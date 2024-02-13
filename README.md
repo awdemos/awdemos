@@ -4,13 +4,15 @@
 
 Hi and welcome to my demos repo!
 
-This repository showcases a collection of demo projects that interest me in various services. There are example deployments in Docker, AWS, and GCP, bare metal Kubernetes, and other projects leveraging modern and cutting-edge technologies.
+This repository showcases a collection of demo projects and research that interest me. Among other things there are example deployments in Docker, AWS, and GCP, bare metal Kubernetes, and other projects leveraging modern and cutting-edge technologies.
 
-It includes examples using Terraform and Pulumi for deploying resources, containerization with containerd and Kubernetes for orchestration, as well as some nice-to-haves like git tips, zsh, and neovim configs, and a lot more.
+While the initial focus of this demo is for technical projects, I have expanded it to include various topics including containers, Large Language Models, and tooling.
 
-Be sure to check out the analysis of Grok, the Ultimate Kubernetes Wishlist, and Kubernetes docs, Talos cluster setups.
+The demos include examples using Terraform and Pulumi for deploying resources, containerization with docker, Kubernetes for orchestration, as well as some nice-to-haves like git tips, zsh, and neovim configs, and a lot more.
 
-Interested in talking about an opportunity? You can schedule a meeting with me anytime during Eastern Standard Time ([https://cal.com/aiconsulting](https://cal.com/aiconsulting)).
+Be sure to check out the analysis of Grok, the Ultimate Kubernetes Wishlist, low level Kubernetes details, and even Talos cluster setups in docker.
+
+If anything strikes you as particularly interesting and you want to speak with me about an opportunity? You can schedule a meeting with me anytime during Eastern Standard Time ([https://cal.com/aiconsulting](https://cal.com/aiconsulting)).
 
 ### Highlights:
 
@@ -22,12 +24,9 @@ Interested in talking about an opportunity? You can schedule a meeting with me a
 
 - **Grok Large Language Model Analysis**: Includes analysis of how the [https://github.com/xai-org/grok-1](https://github.com/xai-org/grok-1) codebase works.
 
-- **Kubernetes Deployments**: Includes examples of Kubernetes deployments, showcasing how to orchestrate containerized applications across a cluster of machines.
-
 - **Kubernetes LLM Installs**: Includes examples of installing Mistral LLM and the OpenAI embedding service in Kubernetes via helm charts, showcasing how to run LLMs in Kubernetes.
 
 - **Python Scripts and Packaging**: Recent work I did setting up poetry.
-
 
 ## Prerequisites
 
@@ -49,7 +48,7 @@ git clone https://github.com/awdemos/demos.git
 cd demos
 ```
 
-# My Favorite Projects
+# Some of my favorite tools
 
 A curated list of my favorite projects across various domains and technologies.
 
@@ -92,8 +91,6 @@ A curated list of my favorite projects across various domains and technologies.
 ## AI and Scripting
 - [GPTScript](https://github.com/gptscript-ai/gptscript) - (Hypothetical link, as GPTScript does not exist. Replace with actual URL if applicable.)
 - [LangChain](https://langchain.com/) - (Hypothetical link, as LangChain does not exist. Replace with actual URL if applicable.)
-
-Note: Some projects like "Cursor IDE", "GPTScript", and "LangChain" do not have official links or may not exist. Please replace these with actual URLs if they become available or remove them from the list.
 
 ## Contributing
 
