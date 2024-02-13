@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ethereum-node-job
+spec:
+  destination:
+    name: 'ethnode'
+    namespace: ethnode0
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ethereum-node-job
+    repoURL: 'https://github.com/yourusername/your-repo'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
