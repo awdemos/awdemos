@@ -13,10 +13,15 @@ Ethereum is an open-source, blockchain-based platform that enables developers to
 - [Ethers.js Documentation](https://docs.ethers.org/v6/)
 - [Foundry Book](https://book.getfoundry.sh/)
 - [Create Turbo-Eth](https://github.com/turbo-eth/create-turbo-eth)
+- [What is Blockchain Node Engine?](https://cloud.google.com/blockchain-node-engine/docs/overview)
+
+## Circle
+
+- [What is USDC](https://developers.circle.com/stablecoins/docs/what-is-usdc)
 
 ## Chainlink nodes
 
-Chainlink is a decentralized oracle network that provides real-world data to smart contracts on the blockchain.
+This is a Chainlink presentation I made last year for a client.
 
 - [Chainlink Presentation](https://docs.google.com/presentation/d/1gnTWuusMh8vYbW2R2zybnFGNnfg6ubE7wwlaL7qcdIQ/edit?pli=1#slide=id.p)
 
@@ -27,6 +32,7 @@ Docker is a platform that uses OS-level virtualization to deliver software in pa
 - [Docker Business Products](https://www.docker.com/products/business/)
 - [Secure Software Supply Chain Best Practices](https://www.docker.com/blog/secure-software-supply-chain-best-practices/)
 - [Building Multimodal GenAI Apps with OctoAI and Docker](https://www.docker.com/blog/build-multimodal-genai-apps-with-octoai-and-docker/)
+- [Test your containers with the Docker Desktop one-node cluster](https://www.docker.com/static/test-lab-docker-kubernetes-admin-magazine-article.pdf)
 
 ## Python
 
