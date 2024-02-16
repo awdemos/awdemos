@@ -38,6 +38,8 @@ Docker is a platform that uses OS-level virtualization to deliver software in pa
 
 Python is a high-level, interpreted programming language known for its readability.
 
+The python based Dockerfile generator is included only a proof of concept but I think code generated Dockerfiles will eventually considered an industry best practice as human generated source files are more prone to bugs.
+
 - [PyGit Source Code](https://github.com/benhoyt/pygit/blob/master/pygit.py)
 
 ## Datadog
