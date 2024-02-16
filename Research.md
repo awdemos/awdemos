@@ -14,6 +14,7 @@ Ethereum is an open-source, blockchain-based platform that enables developers to
 - [Foundry Book](https://book.getfoundry.sh/)
 - [Create Turbo-Eth](https://github.com/turbo-eth/create-turbo-eth)
 - [What is Blockchain Node Engine?](https://cloud.google.com/blockchain-node-engine/docs/overview)
+- [Ethereum All Core Developers Execution Call #181](https://www.galaxy.com/insights/research/ethereum-all-core-developers-execution-call-181/)
 
 ## Circle
 
