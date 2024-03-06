@@ -2,23 +2,32 @@
 
 ## Project Overview
 
-This repository contains a couple of demo projects that sets up some interesting services in AWS and GCP. 
+This repository showcases a collection of demo projects that demonstrate the setup of various services in AWS and GCP, leveraging modern infrastructure as code practices for Kubernetes, containers, and other projects I find interesting. It includes examples using Pulumi for deploying resources, containerization with containerd and Kubernetes for orchestration as well as some nice to haves like git tips, zsh and neovim configs, and a lot more.
 
-Three of these projects use Pulumi infrastructure as code to dpeloy resources into AWS in Go sourced files. For more informaiton please see (https://www.pulumi.com/docs/languages-sdks/go/)
+Be sure to check out the Ultimate Kubernetes Wishlist and Inspecting Images documentation. (I will get around to automating this eventually)
 
-The infrastructure includes a VPC, a public subnet, an internet gateway, a route table, a security group, and an EC2 instance. The EC2 instance is configured to install and run an Ethereum node using the `geth` command.
+### Highlights:
 
-The Fargate project demonstrates how to build a local docker container and push it into an AWS ECR repository presumebly for later ingestion into kubernetes.
+- **Pulumi Projects**: Utilizes Pulumi for infrastructure as code to deploy resources into AWS, with configurations written in Go. For more information, please see [Pulumi's Go documentation](https://www.pulumi.com/docs/languages-sdks/go/).
+
+- **Ethereum Node Deployment**: Features an infrastructure setup including a VPC, public subnet, internet gateway, route table, security group, and an EC2 instance. The EC2 instance is configured to install and run an Ethereum node using the `geth` command.
+
+- **Fargate Integration**: Demonstrates building a local Docker container and pushing it to an AWS ECR repository, presumably for later ingestion into Kubernetes.
+
+- **Kubernetes Deployments**: Includes examples of Kubernetes deployments, showcasing how to orchestrate containerized applications across a cluster of machines.
 
 ## Prerequisites
 
 - Terraform
 - Pulumi
 - AWS/GCP CLI configured with your credentials
+- Docker
+- Containerd
+- Kubernetes CLI (kubectl)
 
-## Setup
+## Setup Instructions
 
-1. Clone the repository:
+### Cloning the Repository
 
 ```bash
 git clone https://github.com/awdemos/demos.git
@@ -123,7 +132,7 @@ The user data script is installing Ethereum and starting the `geth` command. Mak
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+While this is my demo repo, pull requests made in the spirit of this repository are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
