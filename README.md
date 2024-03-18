@@ -2,7 +2,11 @@
 
 ## Project Overview
 
-This repository showcases a collection of demo projects that demonstrate the setup of various services in AWS and GCP, leveraging modern infrastructure as code practices for Kubernetes, containers, and other projects I find interesting. It includes examples using Pulumi for deploying resources, containerization with containerd and Kubernetes for orchestration as well as some nice to haves like git tips, zsh and neovim configs, and a lot more.
+Hi and welcome to my demos repo! nterested in tlking about an opportunity? You can schedule a meeting with me anytime at Eastern Standard Time (https://cal.com/aiconsulting).
+
+This repository showcases a collection of demo projects that interest me in various services. There are example deployments in Docker, AWS and GCP, bare metal kubernetes, and other projects leveraging modern modern and or cutting edge. 
+
+It includes examples using Terraform and Pulumi for deploying resources, containerization with containerd and Kubernetes for orchestration as well as some nice to haves like git tips, zsh and neovim configs, and a lot more.
 
 Be sure to check out the Ultimate Kubernetes Wishlist and Inspecting Images documentation. (I will get around to automating this eventually)
 
@@ -14,16 +18,23 @@ Be sure to check out the Ultimate Kubernetes Wishlist and Inspecting Images docu
 
 - **Fargate Integration**: Demonstrates building a local Docker container and pushing it to an AWS ECR repository, presumably for later ingestion into Kubernetes.
 
+- **Grok Large Lange Model Analysis**: Includes analysis of how the (https://github.com/xai-org/grok-1) codebase works.
+
 - **Kubernetes Deployments**: Includes examples of Kubernetes deployments, showcasing how to orchestrate containerized applications across a cluster of machines.
+
+- **Python Scrippts and Packaging**: Recent work I did in python including settomg up poetry.
+
 
 ## Prerequisites
 
-- Terraform
-- Pulumi
 - AWS/GCP CLI configured with your credentials
-- Docker
 - Containerd
+- Git
+- Docker
 - Kubernetes CLI (kubectl)
+- Pulumi
+- Python
+- Terraform
 
 ## Setup Instructions
 
