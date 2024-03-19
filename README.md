@@ -47,28 +47,6 @@ git clone https://github.com/awdemos/demos.git
 cd demos
 ```
 
-
-Then you can deploy the project as usual with `pulumi up`.
-
-## Configuration
-
-The following variables can be configured in `main.tf`:
-
-- `region`: AWS region to deploy the resources (default: `us-west-2`)
-- `cidr_block`: CIDR block for the VPC (default: `10.0.0.0/16`)
-- `ami`: AMI ID for the EC2 instance (default: `ami-0a62a741df1d21fab`)
-- `instance_type`: Instance type for the EC2 instance (default: `m5.large`)
-- `volume_size`: Root volume size in GB (default: `250`)
-- `key_name`: Name of the key pair for SSH access (default: `your_keypair`)
-
-## Security
-
-The security group is configured to allow all inbound traffic on ports 30303 and 8545 from any IP address. Consider restricting the IP addresses that can access your node for enhanced security.
-
-## User Data Script
-
-The user data script is responsible for installing Ethereum and starting the `geth` command. Ensure the `geth` command options are suitable for your needs.
-
 # My Favorite Projects
 
 A curated list of my favorite projects across various domains and technologies.
