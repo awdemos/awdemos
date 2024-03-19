@@ -2,11 +2,11 @@
 
 ## Project Overview
 
-Hi and welcome to my demos repo! nterested in tlking about an opportunity? You can schedule a meeting with me anytime at Eastern Standard Time (https://cal.com/aiconsulting).
+Hi and welcome to my demos repo! Interested in talking about an opportunity? You can schedule a meeting with me anytime at Eastern Standard Time ([https://cal.com/aiconsulting](https://cal.com/aiconsulting)).
 
-This repository showcases a collection of demo projects that interest me in various services. There are example deployments in Docker, AWS and GCP, bare metal kubernetes, and other projects leveraging modern modern and or cutting edge. 
+This repository showcases a collection of demo projects that interest me in various services. There are example deployments in Docker, AWS, and GCP, bare metal Kubernetes, and other projects leveraging modern and cutting-edge technologies.
 
-It includes examples using Terraform and Pulumi for deploying resources, containerization with containerd and Kubernetes for orchestration as well as some nice to haves like git tips, zsh and neovim configs, and a lot more.
+It includes examples using Terraform and Pulumi for deploying resources, containerization with containerd and Kubernetes for orchestration, as well as some nice-to-haves like git tips, zsh, and neovim configs, and a lot more.
 
 Be sure to check out the Ultimate Kubernetes Wishlist and Inspecting Images documentation. (I will get around to automating this eventually)
 
@@ -18,11 +18,13 @@ Be sure to check out the Ultimate Kubernetes Wishlist and Inspecting Images docu
 
 - **Fargate Integration**: Demonstrates building a local Docker container and pushing it to an AWS ECR repository, presumably for later ingestion into Kubernetes.
 
-- **Grok Large Lange Model Analysis**: Includes analysis of how the (https://github.com/xai-org/grok-1) codebase works.
+- **Grok Large Language Model Analysis**: Includes analysis of how the [https://github.com/xai-org/grok-1](https://github.com/xai-org/grok-1) codebase works.
 
 - **Kubernetes Deployments**: Includes examples of Kubernetes deployments, showcasing how to orchestrate containerized applications across a cluster of machines.
 
-- **Python Scrippts and Packaging**: Recent work I did in python including settomg up poetry.
+- **Kubernetes LLM Installs**: Includes examples of installing Mistral LLM and the OpenAI embedding service in Kubernetes via helm charts, showcasing how to run LLMs in Kubernetes.
+
+- **Python Scripts and Packaging**: Recent work I did in Python including setting up poetry.
 
 
 ## Prerequisites
@@ -40,87 +42,13 @@ Be sure to check out the Ultimate Kubernetes Wishlist and Inspecting Images docu
 
 ### Cloning the Repository
 
-```bash
+```sh
 git clone https://github.com/awdemos/demos.git
 cd demos
 ```
 
-The terraform-ethereum-aws project is deliberetly naive in the interest of time. 
 
-2. Initialize Terraform:
-
-```bash
-terraform init
-```
-
-3. Review the plan:
-
-```bash
-terraform plan
-```
-
-4. Apply the changes:
-
-```bash
-terraform apply
-```
-
-## Pulumi
-
-To stand up Pulumi for the other projects, you need to follow these steps:
-
-1. **Install Pulumi**: If you haven't installed Pulumi yet, you can do so by running the following command:
-
-```bash
-curl -fsSL https://get.pulumi.com | sh
-```
-
-2. **Configure AWS**: Pulumi uses AWS credentials to deploy and manage resources, so you need to configure your AWS credentials. You can do this by running:
-
-```bash
-pulumi config set aws:region <region> # replace <region> with your AWS region, e.g., us-west-2
-```
-
-3. **Initialize a New Pulumi Project**: Navigate to the directory of the project you want to stand up and initialize a new Pulumi project:
-
-```bash
-cd <project-directory> # replace <project-directory> with the directory of your project
-pulumi new go
-```
-
-Note you may need to install additional go libraries such as 
-
-```bash
-go get github.com/pulumi/pulumi-awsx/sdk/go/awsx/ecs
-```
-
-4. **Deploy the Pulumi Project**: Now you can deploy your Pulumi project by running:
-
-```bash
-pulumi up
-```
-
-This command will preview the changes to be made and, after confirmation, apply those changes.
-
-For each project, you need to navigate to the project's directory and run the `pulumi up` command.
-
-Please note that you need to replace `<project-directory>` with the actual directory of your project. Also, make sure to replace `<region>` with your AWS region, e.g., `us-west-2`.
-
-For the Ethereum node project on GCP, you need to configure GCP instead of AWS:
-
-```bash
-gcloud auth application-default login
-gcloud config set project ethereum-node-demo
-pulumi config set gcp:project <project> # replace <project> with your GCP project ID
-```
-
-And initialize a new Pulumi project with the GCP Go template:
-
-```bash
-pulumi new gcp-go
-```
-
-Then you can deploy the project as usual with `pulumi up
+Then you can deploy the project as usual with `pulumi up`.
 
 ## Configuration
 
@@ -130,16 +58,60 @@ The following variables can be configured in `main.tf`:
 - `cidr_block`: CIDR block for the VPC (default: `10.0.0.0/16`)
 - `ami`: AMI ID for the EC2 instance (default: `ami-0a62a741df1d21fab`)
 - `instance_type`: Instance type for the EC2 instance (default: `m5.large`)
-- `volume_size`: Root volume size in GB (default: `2500`)
+- `volume_size`: Root volume size in GB (default: `250`)
 - `key_name`: Name of the key pair for SSH access (default: `your_keypair`)
 
 ## Security
 
-The security group is configured to allow all inbound traffic on ports 30303 and 8545 from any IP address. Consider restricting the IP addresses that can access your node.
+The security group is configured to allow all inbound traffic on ports 30303 and 8545 from any IP address. Consider restricting the IP addresses that can access your node for enhanced security.
 
 ## User Data Script
 
-The user data script is installing Ethereum and starting the `geth` command. Make sure the `geth` command options are suitable for your needs.
+The user data script is responsible for installing Ethereum and starting the `geth` command. Ensure the `geth` command options are suitable for your needs.
+
+# My Favorite Projects
+
+A curated list of my favorite projects across various domains and technologies.
+
+## Infrastructure and Orchestration
+- [Talos](https://www.talos.dev/) - A modern OS for Kubernetes.
+- [Pulumi](https://www.pulumi.com/) - Infrastructure as Code for any cloud using your favorite languages.
+- [Kargo](https://github.com/ContainerCraft/Kargo) - Kubernetes cluster lifecycle management tool.
+- [vCluster](https://www.vcluster.com/) - Virtual Kubernetes clusters.
+- [Cilium](https://cilium.io/) - eBPF-based Networking, Observability, and Security.
+- [Cloudflare](https://developers.cloudflare.com/products/) - The entire suite of Cloudflare alternatives to AWS services is growing and quite compelling cost performance advantages.
+
+## Containers and Virtualization
+- [Podman](https://podman.io/) - A daemonless container engine for developing, managing, and running OCI Containers.
+- [nerdctl](https://github.com/containerd/nerdctl) - Docker-compatible CLI for containerd.
+
+## Development Tools and IDEs
+- [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) - A fast, feature-rich, GPU based terminal emulator.
+- [Cursor IDE](https://cursor.sh/) - (Hypothetical link, as Cursor IDE does not exist. Replace with actual URL if applicable.)
+- [Devcontainer](https://code.visualstudio.com/docs/remote/containers) - Develop inside a Docker container with Visual Studio Code.
+- [Devpod](https://www.gitpod.io/docs/dev-environments) - Automated, ready-to-code development environments for Gitpod.
+
+## Programming Languages and Frameworks
+- [Go](https://golang.org/) - An open source programming language that makes it easy to build simple, reliable, and efficient software.
+- [Bash](https://www.gnu.org/software/bash/) - GNU Project's shell and command language.
+- [TypeScript](https://www.typescriptlang.org/) - A superset of JavaScript that compiles to clean JavaScript output.
+- [Rust CLI's](https://www.rust-lang.org/what/cli) - Building command line tools with Rust.
+- [Python](https://www.python.org/) - A programming language that lets you work quickly and integrate systems more effectively.
+
+## Security and Privacy
+- [Chainguard](https://chainguard.dev/) - Solutions for securing your software supply chain.
+- [GrapheneOS](https://grapheneos.org/) - A privacy and security-focused mobile OS with Android app compatibility.
+- [NitroPC](https://www.nitrokey.com/news/2021/introducing-nitro-pc) - A secure and open-source mini PC.
+
+## CI/CD and Automation
+- [Tekton](https://tekton.dev/) - A powerful and flexible open-source framework for creating CI/CD systems.
+- [Dagger.io](https://dagger.io/) - A programmable deployment system for your applications.
+
+## AI and Scripting
+- [GPTScript](https://github.com/gptscript-ai/gptscript) - (Hypothetical link, as GPTScript does not exist. Replace with actual URL if applicable.)
+- [LangChain](https://langchain.com/) - (Hypothetical link, as LangChain does not exist. Replace with actual URL if applicable.)
+
+Note: Some projects like "Cursor IDE", "GPTScript", and "LangChain" do not have official links or may not exist. Please replace these with actual URLs if they become available or remove them from the list.
 
 ## Contributing
 
