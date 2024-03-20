@@ -60,6 +60,7 @@ A curated list of my favorite projects across various domains and technologies.
 - [Cloudflare](https://developers.cloudflare.com/products/) - The entire suite of Cloudflare alternatives to AWS services is growing and quite compelling cost performance advantages.
 
 ## Containers and Virtualization
+- [Dive](https://github.com/wagoodman/dive) - A tool for exploring each layer in an image, analyzing the contents, and discovering ways to shrink the size of your Docker/OCI image.
 - [Podman](https://podman.io/) - A daemonless container engine for developing, managing, and running OCI Containers.
 - [nerdctl](https://github.com/containerd/nerdctl) - Docker-compatible CLI for containerd.
 
