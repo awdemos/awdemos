@@ -2,13 +2,15 @@
 
 ## Project Overview
 
-Hi and welcome to my demos repo! Interested in talking about an opportunity? You can schedule a meeting with me anytime at Eastern Standard Time ([https://cal.com/aiconsulting](https://cal.com/aiconsulting)).
+Hi and welcome to my demos repo!
 
 This repository showcases a collection of demo projects that interest me in various services. There are example deployments in Docker, AWS, and GCP, bare metal Kubernetes, and other projects leveraging modern and cutting-edge technologies.
 
 It includes examples using Terraform and Pulumi for deploying resources, containerization with containerd and Kubernetes for orchestration, as well as some nice-to-haves like git tips, zsh, and neovim configs, and a lot more.
 
-Be sure to check out the Ultimate Kubernetes Wishlist and Inspecting Images documentation. (I will get around to automating this eventually)
+Be sure to check out the analysis of Grok, the Ultimate Kubernetes Wishlist, and Kubernetes docs, Talos cluster setups.
+
+Interested in talking about an opportunity? You can schedule a meeting with me anytime during Eastern Standard Time ([https://cal.com/aiconsulting](https://cal.com/aiconsulting)).
 
 ### Highlights:
 
@@ -24,13 +26,13 @@ Be sure to check out the Ultimate Kubernetes Wishlist and Inspecting Images docu
 
 - **Kubernetes LLM Installs**: Includes examples of installing Mistral LLM and the OpenAI embedding service in Kubernetes via helm charts, showcasing how to run LLMs in Kubernetes.
 
-- **Python Scripts and Packaging**: Recent work I did in Python including setting up poetry.
+- **Python Scripts and Packaging**: Recent work I did setting up poetry.
 
 
 ## Prerequisites
 
 - AWS/GCP CLI configured with your credentials
-- Containerd
+- Nerdctl
 - Git
 - Docker
 - Kubernetes CLI (kubectl)
@@ -63,6 +65,7 @@ A curated list of my favorite projects across various domains and technologies.
 - [Dive](https://github.com/wagoodman/dive) - A tool for exploring each layer in an image, analyzing the contents, and discovering ways to shrink the size of your Docker/OCI image.
 - [Podman](https://podman.io/) - A daemonless container engine for developing, managing, and running OCI Containers.
 - [nerdctl](https://github.com/containerd/nerdctl) - Docker-compatible CLI for containerd.
+- [Fedora Silverblue](https://silverblue.fedoraproject.org/) - Fedora Silverblue is a variant of the Fedora Workstation with an immutable desktop operating system aimed at good support for container-focused workflows.
 
 ## Development Tools and IDEs
 - [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) - A fast, feature-rich, GPU based terminal emulator.

@@ -3,154 +3,53 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Locale settings
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# PATH settings
-export PATH="${HOME}/bin:${HOME}/.krew/bin:${GOPATH}/bin:$(brew --prefix golang)/libexec/bin:${PATH}"
+# Starship prompt setup
+zmodload zsh/parameter zsh/datetime zsh/mathfunc
+autoload -Uz add-zsh-hook
+
+# Environment variables
+export STARSHIP_SHELL="zsh"
+export STARSHIP_SESSION_KEY=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+export NVM_DIR="$HOME/.nvm"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/bin"
-export GOROOT="$(brew --prefix golang)/libexec"
-
-
-function get_kubectl_context() {
-    kubectl config current-context
-}
-
-function gkc () {
-    kubectl config current-context
-}
-
-function pls() {
-    pulumi stack ls
-}
-
-# Add this to your .zshrc file
-function kube_prompt_info() {
-  kubectl config current-context 2>/dev/null
-}
-
-PROMPT='$(kube_prompt_info) %{$fg_bold[green]%}%p%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-
-generate_otp() {
-  local salt="your-salt-string" # Replace with a unique salt string
-  local date=$(date +%Y-%m-%d) # Get the current date in YYYY-MM-DD format
-  echo -n "${date}${salt}" | shasum -a 256 | cut -d' ' -f1
-}
-
-# Preview changes without applying them
-alias plp='pulumi preview'
-
-# Show configuration values
-alias plc='pulumi config'
-
-# Show stack activity
-alias plh='pulumi stack history'
-
-function aws_creds() {
-  echo AWS_ACCESS_KEY_ID: "$AWS_ACCESS_KEY_ID"
-  echo AWS_SESSION_TOKEN: "$AWS_SESSION_TOKEN"
-}
-
-export PS1="%F{cyan}\$(get_kubectl_context)%f $PS1"
-
-
-# fzf settings
+export GOROOT="/usr/local/go"
+export PATH="$HOME/bin:$HOME/.krew/bin:$GOPATH/bin:$HOME/.local/bin:$PATH"
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS='--preview "bat --color=always --style=numbers --line-range=:400 {}" --reverse '
 export FZF_TMUX_HEIGHT='80%'
-
-# Bat settings
 export BAT_THEME='Monokai Extended Bright'
 export AWS_PAGER='bat -p'
-
-# Editor settings
 export EDITOR='nvim'
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'  # Use Vim if inside an SSH connection
-fi
-
-# Update settings
+[[ -n $SSH_CONNECTION ]] && export EDITOR='vim'
 export UPDATE_ZSH_DAYS=7
 export DISABLE_UPDATE_PROMPT="true"
-
-# Correction settings
 export ENABLE_CORRECTION="true"
-
-# Command completion settings
 export COMPLETION_WAITING_DOTS="true"
-
-# History settings
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 export HISTSIZE=100000
 export SAVEHIST=100000
 export HISTFILE="$HOME/.zsh_history"
-setopt append_history extended_history hist_expire_dups_first hist_ignore_all_dups hist_ignore_dups hist_ignore_space hist_reduce_blanks hist_save_no_dups hist_verify
-setopt share_history pushd_ignore_dups pushd_silent
-
-# Return time on long-running processes
 export REPORTTIME=2
 export TIMEFMT="%U user %S system %P cpu %*Es total"
+
+# Enable command history sharing
+setopt append_history extended_history hist_expire_dups_first hist_ignore_all_dups hist_ignore_dups hist_ignore_space hist_reduce_blanks hist_save_no_dups hist_verify share_history
+
+# Completion system initialization
+autoload -Uz compinit && compinit
 
 # Key bindings
 bindkey "\e[1;5D" backward-word
 bindkey "\e[1;5C" forward-word
 bindkey -e '\C-r' 'fzf-history-widget'  # CTRL-R - Paste the selected command from history into the command line
 bindkey -e '\C-g' cd-widget            # CTRL-G - cd into the selected directory
-
-# zgen setup
-source "${HOME}/.zgen/zgen.zsh"
-
-# Generate zgen init.sh if it doesn't exist
-if ! zgen saved; then
-  zgen load plugins/git
-  zgen load plugins/aws
-  zgen load plugins/github
-  zgen load plugins/command-not-found
-  zgen load plugins/docker
-  zgen load plugins/docker-compose
-  zgen load plugins/macos
-  zgen load plugins/genpass
-  zgen load plugins/node
-  zgen load plugins/zsh-autocomplete
-  zgen load plugins/autoupdate-zgenom
-  zgen load plugins/zsh-completions
-
-  zgen load caarlos0/zsh-mkc
-  zgen load caarlos0/zsh-git-sync
-  zgen load caarlos0/zsh-add-upstream
-  zgen load denolfe/zsh-prepend
-  zgen load powerlevel10k/powerlevel10k
-
-  zgen load agkozak/zsh-z
-
-  # These must be loaded in this order
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-history-substring-search
-
-  zgen load zsh-users/zsh-autosuggestions
-
-  # Completion-only repos
-  zgen load zsh-users/zsh-completions
-
-  # Set keystrokes for substring searching
-  zmodload zsh/terminfo
-  bindkey "$terminfo[kcuu1]" history-substring-search-up
-  bindkey "$terminfo[kcud1]" history-substring-search-down
-  bindkey "^k" history-substring-search-up
-  bindkey "^j" history-substring-search-down
-
-  # Warn you when you run a command that you've got an alias for
-  zgen load djui/alias-tips
-
-  # Generate init.sh
-  zgen save
-fi
 
 # Custom functions
 
@@ -210,22 +109,18 @@ export OPENAI_API_KEY=
 # Load kubectl completion if available
 if command -v kubectl &>/dev/null; then
   source <(kubectl completion zsh)
-  complete -F __start_kubectl k
 fi
 
-# Load ngrok completion if available
-if command -v ngrok &>/dev/null; then
-  eval "$(ngrok completion)"
-fi
 
-# Load bash-insulter for fun error messages on command not found. Potentially nsfw.
+# Load bash-insulter for fun error messages on command not found
 if [ -f ~/code/bash-insulter/src/bash.command-not-found ]; then
   . ~/code/bash-insulter/src/bash.command-not-found
 fi
 
-# Custom aliases
+# aliases
 
 alias weather="curl wttr.in/Holly+Michigan"
+alias p="cd ~/code/op/pulumi-deployments"
 alias j="joshuto"
 alias pr="pulumi refresh"
 alias n="npm run build "
@@ -233,14 +128,12 @@ alias pu="pulumi up"
 alias dev="aws_mfa_auth dev"
 alias prod="aws_mfa_auth prod"
 alias whichawsaccount="aws sts get-caller-identity --query Account --output text"
-alias prodeks="aws eks --region us-west-2 update-kubeconfig --name clustername"
-alias stagingeks="aws eks --region us-west-2 update-kubeconfig --name clustername"
-alias deveks="aws eks --region us-west-2 update-kubeconfig --name clustername"
 alias showmethefiles="git show --name-status | grep -E '^M' | awk '{print $2}' "
 alias givemealltheupdates="for dir in */; do [ -d "$dir/.git" ] && (cd "$dir" && git pull); done"
 alias givemeasecretstring="date +%s | openssl sha256 | awk '{print $NF}'"
 alias f="fzf | xargs bat -p"
 alias t="tree -C ."
+alias l="exa"
 alias readeverything="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias showmenodeinstancetype="kubectl get no -Lbeta.kubernetes.io/instance-type -Lfailure-domain.beta.kubernetes.io/zone"
 alias kgpo="kubectl get pods -A"
@@ -252,7 +145,7 @@ alias kdp='kubectl describe pod'
 alias kg='kubectl get'
 alias kgp='kubectl get pod'
 alias kgs='kubectl get secret'
-alias gclo="git clone "
+alias glo="git clone "
 alias gsm="git switch main"
 alias rebase="git rebase -i ${BASE}"
 alias updateallrepos="find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;"
@@ -283,8 +176,4 @@ alias bb="brew update && brew upgrade"
 alias lens="/Applications/Lens.app/Contents/MacOS/Lens"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source <(kubectl completion zsh)
-complete -F __start_kubectl k
-
 eval "$(starship init zsh)"
-

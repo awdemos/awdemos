@@ -10,17 +10,13 @@ This ultimate list is designed for minimalism, security, and latest trends.
 
 ## Container Runtime and Security
 
-- **Containerd**: I think containerd should replace docker for most containerized application developers since that is what will be running the containerized app in Talos. This manages the container life cycle and support for running containers according to OCI specifications. Ideal for running both general-purpose applications and specialized workloads like Large Language Models or Blockchain nodes. [Learn more about containerd](https://containerd.io/).
+- **Containerd**: I think containerd should the CRI for most containerized application developers since that is what will be running the containerized app in Kubernetes. This manages the container life cycle and support for running containers according to OCI specifications. Ideal for running both general-purpose applications and specialized workloads like Large Language Models or Blockchain nodes. [Learn more about containerd](https://containerd.io/).
 
 - **Kata Containers**: Use Kata Containers for workload isolation. Configure Kubernetes to use Kata as the container runtime for selected deployments. This is how I would run Large Language Models or Blockchain nodes in a cluster. [Explore Kata Containers](https://katacontainers.io/).
 
 - **Chainguard Images**: Utilize Chainguard Images, which are minimal and secure container images. These minimal images ship with zero CVE's, are re-built daily, are based on Alpine Linux, immutable, contain no shell, and no package manager. [Check out Chainguard Images](https://chainguard.dev/products/images/).
 
 - **Chainguard Enforce**: For enforcing policy and ensuring only trusted images are deployed. Turn "default allow" developer experience with Kubernetes into "default deny" production ready workloads. [Learn about Chainguard Enforce](https://chainguard.dev/products/enforce/).
-
-## Enhancing Security with Sigstore
-
-- **Sigstore**: Adopt Sigstore to improve the security of the software supply chain significantly. Sigstore offers a set of open-source tools designed to securely sign and verify software artifacts such as container images, binaries, and software bills of materials (SBOMs). By leveraging ephemeral signing keys and recording signing events in a tamper-resistant public log, Sigstore enables developers and consumers to ensure the integrity and origin of software artifacts without the cumbersome management of keys. [Learn more about Sigstore](https://docs.sigstore.dev/).
 
 ## Continuous Deployment and Configuration Management
 
@@ -35,6 +31,10 @@ This ultimate list is designed for minimalism, security, and latest trends.
 ## CI/CD Pipeline
 
 - **Tekton**: Implement Tekton for building and deploying applications. Define Tekton pipelines for continuous integration and delivery workflows. [Learn more about Tekton](https://tekton.dev/).
+
+## Enhancing Security with Sigstore
+
+- **Sigstore**: Adopt Sigstore to improve the security of the software supply chain significantly. Sigstore offers a set of open-source tools designed to securely sign and verify software artifacts such as container images, binaries, and software bills of materials (SBOMs). By leveraging ephemeral signing keys and recording signing events in a tamper-resistant public log, Sigstore enables developers and consumers to ensure the integrity and origin of software artifacts without the cumbersome management of keys. [Learn more about Sigstore](https://docs.sigstore.dev/).
 
 ## Source Code Management
 
@@ -54,6 +54,8 @@ This ultimate list is designed for minimalism, security, and latest trends.
 
 - **CloudNativePG**: Use CloudNativePG for running PostgreSQL on Kubernetes in a cloud-native manner. It is either this or CockroachDB and I am electing for the simpler solution for development purposes. [Discover CloudNativePG](https://cloudnative-pg.io/).
 
+- **Cockroachdb**: A very compelling globally distributed k8 database.
+
 ## Machine Learning Operations
 
 - **Zenml**: Integrate Zenml for managing machine learning pipelines. This framework looks like a winner for getting started with MLOPS quickly. [Explore Zenml](https://zenml.io/).
@@ -66,11 +68,17 @@ This ultimate list is designed for minimalism, security, and latest trends.
 
 - **KEDA (Kubernetes Event-Driven Autoscaling)**: Integrate KEDA to enable event-driven autoscaling in your Kubernetes clusters. KEDA is a powerful tool that allows for the scaling of any container in Kubernetes based on the number of events needing to be processed. It supports a wide range of event sources and is designed to be lightweight and flexible, working alongside standard Kubernetes components like the Horizontal Pod Autoscaler. [Learn more about KEDA](https://keda.sh/).
 
-## Network Policy and Security
+## Service Mesh
 
 - **Cilium**: Use Cilium for Kubernetes networking, security, and observability. Cilium's performance, service mesh, observability, and multi-cluster communication is what I am betting on in 2024. Refer to the Cilium documentation for setup and configuration. [Check out Cilium](https://cilium.io/docs/).
 
 This design spec guide outlines a comprehensive approach to building a Kubernetes deployment leveraging modern tools and practices for security, deployment, CI/CD, and observability. Each component plays a crucial role in creating a scalable, secure, and efficient Kubernetes infrastructure.
 
+## Secrets Management
+
+- **Amazon CSI Secrets**: Implement Amazon CSI Secrets for managing secrets securely in EKS. Amazon CSI Secrets provides a seamless integration with AWS Secrets Manager to store and retrieve sensitive information such as API keys, passwords, and tokens securely. After trying multiple solutions in EKS I think I like this one the most, but I'm open minded. [Learn more about Amazon CSI Secrets](https://aws.amazon.com/secrets-manager/).
+
+
 ## More Goodies
+
 I have a few more suggestions based on requires including for GPT's, MLOPS, secrets management, and logging but I won't mention those here.
