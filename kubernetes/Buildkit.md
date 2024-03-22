@@ -1,4 +1,6 @@
-Here is some information about deterministic and reproducible builds with nerdctl and BuildKit.
+## Buildkit
+
+Here is some information about deterministic and reproducible builds with Nerdctl and BuildKit.
 
 What are deterministic and reproducible builds?
 
@@ -15,9 +17,8 @@ To build deterministic and reproducible images with nerdctl and BuildKit, you ne
 
 Here is an example of a Dockerfile that is deterministic and reproducible:
 
-Code
 
-```
+```sh
 FROM ghcr.io/chainguard-images/wolfi-base:latest
 RUN apk add --no-cache build-base
 COPY . /app
@@ -28,25 +29,17 @@ CMD ["/app/my-app"]
 
 To build the image with the `--buildkit` flag:
 
-Code
-
-```
+```sh
 nerdctl build --buildkit .
 ```
 
 This will build the image using BuildKit, and the resulting image will be deterministic and reproducible.
 
-Here are some tips for 
-
-building
+Here are some tips for building:
 
 [](https://en.wikipedia.org/wiki/Software_build)
 
-![](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSfyDgiOVUTc7N3nKe74hV5psxNVITVLq15Of07BAMfDnaUeDxB)
-
-[](https://www.youtube.com/watch?v=ont6NeOSwEU)
-
- deterministic and reproducible images:
+Deterministic and reproducible images:
 
 - Use a base image that is deterministic and reproducible.
 - Avoid using commands that are not deterministic, such as `date` and `uuidgen`.
@@ -59,7 +52,7 @@ Benefits of deterministic and reproducible builds:
 - This can help to improve the reliability and security of your applications.
 - Deterministic and reproducible builds can also help to make it easier to troubleshoot problems with your applications.
 
-Conclusion
+## Conclusion
 
 Deterministic and reproducible builds are an important part of building reliable and secure applications. By following the tips above, you can build deterministic and reproducible images with nerdctl and BuildKit.
 

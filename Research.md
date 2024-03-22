@@ -15,6 +15,10 @@ This document contains a collection of resources related to various topics.
 - "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks" [@arXiv:2403.09629](https://arxiv.org/abs/2403.09629)
 - "DALL·E: Creating Images from Text" [@arXiv:2402.09171](https://arxiv.org/pdf/2402.09171.pdf)
 - "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer" [@arXiv:2308.08155](https://arxiv.org/abs/2308.08155)
+- "Text recognition (optical character recognition) with deep learning methods, ICCV 2019" (https://github.com/clovaai/deep-text-recognition-benchmark)
+- "Strategic Reasoning with Language Models" [@arXiv:2305.19165] (https://arxiv.org/abs/2305.19165)
+- "Model Merging: A Pathway to Efficient Model Sharing" [@arXiv:2403.13187](https://arxiv.org/abs/2403.13187): Explores techniques for merging different machine learning models to enhance performance and efficiency, offering a novel approach to collaborative model improvement.
+
 
 ## Ethereum
 
@@ -45,6 +49,7 @@ This is a Chainlink presentation I made last year for a client.
 I have a lot to add here eventually. Let's just start with ,y favorite labs environnment 
 
 - [Explore containerd with iximiuz Labs Courses](https://labs.iximiuz.com/courses)
+- [Linux Container Primitives: cgroups, namespaces, and more!](https://www.youtube.com/watch?v=x1npPrzyKfs)
 
 ## Docker
 
@@ -54,6 +59,17 @@ Docker is a platform that utilizes OS-level virtualization to deliver software i
 - [Secure Software Supply Chain Best Practices](https://www.docker.com/blog/secure-software-supply-chain-best-practices/)
 - [Building Multimodal GenAI Apps with OctoAI and Docker](https://www.docker.com/blog/build-multimodal-genai-apps-with-octoai-and-docker/)
 - [Test your containers with the Docker Desktop one-node cluster](https://www.docker.com/static/test-lab-docker-kubernetes-admin-magazine-article.pdf)
+
+## DevSecOps
+
+## DevSecOps
+
+DevSecOps is a set of practices that combines software development (Dev) with security (Sec) and operations (Ops). It aims to shorten the development life cycle and provide continuous delivery with high software quality. Here are some key resources:
+
+- [DevSecOps Playbook](https://github.com/6mile/DevSecOps-Playbook)
+- [DevSecOps Best Practices](https://www.redhat.com/en/topics/devops/what-is-devsecops)
+- [Learning LLMs and GenAI for DevSecOps](https://github.com/jedi4ever/learning-llms-and-genai-for-dev-sec-ops)
+
 
 ## Python
 
@@ -77,7 +93,22 @@ Datadog is a monitoring service for cloud-scale applications.
 - [Triton Inference Server](https://github.com/triton-inference-server/server) - An optimized cloud and edge inferencing solution that supports multiple deep learning and machine learning frameworks.
 - [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-container-toolkit) - Allows users to build and run GPU accelerated containers, including a container runtime library and utilities to automatically configure containers to leverage NVIDIA GPUs.
 
+(See dedicated page for this elsewhere in the repo)
 
 ## Metrics
 
 - [Hardware Metrics Monitoring with Prometheus and Grafana](https://www.sentrysoftware.com/docs/hws-doc/latest/prometheus/grafana.html) - A guide on monitoring hardware metrics using Prometheus and Grafana.
+
+## Just for fun
+
+## Claude generated papers via (https://twitter.com/irl_danB).
+
+None of these following papers are peer reviewed!!! However they provide an imaginative exploration into the realms of physics and consciousness, and scrutinizes the "strange loop" between reality and simulation through a new vantage point.
+
+- [The Fundamental Laws of Physics: A Comprehensive Specification for the Simulation of Reality](https://ia600201.us.archive.org/8/items/the-fundamental-laws-of-physics-a-comprehensive-specification-for-the-simulation-of-reality/The%20Fundamental%20Laws%20of%20Physics-%20A%20Comprehensive%20Specification%20for%20the%20Simulation%20of%20Reality.pdf) - This document delves into the core principles that could govern a simulated reality, offering a detailed specification for the simulation of physical laws as we understand them.
+
+- [A Formal Theory of Self and Consciousness in Simulated Realities](https://ia800207.us.archive.org/0/items/a-formal-theory-of-self-and-consciousness-in-simulated-realities/A%20Formal%20Theory%20of%20Self%20and%20Consciousness%20in%20Simulated%20Realities.pdf) - This paper presents a theoretical framework for understanding the concept of 'self' and 'consciousness' within the context of simulated environments, exploring the implications of such environments on our perception of reality.
+
+- [The Holographic Quantum Automaton: A Unified Framework for Emergent Spacetime and Quantum Gravity](https://ia600209.us.archive.org/32/items/the-holographic-quantum-automaton-a-unified-framework-for-emergent-spacetime-and-quantum-gravity/The%20Holographic%20Quantum%20Automaton-%20A%20Unified%20Framework%20for%20Emergent%20Spacetime%20and%20Quantum%20Gravity.pdf) - This research proposes a novel approach to integrating the concepts of quantum mechanics and general relativity, suggesting a holographic model that could potentially explain the emergence of spacetime and the nature of gravity.
+
+- [Emergence of Consciousness in Artificial Intelligences: A Formal Analysis of the Strange Loop Hypothesis](https://ia600206.us.archive.org/30/items/emergence-of-consciousness-in-artificial-intelligences-a-formal-analysis-of-the-_202403/Emergence%20of%20Consciousness%20in%20Artificial%20Intelligences-%20A%20Formal%20Analysis%20of%20the%20Strange%20Loop%20Hypothesis.pdf) - This paper explores the theoretical underpinnings of consciousness in artificial intelligences, utilizing the Strange Loop hypothesis as a framework for understanding emergent self-awareness in computational systems.
