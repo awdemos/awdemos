@@ -1,0 +1,1204 @@
+Getting started
+Can my data be recovered once I've terminated my instance?
+We cannot recover your data once you've terminated your instance! Before terminating an instance, make sure to back up all data that you want to keep.
+
+If you want to save data even after you terminate your instance, create a persistent storage file system.
+
+The persistent storage file system must be attached to your instance before you start your instance. The file system cannot be attached to your instance after you start your instance.
+
+When you create a file system, a directory with the name of your file system is created in your home directory. For example, if the name of your file system is PERSISTENT-FILE-SYSTEM, the directory is created at /home/ubuntu/PERSISTENT-FILE-SYSTEM. Data not stored in this directory is erased once you terminate your instance and cannot be recovered.
+
+Can I pause my instance instead of terminating it?
+It currently isn't possible to pause (suspend) your instance rather than terminating it. But, this feature is in the works.
+
+Until this feature is implemented, you can use persistent storage file systems to imitate some of the benefits of being able to pause your instance.
+
+Do you support Kubernetes (K8s)?
+Kubernetes, also known as K8s, isn't supported on On-Demand Cloud.
+
+However, Lambda offers managed Kubernetes for Reserved Cloud.
+
+See our Managed Kubernetes Product Outline to learn more.
+
+69KB
+Lambda_Kubernetes_One_Pager.pdf
+pdf
+Why can't my program find the NVIDIA cuDNN library?
+Unfortunately, the NVIDIA cuDNN license limits how cuDNN can be used on our instances.
+
+On our instances, cuDNN can only be used by the PyTorch® framework and TensorFlow library installed as part of Lambda Stack.
+
+Other software, including PyTorch and TensorFlow installed outside of Lambda Stack, won’t be able to find and use the cuDNN library installed on our instances.
+
+Software outside of Lambda Stack usually looks for the cuDNN library files in /usr/lib/x86_64-linux-gnu. However, on our instances, the cuDNN library files are in /usr/lib/python3/dist-packages/tensorflow.
+
+Creating symbolic links, or "symlinks," for the cuDNN library files might allow your program to find the cuDNN library on our instances.
+
+Run the following command to create symlinks for the cuDNN library files:
+
+Copy
+for cudnn_so in /usr/lib/python3/dist-packages/tensorflow/libcudnn*; do
+  sudo ln -s "$cudnn_so" /usr/lib/x86_64-linux-gnu/
+done
+How do I open Jupyter Notebook on my instance?
+To open Jupyter Notebook on your instance:
+
+In the GPU instances dashboard, find the row for your instance.
+
+Click Launch in the Cloud IDE column.
+
+Watch Lambda's GPU Cloud Tutorial with Jupyter Notebook video on YouTube to learn more about using Jupyter Notebook on Lambda GPU Cloud instances.
+
+How do I upgrade Python?
+Upgrading Python, that is, replacing the preinstalled Python version with a newer version, will break your instance.
+
+Instead of upgrading Python, you should install your desired version of Python alongside the preinstalled version, and use your desired version in a virtual environment.
+
+To install another version of Python alongside the preinstalled version:
+
+Run sudo apt -y update && sudo apt -y install pythonVERSION-full.
+
+Replace VERSION with the Python version you want to install, for example, 3.13. Make sure -full is appended to the Python version, otherwise, you won't have the venv module needed to create Python virtual environments.
+
+As a complete example, if you want to install Python version 3.13, run:
+
+Copy
+sudo apt -y update && sudo apt -y install python3.13-full
+Run pythonVERSION -m venv VENV-NAME to create a Python virtual environment.
+
+Replace VERSION with the Python version you installed in the previous step. Replace VENV-NAME with the name you want to give your virtual environment.
+
+Then, run source VENV-NAME/bin/activate.
+
+Replace VENV-NAME with the name you gave your virtual environment.
+
+As a complete example, if you want to create a virtual environment named my-virtual-environment using Python version 3.13 (installed in the example in the previous step), run:
+
+Copy
+python3.13 -m venv my-virtual-environment
+source my-virtual-environment/bin/activate
+Run python --version to confirm that your virtual environment is using your desired Python version.
+
+Can I upgrade to the latest Ubuntu release?
+Do not run 
+sudo do-release-upgrade
+ or try to upgrade to the latest Ubuntu release. Doing so will break Jupyter Notebook and unless you have SSH access to your instance, Lambda Support won't be able to help you recover your data.
+
+Jupyter Notebook on our instances is configured and tested for the preinstalled version of Python. Upgrading to the latest Ubuntu release will replace the preinstalled version of Python and make Jupyter Notebook inaccessible.
+
+Is it possible to use more than one SSH key?
+It’s possible to allow more than one SSH key to access your instance. To do so, you need to add public keys to ~/.ssh/authorized_keys. You can do this with the echo command.
+
+You can also import SSH keys from GitHub.
+
+This FAQ assumes that you’ve already generated another SSH key pair, that is, a private key and a public key.
+
+Public keys look like this:
+
+Copy
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK5HIO+OQSyFjz0clkvg+48YAihYMo5J7AGKiq+9Alg8 user@hostname
+SSH into your instance as you normally do and run:
+
+Copy
+echo 'PUBLIC-KEY' >> ~/.ssh/authorized_keys
+Replace PUBLIC-KEY with the public key you want to add to your instance. Make sure to keep the single quotes (
+' '
+).
+
+You should now be able to log into your instance using the SSH key you just added.
+
+You can make sure the public key has been added by running:
+
+Copy
+cat ~/.ssh/authorized_keys
+The last line of output should be the public key you just added.
+
+What SSH key formats are supported?
+You can add SSH keys in the following formats using the dashboard or the Cloud API:
+
+OpenSSH (the format ssh-keygen uses by default when generating keys)
+
+RFC4716 (the format PuTTYgen uses when you save a public key)
+
+PKCS8
+
+PEM
+
+OpenSSH keys look like:
+
+Copy
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK5HIO+OQSyFjz0clkvg+48YAihYMo5J7AGKiq+9Alg8 foo@bar
+RFC4716 keys begin with:
+
+Copy
+---- BEGIN SSH2 PUBLIC KEY ----
+PKCS8 keys begin with:
+
+Copy
+-----BEGIN PUBLIC KEY-----
+PEM keys begin with, for example:
+
+Copy
+-----BEGIN RSA PUBLIC KEY-----
+How long does it take for instances to launch?
+Single-GPU instances usually take 3-5 minutes to launch.
+
+Multi-GPU instances usually take 10-15 minutes to launch.
+
+Jupyter Notebook and Demos can take a few minutes after an instance launches to become accessible.
+
+Billing starts the moment an instance begins booting.
+
+What network bandwidth does Lambda GPU Cloud provide?
+Some sites limit transfer speeds. This is known as bandwidth throttling.
+
+Lambda GPU Cloud doesn't limit your transfer speeds but can't control other sites' use of bandwidth throttling.
+
+Further, real-world network bandwidth depends on a variety of factors, including the total number of connections opened by your applications and overall network utilization.
+
+Utah, USA region (us-west-3)
+The bandwidth between instances in our Utah, USA region (us-west-3) can be up to 200 Gbps.
+
+The total bandwidth from this region to the Internet can be up to 20 Gbps.
+
+Texas, USA region (us-south-1)
+The bandwidth between instances in our Texas, USA region (us-south-1) can be up to 200 Gbps.
+
+The total bandwidth from this region to the Internet can be up to 20 Gbps.
+
+We're in the process of testing the network bandwidth in our other regions.
+
+How do I learn my instance's private IP address and other info?
+You can learn your instance's private IP address with the ip command.
+
+You can learn what ports are open on your instance with the nmap command.
+
+Learn your instance's private IP address
+To learn your instance's private IP address, SSH into your instance and run:
+
+Copy
+ip -4 -br addr show | grep '10.'
+The above command will output, for example:
+
+Copy
+enp5s0           UP             10.19.60.24/20
+In the above example, the instance's private IP address is 10.19.60.24.
+
+Tip
+
+If you want your instance's private IP address and only that address, run the following command instead:
+
+Copy
+ip -4 -br addr show | grep -Eo '10\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'
+The above command will output, for example:
+
+Copy
+10.19.60.24
+Learn what ports on your instance are publicly accessible
+You can use Nmap to learn what ports on your instance are publicly accessible, that is, reachable over the Internet.
+
+The instructions, below, assume you're running Ubuntu on your computer.
+
+First, install Nmap on your computer (not on your instance) by running:
+
+Copy
+sudo apt install -y nmap
+Next, run:
+
+Copy
+nmap -Pn INSTANCE-IP-ADDRESS
+Replace INSTANCE-IP-ADDRESS with your instance's IP address, which you can get from the Cloud dashboard.
+
+The command will output, for example:
+
+Copy
+Starting Nmap 7.80 ( https://nmap.org ) at 2023-01-11 13:22 PST
+Nmap scan report for 129.159.46.35
+Host is up (0.041s latency).
+Not shown: 999 filtered ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+
+Nmap done: 1 IP address (1 host up) scanned in 6.42 seconds
+In the above example, TCP port 22 (SSH) is publicly accessible.
+
+If nmap doesn’t show TCP/22 (SSH) or any other ports open, your:
+
+Instance might be terminated. Check the GPU Instances dashboard to find out.
+
+Firewall rules might be blocking incoming connections to your instance.
+
+nmap -Pn INSTANCE-IP-ADDRESS only scans the 1,000 most common TCP ports.
+
+How do I close my account?
+To close your Lambda GPU Cloud account:
+
+Back up all of your data on your instances as well as in your persistent storage file systems.
+
+You can use rsync to back up your data.
+
+Terminate all of your instances from the Cloud dashboard or using the Cloud API.
+
+Delete all of your persistent storage file systems.
+
+In the Cloud dashboard, under Settings, click Close my account. Carefully read the warning in the dialog box that appears. To proceed with closing your account, type in close account, then click Close account.
+
+Dashboard
+The dashboard makes it easy to get started using Lambda GPU Cloud.
+
+From the dashboard, you can:
+
+Launch, restart, and terminate instances.
+
+Create and manage persistent storage file systems.
+
+Add, generate, and delete SSH keys.
+
+Generate and delete API keys.
+
+Use the Demos feature.
+
+View usage.
+
+Manage a Team.
+
+Modify account settings.
+
+Launch, restart, and terminate instances
+Launch instances
+To launch an instance:
+
+Click Instances in the left sidebar of the dashboard.
+
+
+Then, click Launch instance at the top-right of the dashboard.
+
+
+Click the instance type that you want to launch.
+
+
+Click the region in which you want to launch the instance.
+
+
+Click the persistent storage file system that you want to attach to your instance.
+
+If you don’t want to or can’t attach a persistent storage file system to your instance, click Don’t attach a filesystem.
+
+
+Select the SSH key that you want to use for your instance. Then, click Launch instance.
+
+
+You can add additional SSH keys to your instance once your instance has launched.
+
+Review the license agreements and terms of service. If you agree to them, click I agree to the above to launch your instance.
+
+
+In the dashboard, you should now see your instance listed. Once your instance has finished booting, you’ll be provided with the details needed to begin using your instance.
+
+
+You can also launch instances using the Cloud API.
+
+You can also use the Cloud API to get details of a running instance.
+
+Restart instances
+Restart instances by clicking the checkboxes next to the instances you want to restart. Then, click Restart at the top-right of the dashboard.
+
+
+Terminate instances
+Terminate instances by clicking the checkboxes next to the instances you want to terminate. Then, click Terminate at the top-right of the dashboard.
+
+When prompted to do so, type in erase data on instance, then click Terminate instances.
+
+
+You can also terminate instances using the Cloud API.
+
+Create and manage persistent storage file systems
+Create a persistent storage file system
+To create a persistent storage file system:
+
+Click Storage in the left sidebar of the dashboard.
+
+
+Then, click Create filesystem at the top-right of the dashboard.
+
+
+Enter a name and select a region for your file system. Then click Create filesystem.
+
+
+You should now see your persistent storage file system listed in the dashboard.
+
+
+Add, generate, and delete SSH keys
+Add or generate an SSH key
+To add an SSH key that you already have:
+
+Click SSH keys in the left sidebar of the dashboard.
+
+
+Then, click Add SSH key at the top-right of the dashboard.
+
+In the text input box, paste your public SSH key. Enter a name for your key, then click Add SSH key.
+
+To generate a new SSH key:
+
+Instead of pasting your public SSH key as instructed, above, click Generate a new SSH key. Type in a name for your key, then click Create.
+
+
+The private key for your new SSH key will automatically download.
+
+You can also use the Cloud API to add and generate SSH keys.
+
+Delete SSH keys
+Delete SSH keys by clicking Delete at the far-right of the SSH key you want to delete.
+
+Generate and delete API keys
+Generate API keys
+Generate API keys by clicking API keys in the left sidebar of the dashboard.
+
+
+Then, click Generate API Key at the top-right of the dashboard.
+
+
+Delete API keys
+Delete API keys by clicking Delete at the far-right of the API key you want to delete.
+
+Use the Demos feature
+Use the Demos feature by clicking Demos in the left sidebar of the dashboard.
+
+
+View usage
+View usage information by clicking Usage in the left sidebar of the dashboard.
+
+
+Manage a Team
+Click Team at the bottom of the left sidebar to access the Team feature.
+
+
+Learn how to manage a Team by reading our FAQ on getting started with the Team feature.
+
+Modify account settings
+Click Settings at the bottom of the left sidebar to modify your account settings, including your password and payment method.
+Cloud API
+With the Cloud API, you can:
+
+Launch instances, restart instances, and terminate instances.
+
+List the details of all of your instances.
+
+Get the details of a running instance.
+
+Get a list of the instance types offered by Lambda GPU Cloud.
+
+Manage your SSH keys.
+
+List your file systems.
+
+Requests to the Cloud API are generally limited to 1 request per second.
+
+Requests to the /instance-operations/launch endpoint are limited to 1 request every 10 seconds.
+
+Launching instances
+You can launch an instance from the command line using the Cloud API:
+
+Generate an API key.
+
+Create a file named request.json that contains the necessary payload. For example:
+
+Copy
+{
+  "region_name": "us-east-1",
+  "instance_type_name": "gpu_1x_a100_sxm4",
+  "ssh_key_names": [
+    "SSH-KEY"
+  ],
+  "file_system_names": [],
+  "quantity": 1
+}
+Run the following command:
+
+Copy
+curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instance-operations/launch -d @request.json -H "Content-Type: application/json" | jq .
+Replace API-KEY with your actual API key. Don't remove the trailing colon (:).
+
+Restarting instances
+Generate an API key if you haven't already generated one.
+
+Create a file that contains the necessary payload. For example:
+
+Copy
+{
+  "instance_ids": [
+    "0920582c7ff041399e34823a0be62549"
+  ]
+}
+Use the API to obtain the IDs of your instances.
+
+Run the following command:
+
+Copy
+curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instance-operations/restart -d @INSTANCE-IDS -H "Content-Type: application/json" | jq .
+Replace API-KEY with your actual API key. Don't remove the trailing colon (:).
+
+Replace INSTANCE-IDS with the name of the payload file you created in the previous step.
+
+Terminating instances
+Generate an API key if you haven't already generated one.
+
+Create a file that contains the necessary payload. For example:
+
+Copy
+{
+  "instance_ids": [
+    "0920582c7ff041399e34823a0be62549"
+  ]
+}
+Use the API to obtain the IDs of your instances.
+
+Run the following command:
+
+Copy
+curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instance-operations/terminate -d @INSTANCE-IDS -H "Content-Type: application/json" | jq .
+Replace API-KEY with your actual API key. Don't remove the trailing colon (:).
+
+Replace INSTANCE-IDS with the name of the payload file you created in the previous step.
+
+Listing details of running instances
+You can list your running instances from a command line using the Cloud API.
+
+First, generate an API key. Then, run the following command:
+
+Copy
+curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instances | jq .
+Replace API-KEY with your actual API key. Don't remove the trailing colon (:).
+
+Getting details of a specific instance
+You can retrieve the details of an instance from a command line using the Cloud API.
+
+First, generate an API key. Then, run the following command:
+
+Copy
+curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instances/INSTANCE-ID | jq .
+Replace API-KEY with your actual API key. Don't remove the trailing colon (:).
+
+Replace INSTANCE-ID with the ID of the instance you want details about.
+
+Listing instances types offered by Lambda GPU Cloud
+You can list the instances types offered by Lambda GPU Cloud by first generating an API key, then running the following command:
+
+Copy
+curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instance-types | jq .
+Replace API-KEY with your actual API key. Don’t remove the trailing colon (:).
+
+Managing SSH keys
+You can use the Cloud API to:
+
+Add an existing SSH key to your account.
+
+Generate a new SSH key pair.
+
+List the SSH keys saved in your account.
+
+Delete an SSH key from your account.
+
+Note
+
+Following these instructions won't add the SSH key to existing instances.
+
+To add SSH keys to existing instances, read our FAQ on using more than one SSH key.
+
+You can add up to 1,024 SSH keys to your account.
+
+Add an existing SSH key to your account
+To add an existing SSH key to your account:
+
+Generate an API key if you don't have one already.
+
+Create a file named ssh-key.json that contains the necessary payload. For example:
+
+Copy
+{
+  "name": "my-new-key",
+  "public_key": "ssh-ed25519 KEY COMMENT"
+}
+Run the following command:
+
+Copy
+curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/ssh-keys -d @ssh-key.json -H "Content-Type: application/json" | jq .
+Replace API-KEY with your actual API key. Don't remove the trailing colon (:).
+
+Generate a new SSH key pair
+To generate a new SSH key pair:
+
+Generate an API key if you don’t have one already.
+
+Run the following command:
+
+Copy
+curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/ssh-keys -d '{ "name": "my-generated-key" }' -H "Content-Type: application/json" | jq -r '.data.private_key' > my-generated-private-key.pem
+Replace API-KEY with your actual API key. Don't remove the trailing colon (:).
+
+The private key for your SSH key pair will be saved as my-generated-private-key.pem.
+
+Run chmod 400 my-generated-private-key.pem to set the correct file permissions for your private key.
+
+List the SSH keys saved in your account
+To list the SSH keys saved in your account, generate an API key if you don’t already have one. Then, run the following command:
+
+Copy
+curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/ssh-keys | jq .
+Replace API-KEY with your actual API key. Don’t remove the trailing colon (:).
+
+Delete an SSH key from your account
+To delete an SSH key from your account, generate an API key if you don’t already have one. Then, run the following command:
+
+Copy
+curl -u API-KEY: -X DELETE https://cloud.lambdalabs.com/api/v1/ssh-keys/SSH-KEY-ID
+Replace API-KEY with your actual API key. Don't remove the trailing colon (:).
+
+Replace SSH-KEY-ID with the ID of the SSH key you want to delete.
+
+Use the API to obtain the IDs of the SSH keys saved in your account.
+
+Listing file systems
+To list your persistent storage file systems using the Cloud API:
+
+Generate an API key if you don’t already have an API key.
+
+Run the following command:
+
+Copy
+curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/file-systems | jq .
+Replace API-KEY with your actual API key. Don’t remove the trailing colon (:).
+
+File systems
+What are file systems (persistent storage)?
+File systems, also known as persistent storage, allow you to store your large datasets and the state of your instance, for example:
+
+Packages installed system-wide using apt-get.
+
+Python packages installed using pip.
+
+conda and Python venv virtual environments.
+
+Lambda GPU Cloud file systems have a capacity of 8 exabytes, or 8,000,000 terabytes, and you can have a total of 24 file systems, except for file systems created in the Texas, USA (us-south-1) region. The capacity of file systems created in the Texas, USA (us-south-1) region is 10 terabytes.
+
+How are file systems billed?
+Persistent storage is billed per GB used per month, in increments of 1 hour.
+
+For example, based on the price of $0.20 per GB used per month:
+
+If you use 1,000 GB of your file system capacity for an entire month (30 days, or 720 hours), you’ll be billed $200.00.
+
+If you use 1,000 GB of your file system capacity for a single day (24 hours), you’ll be billed $6.67.
+
+The actual price of persistent storage will be displayed when you create your file system.
+
+Can file systems be accessed without an instance?
+Persistent storage file systems can't be accessed unless attached to an instance at the time the instance is launched.
+
+For this reason, it's recommended that you keep a local copy of the files you have saved in your persistent storage file systems. This can be done using rsync.
+
+File systems can't be attached to running instances and can't be mounted remotely, for example, using NFS.
+
+Moreover, file systems can only be attached to instances in the same region. For example, a file system created in the us-west-1 (California, USA) region can only be attached to instances in the us-west-1 region.
+
+File systems can't be transferred from one region to another. However, you can copy data between file systems using tools such as rsync.
+
+Lambda GPU Cloud currently doesn't offer block or object storage.
+
+Can I set a limit (quota) on my file system usage?
+Currently, you can't set a limit (quota) on your persistent storage file system usage.
+
+You can see the usage of a persistent storage file system from within an instance by running df -h -BG. This command will produce output similar to:
+
+Copy
+Filesystem           1G-blocks  Used   Available Use% Mounted on
+udev                       99G    0G         99G   0% /dev
+tmpfs                      20G    1G         20G   1% /run
+/dev/vda1                1357G   23G       1335G   2% /
+tmpfs                      99G    0G         99G   0% /dev/shm
+tmpfs                       1G    0G          1G   0% /run/lock
+tmpfs                      99G    0G         99G   0% /sys/fs/cgroup
+persistent-storage 8589934592G    0G 8589934592G   0% /home/ubuntu/persistent-storage
+/dev/vda15                  1G    1G          1G   6% /boot/efi
+/dev/loop0                  1G    1G          0G 100% /snap/core20/1822
+/dev/loop1                  1G    1G          0G 100% /snap/lxd/24061
+/dev/loop2                  1G    1G          0G 100% /snap/snapd/18357
+tmpfs                      20G    0G         20G   0% /run/user/1000
+In the example output, above:
+
+The name of the file system is persistent-storage.
+
+The size of the file system is 8589934592G (8 exabytes).
+
+The available capacity of the file system is 8589934592G.
+
+The used percentage of the file system is 0%.
+
+The file system is mounted on /home/ubuntu/persistent-storage.
+
+You can also use the Cloud API's /file-systems endpoint to find out your file system usage.
+
+How do I use persistent storage to save datasets and system state?
+You can use the Lambda Cloud Storage feature to save:
+
+Large datasets that you don’t want to re-upload every time you start an instance
+
+The state of your system, including software packages and configurations
+
+You can have up to 24 persistent storage file systems.
+
+Preserving the state of your system
+For saving the state of your system, including:
+
+Packages installed system-wide using apt-get
+
+Python packages installed using pip
+
+conda environments
+
+We recommend creating containers using Docker or other software for creating containers.
+
+You can also create a script that runs the commands needed to re-create your system state. For example:
+
+Copy
+sudo apt install PACKAGE_0 PACKAGE_1 PACKAGE_2 && \
+pip install PACKAGE_3 PACKAGE_4 PACKAGE_5
+Run the script each time you start an instance.
+
+If you only need to preserve Python packages and not packages installed system-wide, you can create a Python virtual environment.
+
+You can also create a conda environment.
+
+For the highest performance when training, we recommend copying your dataset, containers, and virtual environments from persistent storage to your home directory. This can take some time but greatly increases the speed of training.
+
+Firewall
+The Firewall feature allows you to configure firewall rules to restrict incoming traffic to your instances.
+
+Firewall rules configured using the Firewall feature apply to all of your instances outside of the Texas, USA (us-south-1) region.
+
+To use the Firewall feature:
+
+Click Firewall in the left sidebar of the dashboard to open your firewall settings.
+
+
+Under General Settings, use the toggle next to Allow ICMP traffic (ping) to allow or restrict incoming ICMP traffic to your instances.
+
+For network diagnostic tools such as ping and mtr to be able to reach your instances, you need to allow incoming ICMP traffic.
+
+Next to Inbound Rules, click Edit to configure incoming TCP and UDP traffic rules.
+
+
+In the drop-down menu under Type, select:
+
+Custom TCP to manually configure a rule to allow incoming TCP traffic.
+
+Custom UDP to manually configure a rule to allow incoming UDP traffic.
+
+HTTPS to automatically configure a rule to allow incoming HTTPS traffic.
+
+SSH to automatically configure a rule to allow incoming SSH traffic.
+
+All TCP to automatically configure a rule to allow all incoming TCP traffic.
+
+All UDP to automatically configure a rule to allow all incoming UDP traffic.
+
+If you don’t have a rule to allow incoming traffic to port TCP/22, you won’t be able to access your instances using SSH.
+
+In the Source field, either:
+
+Click the 🔎 to automatically enter your current IP address.
+
+Enter a single IP address, for example, 203.0.113.1.
+
+Enter an IP address range in CIDR notation, for example, 203.0.113.0/24.
+
+To allow incoming traffic from any source, enter 0.0.0.0/0.
+
+If you choose Custom TCP or Custom UDP, enter a Port range.
+
+Port range can be:
+
+A single port, for example, 8080.
+
+A range of ports, for example, 8080-8081.
+
+(Optional) Enter a Description for the rule.
+
+(Optional) Click Add rule to add additional rules.
+
+(Optional) Click the x next to any rule you want to delete.
+
+Click Update to apply your changes.
+
+The maximum number of firewall rules you can have is 20.
+
+If you have more than 20 rules, new instances you create might not launch. Also, it’s possible that not all of your rules will be active, which might leave your instances unsecure.
+
+
+Where can I find my server's IPMI (BMC) password?
+You can choose your own IPMI password for your server from within Ubuntu:
+
+Run sudo apt-get install ipmitool to install ipmitool, which is a program for managing IPMI functions.
+
+Run ipmitool user list 1 to view the user list. Confirm that ID 2 is admin or ADMIN.
+
+Run ipmitool user set password 2 to set a new IPMI password.
+
+How do I set the fan speeds for my workstation?
+You can set baseline fan speeds for your workstation using ipmitool. Once baseline fan speeds are set, you can fine-tune the fan speeds in the web-based IPMI interface.
+
+These instructions are only for workstations using an ASUS Pro WS WRX80E-SAGE SE WIFI motherboard.
+
+Before proceeding with these instructions, run sudo dmidecode -t 2 | grep Name to confirm your workstation uses the above motherboard. You should see: Product Name: Pro WS WRX80E-SAGE SE.
+
+First, install ipmitool by running:
+
+Copy
+sudo apt -y update && sudo apt -y install ipmitool
+Then, set the baseline fan speeds by running:
+
+Copy
+sudo ipmitool raw 0x30 0x0E 0x04 0x00 0x32 0x23 0x49 0x46 0x5a 0x64 0x61 0x64 0x61 0x64 && \
+sudo ipmitool raw 0x30 0x0E 0x04 0x01 0x32 0x23 0x49 0x46 0x5a 0x64 0x61 0x64 0x61 0x64 && \
+sudo ipmitool raw 0x30 0x0E 0x04 0x02 0x32 0x23 0x49 0x46 0x5a 0x64 0x61 0x64 0x61 0x64 && \
+sudo ipmitool raw 0x30 0x0E 0x04 0x03 0x32 0x23 0x49 0x46 0x5a 0x64 0x61 0x64 0x61 0x64 && \
+sudo ipmitool raw 0x30 0x0E 0x04 0x04 0x32 0x23 0x49 0x46 0x5a 0x64 0x61 0x64 0x61 0x64 && \
+sudo ipmitool raw 0x30 0x0E 0x04 0x05 0x32 0x23 0x49 0x46 0x5a 0x64 0x61 0x64 0x61 0x64 && \
+sudo ipmitool raw 0x30 0x0E 0x04 0x06 0x32 0x23 0x49 0x46 0x5a 0x64 0x61 0x64 0x61 0x64
+See the ASUS ASMB9-iKVM Fan Customized Mode User Guide [PDF] to learn how to customize fan speeds in the web-based IPMI interface.
+
+Note that Lambda workstations are high-performance systems and generate plenty of heat. For this reason, it's not recommended to use the guide's power efficiency fan policy.
+
+How do I upgrade my Samsung 980 PRO NVMe SSD's firmware?
+Follow these instructions to upgrade your Samsung 980 PRO NVMe SSD's firmware.
+
+Samsung 980 PRO NVMe SSDs with the older 3B2QGXA7 firmware are known to fail.
+
+To know if your SSD is using the 3B2QGXA7 firmware, install the smartmontools package by running sudo apt -y install smartmontools. Then, run sudo smartctl -a /dev/nvme0.
+
+If your SSD is using the 3B2QGXA7 firmware, it's recommended that you upgrade the firmware as soon as possible.
+
+First, download the latest firmware ISO from Samsung's website by running:
+
+Copy
+wget https://semiconductor.samsung.com/resources/software-resources/Samsung_SSD_980_PRO_5B2QGXA7.iso
+Next, run sudo -s to open a shell with root (administrator) privileges.
+
+Finally, run:
+
+Copy
+mkdir /mnt/iso && mount -o loop Samsung_SSD_980_PRO_5B2QGXA7.iso /mnt/iso && \
+mkdir fwupdate && cd fwupdate && \
+gzip -dc /mnt/iso/initrd | cpio -idv --no-absolute-filenames && \
+cd root/fumagician && ./fumagician
+The above command mounts the firmware upgrade ISO, extracts the firmware upgrade, and launches the upgrade.
+
+After the firmware upgrade completes, restart your computer.
+
+Run sudo smartctl -a /dev/nvme0 to confirm your SSD is using the new firmware.
+
+How do I fix slow performance with my Gen 4 M.2 NVMe drive?
+There's a known issue where Gen 4 M.2 NVMe drives experience slow performance when installed into the M.2_1 slot in ASUS Pro WS WRX80E-SAGE SE WIFI motherboards, which are used in Lambda workstations.
+
+If you run sudo dmesg | grep -E 'Hardware Error|AER', you'll see error messages that look like:
+
+Copy
+[  169.304022] {3}[Hardware Error]: It has been corrected by h/w and requires no further action
+[  169.304023] {3}[Hardware Error]: event severity: corrected
+[  169.304024] {3}[Hardware Error]:  Error 0, type: corrected
+[  169.304025] {3}[Hardware Error]:   section_type: PCIe error
+[  169.304026] {3}[Hardware Error]:   port_type: 0, PCIe end point
+[  169.304026] {3}[Hardware Error]:   version: 0.2
+[  169.304027] {3}[Hardware Error]:   command: 0x0406, status: 0x0010
+[  169.304028] {3}[Hardware Error]:   device_id: 0000:2c:00.0
+[  169.304029] {3}[Hardware Error]:   slot: 0
+[  169.304029] {3}[Hardware Error]:   secondary_bus: 0x00
+[  169.304030] {3}[Hardware Error]:   vendor_id: 0x1022, device_id: 0xb000
+[  169.304030] {3}[Hardware Error]:   class_code: 010802
+[  169.304031] {3}[Hardware Error]:   bridge: secondary_status: 0x0000, control: 0x0000
+The error messages might also look like:
+
+Copy
+[    4.172130] acpi PNP0A08:03: PCIe AER handled by firmware
+[   59.749158] nvme 0000:2c:00.0: AER: aer_status: 0x00002001, aer_mask: 0x00000000
+[   59.749860] nvme 0000:2c:00.0: AER:	  [ 0] RxErr		      (First)
+[   59.750522] nvme 0000:2c:00.0: AER:	  [13] NonFatalErr
+[   59.751161] nvme 0000:2c:00.0: AER: aer_layer=Physical Layer, aer_agent=Receiver ID
+If you're experiencing slow performance and seeing errors, contact Lambda Support for a BIOS update that fixes the issue.
+
+Can I upgrade my workstation to RTX 4090 GPUs?
+Workstations can't be upgraded to RTX 4090 GPUs.
+
+To ensure system stability and longevity, the RTX 4090 GPUs we use in our workstations are liquid-cooled, as opposed to air-cooled like other GPUs. To accommodate the liquid-cooling solution and dissipate the amount of heat put out by the RTX 4090 GPUs, the workstation case requires special fan designs and layouts.
+
+Basic Linux commands and system administration
+Importing SSH keys from GitHub accounts
+To import an SSH key from a GitHub account and add it to your server (or Lambda GPU Cloud on-demand instance):
+
+Using your existing SSH key, SSH into your server.
+
+Alternatively, if you're using an on-demand instance, open a terminal in Jupyter Notebook.
+
+Import the SSH key from the GitHub account by running:
+
+Copy
+ssh-import-id gh:USERNAME
+Replace USERNAME with the GitHub account’s username.
+
+If the SSH key is successfully imported, ssh-import-id will output a message similar to:
+
+Copy
+2023-08-04 15:03:52,622 INFO Authorized key ['256', 'SHA256:C6pl0q4evVYZWcyByVF69D6fdbdKa7F8ei8V2F/bTW0', 'cbrownstein-lambda@github/67649580', '(ED25519)']
+2023-08-04 15:03:52,623 INFO [1] SSH keys [Authorized]
+If the SSH key isn't successfully imported, ssh-import-id will output a message similar to:
+
+Copy
+2023-08-04 15:06:36,425 ERROR Username "fake-cbrownstein-lambda" not found at GitHub API. status_code=404 user=fake-cbrownstein-lambda
+Using rsync to copy and synchronize files
+rsync is a tool that you can use to copy files between your computer and a remote server.
+
+rsync can also be used to copy files directly between remote servers, bypassing your computer entirely.
+
+rsync is useful for copying files between Cloud persistent storage file systems in different regions.
+
+rsync copies files using SSH. For this reason, to copy files between your computer and a remote server, you need to be able to SSH into the remote server.
+
+To use rsync to copy files between remote servers directly, you need to be able to SSH into the remote servers using public key authentication with an SSH agent.
+
+Copy files between your computer and a remote server
+To copy files from your computer to a remote server usingrsync, run:
+
+Copy
+rsync -av --info=progress2 FILES USERNAME@SERVER-IP:REMOTE-PATH
+Replace FILES with the files you want to copy to the remote server. Alternatively, you can specify a directory.
+
+Replace USERNAME with your username on the remote server.
+
+Replace SERVER-IP with the IP address of the remote server.
+
+Replace REMOTE-PATH with the directory into which you want to copy files.
+
+In the below example, rsync was used to copy the local directory rsync_example_dir, containing a single empty file named EXAMPLE_FILE, into the home directory of the user ubuntu on a remote server with the IP address 146.235.208.193.
+
+Copy
+$ rsync -a --progress rsync_example_dir ubuntu@146.235.208.193:~
+sending incremental file list
+rsync_example_dir/
+rsync_example_dir/EXAMPLE_FILE
+              0 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=0/2)
+Copy files directly between remote servers
+To copy files directly between remote servers using rsync, you must use public key (rather than password) authentication for SSH with an SSH agent.
+
+You can add your private key to the SSH agent by running:
+
+Copy
+ssh-add SSH-PRIVATE-KEY
+Replace SSH-PRIVATE-KEY with the path to your SSH private key, for example, ~/.ssh/id_ed25519.
+
+You can confirm your key was added to the SSH agent by running:
+
+Copy
+ssh-add -L
+Your public key will be listed in the output.
+
+To copy files directly between remote servers using rsync, first SSH into the server you want to copy files from by running:
+
+Copy
+ssh -A USERNAME-1@SERVER-IP-1
+Replace SERVER-IP-1 with the IP address of the server you want to copy files from, referred to below as Server 1.
+
+Replace USERNAME-1 with your username on Server 1.
+
+It's recommended to run the rsync command, below, in a tmux or screen session. This way, you can log out of Server 1 and the rsync command will continue to run.
+
+Then, on Server 1, run:
+
+Copy
+rsync -av --info=progress2 FILES USERNAME-2@SERVER-IP-2:REMOTE-PATH
+Replace SERVER-IP-2 with the IP address of the server you want to copy files to, referred to below as Server 2.
+
+Replace FILES with the files (or directory) you want to copy to Server 2.
+
+Replace USERNAME-2 with your username on Server 2.
+
+Replace SERVER-IP-2 with the IP address of Server 2.
+
+Replace REMOTE-PATH with the directory into which you want to copy files.
+
+Preventing system from suspending or sleeping
+To prevent your system from going to sleep or suspending, run:
+
+Copy
+sudo systemctl mask hibernate.target hybrid-sleep.target \
+suspend-then-hibernate.target sleep.target suspend.target
+Creating additional user accounts in Ubuntu Desktop
+By having their own accounts, users can manage their own files, datasets, and programs, as well as manage their own Python virtual environments, conda virtual environments, and Docker containers.
+
+Also, by having additional accounts, you can assign system administrator privileges to other users.
+
+You can add user accounts from the Users panel in GNOME Settings:
+
+Press the Super key on your keyboard to open the Activities overview. Then, type users.
+
+The Super key on your keyboard is located between the Ctrl and Alt keys.
+
+
+
+Click Users to open the Users panel in GNOME Settings.
+
+Click Unlock at the top of the panel, then click Add User.
+
+For Account Type, choose either Standard or Administrator.
+
+Standard account users can create, modify, and delete only their own files, not system files or other users' files. Standard account users also can change their own settings only, not system settings or other users’ settings.
+
+Administrator account users have the same privileges as standard account users. However, administrator account users can also create, modify, and delete system files and other users' files. Administrator account users can also change their system settings and other users' settings.
+
+For Full Name, enter the user's full name, that is, their "real" name or name they use to identify themselves.
+
+For Username, enter the name the user will use to log into the system. This name will also be the name of the user's home directory, for example, /home/username.
+
+Under Password, choose either Allow user to set a password when they next login, or Set a password now.
+
+If you choose to set a password now, in the Password field, enter a custom password, or click the  to automatically generate a password.
+
+Click Add at the top of the dialog to add the user.
+
+Virtual environments and Docker containers
+What are virtual environments?
+Virtual environments allow you to create and maintain development environments that are isolated from each other. Lambda recommends using either:
+
+Python venv
+
+conda
+
+Creating a Python virtual environment
+Create a Python virtual environment using the venv module by running:
+
+Copy
+python -m venv --system-site-packages NAME
+Replace NAME with the name you want to give to your virtual environment.
+
+The command, above, creates a virtual environment that has access to Lambda Stack packages and packages installed from Ubuntu repositories.
+
+To create a virtual environment that doesn't have access to Lambda Stack and Ubuntu packages, omit the --system-site-packages option.
+
+Activate the virtual environment by running:
+
+Copy
+source NAME/bin/activate
+Replace NAME with the name you gave your virtual environment in the previous step.
+
+Python packages you install in your virtual environment are isolated from the base environment and other virtual environments.
+
+Locally installed packages can conflict with packages installed in virtual environments. For this reason, it’s recommended to uninstall locally installed packages by running:
+
+To uninstall packages installed locally for your user only, run:
+
+Copy
+pip uninstall -y $(pip -v list | grep ${HOME}/.local | awk '{printf "%s ", $1}')
+To uninstall packages installed locally, system-wide (for all users), run:
+
+Copy
+sudo pip uninstall -y $(pip -v list | grep /usr/local | awk '{printf "%s ", $1}')
+Don't run the above uninstall commands on Lambda GPU Cloud on-demand instances!
+
+The above uninstall commands remove all locally installed packages and, on on-demand instances, break programs including pip and JupyterLab.
+
+See the Python venv module documentation to learn more about Python virtual environments.
+
+Creating a conda virtual environment
+To create a conda virtual environment:
+
+Download the latest version of Miniconda3 by running:
+
+Copy
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+Then, install Miniconda3 by running the command:
+
+Copy
+sh Miniconda3-latest-Linux-x86_64.sh
+Follow the installer prompts. Install Miniconda3 in the default location. Allow the installer to initialize Miniconda3.
+
+If you want to create a conda virtual environment immediately after installing Miniconda3, you need to load the changes made to your .bashrc.
+
+You can either:
+
+Exit and reopen your shell (terminal).
+
+Run source ~/.bashrc.
+
+For compatibility with the Python venv module, it’s recommended that you disable automatic activation of the conda base environment by running:
+
+Copy
+conda config --set auto_activate_base false
+Create a conda virtual environment using Miniconda3 by running:
+
+Copy
+conda create OPTIONS -n NAME PACKAGES
+Replace NAME with the name you want to give your virtual environment.
+
+Replace PACKAGES with the list of packages you want to install in your virtual environment.
+
+(Optional) Replace OPTIONS with options for the conda create command. See the conda create documentation to learn more about available options.
+
+For example, to create a conda virtual environment for PyTorch® with CUDA 11.8, run the below command and follow the prompts:
+
+Copy
+conda create -c pytorch -c nvidia -n pytorch+cuda_11-8 pytorch torchvision torchaudio pytorch-cuda=11.8
+Activate the conda virtual environment by running:
+
+Copy
+conda activate NAME
+Replace NAME with the name of the virtual environment created in the previous step.
+
+For instance, to activate the example PyTorch with CUDA 11.8 virtual environment mentioned in the previous step, run:
+
+Copy
+conda activate pytorch+cuda_11-8
+Once activated, you can test the example virtual environment is working by running:
+
+Copy
+python -c 'import torch ; print("\nIs available: ", torch.cuda.is_available()) ; print("Pytorch CUDA Compiled version: ", torch._C._cuda_getCompiledVersion()) ; print("Pytorch version: ", torch.__version__) ; print("pytorch file: ", torch.__file__) ; num_of_gpus = torch.cuda.device_count(); print("Number of GPUs: ",num_of_gpus)'
+You should see output similar to:
+
+Copy
+Is available:  True
+Pytorch CUDA Compiled version:  11080
+Pytorch version:  2.0.1
+pytorch file:  /home/ubuntu/miniconda3/envs/pytorch+cuda_11-8/lib/python3.11/site-packages/torch/__init__.py
+Number of GPUs:  1
+Locally installed packages can conflict with packages installed in virtual environments. For this reason, it’s recommended to uninstall locally installed packages by running:
+
+To uninstall packages installed locally for your user only, run:
+
+Copy
+pip uninstall -y $(pip -v list | grep ${HOME}/.local | awk '{printf "%s ", $1}')
+To uninstall packages installed locally, system-wide (for all users), run:
+
+Copy
+sudo pip uninstall -y $(pip -v list | grep /usr/local | awk '{printf "%s ", $1}')
+Don’t run the above uninstall commands on Lambda GPU Cloud on-demand instances!
+
+The above uninstall commands remove all locally installed packages and, on on-demand instances, break programs including pip and JupyterLab.
+
+See the Conda documentation to learn more about how to manage conda virtual environments.
+
+Installing Docker and creating a container
+To create and run a Docker container:
+
+Install Docker and NVIDIA Container Toolkit by running:
+
+Copy
+sudo apt -y update && sudo apt -y install docker.io nvidia-container-toolkit && \
+sudo systemctl daemon-reload && \
+sudo systemctl restart docker
+Add your user to the docker group by running:
+
+Copy
+sudo adduser "$(id -un)" docker
+Then, exit and reopen a shell (terminal) so that your user can create and run Docker containers.
+
+Locate the Docker image for the container you want to create. For example, the NVIDIA NGC Catalog has images for creating TensorFlow NGC containers.
+
+Create a container from the Docker image, and run a command in the container, by running:
+
+Copy
+docker run --gpus all -it IMAGE COMMAND
+Replace IMAGE with the URL to the image for the container you want to create.
+
+Replace COMMAND with the command you want to run in the container.
+
+For example, to create a TensorFlow NGC container and run a command to get the container’s TensorFlow build information, run:
+
+Copy
+docker run --gpus all -it nvcr.io/nvidia/tensorflow:23.05-tf2-py3 python -c "import tensorflow as tf ; sys_details = tf.sysconfig.get_build_info() ; print(sys_details)"
+You should see output similar to the following:
+
+Copy
+================
+== TensorFlow ==
+================
+
+NVIDIA Release 23.05-tf2 (build 59341886)
+TensorFlow Version 2.12.0
+
+Container image Copyright (c) 2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+Copyright 2017-2023 The TensorFlow Authors.  All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+NOTE: CUDA Forward Compatibility mode ENABLED.
+  Using CUDA 12.1 driver version 530.30.02 with kernel driver version 525.85.12.
+  See https://docs.nvidia.com/deploy/cuda-compatibility/ for details.
+
+NOTE: The SHMEM allocation limit is set to the default of 64MB.  This may be
+   insufficient for TensorFlow.  NVIDIA recommends the use of the following flags:
+   docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 ...
+
+2023-06-08 17:09:50.643793: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-06-08 17:09:50.680974: I tensorflow/core/platform/cpu_feature_guard.cc:183] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+OrderedDict([('cpu_compiler', '/opt/rh/devtoolset-9/root/usr/bin/gcc'), ('cuda_compute_capabilities', ['sm_52', 'sm_60', 'sm_61', 'sm_70', 'sm_75', 'sm_80', 'sm_86', 'compute_90']), ('cuda_version', '12.1'), ('cudnn_version', '8'), ('is_cuda_build', True), ('is_rocm_build', False), ('is_tensorrt_build', True)])
+See the Docker documentation to learn more about using Docker.
+
+You can also check out the Lambda blog post: NVIDIA NGC Tutorial: Run A PyTorch Docker Container Using Nvidia-Container-Toolkit On Ubuntu.
+
+Lambda Stack and recovery images
+Removing and reinstalling Lambda Stack
+To remove and reinstall Lambda Stack:
+
+Uninstall (purge) the existing Lambda Stack by running:
+
+Copy
+sudo rm -f /etc/apt/sources.list.d/{graphics,nvidia,cuda}* && \
+dpkg -l | \
+awk '/cuda|lib(accinj64|cu(blas|dart|dnn|fft|inj|pti|rand|solver|sparse)|magma|nccl|npp|nv[^p])|nv(idia|ml)|tensor(flow|board)|torch/ { print $2 }' | \
+sudo xargs -or apt -y remove --purge
+Then, install the latest Lambda Stack by running:
+
+Copy
+wget -nv -O- https://lambdalabs.com/install-lambda-stack.sh | sh -
+Recovery images
+See the Install Ubuntu desktop tutorial, specifically steps 3 and 4, to learn how to create and boot a USB stick (flash drive) using the below recovery images.
+
+Workstations
+Recovery ISO images for Vector and Vector One can be downloaded using the following links:
+
+Lambda Recovery (Focal) (based on Ubuntu 20.04 LTS focal)
+
+Lambda Recovery (Jammy) (based on Ubuntu 22.04 LTS jammy)
+
+Tensorbook
+The recovery ISO image for Tensorbook can be downloaded using the following link:
+
+Lambda Recovery for Tensorbook (Jammy) (based on Ubuntu 22.04 LTS jammy)
+
+This recovery image is for the Razer x Lambda Tensorbook only and won't work on older Tensorbook models.
+
+The recovery images contain software distributed under various licenses, including the Software License Agreement (SLA) for NVIDIA cuDNN. The licenses can be viewed in the recovery images at /usr/share/doc/*/copyright. By using the software contained in the recovery images, you agree to these licenses.
+
+Servers
+Recovery images aren't available for servers.
+
+To reinstall Ubuntu and Lambda Stack on your Lambda server, download the Ubuntu 22.04 Server install image, then follow Ubuntu's Server installation instructions.
+
+Install the latest Lambda Stack by logging into Ubuntu and running:
+
+Copy
+wget -nv -O- https://lambdalabs.com/install-lambda-sta
+
+Linux
+Generating an NVIDIA bug report
+NVIDIA bug reports are useful for troubleshooting systems with NVIDIA GPUs, including Cloud instances.
+
+To generate an NVIDIA bug report, run sudo nvidia-bug-report.sh. This command creates a file named nvidia-bug-report.log.gz in your current directory. This file contains the NVIDIA bug report.
+
+You can view the contents of the nvidia-bug-report.log.gz file by running zless nvidia-bug-report.log.gz.
+
+Be sure to generate and provide an NVIDIA bug report whenever submitting a support ticket to Lambda Support. Providing an NVIDIA bug report when you first submit a ticket helps Support more quickly troubleshoot any problems you're experiencing with your Lambda system.
