@@ -1,5 +1,9 @@
 ```sh
 
+# If you prefer running in a container
+podman build -t lambdactl .
+podman run lambdactl -- lambdactl --help
+
 # Install packages, build client
 go install github.com/spf13/cobra@latest
 go install github.com/go-resty/resty/v2@latest

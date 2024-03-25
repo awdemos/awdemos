@@ -1,0 +1,29 @@
+name: Run lambdactl
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: '1.22.1'
+
+    - name: Build lambdactl
+      run: |
+        go build -o lambdactl
+
+    - name: Run lambdactl
+      run: |
+        ./lambdactl --help # Replace '--help' with the actual commands you want to run
