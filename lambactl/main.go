@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/awdemos/demo/lambdactl/cmd"
+	"github.com/awdemos/demos/lambdactl/cmd"
 )
 
 func main() {
