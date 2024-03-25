@@ -1,3 +1,7 @@
+This demo code contains the API structure for the API spec at (https://cloud.lambdalabs.com/api/v1/docs). The code was only tested to compile, but the Dockerfile is tested to build and run. A github action is also present in the .github directory but it has not been tested but publishing as a GHA module seems like it would be a good idea to get a tested version published in the GHA marketplace.
+
+To get started:
+
 ```sh
 
 # If you prefer running in a container
