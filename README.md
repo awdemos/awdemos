@@ -63,8 +63,8 @@ A curated list of my favorite projects across various domains and technologies.
 - [Cloudflare](https://developers.cloudflare.com/products/) - The entire suite of Cloudflare alternatives to AWS services is growing and quite compelling cost performance advantages.
 
 ## AI and Scripting
-- [GPTScript](https://github.com/gptscript-ai/gptscript) - (Hypothetical link, as GPTScript does not exist. Replace with actual URL if applicable.)
-- [LangChain](https://langchain.com/) - (Hypothetical link, as LangChain does not exist. Replace with actual URL if applicable.)
+- [GPTScript](https://github.com/gptscript-ai/gptscript) - Natural language gpt scripting engine.
+- [LangChain](https://langchain.com/) - LLM framework.
 - [aider](https://github.com/paul-gauthier/aider) - A smart codegen in the terminal.
 
 ## Containers and Worklows
@@ -80,7 +80,7 @@ A curated list of my favorite projects across various domains and technologies.
 
 ## Development Tools and IDEs
 - [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) - A fast, feature-rich, GPU based terminal emulator.
-- [Cursor IDE](https://cursor.sh/) - (Hypothetical link, as Cursor IDE does not exist. Replace with actual URL if applicable.)
+- [Cursor IDE](https://cursor.sh/) - AI enabled IDE.
 - [Devcontainer](https://code.visualstudio.com/docs/remote/containers) - Develop inside a Docker container with Visual Studio Code.
 - [Devpod](https://www.gitpod.io/docs/dev-environments) - Automated, ready-to-code development environments for Gitpod.
 
