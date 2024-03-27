@@ -5,6 +5,12 @@ This document is a curated collection of groundbreaking papers, books, or releas
 - **1948, July & October**: 📃 "A Mathematical Theory of Communication" by *Claude Shannon*.
   
 - **1971, November 3**: 📘 First edition of the *Unix Manual*.
+
+- **1972, November 3**: 📜 Release of C
+
+- **1976**: 🖋️ Development of Vi
+
+- **1977, January 1**: 🐚 Release of Bash
   
 - **1978, April**: 🔐 "Secure Communications Over Insecure Channels" by *Ralph C. Merkle*.
 
@@ -21,10 +27,16 @@ This document is a curated collection of groundbreaking papers, books, or releas
 - **2005, April 7**: 🌐 Release of *Git* by *Linus Torvalds*.
   
 - **2009, January 3**: 💲 *Bitcoin* release by *Satoshi Nakamoto*.
+
+- **2009, April 30**: 🎙️ First recorded use of the term "DevOps" in a talk
+
+- **2016, April 21**: 📚 Publication of "Site Reliability Engineering" book by Google
   
 - **2017, June 12**: 🤖 "Attention Is All You Need" by *Ashish Vaswani et al.*, introducing the *Transformer model*.
   
 - **2016, March**: 🎮 "Mastering the game of Go with deep neural networks and tree search" by *Silver et al.*, detailing the *AlphaGo system*. (Feel free to ask me about its impact on chess!)
+
+- **2018**: 🗓️ Nvidia provided to OpenAI the first RGX GPU cluster.
 
 🔜 **More to come! Stay tuned.**
 

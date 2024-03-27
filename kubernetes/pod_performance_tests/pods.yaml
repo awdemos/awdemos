@@ -1,0 +1,72 @@
+# kubectl get events --field-selector involvedObject.name=chainguard-wolfi --watch
+# kubectl get events --field-selector involvedObject.name=alpine --watch
+# kubectl get events --field-selector involvedObject.name=nginx --watch
+# kubectl get events --field-selector involvedObject.name=python-slim --watch
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: chainguard-wolfi
+spec:
+  containers:
+  - name: wolfi
+    image: chainguard/wolfi:latest
+    startupProbe:
+      exec:
+        command:
+        - sh
+        - -c
+        - "echo started"
+      failureThreshold: 30
+      periodSeconds: 10
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: alpine
+spec:
+  containers:
+  - name: alpine
+    image: alpine:latest
+    command: ["sh", "-c", "sleep 10000"]
+    startupProbe:
+      exec:
+        command:
+        - sh
+        - -c
+        - "echo started"
+      failureThreshold: 30
+      periodSeconds: 10
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    startupProbe:
+      httpGet:
+        path: /
+        port: 80
+      failureThreshold: 30
+      periodSeconds: 10
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: python-slim
+spec:
+  containers:
+  - name: python-slim
+    image: python:slim
+    command: ["sh", "-c", "sleep 10000"]
+    startupProbe:
+      exec:
+        command:
+        - python
+        - -c
+        - "print('ready')"  # Replace with an actual command that indicates readiness
+      failureThreshold: 30
+      periodSeconds: 10

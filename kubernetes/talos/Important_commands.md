@@ -1,5 +1,7 @@
 This document outlines a series of commands useful for managing a Kubernetes cluster with Talos and other tools.
 
+- [Talos Upgrade Tutorial] (https://www.youtube.com/watch?v=7fySw9TPqUU)
+
 ## Talos Commands
 
 List Talos Config Contexts:

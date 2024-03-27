@@ -79,6 +79,10 @@ This design spec guide outlines a comprehensive approach to building a Kubernete
 - **Amazon CSI Secrets**: Implement Amazon CSI Secrets for managing secrets securely in EKS. Amazon CSI Secrets provides a seamless integration with AWS Secrets Manager to store and retrieve sensitive information such as API keys, passwords, and tokens securely. After trying multiple solutions in EKS I think I like this one the most, but I'm open minded. [Learn more about Amazon CSI Secrets](https://aws.amazon.com/secrets-manager/).
 
 
+## EKS Security
+
+- **HardenEKS**: (https://github.com/aws-samples/hardeneks)
+
 ## More Goodies
 
 I have a few more suggestions based on requires including for GPT's, MLOPS, secrets management, and logging but I won't mention those here.

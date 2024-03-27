@@ -4,7 +4,9 @@ Here is some information about deterministic and reproducible builds with Nerdct
 
 What are deterministic and reproducible builds?
 
-A deterministic build is a build that always produces the same output, given the same inputs. A reproducible build is a build that can be reproduced on different machines, with different environments.
+A deterministic build is a build that always produces the same output, given the same inputs. A reproducible build is a build that can be reproduced on different machines, with different environments, see (https://en.wikipedia.org/wiki/Software_build).
+
+In my opinion, container images in the current year should always be built to be deterministic to the bit level.
 
 How can I build deterministic and reproducible images with nerdctl and BuildKit?
 
@@ -37,8 +39,6 @@ This will build the image using BuildKit, and the resulting image will be determ
 
 Here are some tips for building:
 
-[](https://en.wikipedia.org/wiki/Software_build)
-
 Deterministic and reproducible images:
 
 - Use a base image that is deterministic and reproducible.
@@ -56,4 +56,4 @@ Benefits of deterministic and reproducible builds:
 
 Deterministic and reproducible builds are an important part of building reliable and secure applications. By following the tips above, you can build deterministic and reproducible images with nerdctl and BuildKit.
 
-https://earthly.dev/blog/nerdctl/#:~:text=BuildKit%20Support,-BuildKit%20is%20a%20modern%2C
+Source: (https://earthly.dev/blog/nerdctl/#:~:text=BuildKit%20Support,-BuildKit%20is%20a%20modern%2C)
