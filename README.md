@@ -93,8 +93,8 @@ A curated list of my favorite projects across various domains and technologies.
 
 ## Security and Privacy
 - [Chainguard](https://chainguard.dev/) - Solutions for securing your software supply chain.
-- [GrapheneOS](https://grapheneos.org/) - A privacy and security-focused mobile OS with Android app compatibility.
-- [NitroPC](https://www.nitrokey.com/news/2021/introducing-nitro-pc) - A secure and open-source mini PC.
+- [GrapheneOS](https://grapheneos.org/) - A privacy and security-focused Android distribution.
+- [NitroPC](https://www.nitrokey.com/news/2021/introducing-nitro-pc) - A secure and open-source mini PC with open source BIOS.
 - [Learn LLMs and DevSecOps](https://github.com/jedi4ever/learning-llms-and-genai-for-dev-sec-ops) - DevSecOps issues or LLMS.
 
 
