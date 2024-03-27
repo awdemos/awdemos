@@ -4,6 +4,8 @@ Nvidia has released some important software projects to go along with their hard
 
 - [Nvidia Launchpad AI](https://www.nvidia.com/en-us/launchpad/ai/) - An excellent labs resource.
 
+- [Nvidia GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html) - Automation for all the management of all NVIDIA software components needed to provision GPU in Kubernetes.
+
 - [System Management Interface SMI](https://developer.nvidia.com/nvidia-system-management-interface) - The NVIDIA System Management Interface (nvidia-smi) is a command line utility, based on top of the NVIDIA Management Library (NVML), intended to aid in the management and monitoring of NVIDIA GPU devices.
 
 - [Triton Inference Server](https://github.com/triton-inference-server/server) - An optimized cloud and edge inferencing solution that supports multiple deep learning and machine learning frameworks.
@@ -14,9 +16,12 @@ Quickstart: (https://github.com/triton-inference-server/server/blob/main/docs/ge
 
 Quickstart: (https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 
+- [NIM](https://www.youtube.com/watch?v=Od-AdE4If8o) - an inference microservice with RAG capabilities.
+
 ## Examples
 
 ```sh
+nvidia-smi
 docker run --gpus all --rm -ti nvcr.io/nvidia/pytorch:24.01-py3
 
 docker run --gpus=1 --rm -p8000:8000 -p8001:8001 -p8002:8002 -v/full/path/to/docs/examples/model_repository:/models nvcr.io/nvidia/tritonserver:24.01-py3 tritonserver --model-repository=/models
@@ -38,6 +43,13 @@ Talos Linux is a distribution of Kubernetes that installs a bare metal minimal o
 ## Ubuntu
 
 Ubuntu offers robust support for Nvidia hardware and a range of professional services to make integration easier (https://ubuntu.com/nvidia)
+
+An excellent driver installer script is avai;able from Lambda Labs here: 
+
+```sh
+wget -nv -O- https://lambdalabs.com/install-lambda-stack.sh | sh -
+sudo reboot
+```
 
 ## Other
 

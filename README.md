@@ -62,11 +62,21 @@ A curated list of my favorite projects across various domains and technologies.
 - [Cilium](https://cilium.io/) - eBPF-based Networking, Observability, and Security.
 - [Cloudflare](https://developers.cloudflare.com/products/) - The entire suite of Cloudflare alternatives to AWS services is growing and quite compelling cost performance advantages.
 
-## Containers and Virtualization
+## AI and Scripting
+- [GPTScript](https://github.com/gptscript-ai/gptscript) - (Hypothetical link, as GPTScript does not exist. Replace with actual URL if applicable.)
+- [LangChain](https://langchain.com/) - (Hypothetical link, as LangChain does not exist. Replace with actual URL if applicable.)
+- [aider](https://github.com/paul-gauthier/aider) - A smart codegen in the terminal.
+
+## Containers and Worklows
 - [Dive](https://github.com/wagoodman/dive) - A tool for exploring each layer in an image, analyzing the contents, and discovering ways to shrink the size of your Docker/OCI image.
 - [Podman](https://podman.io/) - A daemonless container engine for developing, managing, and running OCI Containers.
 - [nerdctl](https://github.com/containerd/nerdctl) - Docker-compatible CLI for containerd.
+- [slim](https://github.com/slimtoolkit/slim) - Miniy container images by up to by up to 30x.
 - [Fedora Silverblue](https://silverblue.fedoraproject.org/) - Fedora Silverblue is a variant of the Fedora Workstation with an immutable desktop operating system aimed at good support for container-focused workflows.
+
+## CI/CD and Automation
+- [Tekton](https://tekton.dev/) - A powerful and flexible open-source framework for creating CI/CD systems.
+- [Dagger.io](https://dagger.io/) - A programmable deployment system for your applications.
 
 ## Development Tools and IDEs
 - [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) - A fast, feature-rich, GPU based terminal emulator.
@@ -85,14 +95,8 @@ A curated list of my favorite projects across various domains and technologies.
 - [Chainguard](https://chainguard.dev/) - Solutions for securing your software supply chain.
 - [GrapheneOS](https://grapheneos.org/) - A privacy and security-focused mobile OS with Android app compatibility.
 - [NitroPC](https://www.nitrokey.com/news/2021/introducing-nitro-pc) - A secure and open-source mini PC.
+- [Learn LLMs and DevSecOps](https://github.com/jedi4ever/learning-llms-and-genai-for-dev-sec-ops) - DevSecOps issues or LLMS.
 
-## CI/CD and Automation
-- [Tekton](https://tekton.dev/) - A powerful and flexible open-source framework for creating CI/CD systems.
-- [Dagger.io](https://dagger.io/) - A programmable deployment system for your applications.
-
-## AI and Scripting
-- [GPTScript](https://github.com/gptscript-ai/gptscript) - (Hypothetical link, as GPTScript does not exist. Replace with actual URL if applicable.)
-- [LangChain](https://langchain.com/) - (Hypothetical link, as LangChain does not exist. Replace with actual URL if applicable.)
 
 ## Contributing
 

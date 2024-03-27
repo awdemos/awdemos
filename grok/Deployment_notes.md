@@ -1,4 +1,8 @@
-On March 19 2024, Grok a large language model is released by Elon Musk. One of the largest models released open source to date, 314 Billion parameter model, is released without fine-tuning and may require "model shaping." Running Grok needs 8 x A100 80 GB GPUs as reported by users (https://huggingface.co/xai-org/grok-1/discussions/46).
+On March 19 2024, Grok a large language model is released by Elon Musk. One of the largest models released open source to date, 314 Billion parameter model, is released without fine-tuning and may require "model shaping." 
+
+On march 22nd a twitter user reports running it on a MBP laptop: (https://twitter.com/ggerganov/status/1771273402013073697) and got these changes merged (https://github.com/ggerganov/llama.cpp/pull/6204)
+
+I believe training Grok needs 8 x A100 80 GB GPUs as reported by users (https://huggingface.co/xai-org/grok-1/discussions/46).
 
 Open source Grok is likely going to need a couple iterations of contributions from the open source community to become useful for most users (perhaps through "model merging," see (https://arxiv.org/abs/2403.13187)). For effective interaction with Grok, consider these optimization strategies:
 
