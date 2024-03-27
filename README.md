@@ -71,7 +71,7 @@ A curated list of my favorite projects across various domains and technologies.
 - [Dive](https://github.com/wagoodman/dive) - A tool for exploring each layer in an image, analyzing the contents, and discovering ways to shrink the size of your Docker/OCI image.
 - [Podman](https://podman.io/) - A daemonless container engine for developing, managing, and running OCI Containers.
 - [nerdctl](https://github.com/containerd/nerdctl) - Docker-compatible CLI for containerd.
-- [slim](https://github.com/slimtoolkit/slim) - Miniy container images by up to by up to 30x.
+- [slim](https://github.com/slimtoolkit/slim) - Minify container images by up to 30x.
 - [Fedora Silverblue](https://silverblue.fedoraproject.org/) - Fedora Silverblue is a variant of the Fedora Workstation with an immutable desktop operating system aimed at good support for container-focused workflows.
 
 ## CI/CD and Automation
