@@ -1,6 +1,6 @@
 # 📜 History
 
-This document is a curated collection of groundbreaking papers, books, or releases that have significantly influenced my work across various domains.
+This document is a curated collection of groundbreaking papers, books, or releases that have significantly influences my proessional career in various ways. I believe keeping these milestones in mind is important context.
 
 - **1948, July & October**: 📃 "A Mathematical Theory of Communication" by *Claude Shannon*.
   
@@ -30,13 +30,13 @@ This document is a curated collection of groundbreaking papers, books, or releas
 
 - **2009, April 30**: 🎙️ First recorded use of the term "DevOps" in a talk
 
+- **2016, March**: 🎮 "Mastering the game of Go with deep neural networks and tree search" by *Silver et al.*, detailing the *AlphaGo system*. (Feel free to ask me about its impact on professional chess!)
+
 - **2016, April 21**: 📚 Publication of "Site Reliability Engineering" book by Google
   
-- **2017, June 12**: 🤖 "Attention Is All You Need" by *Ashish Vaswani et al.*, introducing the *Transformer model*.
-  
-- **2016, March**: 🎮 "Mastering the game of Go with deep neural networks and tree search" by *Silver et al.*, detailing the *AlphaGo system*. (Feel free to ask me about its impact on chess!)
+- **2016, August**: 🗓️ Nvidia provided to OpenAI the first DGX-1 GPU cluster.
 
-- **2018**: 🗓️ Nvidia provided to OpenAI the first RGX GPU cluster.
+- **2017, June 12**: 🤖 "Attention Is All You Need" by *Ashish Vaswani et al.*, introducing the *Transformer model* data structure.
 
 🔜 **More to come! Stay tuned.**
 
