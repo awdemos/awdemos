@@ -3,7 +3,9 @@
 This document is a curated collection of groundbreaking papers, books, or releases that have significantly influences my proessional career in various ways. I believe keeping these milestones in mind is important context.
 
 - **1948, July & October**: 📃 "A Mathematical Theory of Communication" by *Claude Shannon*.
-  
+
+- **1964**: Multics invented the use of Protection Rings.  
+
 - **1971, November 3**: 📘 First edition of the *Unix Manual*.
 
 - **1972, November 3**: 📜 Release of C
