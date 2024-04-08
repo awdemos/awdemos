@@ -6,15 +6,60 @@ Hi and welcome to my demos repo!
 
 This repository showcases a collection of demo projects and research that interest me. Among other things there are example deployments in Docker, AWS, and GCP, bare metal Kubernetes, and other projects leveraging modern and cutting-edge technologies.
 
-While the initial focus of this demo is for technical projects, I have expanded it to include various topics including containers, Large Language Models, and tooling.
-
-The demos include examples using Terraform and Pulumi for deploying resources, containerization with docker, Kubernetes for orchestration, as well as some nice-to-haves like git tips, zsh, and neovim configs, and a lot more.
+The demos include examples using Terraform and Pulumi for deploying resources, containerization with docker, Kubernetes for orchestration, as well as some nice-to-haves like git tips and a lot more.
 
 Be sure to check out the analysis of Grok, the Ultimate Kubernetes Wishlist, low level Kubernetes details, and even Talos cluster setups in docker.
+
+# Why You Should Consider My Expertise
+
+If you're encountering these challenges:
+
+- Struggling to manage cloud inrastructure in a reliable manner.
+- Seeking ways to make your Kubernetes, workloads, cloud, or SRE more cost-effective or faster.
+- Overwhelmed by the plethora of tools and frameworks available. If you want to switch over rom legacy to modern stacks.
+- Uncertain about the next steps for your inrastructure products.
+- In need of external expertise to assess your requirements and evaluate potential talent.
+
+## What I Offer
+
+- **Domain-Specific Evaluation Systems**: Tailor-made systems to assess the performance and reliability of your inrastructure, ensuring they meet the specific needs of your domain.
+- **Cost management**: Enhancing the efficiency of cloud deployments is more important now then ever. I can frequently get 50% cost savings for an organization.
+- **Development Tools and Infrastructure**: Custom solutions to streamline your development process, facilitating rapid iterations on sotfware releases.
+- **Product Strategy Guidance**: Strategic advice on product development, prioritization, and talent evaluation to bolster your team.
+- **Content and Writing**: Radically reduce complexity for better collaboration among stakeholders.
+
+## Services Offered
+
+### Tier 1: Strategy
+
+Guidance on:
+- On-prem or cloud performance (cost, quality, speed)
+- Product strategy
+- Custom systems
+- Techniques like zero trust authentication, multi factor authentication.
+
+You'll receive a comprehensive plan and regular team consultations to navigate common pitfalls and optimize tool and technique selection.
+
+### Tier 2: Comprehensive
+
+Includes all Tier 1 services, plus:
+- **Implementation**: Production-ready code and prototypes to fast-track release and development.
+- **Hands-On MLOps Optimization**: Direct involvement in fine-tuning and prompt engineering to boost model performance.
+- **Content Production**: Creation of documents and blogs to share best practices and insights with your stakeholders.
+- **Team Growth**: Personalized training for 2-4 team members to quickly enhance their AI skills.
+- **Extended Consultation**: In-depth discussions on advanced AI topics, including cutting-edge techniques and trends.
+
+Tier 2 services are exclusive to one client at a time to guarantee the highest quality of service.
+
+## How to Engage My Services
+
+Available for both short-term and long-term projects on a retainer basis.```
 
 If anything strikes you as particularly interesting and you want to speak with me about an opportunity? You can schedule a meeting with me anytime during Eastern Standard Time ([https://cal.com/aiconsulting](https://cal.com/aiconsulting)).
 
 ### Highlights:
+
+- **SRE Methodologies**: A detailed explanation of the changes the SRE discipline brings to the world of software delivery. 
 
 - **Pulumi Projects**: Utilizes Pulumi for infrastructure as code to deploy resources into AWS, with configurations written in Go. For more information, please see [Pulumi's Go documentation](https://www.pulumi.com/docs/languages-sdks/go/).
 

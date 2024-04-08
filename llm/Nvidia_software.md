@@ -53,7 +53,7 @@ sudo reboot
 
 ## Other
 
-"the DGX-1, a 3-foot-long, 5-inch-thin rectangular container that Nvidia calls "the world's first AI supercomputer in a box." The $130,000 machine delivers 170 teraflops of performance--on par with 250 conventional servers. In August Huang personally delivered the first unit to Elon Musk and his San Francisco AI nonprofit, OpenAI."
+"The DGX-1, is a 3-foot-long, 5-inch-thin rectangular container that Nvidia calls "the world's first AI supercomputer in a box." The $130,000 machine delivers 170 teraflops of performance--on par with 250 conventional servers. In August Huang personally delivered the first unit to Elon Musk and his San Francisco AI nonprofit, OpenAI."
 
 (https://www.forbes.com/sites/aarontilley/2016/11/30/nvidia-deep-learning-ai-intel/)
 
