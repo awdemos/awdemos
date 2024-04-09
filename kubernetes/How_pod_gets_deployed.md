@@ -1,6 +1,6 @@
 Deploying a pod in Kubernetes involves several steps and components. Here's a detailed breakdown:
 
-- Create a Pod Manifest: The first step is to create a Pod manifest, which is typically a YAML that describes the Pod's desired state. This includes information like the Docker image(s) to use, the ports to expose, environment variables, and more.
+- Create a Pod Manifest: The first step is to create a Pod manifest, which is typically a YAML file that describes the Pod's desired state. This includes information like the Docker image(s) to use, the ports to expose, environment variables, and more.
 
 - Submit the Manifest to the Kubernetes API Server: Using kubectl, the command-line interface for running commands against Kubernetes clusters, you submit the Pod manifest to the Kubernetes API server. This is typically done with a command like kubectl apply -f pod.yaml.
 
@@ -8,7 +8,7 @@ Deploying a pod in Kubernetes involves several steps and components. Here's a de
 
 - Kubelet Starts the Pod: The Kubelet on the assigned Node receives the command to start the Pod. The Kubelet is a node agent that ensures containers are running in a Pod.
 
-- Container Runtime Pulls the Image: The Kubelet instructs the container runtime (like Docker or containerd) to pull the image from the specified Docker registry.
+- Container Runtime Pulls the Image: The Kubelet instructs the container runtime (like Docker or containerd) to pull the image from the specified Container registry.
 
 - Container Runtime Starts the Container: Once the image is pulled, the container runtime starts the container with the specifications provided in the Pod manifest.
 

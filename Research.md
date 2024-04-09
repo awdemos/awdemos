@@ -18,6 +18,7 @@ This document contains a collection of resources related to various topics.
 - "Text recognition (optical character recognition) with deep learning methods, ICCV 2019" (https://github.com/clovaai/deep-text-recognition-benchmark)
 - "Strategic Reasoning with Language Models" [@arXiv:2305.19165] (https://arxiv.org/abs/2305.19165)
 - "Model Merging: A Pathway to Efficient Model Sharing" [@arXiv:2403.13187](https://arxiv.org/abs/2403.13187): Explores techniques for merging different machine learning models to enhance performance and efficiency, offering a novel approach to collaborative model improvement.
+- "OLMo: Accelerating the Science of Language Models" [@arXiv:2402.00838] (https://arxiv.org/pdf/2402.00838.pdf)
 
 
 ## Ethereum
@@ -62,8 +63,6 @@ Docker is a platform that utilizes OS-level virtualization to deliver software i
 
 ## DevSecOps
 
-## DevSecOps
-
 DevSecOps is a set of practices that combines software development (Dev) with security (Sec) and operations (Ops). It aims to shorten the development life cycle and provide continuous delivery with high software quality. Here are some key resources:
 
 - [DevSecOps Playbook](https://github.com/6mile/DevSecOps-Playbook)
@@ -78,6 +77,7 @@ Python is a high-level, interpreted programming language known for its readabili
 In the python directory there is a custom project I made that is a data vlidation input checker for a Dockerfile generator I hope to make more robust over time.
 
 - [PyGit Source Code](https://github.com/benhoyt/pygit/blob/master/pygit.py) This is my favorite way to learn python and git.
+- [pyenv](https://github.com/pyenv/pyenv) I believe this is an underappreciated component of the python ecosystem more people should be using.
 
 ## Datadog
 
