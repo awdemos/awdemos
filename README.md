@@ -6,19 +6,20 @@ Hi and welcome to my demos repo!
 
 This repository showcases a collection of demo projects and research that interest me. 
 
-The demos include examples using Terraform and Pulumi for deploying resources, containerization with docker, Kubernetes for orchestration, as well as some nice-to-haves like git tips and a lot more.
+The demos include examples using Terraform and Pulumi for deploying resources, containerization with Docker, Kubernetes for orchestration, as well as some nice-to-haves like git tips and a lot more. If you are a non-engineering reviewer of this information, first of all welcome! I hope that you find this informational, just examine the sections most relevant to your interests!
 
-Be sure to check out the analysis of Grok, my Ultimate Kubernetes Wishlist, low level Kubernetes details, and even Talos cluster setups in docker.
+Be sure to check out the analysis of Grok, CVE-2024-3094, my Ultimate Kubernetes Wishlist, low level Kubernetes details, SRE deffinitions, etc.
 
-# Why You Should Consider My Expertise
+# Why You Should Consider Hiring Me
 
 If you're encountering these challenges:
 
 - Struggling to manage cloud inrastructure in a reliable manner.
 - Seeking ways to make your Kubernetes, workloads, cloud, or SRE more cost-effective or faster.
-- Overwhelmed by the plethora of tools and frameworks available. If you want to switch over rom legacy to modern stacks.
-- Uncertain about the next steps for your inrastructure products.
-- In need of external expertise to assess your requirements and evaluate potential talent.
+- Overwhelmed by the plethora of tools and frameworks available. If you want to switch over from legacy to modern tech stacks.
+- If you are uncertain about the next steps for your inrastructure products.
+- In need of a subject matter expert to assess your requirements and evaluate potential needs.
+- Experience matters! I steer my projects away from risky engineering practices and towards emerging solutions that use patterns that are designed to work better, faster, cheaper.
 
 ## What I Offer
 
@@ -28,8 +29,7 @@ If you're encountering these challenges:
 - **Product Strategy Guidance**: Strategic advice on product development, prioritization, and talent evaluation to bolster your team.
 - **Content and Writing**: I also provide documentation on any systems or environments I work on.
 
-
-## Services Offered
+## Consulting Services Offered
 
 ### Tier 1: Strategy
 
@@ -72,9 +72,9 @@ You can schedule a meeting with me anytime during Eastern Standard Time ([https:
 
 - **Grok Large Language Model Analysis**: Includes analysis of how the [https://github.com/xai-org/grok-1](https://github.com/xai-org/grok-1) codebase works.
 
-- **Kubernetes LLM Installs**: Includes examples of installing Mistral LLM and the OpenAI embedding service in Kubernetes via helm charts, showcasing how to run LLMs in Kubernetes.
+- **Kubernetes LLM Installs**: This includes examples of installing Mistral LLM and the OpenAI embedding service in Kubernetes via helm charts, showcasing how to run LLMs in Kubernetes.
 
-- **Python Scripts and Packaging**: Recent work I did setting up poetry.
+- **Python Scripts and Packaging**: Some example scripts and best practices I like.
 
 ## Prerequisites
 
@@ -154,4 +154,4 @@ While this is my demo repo, pull requests made in the spirit of this repository 
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Any software written by me is released under the [MIT](https://choosealicense.com/licenses/mit/) license. Software released by others may have other licenses, please see their licensing page for more information.
