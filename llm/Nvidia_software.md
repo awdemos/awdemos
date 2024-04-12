@@ -1,6 +1,6 @@
 # Nvidia
 
-Nvidia has released some important software projects to go along with their hardware including production ready inference engines and container orchestrations toolkits.
+Nvidia has released some important software projects to go along with their hardware including production ready inference engines and container orchestrations toolkits. I believe it will be a good choice for many companies to evulate if if one of these tools can be used in their projects.
 
 - [Nvidia Launchpad AI](https://www.nvidia.com/en-us/launchpad/ai/) - An excellent labs resource.
 
@@ -15,6 +15,8 @@ Quickstart: (https://github.com/triton-inference-server/server/blob/main/docs/ge
 - [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-container-toolkit) - Allows users to build and run GPU accelerated containers, including a container runtime library and utilities to automatically configure containers to leverage NVIDIA GPUs.
 
 Quickstart: (https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+
+- [Deploying a 1.3B GPT-3 Model with NVIDIA NeMo Megatron](https://developer.nvidia.com/blog/deploying-a-1-3b-gpt-3-model-with-nvidia-nemo-megatron/) - A comprehensive guide on deploying large-scale GPT-3 models using NVIDIA's NeMo Megatron framework.
 
 - [NIM](https://www.youtube.com/watch?v=Od-AdE4If8o) - an inference microservice with RAG capabilities.
 

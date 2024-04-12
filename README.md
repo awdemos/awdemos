@@ -4,11 +4,11 @@
 
 Hi and welcome to my demos repo!
 
-This repository showcases a collection of demo projects and research that interest me. Among other things there are example deployments in Docker, AWS, and GCP, bare metal Kubernetes, and other projects leveraging modern and cutting-edge technologies.
+This repository showcases a collection of demo projects and research that interest me. 
 
 The demos include examples using Terraform and Pulumi for deploying resources, containerization with docker, Kubernetes for orchestration, as well as some nice-to-haves like git tips and a lot more.
 
-Be sure to check out the analysis of Grok, the Ultimate Kubernetes Wishlist, low level Kubernetes details, and even Talos cluster setups in docker.
+Be sure to check out the analysis of Grok, my Ultimate Kubernetes Wishlist, low level Kubernetes details, and even Talos cluster setups in docker.
 
 # Why You Should Consider My Expertise
 
@@ -26,7 +26,8 @@ If you're encountering these challenges:
 - **Cost management**: Enhancing the efficiency of cloud deployments is more important now then ever. I can frequently get 50% cost savings for an organization.
 - **Development Tools and Infrastructure**: Custom solutions to streamline your development process, facilitating rapid iterations on sotfware releases.
 - **Product Strategy Guidance**: Strategic advice on product development, prioritization, and talent evaluation to bolster your team.
-- **Content and Writing**: Radically reduce complexity for better collaboration among stakeholders.
+- **Content and Writing**: I also provide documentation on any systems or environments I work on.
+
 
 ## Services Offered
 
@@ -36,7 +37,7 @@ Guidance on:
 - On-prem or cloud performance (cost, quality, speed)
 - Product strategy
 - Custom systems
-- Techniques like zero trust authentication, multi factor authentication.
+- Techniques like "Shift Left," immutable operating systems, zero authentication. (As it is 2024, we can even do better then "Shift left," we can "Start left")
 
 You'll receive a comprehensive plan and regular team consultations to navigate common pitfalls and optimize tool and technique selection.
 
@@ -45,19 +46,19 @@ You'll receive a comprehensive plan and regular team consultations to navigate c
 Includes all Tier 1 services, plus:
 - **Implementation**: Production-ready code and prototypes to fast-track release and development.
 - **Hands-On MLOps Optimization**: Direct involvement in fine-tuning and prompt engineering to boost model performance.
-- **Content Production**: Creation of documents and blogs to share best practices and insights with your stakeholders.
+- **Content Production**: Creation of technical documents and blog posts to share best practices and insights with your stakeholders.
 - **Team Growth**: Personalized training for 2-4 team members to quickly enhance their AI skills.
-- **Extended Consultation**: In-depth discussions on advanced AI topics, including cutting-edge techniques and trends.
+- **Extended Consultation**: I am available on consulting retainer on an hourly basis. That can include Linux, DevOps, SRE, AI, and other cutting-edge techniques and trends.
 
 Tier 2 services are exclusive to one client at a time to guarantee the highest quality of service.
 
 ## How to Engage My Services
 
-Available for both short-term and long-term projects on a retainer basis.```
+If anything strikes you as particularly interesting and you want to speak with me about an opportunity? 
 
-If anything strikes you as particularly interesting and you want to speak with me about an opportunity? You can schedule a meeting with me anytime during Eastern Standard Time ([https://cal.com/aiconsulting](https://cal.com/aiconsulting)).
+You can schedule a meeting with me anytime during Eastern Standard Time ([https://cal.com/aiconsulting](https://cal.com/aiconsulting)).
 
-### Highlights:
+### Git Repo Highlights:
 
 - **SRE Methodologies**: A detailed explanation of the changes the SRE discipline brings to the world of software delivery. 
 
@@ -111,8 +112,12 @@ A curated list of my favorite projects across various domains and technologies.
 - [GPTScript](https://github.com/gptscript-ai/gptscript) - Natural language gpt scripting engine.
 - [LangChain](https://langchain.com/) - LLM framework.
 - [aider](https://github.com/paul-gauthier/aider) - A smart codegen in the terminal.
+- [ComfyUI](https://github.com/comfyanonymous/ComfyUI) - This stable difffusion framework or another like is likely going to change the Internet forever imho.
+
 
 ## Containers and Worklows
+- [bincapz](https://github.com/chainguard-dev/bincapz) - A tool for securing container images by applying binary capabilities with fine-grained control.
+- [Colima](https://github.com/abiosoft/colima) - A container runtime for macOS (and Linux) that emphasizes simplicity and performance. It supports Docker and Kubernetes out of the box.
 - [Dive](https://github.com/wagoodman/dive) - A tool for exploring each layer in an image, analyzing the contents, and discovering ways to shrink the size of your Docker/OCI image.
 - [Podman](https://podman.io/) - A daemonless container engine for developing, managing, and running OCI Containers.
 - [nerdctl](https://github.com/containerd/nerdctl) - Docker-compatible CLI for containerd.

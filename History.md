@@ -1,6 +1,7 @@
 # 📜 History
 
-This document is a curated collection of groundbreaking papers, books, or releases that have significantly influences my proessional career in various ways. I believe keeping these milestones in mind is important context.
+Maintaining awareness of IT history helps me understand the reasons that went into engineering decisions and designs. This document is a curated collection of groundbreaking papers, books, or releases that have significantly influenced my proessional career in various ways. I believe keeping these milestones in mind is important context for making engineering and product decisions.
+
 
 - **1948, July & October**: 📃 "A Mathematical Theory of Communication" by *Claude Shannon*.
 
@@ -15,6 +16,9 @@ This document is a curated collection of groundbreaking papers, books, or releas
 - **1977, January 1**: 🐚 Release of Bash
   
 - **1978, April**: 🔐 "Secure Communications Over Insecure Channels" by *Ralph C. Merkle*.
+
+- **1978, August**: 📄 "The UNIX Time-Sharing System" by *Dennis M. Ritchie and Ken Thompson*. Available at [https://www.scs.stanford.edu/nyu/04fa/sched/readings/unix.pdf](https://www.scs.stanford.edu/nyu/04fa/sched/readings/unix.pdf).
+
 
 - **1983, September**: 🐃 Start of the *GNU Project* by *Richard Stallman*.
 
