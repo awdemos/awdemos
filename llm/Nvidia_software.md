@@ -20,6 +20,22 @@ Quickstart: (https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/l
 
 - [NIM](https://www.youtube.com/watch?v=Od-AdE4If8o) - an inference microservice with RAG capabilities.
 
+- [Enabling Peer-to-Peer P2P Connections in NVIDIA GPUs with Linux Open GPU Kernel Module] - (https://github.com/tinygrad/open-gpu-kernel-modules)
+Released 04-12-2024 (https://twitter.com/__tinygrad__/status/1778677126092509611)
+
+### Prerequisites:
+- NVIDIA GPUs with support for P2P.
+- A Linux system with the latest NVIDIA drivers installed.
+- The Open GPU Kernel Modules from the [tinygrad/open-gpu-kernel-modules](https://github.com/tinygrad/open-gpu-kernel-modules) GitHub repository.
+
+### Steps to Enable P2P Support:
+
+1. **Install NVIDIA Drivers**: Ensure that the latest NVIDIA drivers are installed on your system. These drivers are necessary for the GPUs to function correctly and for the P2P feature to be available.
+
+2. **Clone the Open GPU Kernel Modules Repository**:
+
+
+
 ## Examples
 
 ```sh
