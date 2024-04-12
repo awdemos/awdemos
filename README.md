@@ -6,9 +6,11 @@ Hi and welcome to my demos repo!
 
 This repository showcases a collection of demo projects and research that interest me. 
 
-The demos include examples using Terraform and Pulumi for deploying resources, containerization with Docker, Kubernetes for orchestration, as well as some nice-to-haves like git tips and a lot more. If you are a non-engineering reviewer of this information, first of all welcome! I hope that you find this informational, just examine the sections most relevant to your interests!
+The demos directory include examples of deploying resources into public clouds, using Terraform, Pulumi, and Kubernetes for deploying resources, application containers, as well as some nice-to-haves like git tips and a lot more. 
 
-Be sure to check out the analysis of Grok, CVE-2024-3094, my Ultimate Kubernetes Wishlist, low level Kubernetes details, SRE deffinitions, etc.
+If you are a non-engineering reviewer of this information, first of all welcome and thanks for coming by! I hope that you find this informational, feel free to just examine the sections most relevant to your interests!
+
+For technical readers, be sure to check out the analysis of Grok, CVE-2024-3094, my Ultimate Kubernetes Wishlist, low level Kubernetes details, SRE definitions, and LLM attacks.
 
 # Why You Should Consider Hiring Me
 
