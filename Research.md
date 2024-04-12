@@ -18,7 +18,9 @@ This document contains a collection of resources related to various topics.
 - "Text recognition (optical character recognition) with deep learning methods, ICCV 2019" (https://github.com/clovaai/deep-text-recognition-benchmark)
 - "Strategic Reasoning with Language Models" [@arXiv:2305.19165] (https://arxiv.org/abs/2305.19165)
 - "Model Merging: A Pathway to Efficient Model Sharing" [@arXiv:2403.13187](https://arxiv.org/abs/2403.13187): Explores techniques for merging different machine learning models to enhance performance and efficiency, offering a novel approach to collaborative model improvement.
-- "OLMo: Accelerating the Science of Language Models" [@arXiv:2402.00838] (https://arxiv.org/pdf/2402.00838.pdf)
+- "OLMo: Accelerating the Science of Language Models" [@arXiv:2402.00838](https://arxiv.org/pdf/2402.00838.pdf): A complete open source foundational model release..
+- "More Agents Is All You Need" [@arXiv:2402.05120](https://arxiv.org/abs/2402.05120): "We find that, simply via a sampling-and-voting method, the performance of large language models (LLMs) scales with the number of agents instantiated. Also, this method is orthogonal to existing complicated methods to further enhance LLMs, while the degree of enhancement is correlated to the task difficulty. We conduct comprehensive experiments on a wide range of LLM benchmarks to verify the presence of our finding, and to study the properties that can facilitate its occurrence."
+
 
 
 ## Ethereum
@@ -76,6 +78,7 @@ Python is a high-level, interpreted programming language known for its readabili
 
 In the python directory there is a custom project I made that is a data vlidation input checker for a Dockerfile generator I hope to make more robust over time.
 
+- [Understanding Python Builtins](https://tushar.lol/post/builtins/#so-whats-a-builtin) - This article provides a deep dive into Python's built-in functions and how they are implemented. It's a great resource for anyone looking to understand the intricacies of Python's design and how to effectively utilize its built-in capabilities.
 - [PyGit Source Code](https://github.com/benhoyt/pygit/blob/master/pygit.py) This is my favorite way to learn python and git.
 - [pyenv](https://github.com/pyenv/pyenv) I believe this is an underappreciated component of the python ecosystem more people should be using.
 
@@ -112,3 +115,7 @@ None of these following papers are peer reviewed!!! However they provide an imag
 - [The Holographic Quantum Automaton: A Unified Framework for Emergent Spacetime and Quantum Gravity](https://ia600209.us.archive.org/32/items/the-holographic-quantum-automaton-a-unified-framework-for-emergent-spacetime-and-quantum-gravity/The%20Holographic%20Quantum%20Automaton-%20A%20Unified%20Framework%20for%20Emergent%20Spacetime%20and%20Quantum%20Gravity.pdf) - This research proposes a novel approach to integrating the concepts of quantum mechanics and general relativity, suggesting a holographic model that could potentially explain the emergence of spacetime and the nature of gravity.
 
 - [Emergence of Consciousness in Artificial Intelligences: A Formal Analysis of the Strange Loop Hypothesis](https://ia600206.us.archive.org/30/items/emergence-of-consciousness-in-artificial-intelligences-a-formal-analysis-of-the-_202403/Emergence%20of%20Consciousness%20in%20Artificial%20Intelligences-%20A%20Formal%20Analysis%20of%20the%20Strange%20Loop%20Hypothesis.pdf) - This paper explores the theoretical underpinnings of consciousness in artificial intelligences, utilizing the Strange Loop hypothesis as a framework for understanding emergent self-awareness in computational systems.
+
+## Software development research
+
+- [Sprints - The Biggest Mistake Of Software Engineering](https://www.youtube.com/watch?v=_p1Q4c3TF3c) - This video discusses the pitfalls of the sprint methodology in software engineering, offering insights into how it can lead to burnout and inefficiency. I strongly believe that orgs that spend more time spending problems and less time in meetings will be more effective in the long term. Software development is a marathon, not a sprint. Nobody runs on sprints. Agile encourages teams to "rush" towards ticket closing to generate burndown graphs but ticket count is not a reflection of work quality anymore then git commit count is a reflection of code quality.
