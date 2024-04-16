@@ -31,3 +31,9 @@ You can access the application as follows:
 
 Backend: Accessible at http://localhost:8080
 Frontend: Accessible at http://localhost:8081
+
+
+```
+dagger call -m github.com/purpleclay/daggerverse/trivy image --ref golang:1.21.7-bookworm
+dagger call -m github.com/purpleclay/daggerverse/trivy image --ref cgr.dev/chainguard
+```
