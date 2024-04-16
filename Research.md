@@ -91,6 +91,19 @@ Datadog is a monitoring service for cloud-scale applications.
 - [Datadog Agent Getting Started Guide](https://docs.datadoghq.com/getting_started/agent/)
 - [Google SLO Generator](https://github.com/google/slo-generator/blob/master/README.md)
 
+## Neuroscience
+
+| Entity | Memory Capacity |
+
+| --- | --- |
+| Human Brain (Cerebral Cortex) | Over 74 Terabytes |
+| Early-Generation Personal Computers | Few Megabytes |
+| Modern Smartphones | 16GB, 64GB, 128GB or more |
+| Apollo Spacecraft's Onboard Computer | 64 Kilobytes |
+| Human Brain (Total) | 2.5 Petabytes | brain processing capacity of around 10^16 bits per second.
+| Yahoo's Data Warehouse | 2.0 Petabytes |
+| IRS's Data Warehouse | 150 Terabytes |
+
 ## Nvidia
 
 - [Triton Inference Server](https://github.com/triton-inference-server/server) - An optimized cloud and edge inferencing solution that supports multiple deep learning and machine learning frameworks.
