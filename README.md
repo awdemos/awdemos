@@ -8,7 +8,7 @@ This repository showcases a collection of demo projects and research that intere
 
 The demos directory include examples of deploying resources into public clouds, using Terraform, Pulumi, and Kubernetes for deploying resources, application containers, as well as some nice-to-haves like git tips and a lot more. 
 
-If you are a non-engineering reviewer of this information, first of all welcome and thanks for coming by! I hope that you find this informational, feel free to just examine the sections most relevant to your interests!
+If you are a non-engineering reviewer of this information, first of all welcome and thanks for coming by! I hope that you find this informational, feel free to just examine the sections most relevant to your interests.
 
 For technical readers, be sure to check out the analysis of Grok, CVE-2024-3094, my Ultimate Kubernetes Wishlist, low level Kubernetes details, SRE definitions, and LLM attacks.
 
@@ -105,16 +105,15 @@ A curated list of my favorite projects across various domains and technologies.
 ## Infrastructure and Orchestration
 - [Talos](https://www.talos.dev/) - A modern OS for Kubernetes.
 - [Pulumi](https://www.pulumi.com/) - Infrastructure as Code for any cloud using your favorite languages.
-- [Kargo](https://github.com/ContainerCraft/Kargo) - Kubernetes cluster lifecycle management tool.
 - [vCluster](https://www.vcluster.com/) - Virtual Kubernetes clusters.
 - [Cilium](https://cilium.io/) - eBPF-based Networking, Observability, and Security.
 - [Cloudflare](https://developers.cloudflare.com/products/) - The entire suite of Cloudflare alternatives to AWS services is growing and quite compelling cost performance advantages.
 
 ## AI and Scripting
 - [GPTScript](https://github.com/gptscript-ai/gptscript) - Natural language gpt scripting engine.
-- [LangChain](https://langchain.com/) - LLM framework.
 - [aider](https://github.com/paul-gauthier/aider) - A smart codegen in the terminal.
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI) - This stable difffusion framework or another like is likely going to change the Internet forever imho.
+- [vLLM](https://github.com/vllm-project/vllm) - vLLM is a fast and easy-to-use library for LLM inference and serving.
 
 
 ## Containers and Worklows
@@ -124,15 +123,18 @@ A curated list of my favorite projects across various domains and technologies.
 - [Podman](https://podman.io/) - A daemonless container engine for developing, managing, and running OCI Containers.
 - [nerdctl](https://github.com/containerd/nerdctl) - Docker-compatible CLI for containerd.
 - [slim](https://github.com/slimtoolkit/slim) - Minify container images by up to 30x.
-- [Fedora Silverblue](https://silverblue.fedoraproject.org/) - Fedora Silverblue is a variant of the Fedora Workstation with an immutable desktop operating system aimed at good support for container-focused workflows.
+- [Fedora Silverblue](https://silverblue.fedoraproject.org/) - Fedora Silverblue is a variant of the Fedora Workstation with an immutable desktop operating system aimed at good support for container-focused workflows. I use the Blufin spinoff now.
+- [Xenia Linux](https://xenialinux.com/) - An immutable distribution based on Gentoo
+- [Asterinas](https://github.com/asterinas/asterinas) - Asterinas is a secure, fast, and general-purpose OS kernel, written in Rust and providing Linux-compatible ABI.
+
 
 ## CI/CD and Automation
 - [Tekton](https://tekton.dev/) - A powerful and flexible open-source framework for creating CI/CD systems.
 - [Dagger.io](https://dagger.io/) - A programmable deployment system for your applications.
 
 ## Development Tools and IDEs
-- [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) - A fast, feature-rich, GPU based terminal emulator.
-- [Cursor IDE](https://cursor.sh/) - AI enabled IDE.
+- [WezTerm](https://wezfurlong.org/wezterm/index.html) - WezTerm is a powerful cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
+- [Zed IDE](https://zed.dev/) - Rust written AI enabled IDE.
 - [Devcontainer](https://code.visualstudio.com/docs/remote/containers) - Develop inside a Docker container with Visual Studio Code.
 - [Devpod](https://www.gitpod.io/docs/dev-environments) - Automated, ready-to-code development environments for Gitpod.
 
@@ -140,11 +142,11 @@ A curated list of my favorite projects across various domains and technologies.
 - [Go](https://golang.org/) - An open source programming language that makes it easy to build simple, reliable, and efficient software.
 - [Bash](https://www.gnu.org/software/bash/) - GNU Project's shell and command language.
 - [TypeScript](https://www.typescriptlang.org/) - A superset of JavaScript that compiles to clean JavaScript output.
-- [Rust CLI's](https://www.rust-lang.org/what/cli) - Building command line tools with Rust.
+- [Rust CLI's](https://www.rust-lang.org/what/cli) - Building command line tools with Rust. Rust is my favorite language by a mile right now.
 - [Python](https://www.python.org/) - A programming language that lets you work quickly and integrate systems more effectively.
 
 ## Security and Privacy
-- [Chainguard](https://chainguard.dev/) - Solutions for securing your software supply chain.
+- [Chainguard](https://chainguard.dev/) - Solutions for securing Docker images.
 - [GrapheneOS](https://grapheneos.org/) - A privacy and security-focused Android distribution.
 - [NitroPC](https://www.nitrokey.com/news/2021/introducing-nitro-pc) - A secure and open-source mini PC with open source BIOS.
 - [Learn LLMs and DevSecOps](https://github.com/jedi4ever/learning-llms-and-genai-for-dev-sec-ops) - DevSecOps issues or LLMS.
