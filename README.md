@@ -37,6 +37,11 @@ If you're encountering these challenges:
 
 Guidance on:
 - On-prem or cloud performance (cost, quality, speed)
+- LLMs
+- Agents, agentic frameworks, bots
+- Prompting
+- Industry trends
+- AI workshops
 - Product strategy
 - Custom systems
 - Techniques like "Shift Left," immutable operating systems, zero authentication. (As it is 2024, we can even do better then "Shift left," we can "Start left")
@@ -53,6 +58,41 @@ Includes all Tier 1 services, plus:
 - **Extended Consultation**: I am available on consulting retainer on an hourly basis. That can include Linux, DevOps, SRE, AI, and other cutting-edge techniques and trends.
 
 Tier 2 services are exclusive to one client at a time to guarantee the highest quality of service.
+
+## What Perplexity thinks my resume says about my character and personality
+
+Based on my extensive experience and accomplishments, several aspects of my character and personality can be inferred:
+
+## Growth Mindset and Adaptability
+I demonstrate a strong growth mindset, as evidenced by my career progression from IT roles to advanced AI engineering positions. I've consistently adapted to new technologies and challenges, showing a willingness to learn and evolve.
+
+## Intellectual Curiosity
+My diverse research interests and continuous pursuit of certifications and bootcamps indicate a deep intellectual curiosity. I'm passionate about staying at the forefront of technology, particularly in AI, machine learning, and programming languages.
+
+## Leadership and Collaboration
+Throughout my career, I've taken on leadership roles, managing teams and collaboration across teams and departments. This suggests strong interpersonal skills and the ability to work effectively in diverse environments.
+
+## Innovation-Driven
+I appear to be innovation-driven, often implementing new technologies and improving existing systems. My work in AI and blockchain indicates a forward-thinking approach to technology.
+
+## Detail-Oriented and Security-Conscious
+My experience in creating disaster recovery plans, implementing security measures, and obtaining security-related certifications suggests a detail-oriented nature and a strong focus on cybersecurity.
+
+## Ethical Considerations
+My involvement in establishing AI governance models and an awareness of ethical and legal implications in AI technology is up to date on this topic. I view AI as a social good and a marvelous opportunity to improve quality of life.
+I can commit to you that I will not work on AI weapon systems or unethical use cases and I have not done so in the past.
+
+## Problem-Solver
+My track record of tackling complex technical challenges across various roles suggests strong problem-solving skills and a proactive approach to addressing issues.
+
+## Communicator
+My experience as a Sales Engineer and ability to work with diverse stakeholders indicate strong communication skills, both technical and non-technical.
+
+## Lifelong Learner
+My ongoing pursuit of certifications and participation in bootcamps, even at a senior level in my career, demonstrates a commitment to lifelong learning and self-improvement.
+
+These traits paint a picture of me as a well-rounded, technically proficient professional who is proactive, adaptable, and committed to driving innovation while maintaining ethical standards in technology.
+
 
 ## How to Engage My Services
 
