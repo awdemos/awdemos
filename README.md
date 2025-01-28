@@ -134,7 +134,7 @@ You can schedule a meeting with me anytime during Eastern Standard Time ([https:
 ### Cloning the Repository
 
 ```sh
-git clone https://github.com/awdemos/demos.git
+git clone https://github.com/awdemos/awdemos.git
 cd demos
 ```
 
