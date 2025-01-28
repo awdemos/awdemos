@@ -26,7 +26,7 @@ If you're encountering these challenges:
 
 ## What I Offer
 
-- **Domain-Specific Evaluation Systems**: Tailor-made systems to assess the performance and reliability of your inrastructure, ensuring they meet the specific needs of your domain.
+- **Custom Solutions Delivery for cutting edge services**: Tailor-made systems to assess the performance and reliability of your inrastructure, ensuring they meet the specific needs of your domain.
 - **Cost management**: Enhancing the efficiency of cloud deployments is more important now then ever. I can frequently get 50% cost savings for an organization.
 - **Development Tools and Infrastructure**: Custom solutions to streamline your development process, facilitating rapid iterations on sotfware releases.
 - **Product Strategy Guidance**: Strategic advice on product development, prioritization, and talent evaluation to bolster your team.
@@ -45,7 +45,7 @@ Guidance on:
 - AI workshops
 - Product strategy
 - Custom systems
-- Techniques like "Shift Left," immutable operating systems, zero authentication. (As it is 2024, we can even do better then "Shift left," we can "Start left")
+- Techniques like "Shift Left," immutable operating systems, zero authentication. (As it is 2025, we can even do better then "Shift left," we can "Start left")
 
 You'll receive a comprehensive plan and regular team consultations to navigate common pitfalls and optimize tool and technique selection.
 
