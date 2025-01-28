@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-Hi and welcome to my demos repo!
+Hi and welcome to my GitHub account!
 
-This repository showcases a collection of demo projects and research that interest me. 
+This account showcases my professional interests and a large collection of demo projects and research that interest me. I have been an open source specialist for over 20 years.
 
 The demos directory include examples of deploying resources into public clouds, using Terraform, Pulumi, and Kubernetes for deploying resources, application containers, as well as some nice-to-haves like git tips and a lot more. 
 
@@ -12,11 +12,12 @@ If you are a non-engineering reviewer of this information, first of all welcome 
 
 For technical readers, be sure to check out the analysis of Grok, CVE-2024-3094, my Ultimate Kubernetes Wishlist, low level Kubernetes details, SRE definitions, and LLM attacks.
 
-# Why You Should Consider Hiring Me
+# If you are a hiring manager:
 
 If you're encountering these challenges:
 
-- Struggling to manage cloud inrastructure in a reliable manner.
+- You need an AI expert trained on all the latest and greatest AI innovations.
+- You are struggling to manage cloud inrastructure in a reliable manner.
 - Seeking ways to make your Kubernetes, workloads, cloud, or SRE more cost-effective or faster.
 - Overwhelmed by the plethora of tools and frameworks available. If you want to switch over from legacy to modern tech stacks.
 - If you are uncertain about the next steps for your inrastructure products.
@@ -79,8 +80,7 @@ I appear to be innovation-driven, often implementing new technologies and improv
 My experience in creating disaster recovery plans, implementing security measures, and obtaining security-related certifications suggests a detail-oriented nature and a strong focus on cybersecurity.
 
 ## Ethical Considerations
-My involvement in establishing AI governance models and an awareness of ethical and legal implications in AI technology is up to date on this topic. I view AI as a social good and a marvelous opportunity to improve quality of life.
-I can commit to you that I will not work on AI weapon systems or unethical use cases and I have not done so in the past.
+My involvement in establishing AI governance models and an awareness of ethical and legal implications in AI technology is up to date on this topic. I view AI as a social good and a marvelous opportunity to improve quality of life. I can commit to you that I will not work on AI weapon systems or unethical use cases and I have not done so in the past.
 
 ## Problem-Solver
 My track record of tackling complex technical challenges across various roles suggests strong problem-solving skills and a proactive approach to addressing issues.
