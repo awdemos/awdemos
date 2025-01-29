@@ -12,9 +12,7 @@ If you are a non-engineering reviewer of this information, first of all welcome 
 
 For technical readers, be sure to check out the analysis of Grok, CVE-2024-3094, my Ultimate Kubernetes Wishlist, low level Kubernetes details, SRE definitions, and LLM attacks.
 
-# If you are a hiring manager:
-
-If you're encountering these challenges:
+I like working on these kinds of challenges:
 
 - You need an AI expert trained on all the latest and greatest AI innovations.
 - You are struggling to manage cloud inrastructure in a reliable manner.
@@ -60,7 +58,7 @@ Includes all Tier 1 services, plus:
 
 Tier 2 services are exclusive to one client at a time to guarantee the highest quality of service.
 
-## What Perplexity thinks my resume says about my character and personality
+## A PerplexityAI analysis about my character and personality
 
 Based on my extensive experience and accomplishments, several aspects of my character and personality can be inferred:
 
@@ -135,7 +133,7 @@ You can schedule a meeting with me anytime during Eastern Standard Time ([https:
 
 ```sh
 git clone https://github.com/awdemos/awdemos.git
-cd demos
+cd awdemos
 ```
 
 # Some of my favorite tools
