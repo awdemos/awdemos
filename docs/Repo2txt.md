@@ -2,7 +2,7 @@
 
 ## Overview
 repo2txt is a powerful tool designed to dump the contents of a Git repository into a single file, optimizing it for use in Retrieval-Augmented Generation (RAG) systems or as part of prompts for Large Language Models (LLMs). By consolidating your codebase into one file, you can more easily pass context to an LLM or integrate it into a RAG pipeline.
-This document is improved documentaiton for dmeo purposes.
+This document is improved documentaiton for demo purposes.
 
 ## Features
 - Dumps entire repository content into a single file
