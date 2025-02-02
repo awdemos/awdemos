@@ -1,63 +1,66 @@
-# README
-
 ## Project Overview
 
-Hi and welcome to my demos repo!
+Welcome to my demos repository! This collection showcases a range of projects and research that reflect my expertise and interests in AI engineering, machine learning, and advanced cloud technologies.
 
-This repository showcases a collection of demo projects and research that interest me. 
+## Expertise Highlights
 
-The demos directory include examples of deploying resources into public clouds, using Terraform, Pulumi, and Kubernetes for deploying resources, application containers, as well as some nice-to-haves like git tips and a lot more. 
+- **AI and ML Consulting**: Specializing in cutting-edge AI solutions, including large language models (LLMs), multi-agent systems, and custom AI agent development for clients.
+- **Cloud and Infrastructure**: Proficient in deploying resources across public clouds using Terraform, Pulumi, and Kubernetes.
+- **Advanced AI Implementations**: Experience with agent build-out, multi-agent systems, and innovative AI architectures.
+- **DevOps and SRE**: Implementing best practices in Site Reliability Engineering and DevOps methodologies.
 
-If you are a non-engineering reviewer of this information, first of all welcome and thanks for coming by! I hope that you find this informational, feel free to just examine the sections most relevant to your interests.
+## Key Projects and Analyses
 
-For technical readers, be sure to check out the analysis of Grok, CVE-2024-3094, my Ultimate Kubernetes Wishlist, low level Kubernetes details, SRE definitions, and LLM attacks.
+- Grok Analysis: In-depth examination of OpenAI's latest language model.
+- CVE-2024-3094 Investigation: Comprehensive security analysis.
+- Ultimate Kubernetes Wishlist: Innovative ideas for Kubernetes enhancements.
+- Low-Level Kubernetes Details: Deep dive into Kubernetes internals.
+- SRE Definitions and Best Practices: Comprehensive guide to Site Reliability Engineering.
+- LLM Attack Vectorss: Analysis of potential vulnerabilities in large language models.
 
-# Why You Should Consider Hiring Me
+## Why Choose Me as Your AI/ML Consultant
 
-If you're encountering these challenges:
+If you're facing these challenges:
 
-- Struggling to manage cloud inrastructure in a reliable manner.
-- Seeking ways to make your Kubernetes, workloads, cloud, or SRE more cost-effective or faster.
-- Overwhelmed by the plethora of tools and frameworks available. If you want to switch over from legacy to modern tech stacks.
-- If you are uncertain about the next steps for your inrastructure products.
-- In need of a subject matter expert to assess your requirements and evaluate potential needs.
-- Experience matters! I steer my projects away from risky engineering practices and towards emerging solutions that use patterns that are designed to work better, faster, cheaper.
+- Need to implement cutting-edge AI solutions like multi-agent systems or custom AI agents.
+- Struggling to leverage AI/ML technologies effectively in your business processes.
+- Seeking expertise in integrating AI with cloud infrastructure and Kubernetes.
+- Looking for guidance on LLM implementation, fine-tuning, and deployment.
+- Require a subject matter expert to assess your AI/ML requirements and evaluate potential solutions.
 
 ## What I Offer
 
-- **Domain-Specific Evaluation Systems**: Tailor-made systems to assess the performance and reliability of your inrastructure, ensuring they meet the specific needs of your domain.
-- **Cost management**: Enhancing the efficiency of cloud deployments is more important now then ever. I can frequently get 50% cost savings for an organization.
-- **Development Tools and Infrastructure**: Custom solutions to streamline your development process, facilitating rapid iterations on sotfware releases.
-- **Product Strategy Guidance**: Strategic advice on product development, prioritization, and talent evaluation to bolster your team.
-- **Content and Writing**: I also provide documentation on any systems or environments I work on.
+- **DevOps Strategy and Implementation**: Tailored bleeding-edge CICD solutions for the fastest builds, from conceptualization to deployment. If your builds take over a minute I can help you.
+- **AI Strategy and Implementation**: Tailored AI solutions, from conceptualization to deployment. I have been working with advanced AI chatbots since 2016 and I have worked for influential figures in the AI industry.
+- **Multi-Agent System Development**: Design and implementation of sophisticated multi-agent AI architectures. I am up to date on the latest techniques of this fascinating technology.
+- **LLM Expertise**: Fine-tuning, deployment, and optimization of large language models. I know how to build LLMs from scratch and I have atteneded 3 bootcamps on this topic since 2024 and I am Nvidia certified.
+- **Cloud-AI Integration**: Seamless integration of AI solutions with cloud and Kubernetes environments. I am comfortable with all the major cloud providers. My last work in the cloud was an Azure Copilot Studio project.
+- **AI Performance Optimization**: Enhancing the efficiency and cost-effectiveness of AI deployments.
+- **AI Product Strategy**: Strategic advice on AI product development and talent evaluation. I know all the trends, leading figures, topics of importants, and history of the AI field going back for decades. I am writing a book on these topics.
+- **Technical Content Creation**: Comprehensive documentation and knowledge transfer for AI systems.
+- **Briefed by leading AI vendors**: I attend briefings by Google, Dell, Apple, HPE, Nvidia, and many others where they tell me about their product updates before they are announced. By the time you read about it in a Gartner Report, I have known about it for six months.
 
-## Consulting Services Offered
+## Consulting Services
 
-### Tier 1: Strategy
+### Tier 1: AI Strategy and Planning
 
-Guidance on:
-- On-prem or cloud performance (cost, quality, speed)
-- LLMs
-- Agents, agentic frameworks, bots
-- Prompting
-- Industry trends
-- AI workshops
-- Product strategy
-- Custom systems
-- Techniques like "Shift Left," immutable operating systems, zero authentication. (As it is 2024, we can even do better then "Shift left," we can "Start left")
+- AI readiness assessments
+- LLM implementation strategies
+- Multi-agent system architecture design
+- AI-driven product strategy
+- Industry trend analysis and AI workshops
+- Advanced AI techniques consultation (e.g., prompt engineering, zero-shot learning)
 
-You'll receive a comprehensive plan and regular team consultations to navigate common pitfalls and optimize tool and technique selection.
-
-### Tier 2: Comprehensive
+### Tier 2: Comprehensive AI Implementation
 
 Includes all Tier 1 services, plus:
-- **Implementation**: Production-ready code and prototypes to fast-track release and development.
-- **Hands-On MLOps Optimization**: Direct involvement in fine-tuning and prompt engineering to boost model performance.
-- **Content Production**: Creation of technical documents and blog posts to share best practices and insights with your stakeholders.
-- **Team Growth**: Personalized training for 2-4 team members to quickly enhance their AI skills.
-- **Extended Consultation**: I am available on consulting retainer on an hourly basis. That can include Linux, DevOps, SRE, AI, and other cutting-edge techniques and trends.
+- **Hands-on AI Development**: Production-ready AI code and prototypes.
+- **MLOps Optimization**: Direct involvement in AI model fine-tuning and deployment.
+- **AI Content Production**: Creation of technical AI documentation and thought leadership content.
+- **Team AI Upskilling**: Personalized AI and ML training for your team members.
+- **Ongoing AI Consultation**: Available on retainer for continuous AI guidance and problem-solving.
 
-Tier 2 services are exclusive to one client at a time to guarantee the highest quality of service.
+Tier 2 services are offered exclusively to ensure dedicated, high-quality support for your AI initiatives.
 
 ## What Perplexity thinks my resume says about my character and personality
 
@@ -167,7 +170,6 @@ A curated list of my favorite projects across various domains and technologies.
 - [Xenia Linux](https://xenialinux.com/) - An immutable distribution based on Gentoo
 - [Asterinas](https://github.com/asterinas/asterinas) - Asterinas is a secure, fast, and general-purpose OS kernel, written in Rust and providing Linux-compatible ABI.
 
-
 ## CI/CD and Automation
 - [Tekton](https://tekton.dev/) - A powerful and flexible open-source framework for creating CI/CD systems.
 - [Dagger.io](https://dagger.io/) - A programmable deployment system for your applications.
@@ -177,6 +179,9 @@ A curated list of my favorite projects across various domains and technologies.
 - [Zed IDE](https://zed.dev/) - Rust written AI enabled IDE.
 - [Devcontainer](https://code.visualstudio.com/docs/remote/containers) - Develop inside a Docker container with Visual Studio Code.
 - [Devpod](https://www.gitpod.io/docs/dev-environments) - Automated, ready-to-code development environments for Gitpod.
+
+- ## Homelab
+- [Orange Lab](https://github.com/QC-Labs/orange-lab) - Manage a local kubernetes AI platform through Pulumi with everything you need taken care of.
 
 ## Programming Languages and Frameworks
 - [Go](https://golang.org/) - An open source programming language that makes it easy to build simple, reliable, and efficient software.
