@@ -1,0 +1,33 @@
+services:
+  app:
+    build:
+      context: .
+    environment:
+      - DATABASE_URL=postgres://postgres:mysecretpassword@db:5432/users_db
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: ["cargo", "run"]
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: users_db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    expose:
+      - "5432"
+
+volumes:
+  db_data:
+
