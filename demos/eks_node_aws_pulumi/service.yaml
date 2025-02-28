@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-service
+spec:
+  selector:
+    app: hello-app  # This should match the label in your Deployment
+  ports:
+  - protocol: TCP
+    port: 80        # The port the service exposes
+    targetPort: 3000  # The port the container listens on
+  type: LoadBalancer # Or ClusterIP, NodePort depending on your needs
+
