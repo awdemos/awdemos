@@ -1,28 +1,34 @@
 ## Project Overview
 
-Welcome to my demos repository! This collection showcases a range of projects and research that reflect my expertise and interests in AI engineering, machine learning, and advanced cloud technologies.
+Hi welcome to my demos repository! 
+
+This collection showcases a range of projects and research interests in software engineering including AI, machine learning, devops, Rust, quantum computing, and advanced cloud technologies.
 
 ## Expertise Highlights
 
 - **AI and ML Consulting**: Specializing in cutting-edge AI solutions, including large language models (LLMs), multi-agent systems, and custom AI agent development for clients.
-- **Cloud and Infrastructure**: Proficient in deploying resources across public clouds using Terraform, Pulumi, and Kubernetes.
+- **Cloud and Infrastructure**: I am experinced in deploying complex software applications and resources across public clouds using everything from Ansible, Terraform, Pulumi for Kubernetes workloads.
+- **Advanced Container and Docker security expertise**: I am deeply acquainted with container internals and best practices for secure and performant microservices.
 - **Advanced AI Implementations**: Experience with agent build-out, multi-agent systems, and innovative AI architectures.
 - **DevOps and SRE**: Implementing best practices in Site Reliability Engineering and DevOps methodologies.
 
 ## Key Projects and Analyses
 
-- Grok Analysis: In-depth examination of OpenAI's latest language model.
+- Run a language model to play Tic-Tac-Toe using Gradient Ratio Policy Optimization (GRPO)
+- Grok Analysis: In-depth examination of OpenAI's latest language model (2024).
 - CVE-2024-3094 Investigation: Comprehensive security analysis.
 - Ultimate Kubernetes Wishlist: Innovative ideas for Kubernetes enhancements.
 - Low-Level Kubernetes Details: Deep dive into Kubernetes internals.
 - SRE Definitions and Best Practices: Comprehensive guide to Site Reliability Engineering.
-- LLM Attack Vectorss: Analysis of potential vulnerabilities in large language models.
+- LLM Attack Vectors: Analysis of potential vulnerabilities in large language models. 
+- Red-team LLMs with DSPY.
 
 ## Why Choose Me as Your AI/ML Consultant
 
 If you're facing these challenges:
 
-- Need to implement cutting-edge AI solutions like multi-agent systems or custom AI agents.
+- You are growing so fast you need someone to come in with an owner mentality!
+- If you need to implement cutting-edge AI solutions like RAG or custom AI agents.
 - Struggling to leverage AI/ML technologies effectively in your business processes.
 - Seeking expertise in integrating AI with cloud infrastructure and Kubernetes.
 - Looking for guidance on LLM implementation, fine-tuning, and deployment.
@@ -38,7 +44,8 @@ If you're facing these challenges:
 - **AI Performance Optimization**: Enhancing the efficiency and cost-effectiveness of AI deployments.
 - **AI Product Strategy**: Strategic advice on AI product development and talent evaluation. I know all the trends, leading figures, topics of importants, and history of the AI field going back for decades. I am writing a book on these topics.
 - **Technical Content Creation**: Comprehensive documentation and knowledge transfer for AI systems.
-- **Briefed by leading AI vendors**: I attend briefings by Google, Dell, Apple, HPE, Nvidia, and many others where they tell me about their product updates before they are announced. By the time you read about it in a Gartner Report, I have known about it for six months.
+- **Briefed by leading AI vendors**: I attend briefings by Google, Dell, Apple, HPE, Nvidia, and many others where they tell me about their product updates before they are announced.
+- **Huge professional network**: I have numerous friends and colleagues in the industry that has similar or has better skills then me in some areas.
 
 ## Consulting Services
 
