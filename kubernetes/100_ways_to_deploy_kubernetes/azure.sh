@@ -10,9 +10,10 @@ create_pulumi_project() {
     local lang=$1
     local file=$2
     local cluster_name=$3
+    local dir_name="azure_${lang}"
     
-    mkdir -p "$lang"
-    cd "$lang"
+    mkdir -p "$dir_name"
+    cd "$dir_name"
     
     pulumi new azure-$lang --name azure-aks-$lang --description "Azure AKS Cluster" --generate-only --yes
     
@@ -169,10 +170,10 @@ main() {
         file=${files[$i]}
         cluster_name="myakscluster-${lang}"
         
-        echo "Creating $lang project..."
+        echo "Creating azure_$lang project..."
         create_pulumi_project $lang $file $cluster_name
         
-        echo "$lang project created successfully!"
+        echo "azure_$lang project created successfully!"
         echo
     done
 
