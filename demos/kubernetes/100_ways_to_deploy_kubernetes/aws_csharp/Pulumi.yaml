@@ -1,0 +1,7 @@
+name: eks-csharp
+description: Minimal EKS cluster
+runtime: dotnet
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-csharp
