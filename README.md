@@ -4,6 +4,9 @@ Hi welcome to my demos repository!
 
 This collection showcases a range of projects and research interests in software engineering including AI, machine learning, devops, Rust, quantum computing, and advanced cloud technologies.
 
+![My Repo](repo.png)
+
+
 ## Expertise Highlights
 
 - **AI and ML Consulting**: Specializing in cutting-edge AI solutions, including large language models (LLMs), multi-agent systems, and custom AI agent development for clients.
