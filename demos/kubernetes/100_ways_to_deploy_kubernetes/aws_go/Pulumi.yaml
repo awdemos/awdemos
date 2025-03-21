@@ -1,0 +1,7 @@
+name: eks-go
+description: Minimal EKS cluster
+runtime: go
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-go

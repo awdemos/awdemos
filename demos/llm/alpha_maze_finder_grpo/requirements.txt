@@ -1,0 +1,9 @@
+unsloth
+vllm
+pillow
+datasets
+torch
+pandas
+numpy
+transformers
+setuptools
