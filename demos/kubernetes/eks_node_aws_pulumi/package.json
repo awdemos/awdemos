@@ -1,0 +1,13 @@
+{
+  "name": "eks_node_aws_pulumi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app/app.js",
+    "dev": "nodemon app/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,51 @@
+# Dataset configuration
+dataset:
+  name: "TuringsSolutions/PFAF750"
+  test_size: 0.2
+  random_seed: 42
+  input_column: "question"  # Verify actual column name
+  output_column: "answer"
+
+# Model configuration
+model:
+  checkpoint: "HuggingFaceTB/SmolLM2-360M"
+  learning_rate: 5e-5
+  max_length: 512
+  similarity_threshold: 0.9
+
+# Training parameters
+training:
+  epochs: 2
+  batch_size: 1  # Current implementation processes single examples
+  save_dir: "./checkpoints"
+  save_every: 100  # Save every N examples
+
+# Reasoning configuration
+reasoning:
+  forward_prefix: "<think>"
+  forward_suffix: "</think> <answer>"
+  answer_suffix: "</answer>"
+
+# Teleprompter settings
+teleprompter:
+  max_bootstrapped_demos: 4
+  max_labeled_demos: 4
+  max_rounds: 1
+
+# Hardware configuration
+hardware:
+  device: "cuda"  # auto-detected but can override
+  fp16: true
+  gradient_accumulation_steps: 1
+
+# Validation parameters
+validation:
+  check_interval: 50  # Run validation every N examples
+  max_examples: 100   # Max examples to use for validation
+
+# Logging configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+  file: "./training.log"
+
