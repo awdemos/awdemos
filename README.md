@@ -4,16 +4,26 @@ Hi welcome to my demos repository!
 
 This collection showcases a range of projects and research interests in software engineering including AI, machine learning, devops, Rust, quantum computing, and advanced cloud technologies.
 
+This repo is not an attempt to describe my professional recommendations for any particular problem. Instead it's a front-page for my multi-year study of the problem domain of software delivery
+for modern applications.
+
 ![My Repo](repo.png)
 
 
 ## Expertise Highlights
 
+- **Emotional Intelligence and Conflict Resolution**: I base all my interactions at work according to the principles of Emotional Intelligence and Conflict Resolution. I pursue training in cultivating
+body and emotional awareness, empathy to others, the development of active listening skills, and positive outcomes for all the stakeholders and contributors in a work environment.
+- **Engineering Culture Specialist**: I contribute toward building a happy and rewarding engineering culture wherever I can. I tailor my communication strategies to the people and expectations for
+acheiving goals an organization may have. My interests closely track what you can find on HackerNews and I was strongly influenced on the hacker mindset early in my career on Slashdot.
 - **AI and ML Consulting**: Specializing in cutting-edge AI solutions, including large language models (LLMs), multi-agent systems, and custom AI agent development for clients.
-- **Cloud and Infrastructure**: I am experinced in deploying complex software applications and resources across public clouds using everything from Ansible, Terraform, Pulumi for Kubernetes workloads.
-- **Advanced Container and Docker security expertise**: I am deeply acquainted with container internals and best practices for secure and performant microservices.
-- **Advanced AI Implementations**: Experience with agent build-out, multi-agent systems, and innovative AI architectures.
-- **DevOps and SRE**: Implementing best practices in Site Reliability Engineering and DevOps methodologies.
+- **Cloud and On-premise Infrastructure**: I am experinced in deploying complex software applications and resources across public clouds using everything from Ansible, Terraform, Pulumi for Kubernetes workloads.
+I have managed racks of servers, server rooms, co-location in data centers, and cloud-native applications since the early 2000s. I stay current on the latest industry news on a daily basis.
+- **Advanced Container and Docker security expertise**: I am deeply acquainted with container internals and best practices for secure and performant microservices. My favorite resource for advanced container
+learnings right now is [iximiuz.com](https://iximiuz.com/en/)
+- **Advanced AI Implementations**: Experience with agent build-out, multi-agent systems, and innovative AI architectures. I recently completed 6 months of AI bootcamp training from Stanford, Duke, and others.
+- **DevOps and SRE**: Implementing best practices in Site Reliability Engineering and DevOps methodologies. I have been practicing DevOps since 2013 and SRE since 2023.
+- **Linux**: While direct Linux experience seems to be declining in some areas of modern cloud practice, I've been using Linux since the early 2000s and happily run atomic and immutable Linux operating systems in my home lab.
 
 ## Key Projects and Analyses
 
@@ -25,17 +35,19 @@ This collection showcases a range of projects and research interests in software
 - SRE Definitions and Best Practices: Comprehensive guide to Site Reliability Engineering.
 - LLM Attack Vectors: Analysis of potential vulnerabilities in large language models. 
 - Red-team LLMs with DSPY.
+- I have not updated this list since 2024 and I have loads more I will update this in the future.
 
 ## Why Choose Me as Your AI/ML Consultant
 
 If you're facing these challenges:
 
 - You are growing so fast you need someone to come in with an owner mentality!
-- If you need to implement cutting-edge AI solutions like RAG or custom AI agents.
+- You want to implement cutting-edge AI solutions like RAG or AI agents but are overwhelmed with the options.
 - Struggling to leverage AI/ML technologies effectively in your business processes.
 - Seeking expertise in integrating AI with cloud infrastructure and Kubernetes.
 - Looking for guidance on LLM implementation, fine-tuning, and deployment.
 - Require a subject matter expert to assess your AI/ML requirements and evaluate potential solutions.
+- You want someone to build secure and scalable solutions out of the box not based on vague notions of cybersecurity from years past but concrete and relevant solutions ready for todays risks.
 
 ## What I Offer
 
@@ -54,12 +66,12 @@ If you're facing these challenges:
 
 ### Tier 1: AI Strategy and Planning
 
-- AI readiness assessments
-- LLM implementation strategies
+- AI readiness assessments. I have list of questions to ask an organization about their AI readiness and AI maturity in an organization that starts from no readiness or maturity and escalates to fully operational production ready workflows.
+- LLM implementation strategies. I am up to date on the latest models from all the major model providers like OpenAI, DeepSeek, Anthropic, Huggingface, Nvidia, Microsoft, Google, and others.
 - Multi-agent system architecture design
-- AI-driven product strategy
+- AI-driven product strategy. AI is great but without a product driven implementation plan expectations can be missed.
 - Industry trend analysis and AI workshops
-- Advanced AI techniques consultation (e.g., prompt engineering, zero-shot learning)
+- Advanced AI techniques consultation (e.g., prompt engineering, zero-shot learning), private AI deployments.
 
 ### Tier 2: Comprehensive AI Implementation
 
@@ -111,7 +123,7 @@ These traits paint a picture of me as a well-rounded, technically proficient pro
 
 If anything strikes you as particularly interesting and you want to speak with me about an opportunity? 
 
-You can schedule a meeting with me anytime during Eastern Standard Time ([https://cal.com/aiconsulting](https://cal.com/aiconsulting)).
+You can schedule a meeting with me anytime during Eastern Standard Time at [https://cal.com/aiconsulting](https://cal.com/aiconsulting) (no US holidays or weekends without prior agreement please!)
 
 ### Git Repo Highlights:
 
@@ -131,9 +143,10 @@ You can schedule a meeting with me anytime during Eastern Standard Time ([https:
 
 - **Python Scripts and Packaging**: Some example scripts and best practices I like.
 
-## Prerequisites
+## Some Repo Prerequisites
 
-- AWS/GCP CLI configured with your credentials
+If you want to use the code in this repo you will need some of the following tools:
+- AZ/AWS/GCP CLI configured with your credentials
 - Nerdctl
 - Git
 - Docker
@@ -153,7 +166,7 @@ cd demos
 
 # Some of my favorite tools
 
-A curated list of my favorite projects across various domains and technologies.
+A curated list of some of my favorite projects across various domains and technologies.
 
 ## Infrastructure and Orchestration
 - [Talos](https://www.talos.dev/) - A modern OS for Kubernetes.
