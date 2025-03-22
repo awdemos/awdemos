@@ -251,6 +251,7 @@ A curated list of some of my favorite projects across various domains and techno
 
 - ## Homelab
 - [Orange Lab](https://github.com/QC-Labs/orange-lab) - Manage a local kubernetes AI platform through Pulumi with everything you need taken care of.
+- [CowabungaAI](https://github.com/awdemos/cowabungaai) - A fork I made of LeapfrogAI. I hope to start developing on it soon.
 
 ## Programming Languages and Frameworks
 - [Go](https://golang.org/) - An open source programming language that makes it easy to build simple, reliable, and efficient software.
