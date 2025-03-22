@@ -22,8 +22,7 @@ see a lot of Bash, Python, Rust, Typescript, Go, I think there is dotnet in here
 This repository is not just a code archive; it's an example on how to demonstrate continuous learning and innovation in software engineering. 
 In some cases I hope shows my ability to tackle complex, future-facing challenges and deliver production-grade solutions across multiple domains challenging companies today.
 
-Explore the projects to witness the convergence of theory and practice, where academic research meets real-world application. Whether you're a potential collaborator, employer, or fellow enthusiast, this showcase offers
-a glimpse into the future of technology and my role in shaping it. I also have a lot of open source contributions and I enjoy working on open source projects in my free time. 
+I also have a lot of open source contributions and I enjoy working on open source projects in my free time. 
 
 ![My Repo](repo.png)
 
@@ -32,7 +31,7 @@ a glimpse into the future of technology and my role in shaping it. I also have a
 
 - **Emotional Intelligence and Conflict Resolution**: I base all my interactions at work according to the principles of Emotional Intelligence and Conflict Resolution. I pursue training in cultivating
 body and emotional awareness, empathy to others, the development of active listening skills, and positive outcomes for all the stakeholders and contributors in a work environment.
-- **Engineering Culture Specialist**: I contribute toward building a happy and rewarding engineering culture wherever I can. I tailor my communication strategies to the people and expectations for
+- **Engineering Culture Specialist**: I contribute toward building a happy and rewarding engineering culture wherever I can. 
 acheiving goals an organization may have. My interests closely track what you can find on HackerNews and I was strongly influenced on the hacker mindset early in my career on Slashdot.
 - **AI and ML Consulting**: Specializing in cutting-edge AI solutions, including large language models (LLMs), multi-agent systems, and custom AI agent development for clients.
 - **Cloud and On-premise Infrastructure**: I am experinced in deploying complex software applications and resources across public clouds using everything from Ansible, Terraform, and Pulumi.
