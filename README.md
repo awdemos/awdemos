@@ -42,6 +42,7 @@ learnings right now is [iximiuz.com](https://iximiuz.com/en/)
 - **Advanced AI Implementations**: Experience with agent build-out, multi-agent systems, and innovative AI architectures. I recently completed 6 months of AI bootcamp training from Stanford, Duke, and others.
 - **DevOps and SRE**: Implementing best practices in Site Reliability Engineering and DevOps methodologies. I have been practicing DevOps since 2013 and SRE since 2023.
 - **Linux**: While direct Linux experience seems to be declining in some areas of modern cloud practice, I've been using Linux since the early 2000s and I run atomic and immutable Linux operating systems in my home lab.
+- **Nvidia**: I am Nvidia certified Technical Advisor and I have taken about 80 hours of additional Nvidia training and I manage the Nvidia infrastructure for a Fortune 1000 company including licensing.
 
 ## Key Projects and Analyses
 
