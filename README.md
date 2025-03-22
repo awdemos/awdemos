@@ -7,7 +7,7 @@ research and hands-on experience in shaping the future of software delivery and 
 
 - **AI & Machine Learning**: Innovative applications of LLMs and neural networks for real-world problem-solving.
 - **DevOps Revolution**: Kubernetes-native AI orchestration and hybrid cloud/on-prem LLM deployments.
-- **Quantum-Ready Solutions**: Comprehensive playbooks for Q-Day preparedness and post-quantum cryptography implementation.
+- **Quantum-Ready Solutions**: Q-day is a big deal and no one should take it for granted in the AI era that classic Internet cryptography standards might be broken soon or already are.
 - **Emerging Tech Fusion**: Unique integrations of robotics, Rust, and advanced Linux scripting for next-gen applications.
 - **Programming Language Experiments**: I experiment with a half dozen or so programming languages in this repo and you will 
 see a lot of Bash, Python, Rust, Typescript, Go, I think there is dotnet in here, Lua.
