@@ -19,27 +19,27 @@ Experienced AI and DevOps engineer with a proven track record in leading AI infr
 
 ## Professional Experience
 
-**Lead AI Infrastructure Engineer** | Helix Center for Applied AI and Robotics (Remote) | Present
+**Lead AI Infrastructure Engineer** | Helix Center for Applied AI and Robotics 
 - Spearheaded AI, ML, and LLM strategy for a Fortune 1000 company's AI division
 - Led development of an award-winning AI platform for the US Navy (January 2025)
 - Managed cloud and on-premise AI infrastructure to meet organizational goals
 - Provided technical leadership in coding, platform engineering, and DevOps practices
 
-**Senior DevOps Engineer** | Prometheum | January 2020 - January 2024
+**Senior DevOps Engineer** | Prometheum
 - Implemented secure multi-account AWS architecture, enhancing data protection
 - Managed Kubernetes clusters with emphasis on DevSecOps and GitOps principles
 - Streamlined CI/CD processes, significantly improving deployment efficiency
 
-**Senior System Administrator** | Cycorp Inc. | January 2016 - January 2020
+**Senior System Administrator** | Cycorp Inc.
 - Administered AWS cloud services and introduced infrastructure as code
 - Devised comprehensive Disaster Recovery, Security, and Incident Response protocols
 - Managed advanced AI chatbot infrastructure using Vsphere and Infiniband
 
-**Lead DevOps Engineer** | Wibidata | San Francisco, CA | January 2010 - January 2013
+**Lead DevOps Engineer** | Wibidata
 - Led migration of legacy services to OpenStack and AWS, optimizing system performance
 - Enhanced AWS EC2 implementation for increased fault tolerance and high availability
 
-**IT Manager** | Wikimedia Foundation | San Francisco, CA | January 2008 - January 2010
+**IT Manager** | Wikimedia Foundation
 - Managed $1 million IT budget and led a team of staff and contractors
 - Redesigned office network, eliminating single points of failure and improving reliability
 
