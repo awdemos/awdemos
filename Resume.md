@@ -1,105 +1,61 @@
-# Andrew White, AI Engineering Leader  
-Michigan, United States Citizen  
+Andrew White
+AI, DevOps, Platform Leader
+github.com/awdemos
 
----
+## Professional Summary
 
-## SUMMARY  
-Experienced AI engineering leader specializing in AI infrastructure, DevOps, and Kubernetes orchestration. Proven ability to deliver award-winning AI platforms, optimize cloud and on-premise environments, and drive innovation across industries. Recognized for technical expertise, problem-solving skills, and collaborative leadership in delivering impactful solutions. Committed to leveraging cutting-edge technologies to drive organizational success and build scalable systems.
+Experienced AI and DevOps engineer with a proven track record in leading AI infrastructure, cloud management, and platform development. Skilled in implementing cutting-edge technologies, optimizing system performance, and driving innovation in AI and ML strategies. Committed to delivering exceptional results with a growth mindset and collaborative approach.
 
----
+## Core Competencies
 
-## WORK EXPERIENCE  
+- AI/ML Infrastructure
+- Cloud Architecture (AWS, OpenStack)
+- Kubernetes & Container Orchestration
+- DevSecOps & GitOps
+- CI/CD Pipeline Optimization
+- Infrastructure as Code
+- Blockchain Technologies
+- Python & Rust Development
 
-### Lead AI Infrastructure Engineer, Helix Center for Applied AI and Robotics  
-Remote, USA  
-- Spearheaded the company's AI, ML, and LLM strategy through hands-on leadership.  
-- Managed cloud and on-premise AI infrastructure to meet organizational goals.  
-- Championed the development of an award-winning AI platform for the US Navy in 2024.  
-- Orchestrated technical leadership in coding, platform engineering, and DevOps practices.  
-- Contributed as a member of the Helix Council steering committee by advising on AI strategy.  
+## Professional Experience
 
-### Senior DevOps Engineer, Prometheum  
-Remote, USA  
-- Engineered a regulated blockchain-based securities trading platform.  
-- Implemented a secure multi-account AWS architecture enhancing data protection.  
-- Managed Kubernetes clusters and streamlined CI/CD processes for greater efficiency.  
+**Lead AI Infrastructure Engineer** | Helix Center for Applied AI and Robotics (Remote) | Present
+- Spearheaded AI, ML, and LLM strategy for a Fortune 1000 company's AI division
+- Led development of an award-winning AI platform for the US Navy (January 2025)
+- Managed cloud and on-premise AI infrastructure to meet organizational goals
+- Provided technical leadership in coding, platform engineering, and DevOps practices
 
-### Senior System Administrator, Cycorp Inc.  
-Austin, USA  
-- Oversaw 8 fully-loaded Dell PowerEdge server racks, ensuring optimal performance.  
-- Handled AWS cloud services and reinforced user authentication measures.  
-- Devised comprehensive Disaster Recovery Plans, Security Plans, and Incident Response protocols.  
+**Senior DevOps Engineer** | Prometheum | January 2020 - January 2024
+- Implemented secure multi-account AWS architecture, enhancing data protection
+- Managed Kubernetes clusters with emphasis on DevSecOps and GitOps principles
+- Streamlined CI/CD processes, significantly improving deployment efficiency
 
-### Lead DevOps Engineer, Wibidata  
-San Francisco, USA  
-- Led migration of legacy services to OpenStack and AWS, optimizing system performance.  
-- Oversaw development environment and data center operations to ensure reliability.  
-- Enhanced AWS EC2 implementation for increased fault tolerance and high availability.  
+**Senior System Administrator** | Cycorp Inc. | January 2016 - January 2020
+- Administered AWS cloud services and introduced infrastructure as code
+- Devised comprehensive Disaster Recovery, Security, and Incident Response protocols
+- Managed advanced AI chatbot infrastructure using Vsphere and Infiniband
 
-### IT Manager, Wikimedia Foundation  
-San Francisco, USA  
-- Managed a team of three full-time staff and multiple contractors to meet IT objectives.  
-- Oversaw a $1 million IT budget, ensuring cost-effective operations.  
-- Redesigned the office network to eliminate single points of failure, enhancing reliability.  
+**Lead DevOps Engineer** | Wibidata | San Francisco, CA | January 2010 - January 2013
+- Led migration of legacy services to OpenStack and AWS, optimizing system performance
+- Enhanced AWS EC2 implementation for increased fault tolerance and high availability
 
-### Infrastructure Engineer, OpenDNS  
-San Francisco, USA  
-- Supported incident management and facilitated data center operations.  
-- Provisioned servers to new colocation data centers while optimizing network efficiency.  
+**IT Manager** | Wikimedia Foundation | San Francisco, CA | January 2008 - January 2010
+- Managed $1 million IT budget and led a team of staff and contractors
+- Redesigned office network, eliminating single points of failure and improving reliability
 
-### System Administrator, Six Apart  
-San Francisco, USA  
-- Supported all company IT services during periods of significant growth.  
-- Managed IT services that facilitated major contributions to open source projects.  
+## Certifications
 
-### Sales Engineer, Linux Labs  
-Atlanta, USA  
-- Acquired expertise in utilizing custom Linux operating systems for HPC clusters.  
-- Conducted cold calls to identify researchers and potential buyers, expanding market reach.  
+- AI Makerspace AI Engineer Cohort 5 (Present)
+- Rust Foundations Course (2025)
+- Nvidia Technical Advisor (2024)
+- Dell AI Advisor (2024)
+- Foundations to SLMs Cohort 3 (2024)
+- Securing the AI/ML Supply Chain (2024)
 
----
+## Additional Skills
 
-## KEY ACHIEVEMENTS  
-- Developed an award-winning AI platform for the US Navy (2024).  
-- Migrated legacy systems to modern infrastructure (OpenStack/AWS) at Wibidata with improved fault tolerance and scalability.  
-- Redesigned Wikimedia Foundation's office network architecture to eliminate single points of failure while managing a $1M budget effectively.
+- Programming: Rust, Python, Lua, Common Lisp, Bash
+- AI Technologies: Large Language Models, RAG, AI Agents
+- Open Source: Active contributor and maintainer of AI platforms
 
----
-
-## SKILLS  
-
-| **Technical Skills**             | **Cloud Platforms**    | **Leadership & Collaboration** |
-|-----------------------------------|------------------------|----------------------------------|
-| Kubernetes                        | AWS/GCP/Azure          | Cross team collaboration       |
-| Terraform                         | GCP                    | Lots of Communication and docs |
-| CI/CD                             | Azure                  | Problem Solving                |
-| Python                            |                        | Open-minded                    |
-| Rust                              |                        | Forward-thinking               |
-
----
-
-## LANGUAGES  
-
-| Language            | Proficiency | Spoken      | Reading
-|---------------------|-------------|-------------|-------------|
-| Classical Latin     | Expert      | Intermediate| Intermediate/advanced
-| Ancient Greek       | Beginner    | Beginner    | Beginner
-| Pali                | Beginner    | Beginner    | Beginner
-| Sanskrit            | Beginner    | Beginner    | Beginner
-
----
-
-## CERTIFICATIONS  
-
-| Certification Name                                      | Issuer/Source                       |
-|---------------------------------------------------------|--------------------------------------|
-| AI Engineering 0525 Certificate                                     | AI Makerspace        |
-| Acting Responsibly with Generative AI                  | Credly                              |
-| Dignity and Respect in the Global Workplace (Comprehensive) | Credly                              |
-| GG203x: Empathy and Emotional Intelligence at Work     | edX                                 |
-| NVIDIA AI Advisor - Technical Sales                    | NVIDIA                              |
-| Preventing Workplace Violence                          | Credly                              |
-| Supply Chain Security                                  | Chainguard                          |
-
-
-
+Authorized to work in the US for any employer
