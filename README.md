@@ -27,7 +27,7 @@ I also have a lot of open source contributions and I enjoy working on open sourc
 ![My Repo](repo.png)
 
 ![Dell AI Champion](Dell_AI_Champion.png)
-![Nvidia Technical advisor](Nvidia_Technical_Advisor.png)
+![Nvidia Technical Advisor](Nvidia_Technial_Advisor.png)
 
 ## Expertise Highlights
 
