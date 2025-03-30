@@ -1,3 +1,5 @@
+Sourced from (https://ollama.com/library/gemma3)
+
 The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI capabilities across tasks involving text, images, and reasoning. Here’s a detailed explanation of each benchmark:
 
 ### **1. COCOcap**
