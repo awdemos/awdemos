@@ -1,0 +1,22 @@
+# Stage 1: Build (This won't work as is due to immutability)
+FROM cgr.dev/chainguard/rust:latest-dev AS build
+
+WORKDIR /tmp
+
+COPY . .
+
+# This step will fail due to immutability
+RUN cargo build --release
+
+# Stage 2: Run
+FROM cgr.dev/chainguard/rust:latest-dev
+
+# Copy the pre-built binary from the build stage
+# This assumes you have a way to build the binary outside this process
+COPY --from=build /tmp/target/release/your_binary_name /app/
+
+WORKDIR /app
+
+# Run your Rust code
+CMD ["./your_binary_name"]
+
