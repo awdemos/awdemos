@@ -21,7 +21,7 @@ over the years and have worked at many of the worlds leading startup companies, 
 
 - **AI/ML Mastery**: From LLMs, RAG to AI agents, and complex multi-modal AI platforms, I bring state of the art solutions to life, transforming theoretical concepts into practical, business-driving tools. 
 - **Infrastructure Scaling Wizard**: I don't just manage growth; I architect for it. My owner's mentality ensures your infrastructure evolves as rapidly as your ambitions. I work hard on how to prevent problems occuring in the future through honest assessments of data and customer requirements.
-- **Cloud & Kubernetes Virtuoso**: I know how to seamlessly integrate AI with software development workflows in CI and CD and the desktop and through APIs, also within cloud infrastructure in AWS, GCP, and Azure, and in various versions of Kubernetes with service meshes, policy controlelrs, and DevSecOps. I aim to create robust, scalable environments that stand the test of time and traffic and I often take the lead on securing Kubernetes clusters, including some for publically traded companies with strict compliance and security auditing requirements.
+- **Cloud & Kubernetes Virtuoso**: I know how to seamlessly integrate AI with software development workflows in CI and CD and the desktop and through APIs, also within cloud infrastructure in AWS, GCP, and Azure, and in various versions of Kubernetes with service meshes, policy controllers, and implement DevSecOps on day one. I aim to create robust, scalable environments that stand the test of time and traffic and I often take the lead on securing Kubernetes clusters, including some for publically traded companies with strict compliance and security auditing requirements.
 
 ### LLM Implementation Specialist
 
