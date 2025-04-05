@@ -1,4 +1,4 @@
-## Project Showcase: Cutting-Edge Software Engineering
+## My Demos Repo: showcasing my skills for AI, DevOps, Robotics, and Quantum Computing solutions.
 
 ![My Repo](repo.png)
 
