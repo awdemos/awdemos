@@ -50,14 +50,14 @@ over the years and have worked at many of the worlds leading startup companies, 
 
 ### Collaborative Approach
 
-- **Agile Methodology Expert**: I comfortable with Agile practices.
-- **Clear Communication**: I pride myself on the ability to communicate with people with no technical or engineering background. I have 80 year old relatives who I have taught about AI. I keep the use of jargon only when in team appropriate meetings.
+- **Agile Methodology Expert**: I am comfortable with Agile practices or a more relaxed work style. Tell me how you like to work and I'll be accomodate to your style and expectations.
+- **Clear Communication**: I pride myself on the ability to communicate with people with no technical background. I have 80 year old relatives who I have taught about AI. I keep the use of jargon only when in team appropriate meetings.
 
 By choosing me, you're not just getting a consultant; you're gaining a partner committed to elevating your engineering culture with a spirit of deep collaboration and meaningful deliverables. Let's transform your challenges into opportunities and set new benchmarks in what we can do!
 
 ## What I Offer
 
-- **DevOps Strategy and Implementation**: Tailored bleeding-edge CICD solutions for the fastest builds, from conceptualization to deployment. If your builds take over a minute I can help you.
+- **DevOps Strategy and Implementation**: Tailored bleeding-edge CICD solutions for the fastest builds possible, with zero Nday vulnerabilities, secure out of the box. If your builds take over a minute I can help you.
 - **AI Strategy and Implementation**: Tailored AI solutions, from conceptualization to deployment. I have been working with advanced AI chatbots since 2016 and I have worked for influential figures in the AI industry.
 - **Multi-Agent System Development**: Design and implementation of sophisticated multi-agent AI architectures. I am up to date on the latest techniques of this fascinating technology.
 - **LLM Expertise**: Fine-tuning, deployment, and optimization of large language models. I know how to build LLMs from scratch and I have atteneded 3 bootcamps on this topic since 2024 and I am Nvidia certified.
@@ -72,9 +72,9 @@ By choosing me, you're not just getting a consultant; you're gaining a partner c
 
 ### Tier 1: AI Strategy and Planning
 
-- AI readiness assessments. I have list of questions to ask an organization about their AI readiness and AI maturity in an organization that starts from no readiness or maturity and escalates to fully operational production ready workflows.
-- LLM implementation strategies. I am up to date on the latest models from all the major model providers like OpenAI, DeepSeek, Anthropic, Huggingface, Nvidia, Microsoft, Google, and others.
-- Multi-agent system architecture design
+- AI readiness assessments. In the discovery phase of getting to know you, you can ask me for a self-assessment survey of how your organizations AI readiness and AI maturity. I have been trained by Nvidia, Dell, Apple, and Google on how to assess if an organization can go from no readiness to a fully-managed and staffed AI Center of Excellence fulfilling the organizations AI goals.
+- LLM implementation strategies. I am up to date on the latest models from all the major model providers like OpenAI, DeepSeek, Anthropic, Huggingface, Nvidia, Microsoft, Google, and others. I know of a lot of speciality models with unique capabilites and I make my own sometimes.
+- Multi-agent system architecture design. There is a lot of ways to do this and I don't think there is any clear winner int he open-source world but a lot of the major projects are very appealling such as Crewai, etc.
 - AI-driven product strategy. AI is great but without a product driven implementation plan expectations can be missed.
 - Industry trend analysis and AI workshops
 - Advanced AI techniques consultation (e.g., prompt engineering, zero-shot learning), private AI deployments.
