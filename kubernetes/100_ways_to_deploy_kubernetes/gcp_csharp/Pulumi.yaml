@@ -1,7 +1,0 @@
-name: gcp-gke-csharp
-description: GCP GKE Cluster
-runtime: dotnet
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: gcp-csharp
