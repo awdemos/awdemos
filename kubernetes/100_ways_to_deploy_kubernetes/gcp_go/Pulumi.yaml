@@ -1,7 +1,0 @@
-name: gcp-gke-go
-description: GCP GKE Cluster
-runtime: go
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: gcp-go
