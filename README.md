@@ -1,61 +1,12 @@
 ## Project Showcase: Cutting-Edge Software Engineering
 
-Welcome to my demos repository, a curated collection of software projects I have thought up at the intersection of AI, DevOps, and advanced cloud technologies. This showcase represents only a small fraction of my multi-year 
-research and hands-on experience in shaping the future of software delivery and I think is a reasonable overview of the kind of software quality I produce.
-
-### Highlights
-
-- **AI & Machine Learning**: Innovative applications of LLMs and neural networks for real-world problem-solving.
-- **DevOps Revolution**: Kubernetes-native AI orchestration and hybrid cloud/on-prem LLM deployments.
-- **Quantum-Ready Solutions**: Q-day is a big deal and no one should take it for granted in the AI era that classic Internet cryptography standards might be broken soon or already are.
-- **Emerging Tech Fusion**: Unique integrations of robotics, Rust, and advanced Linux scripting for next-gen applications.
-- **Programming Language Experiments**: I experiment with a half dozen or so programming languages in this repo and you will 
-see a lot of Bash, Python, Rust, Typescript, Go, I think there is dotnet in here, Lua.
-
-### Featured Projects
-
-1. **AI-Driven DevOps Pipeline**: Leveraging machine learning for predictive analytics and anomaly detection in CI/CD processes.
-2. **Quantum-Resistant Cryptography Framework**: Proactive security measures against future quantum threats.
-3. **Rust-Powered Cloud Native Tools**: High-performance, memory-safe utilities for modern cloud environments.
-4. **Robotics AI Integration**: Cutting-edge algorithms for autonomous decision-making in robotic systems.
-
-This repository is not just a code archive; it's an example on how to demonstrate continuous learning and innovation in software engineering. 
-In some cases I hope shows my ability to tackle complex, future-facing challenges and deliver production-grade solutions across multiple domains challenging companies today.
-
-I also have a lot of open source contributions and I enjoy working on open source projects in my free time. 
-
 ![My Repo](repo.png)
 
-![Dell AI Champion](Dell_AI_Champion.png)
-![Nvidia Technical Advisor](Nvidia_Technial_Advisor.png)
+<img src="Dell_AI_Champion.png" alt="Dell AI Champion" width="150" height="150">
+<img src="Nvidia_Technical_Advisor.png" alt="NVIDIA Technical Advisor" width="150" height="150">
 
-## Expertise Highlights
+Welcome to my demos repository—a curated showcase of innovative software projects at the crossroads of AI, DevOps, and advanced cloud technologies. These projects reflect years of research, hands-on development, and a commitment to excellence in shaping the future of software delivery. While this collection represents only a fraction of my work, it offers a glimpse into the high-quality solutions I create to tackle complex challenges. If you're exploring this repository, you're already ahead of the curve in embracing next-generation engineering practices. Please share with anyone who would like it!
 
-- **Emotional Intelligence and Conflict Resolution**: I base all my interactions at work according to the principles of Emotional Intelligence and Conflict Resolution. I pursue training in cultivating
-body and emotional awareness, empathy to others, the development of active listening skills, and positive outcomes for all the stakeholders and contributors in a work environment.
-- **Engineering Culture Specialist**: I contribute toward building a happy and rewarding engineering culture wherever I can. 
-acheiving goals an organization may have. My interests closely track what you can find on HackerNews and I was strongly influenced on the hacker mindset early in my career on Slashdot.
-- **AI and ML Consulting**: Specializing in cutting-edge AI solutions, including large language models (LLMs), multi-agent systems, and custom AI agent development for clients.
-- **Cloud and On-premise Infrastructure**: I am experinced in deploying complex software applications and resources across public clouds using everything from Ansible, Terraform, and Pulumi.
-I have managed racks of servers, server rooms, co-location in data centers, and cloud-native applications since the early 2000s. I stay current on the latest industry news on a daily basis.
-- **Advanced Container and Docker security expertise**: I am deeply acquainted with container internals and best practices for secure and performant microservices. My favorite resource for advanced container
-learnings right now is [iximiuz.com](https://iximiuz.com/en/)
-- **Advanced AI Implementations**: Experience with agent build-out, multi-agent systems, and innovative AI architectures. I recently completed 6 months of AI bootcamp training from Stanford, Duke, and others.
-- **DevOps and SRE**: Implementing best practices in Site Reliability Engineering and DevOps methodologies. I have been practicing DevOps since 2013 and SRE since 2023.
-- **Linux**: While direct Linux experience seems to be declining in some areas of modern cloud practice, I've been using Linux since the early 2000s and I run atomic and immutable Linux operating systems in my home lab.
-- **Nvidia**: I am Nvidia certified Technical Advisor and I have taken about 80 hours of additional Nvidia training and I manage the Nvidia infrastructure for a Fortune 1000 company including licensing.
-
-## Key Projects and Analyses
-
-- Run a language model to play Tic-Tac-Toe using Gradient Ratio Policy Optimization (GRPO)
-- Grok Analysis: In-depth examination of OpenAI's latest language model (2024).
-- CVE-2024-3094 Investigation: Comprehensive security analysis.
-- Ultimate Kubernetes Wishlist: Innovative ideas for Kubernetes enhancements.
-- Low-Level Kubernetes Details: Deep dive into Kubernetes internals.
-- SRE Definitions and Best Practices: Comprehensive guide to Site Reliability Engineering.
-- LLM Attack Vectors: Analysis of potential vulnerabilities in large language models. 
-- Red-team LLMs with DSPY.
-- I have not updated this list since 2024 and I have loads more I will update this in the future.
 
 ## Why Choose Me as Your AI/ML Consultant
 
@@ -131,40 +82,55 @@ Includes all Tier 1 services, plus:
 
 Tier 2 services are offered exclusively to ensure dedicated, high-quality support for your AI initiatives.
 
-## What Perplexity thinks my resume says about my character and personality
+### My Demos Repo Highlights
 
-Based on my extensive experience and accomplishments, several aspects of my character and personality can be inferred:
+- **AI & Machine Learning**: Innovative applications of LLMs and neural networks for real-world problem-solving.
+- **DevOps Revolution**: Kubernetes-native AI orchestration and hybrid cloud/on-prem LLM deployments.
+- **Quantum-Ready Solutions**: Q-day is a big deal and no one should take it for granted in the AI era that classic Internet cryptography standards might be broken soon or already are.
+- **Emerging Tech Fusion**: Unique integrations of robotics, Rust, and advanced Linux scripting for next-gen applications.
+- **Programming Language Experiments**: I experiment with a half dozen or so programming languages in this repo and you will 
+see a lot of Bash, Python, Rust, Typescript, Go, I think there is dotnet in here, Lua.
 
-## Growth Mindset and Adaptability
-I demonstrate a strong growth mindset, as evidenced by my career progression from IT roles to advanced AI engineering positions. I've consistently adapted to new technologies and challenges, showing a willingness to learn and evolve.
+### Featured Projects
 
-## Intellectual Curiosity
-My diverse research interests and continuous pursuit of certifications and bootcamps indicate a deep intellectual curiosity. I'm passionate about staying at the forefront of technology, particularly in AI, machine learning, and programming languages.
+1. **AI-Driven DevOps Pipeline**: Leveraging machine learning for predictive analytics and anomaly detection in CI/CD processes.
+2. **Quantum-Resistant Cryptography Framework**: Proactive security measures against future quantum threats.
+3. **Rust-Powered Cloud Native Tools**: High-performance, memory-safe utilities for modern cloud environments.
+4. **Robotics AI Integration**: Cutting-edge algorithms for autonomous decision-making in robotic systems.
 
-## Leadership and Collaboration
-Throughout my career, I've taken on leadership roles, managing teams and collaboration across teams and departments. This suggests strong interpersonal skills and the ability to work effectively in diverse environments.
+This repository is not just a code archive; it's an example on how to demonstrate continuous learning and innovation in software engineering. 
+In some cases I hope shows my ability to tackle complex, future-facing challenges and deliver production-grade solutions across multiple domains challenging companies today.
 
-## Innovation-Driven
-I appear to be innovation-driven, often implementing new technologies and improving existing systems. My work in AI and blockchain indicates a forward-thinking approach to technology.
+I also have a lot of open source contributions and I enjoy working on open source projects in my free time. 
 
-## Detail-Oriented and Security-Conscious
-My experience in creating disaster recovery plans, implementing security measures, and obtaining security-related certifications suggests a detail-oriented nature and a strong focus on cybersecurity.
 
-## Ethical Considerations
-My involvement in establishing AI governance models and an awareness of ethical and legal implications in AI technology is up to date on this topic. I view AI as a social good and a marvelous opportunity to improve quality of life.
-I can commit to you that I will not work on AI weapon systems or unethical use cases and I have not done so in the past.
+## Expertise Highlights
 
-## Problem-Solver
-My track record of tackling complex technical challenges across various roles suggests strong problem-solving skills and a proactive approach to addressing issues.
+- **Emotional Intelligence and Conflict Resolution**: I base all my interactions at work according to the principles of Emotional Intelligence and Conflict Resolution. I pursue training in cultivating
+body and emotional awareness, empathy to others, the development of active listening skills, and positive outcomes for all the stakeholders and contributors in a work environment.
+- **Engineering Culture Specialist**: I contribute toward building a happy and rewarding engineering culture wherever I can. 
+acheiving goals an organization may have. My interests closely track what you can find on HackerNews and I was strongly influenced on the hacker mindset early in my career on Slashdot.
+- **AI and ML Consulting**: Specializing in cutting-edge AI solutions, including large language models (LLMs), multi-agent systems, and custom AI agent development for clients.
+- **Cloud and On-premise Infrastructure**: I am experinced in deploying complex software applications and resources across public clouds using everything from Ansible, Terraform, and Pulumi.
+I have managed racks of servers, server rooms, co-location in data centers, and cloud-native applications since the early 2000s. I stay current on the latest industry news on a daily basis.
+- **Advanced Container and Docker security expertise**: I am deeply acquainted with container internals and best practices for secure and performant microservices. My favorite resource for advanced container
+learnings right now is [iximiuz.com](https://iximiuz.com/en/)
+- **Advanced AI Implementations**: Experience with agent build-out, multi-agent systems, and innovative AI architectures. I recently completed 6 months of AI bootcamp training from Stanford, Duke, and others.
+- **DevOps and SRE**: Implementing best practices in Site Reliability Engineering and DevOps methodologies. I have been practicing DevOps since 2013 and SRE since 2023.
+- **Linux**: While direct Linux experience seems to be declining in some areas of modern cloud practice, I've been using Linux since the early 2000s and I run atomic and immutable Linux operating systems in my home lab.
+- **Nvidia**: I am Nvidia certified Technical Advisor and I have taken about 80 hours of additional Nvidia training and I manage the Nvidia infrastructure for a Fortune 1000 company including licensing.
 
-## Communicator
-My experience as a Sales Engineer and ability to work with diverse stakeholders indicate strong communication skills, both technical and non-technical.
+## Some Key Projects and Analyses
 
-## Lifelong Learner
-My ongoing pursuit of certifications and participation in bootcamps, even at a senior level in my career, demonstrates a commitment to lifelong learning and self-improvement.
-
-These traits paint a picture of me as a well-rounded, technically proficient professional who is proactive, adaptable, and committed to driving innovation while maintaining ethical standards in technology.
-
+- Run a language model to play Tic-Tac-Toe using Gradient Ratio Policy Optimization (GRPO)
+- Grok Analysis: In-depth examination of OpenAI's latest language model (2024).
+- CVE-2024-3094 Investigation: Comprehensive security analysis.
+- Ultimate Kubernetes Wishlist: Innovative ideas for Kubernetes enhancements.
+- Low-Level Kubernetes Details: Deep dive into Kubernetes internals.
+- SRE Definitions and Best Practices: Comprehensive guide to Site Reliability Engineering.
+- LLM Attack Vectors: Analysis of potential vulnerabilities in large language models. 
+- Red-team LLMs with DSPY.
+- I have not updated this list since 2024 and I have loads more I will update this in the future.
 
 ## How to Engage My Services
 
@@ -266,6 +232,40 @@ A curated list of some of my favorite projects across various domains and techno
 - [GrapheneOS](https://grapheneos.org/) - A privacy and security-focused Android distribution.
 - [NitroPC](https://www.nitrokey.com/news/2021/introducing-nitro-pc) - A secure and open-source mini PC with open source BIOS.
 - [Learn LLMs and DevSecOps](https://github.com/jedi4ever/learning-llms-and-genai-for-dev-sec-ops) - DevSecOps issues or LLMS.
+
+## What Perplexity thinks my resume says about my character and personality
+
+Based on my extensive experience and accomplishments, several aspects of my character and personality can be inferred:
+
+## Growth Mindset and Adaptability
+I demonstrate a strong growth mindset, as evidenced by my career progression from IT roles to advanced AI engineering positions. I've consistently adapted to new technologies and challenges, showing a willingness to learn and evolve.
+
+## Intellectual Curiosity
+My diverse research interests and continuous pursuit of certifications and bootcamps indicate a deep intellectual curiosity. I'm passionate about staying at the forefront of technology, particularly in AI, machine learning, and programming languages.
+
+## Leadership and Collaboration
+Throughout my career, I've taken on leadership roles, managing teams and collaboration across teams and departments. This suggests strong interpersonal skills and the ability to work effectively in diverse environments.
+
+## Innovation-Driven
+I appear to be innovation-driven, often implementing new technologies and improving existing systems. My work in AI and blockchain indicates a forward-thinking approach to technology.
+
+## Detail-Oriented and Security-Conscious
+My experience in creating disaster recovery plans, implementing security measures, and obtaining security-related certifications suggests a detail-oriented nature and a strong focus on cybersecurity.
+
+## Ethical Considerations
+My involvement in establishing AI governance models and an awareness of ethical and legal implications in AI technology is up to date on this topic. I view AI as a social good and a marvelous opportunity to improve quality of life.
+I can commit to you that I will not work on AI weapon systems or unethical use cases and I have not done so in the past.
+
+## Problem-Solver
+My track record of tackling complex technical challenges across various roles suggests strong problem-solving skills and a proactive approach to addressing issues.
+
+## Communicator
+My experience as a Sales Engineer and ability to work with diverse stakeholders indicate strong communication skills, both technical and non-technical.
+
+## Lifelong Learner
+My ongoing pursuit of certifications and participation in bootcamps, even at a senior level in my career, demonstrates a commitment to lifelong learning and self-improvement.
+
+These traits paint a picture of me as a well-rounded, technically proficient professional who is proactive, adaptable, and committed to driving innovation while maintaining ethical standards in technology.
 
 
 ## Contributing
