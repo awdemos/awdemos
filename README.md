@@ -9,7 +9,7 @@ Welcome to my demos repository—a curated showcase of innovative software proje
 
 <div style="display: flex; align-items: center; gap: 20px;">
   <img src="Dell_AI_Champion.png" alt="Dell AI Champion" width="200" height="200">
-  <img src="Nvidia_Technical_Advisor.png" alt="NVIDIA Technical Advisor" width="240" height="200">
+  <img src="Nvidia_Technical_Advisor.png" alt="NVIDIA Technical Advisor" width="280" height="200">
 </div>
 
 ## Why Choose Me as Your AI/ML Consultant
