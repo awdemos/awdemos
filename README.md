@@ -1,4 +1,4 @@
-## My Demos Showcase Repo: Cutting-Edge Software Engineering for Ai, DevOps, and Quantum Computing
+## My Demos Repo: showcasing my skills for AI, DevOps, Robotics, and Quantum Computing solutions.
 
 ![My Repo](repo.png)
 
