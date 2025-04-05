@@ -27,6 +27,10 @@ over the years and have worked at many of the worlds leading startup companies, 
 
 - **Custom LLM Solutions**: Proficient in fine-tuning, deployment, and optimization of Large Language Models tailored to your unique business needs.
 - **Multi-LLM Architecture**: Proficient in designing and implementing systems that leverage multiple LLMs for enhanced performance and versatility.
+- **Agentic Frameworks**: I am well versed on all the offerings of agentic and multi-agent systems. 
+- **Finetuning**: 
+- **Inference Optimization**: I know how to utilize Unsloth for 2x inference benefits and I know a lot about additional resources on reducing inference costs.
+- **LLM Security**: Trained in LLM red-teaming and aware of attacking stratigies on models and how to utilize Guardrails.
 
 ### Security-First Approach
 
@@ -36,20 +40,20 @@ over the years and have worked at many of the worlds leading startup companies, 
 ### Holistic Problem Solving
 
 - **Full-Stack AI Integration**: From backend infrastructure to frontend applications, I ensure AI technologies are effectively woven into every layer of your tech stack.
-- **Business Process Optimization**: Leveraging AI/ML to streamline operations, enhance decision-making, and drive efficiency across your organization.
+- **Business Process Optimization**: I know how to leverage AI/ML to streamline operations, enhance decision-making, and drive efficiency for teams and organizations.
 
 ### Proven Track Record
 
 - **Production-Grade Deployments**: Experience in delivering robust, scalable AI solutions. I have been supporting advanced commerical AI chatbot applications on-premise and in the cloud since 2016.
 - **Innovative Problem-Solver**: I have a history of tackling complex challenges and producing reliable and production ready solutions backed by data and and years of following security, governance, and compliance for companies in regulated industries.
+- **Award Winning Work**: In January of 2025 my team won an award for a prize by the US Navy.
 
 ### Collaborative Approach
 
-- **Agile Methodology Expert**: Seamlessly integrating into your team with Agile practices, ensuring rapid iteration and continuous improvement.
+- **Agile Methodology Expert**: I comfortable with Agile practices.
 - **Clear Communication**: I pride myself on the ability to communicate with people with no technical or engineering background. I have 80 year old relatives who I have taught about AI. I keep the use of jargon only when in team appropriate meetings.
 
-By choosing me, you're not just getting a consultant; you're gaining a partner committed to elevating your AI and infrastructure capabilities that you need. Let's transform your challenges into opportunities and set new benchmarks in AI-driven innovation.
-My solutions will be data and performance driven and I always seek the most cost effective solution with what I build. 
+By choosing me, you're not just getting a consultant; you're gaining a partner committed to elevating your engineering culture with a spirit of deep collaboration and meaningful deliverables. Let's transform your challenges into opportunities and set new benchmarks in what we can do!
 
 ## What I Offer
 
