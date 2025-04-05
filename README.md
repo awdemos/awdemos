@@ -2,15 +2,15 @@
 
 ![My Repo](repo.png)
 
-### Recognitions
-
-<div style="display: flex; align-items: center; gap: 20px;">
-  <img src="Dell_AI_Champion.png" alt="Dell AI Champion" width="128" height="128">
-  <img src="Nvidia_Technical_Advisor.png" alt="NVIDIA Technical Advisor" width="128" height="128">
-</div>
 
 Welcome to my demos repository—a curated showcase of innovative software projects at the crossroads of AI, DevOps, and advanced cloud technologies. These projects reflect years of research, hands-on development, and a commitment to excellence in shaping the future of software delivery. While this collection represents only a fraction of my work, it offers a glimpse into the high-quality solutions I create to tackle complex challenges. If you're exploring this repository, you're already ahead of the curve in embracing next-generation engineering practices. Please share with anyone who would like it!
 
+### Recognitions
+
+<div style="display: flex; align-items: center; gap: 20px;">
+  <img src="Dell_AI_Champion.png" alt="Dell AI Champion" width="200" height="200">
+  <img src="Nvidia_Technical_Advisor.png" alt="NVIDIA Technical Advisor" width="200" height="200">
+</div>
 
 ## Why Choose Me as Your AI/ML Consultant
 
