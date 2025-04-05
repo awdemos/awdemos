@@ -1,4 +1,4 @@
-## Project Showcase: Cutting-Edge Software Engineering
+## My Demos Showcase Repo: Cutting-Edge Software Engineering for Ai, DevOps, and Quantum Computing
 
 ![My Repo](repo.png)
 
