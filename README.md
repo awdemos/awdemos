@@ -14,14 +14,14 @@ Welcome to my demos repository—a curated showcase of innovative software proje
 
 ## Why Choose Me as Your AI/ML Consultant
 
-Are you navigating the complex landscape of AI implementation and infrastructure scaling? I have worked at software companies for over twenty years and I have seen a lot of good and a lot of bad engineering strategies 
-and I have learned from all those experiences to inform me on how to plan for successful outcomes. Here's why I'm your ideal partner in this journey:
+Are you navigating the complex changes involved with AI and LLM  infrastructure? I have worked at advanced AI companies since 2016 and I have worked at software companies for over twenty years. I have seen a lot of good and a lot of bad engineering strategies 
+over the years from many of the worlds leading startup companies including household names with billions of active users and startups you have neve rheard of to enteprise companies AI Center of Excellence. I have seen all sorts of things and I have learned from all those experiences to inform me on how to plan for successful outcomes on software engineering challenges. Here's why I'm your ideal partner in this journey:
 
 ### Expertise That Drives Innovation
 
-- **AI/ML Mastery**: From RAG to AI agents, I bring state of the art solutions to life, transforming theoretical concepts into practical, business-driving tools.
-- **Infrastructure Scaling Wizard**: I don't just manage growth; I architect for it. My owner's mentality ensures your infrastructure evolves as rapidly as your ambitions.
-- **Cloud & Kubernetes Virtuoso**: Seamlessly integrating AI with cloud infrastructure and Kubernetes, I create robust, scalable environments that stand the test of time and traffic.
+- **AI/ML Mastery**: From LLMs, RAG to AI agents, and complex multi-modal AI platforms, I bring state of the art solutions to life, transforming theoretical concepts into practical, business-driving tools. 
+- **Infrastructure Scaling Wizard**: I don't just manage growth; I architect for it. My owner's mentality ensures your infrastructure evolves as rapidly as your ambitions. I work hard on how to prevent problems occuring in the future through honest assessments of data and customer requirements.
+- **Cloud & Kubernetes Virtuoso**: I know how to seamlessly integrate AI with software development workflows in CI and CD and the desktop and through APIs, also within cloud infrastructure in AWS, GCP, and Azure, and in various verisons of Kubernetes. I aim to create robust, scalable environments that stand the test of time and traffic and I often take the lead on securing Kubernetes clusters, including some for publically traded companies with strict compliance and security auditing requirements.
 
 ### LLM Implementation Specialist
 
