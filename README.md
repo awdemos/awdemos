@@ -12,7 +12,7 @@ Welcome to my demos repository—a curated showcase of innovative software proje
   <img src="Nvidia_Technical_Advisor.png" alt="NVIDIA Technical Advisor" width="280" height="200">
 </div>
 
-## Why Choose Me as Your AI/ML Consultant
+## Why Choose Me as Your AI/DevOps/ML Lead?
 
 Are you navigating the complex changes involved with AI and LLM  infrastructure? I have worked at advanced AI companies since 2016 and I have worked at software companies for over twenty years. I have seen a lot of good and a lot of bad engineering strategies 
 over the years from many of the worlds leading startup companies including household names with billions of active users and startups you have neve rheard of to enteprise companies AI Center of Excellence. I have seen all sorts of things and I have learned from all those experiences to inform me on how to plan for successful outcomes on software engineering challenges. Here's why I'm your ideal partner in this journey:
