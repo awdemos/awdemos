@@ -9,13 +9,13 @@ Welcome to my demos repository—a curated showcase of innovative software proje
 
 <div style="display: flex; align-items: center; gap: 20px;">
   <img src="Dell_AI_Champion.png" alt="Dell AI Champion" width="200" height="200">
-  <img src="Nvidia_Technical_Advisor.png" alt="NVIDIA Technical Advisor" width="280" height="200">
+  <img src="Nvidia_Technical_Advisor.png" alt="NVIDIA Technical Advisor" width="300" height="200">
 </div>
 
 ## Why Choose Me as Your AI/DevOps/ML Lead?
 
-Are you navigating the complex changes involved with AI and LLM  infrastructure? I have worked at advanced AI companies since 2016 and I have worked at software companies for over twenty years. I have seen a lot of good and a lot of bad engineering strategies 
-over the years and have worked at many of the worlds leading startup companies, some of which are household names with billions of active users, and some of them are startups you have neve heard of. In recent years I have been supporting enteprise-sized AI Center of Excellence at a Fortune 1000 company. I hear a lot about what companies large and small are doing with AI and I am confidant I know how to guide an organization on how to achieve successful outcomes in AI, DevOps, and Platform Engineering solutions,. So let me deep dive into some detail about that why I'm your ideal partner in this journey:
+Are you navigating the complex changes involved with AI, platform engineering, and DevOps ? I specialize in emerging technology and I have worked with advanced AI chatbots since 2016 and I have worked at software companies for over twenty years. I have seen a lot of good and a lot of bad engineering strategies 
+over the years and have worked at many of the worlds leading startup companies, some of which are household names with billions of active users, and some of them are startups you have never heard of. In recent years I have been supporting enteprise-sized AI Center of Excellence at a Fortune 1000 company. I hear a lot about what companies large and small are doing with AI and I am confidant I know how to guide an organization on how to achieve successful outcomes in AI, DevOps, and Platform Engineering solutions. So lets deep dive into some detail about what that entails and why I'm your ideal partner in this journey:
 
 ### Expertise That Drives Innovation
 
