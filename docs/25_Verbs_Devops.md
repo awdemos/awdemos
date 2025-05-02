@@ -54,12 +54,12 @@ The verbs are grouped into four pillars, each representing a phase of the techno
 ## 📋 The 25 Verbs Table
 
 ```markdown
-| Pillar        | Verbs                                                                 |
-|---------------|-----------------------------------------------------------------------|
-| **Strategy**      | Justify, Design, Cost, Productize, Implement, Enroll                  |
-| **Provisioning**  | Store, Network, Build, Configure, Secure, Discover, Deploy, Distribute|
-| **Operations**    | Govern, Audit, Document, License, Maintain, Perform                   |
-| **Support**       | Support, Recover, Monitor, Log, Trace                                 |
+| Pillar         | Verbs                                                                                       |
+| -------------- | ------------------------------------------------------------------------------------------- |
+| Strategy       | Justify, Design, Cost, Productize, Implement, Enroll                                        |
+| Provisioning   | Store, Network, Build, Configure, Secure, Discover, Deploy, Distribute                      |
+| Operations     | Govern, Audit, Document, License, Maintain, Perform                                         |
+| Support        | Support, Recover, Monitor, Log, Trace                                                       |
 ```
 
 ---
