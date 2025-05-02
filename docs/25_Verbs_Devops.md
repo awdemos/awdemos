@@ -1,6 +1,6 @@
 # The 25 Verbs of DevOps: A Comprehensive Skills Framework
 
-This briefing distills the webinar by Michael Forrester, "Mind the Gap: DevOps Skills Assessment Made Simple," integrating the **complete set of 25 DevOps action verbs** you to know in order to successfully deploy a technology for a commercial application. This framework is designed for technical leaders, DevOps engineers, and platform teams to systematically identify, benchmark, and close skills gaps for any technology adoption-from Kubernetes to IaC, ML Ops, and beyond.
+This briefing distills the webinar by Michael Forrester, "Mind the Gap: DevOps Skills Assessment Made Simple," integrating the **complete set of 25 DevOps action verbs** you need to know in order to successfully deploy a technology for a commercial application. This framework is designed for technical leaders, DevOps engineers, and platform teams to systematically identify, benchmark, and close skills gaps for any technology adoption-from Kubernetes to IaC, ML Ops, and beyond.
 
 ---
 
@@ -8,7 +8,7 @@ This briefing distills the webinar by Michael Forrester, "Mind the Gap: DevOps S
 
 The pace of technological change (cloud, Kubernetes, platform engineering, AI/ML) has outstripped most teams’ ability to keep up. The 25 verbs represent the **core, repeatable actions** required to successfully launch, operate, and support any technology in production. They serve as a universal checklist for skills assessment, upskilling, and team maturity mapping.
 
-> Console based workflows ("clickops") don't scale with increasing complexity. You could hire a hundred Starcraft esports professionals or you can use infrastructure as code.
+> Console based workflows ("clickops") don't scale with increasing complexity. You could hire a hundred Starcraft esports professionals or you can use infrastructure as code. One of these options is better and cheaper than the other!
 
 ---
 
@@ -20,7 +20,7 @@ The verbs are grouped into four pillars, each representing a phase of the techno
 - **Justify**: Build the business case for using a particular technology and articulate value.
 - **Design**: Architect solutions, both high-level and tactical for implementing it.
 - **Cost**: Estimate, track, and optimize costs (TCO, ROI) before deploying so that you know you can afford to operate the underlying infrastructure.
-- **Productize**: Package as a service/platform for internal/external users. Developers, administrators and users need access to the same platform to know how it works.
+- **Productize**: Package as a service/platform for internal/external users. Developers, administrators, and users need access to the same platform to know how it works.
 - **Implement**: Plan and execute the rollout in small and manageable milestones.
 - **Enroll**: Drive adoption of the technology through training, enablement, and change management.
 
