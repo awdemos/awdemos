@@ -37,7 +37,7 @@ The repository contains several featured projects that demonstrate practical app
 ## The 25 Verbs DevOps Framework
 A significant component of the repository is the 25 Verbs DevOps Framework, a comprehensive methodology for implementing and assessing DevOps practices.
 
-<style="display: flex; align-items: center; gap: 20px;">
+<div style="display: flex; align-items: center; gap: 20px;">
   <img src="25_verbs_devops.png" alt="25 Verbs DevOps" width="800" height="400">
 </div>
 
