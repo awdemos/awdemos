@@ -16,9 +16,8 @@ Welcome to my demos repository—a curated showcase of innovative software proje
 
 The repository encompasses four primary technology domains, each containing multiple sub-areas of expertise.
 
-<div style="display: flex; align-items: center; gap: 20px;">
-  <img src="awdemos_repo.png" alt="Repository Contents" width="800" height="400">
-</div>
+<img src="awdemos_repo.png" alt="awdemos demo repo" width="800" height="400" style="max-width: 100%; height: auto; image-rendering: crisp-edges;">
+
 
 ## Key Projects and Demonstrations
 The repository contains several featured projects that demonstrate practical applications of various technologies:
@@ -37,9 +36,7 @@ The repository contains several featured projects that demonstrate practical app
 ## The 25 Verbs DevOps Framework
 A significant component of the repository is the 25 Verbs DevOps Framework, a comprehensive methodology for implementing and assessing DevOps practices.
 
-<div style="display: flex; align-items: center; gap: 20px;">
-  <img src="25_verbs_devops.png" alt="25 Verbs DevOps" width="800" height="400">
-</div>
+<img src="25_verbs_devops.png" alt="25 Verbs DevOps" width="800" height="400" style="max-width: 100%; height: auto; image-rendering: crisp-edges;">
 
 I have a modified version of this ready to go for AIOps.
 
