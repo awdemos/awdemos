@@ -12,6 +12,37 @@ Welcome to my demos repository—a curated showcase of innovative software proje
   <img src="Nvidia_Technical_Advisor.png" alt="NVIDIA Technical Advisor" width="300" height="200">
 </div>
 
+## Repository Mind Map
+
+The repository encompasses four primary technology domains, each containing multiple sub-areas of expertise.
+
+<div style="display: flex; align-items: center; gap: 20px;">
+  <img src="awdemos_repo.png" alt="Repository Contents" width="200" height="200">
+</div>
+
+## Key Projects and Demonstrations
+The repository contains several featured projects that demonstrate practical applications of various technologies:
+
+| Project                  | Description                                         | Domain         | Technologies                |
+|--------------------------|-----------------------------------------------------|----------------|-----------------------------|
+| AI Analysis Crew         | System using LLMs for research and content creation | AI/ML          | LLMs, RAG, Agents           |
+| Multimodal Benchmarks    | Evaluation framework for multimodal AI models       | AI/ML          | Multimodal AI, Metrics      |
+| User Management System   | Rust-based user management with PostgreSQL          | Rust           | Rust, Databases             |
+| Matrix Multiplication    | High-performance matrix operations library          | Rust           | Rust, ndarray               |
+| Flask LLaMA Proxy        | Flask application for proxying LLaMA model requests | Python         | Flask, LLMs                 |
+| Kubernetes/EKS Demos     | K8s deployment examples with AI components          | Infrastructure | Kubernetes, Containers      |
+| SRE Practices            | SLO/SLI implementations and incident management     | Infrastructure | Monitoring, Alerting        |
+| Quantum-Ready Security   | Security implementations for post-quantum era       | Security       | Post-Quantum Cryptography   |
+
+## The 25 Verbs DevOps Framework
+A significant component of the repository is the 25 Verbs DevOps Framework, a comprehensive methodology for implementing and assessing DevOps practices.
+
+tyle="display: flex; align-items: center; gap: 20px;">
+  <img src="25_verbs_devops.png" alt="25 Verbs DevOps" width="200" height="200">
+</div>
+
+I have a modified version of this ready to go for AIOps.
+
 ## Why Choose Me as Your AI/DevOps/ML Lead?
 
 Are you navigating the complex changes involved with AI, platform engineering, and DevOps ? I specialize in emerging technology and I have worked with advanced AI chatbots since 2016 and I have worked at software companies for over twenty years. I have seen a lot of good and a lot of bad engineering strategies 
@@ -22,6 +53,7 @@ over the years and have worked at many of the worlds leading startup companies, 
 - **AI/ML Mastery**: From LLMs, RAG to AI agents, and complex multi-modal AI platforms, I bring state of the art solutions to life, transforming theoretical concepts into practical, business-driving tools. 
 - **Infrastructure Scaling Wizard**: I don't just manage growth; I architect for it. My owner's mentality ensures your infrastructure evolves as rapidly as your ambitions. I work hard on how to prevent problems occuring in the future through honest assessments of data and customer requirements.
 - **Cloud & Kubernetes Veteran**: I know how to seamlessly integrate AI with software development workflows in CI and CD and the desktop and through APIs, also within cloud infrastructure in AWS, GCP, and Azure, and in various versions of Kubernetes with service meshes, policy controllers, and implement DevSecOps on day one. I aim to create robust, scalable environments that stand the test of time and traffic and I often take the lead on securing Kubernetes clusters, including some for publically traded companies with strict compliance and security auditing requirements.
+- **Simple and elegant solutions delivery**: You may notice I give strong preference to open source tooling, simple standards like Markdown, command line tools and reproducability.
 
 ### LLM Implementation Specialist
 
@@ -34,8 +66,9 @@ over the years and have worked at many of the worlds leading startup companies, 
 
 ### Security-First Approach
 
-- **Quantum-Ready Solutions**: Prepared for the post-quantum era with advanced cryptography implementations and Q-Day readiness strategies.
-- **Modern Security Paradigms**: Implementing security measures that address today's threats and tomorrow's challenges, moving beyond outdated cybersecurity notions.
+- **Deep Understanding of Security Practices:** I specialize in Linux, container, and memory safe programming, virtually eliminating certain classes of vulnerabilities.
+- **Quantum-Ready Solutions**: Getting prepared for the post-quantum era with advanced cryptography implementations and Q-Day readiness strategies.
+- **Modern Security Paradigms**: Implementing security measures that address today's threats and tomorrow's challenges, moving beyond outdated cybersecurity notions. Cybersecurity pre-AI and LLM era is inadequate.
 
 ### Holistic Problem Solving
 
@@ -48,10 +81,13 @@ over the years and have worked at many of the worlds leading startup companies, 
 - **Innovative Problem-Solver**: I have a history of tackling complex challenges and producing reliable and production ready solutions backed by data and and years of following security, governance, and compliance for companies in regulated industries.
 - **Award Winning Work**: In January of 2025 my team won an award for a prize by the US Navy.
 
-### Collaborative Approach
+### Customer Focused Approach
 
+- **Customer Success is my success**: I care about my customers success as critical to my own. 
+- **Trusted Adviusor**: I am confortable with NDAs and am ethical in my dealings.
 - **Agile Methodology Expert**: I am comfortable with Agile practices or a more relaxed work style. Tell me how you like to work and I'll be accomodate to your style and expectations.
 - **Clear Communication**: I pride myself on the ability to communicate with people with no technical background. I have 80 year old relatives who I have taught about AI. I keep the use of jargon only when in team appropriate meetings.
+- **No time wasted**: I won't waste your time with promises I can't deliver on or drag out engagements for billable hours.
 
 By choosing me, you're not just getting a consultant; you're gaining a partner committed to elevating your engineering culture with a spirit of deep collaboration and meaningful deliverables. Let's transform your challenges into opportunities and set new benchmarks in what we can do!
 
