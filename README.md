@@ -17,7 +17,7 @@ Welcome to my demos repository—a curated showcase of innovative software proje
 The repository encompasses four primary technology domains, each containing multiple sub-areas of expertise.
 
 <div style="display: flex; align-items: center; gap: 20px;">
-  <img src="awdemos_repo.png" alt="Repository Contents" width="200" height="200">
+  <img src="awdemos_repo.png" alt="Repository Contents" width="800" height="400">
 </div>
 
 ## Key Projects and Demonstrations
@@ -37,8 +37,8 @@ The repository contains several featured projects that demonstrate practical app
 ## The 25 Verbs DevOps Framework
 A significant component of the repository is the 25 Verbs DevOps Framework, a comprehensive methodology for implementing and assessing DevOps practices.
 
-tyle="display: flex; align-items: center; gap: 20px;">
-  <img src="25_verbs_devops.png" alt="25 Verbs DevOps" width="200" height="200">
+<style="display: flex; align-items: center; gap: 20px;">
+  <img src="25_verbs_devops.png" alt="25 Verbs DevOps" width="800" height="400">
 </div>
 
 I have a modified version of this ready to go for AIOps.
@@ -89,7 +89,7 @@ over the years and have worked at many of the worlds leading startup companies, 
 - **Clear Communication**: I pride myself on the ability to communicate with people with no technical background. I have 80 year old relatives who I have taught about AI. I keep the use of jargon only when in team appropriate meetings.
 - **No time wasted**: I won't waste your time with promises I can't deliver on or drag out engagements for billable hours.
 
-By choosing me, you're not just getting a consultant; you're gaining a partner committed to elevating your engineering culture with a spirit of deep collaboration and meaningful deliverables. Let's transform your challenges into opportunities and set new benchmarks in what we can do!
+By choosing me, you're not just getting a subject matter expert in multiple domains; you're gaining a partner committed to elevating your engineering culture with a spirit of deep collaboration and meaningful deliverables. Let's transform your challenges into opportunities and set new benchmarks in what we can do!
 
 ## What I Offer
 
