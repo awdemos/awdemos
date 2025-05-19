@@ -14,7 +14,7 @@ Welcome to my demos repository—a curated showcase of innovative software proje
 
 ## Repository Mind Map
 
-The repository encompasses four primary technology domains, each containing multiple sub-areas of expertise.
+The repository encompasses four primary technology domains, each containing multiple sub-areas of expertise: DevOps & Infrastructure, AI & Machine Learning, Security & Quantum Computing, Programming.
 
 <img src="awdemos_repo.png" alt="awdemos demo repo" width="800" height="400" style="max-width: 100%; height: auto; image-rendering: crisp-edges;">
 
