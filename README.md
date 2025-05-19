@@ -232,9 +232,9 @@ A curated list of some of my favorite projects across various domains and techno
 ## AI and Scripting
 - [GPTScript](https://github.com/gptscript-ai/gptscript) - Natural language gpt scripting engine.
 - [aider](https://github.com/paul-gauthier/aider) - A smart codegen in the terminal.
+- [Neon](https://neon.tech/) - This is the most exciting develop in serverless in a long time with scale-to-zero and branching Postgres. 
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI) - This stable difffusion framework or another like is likely going to change the Internet forever imho.
 - [vLLM](https://github.com/vllm-project/vllm) - vLLM is a fast and easy-to-use library for LLM inference and serving.
-
 
 ## Containers and Worklows
 - [bincapz](https://github.com/chainguard-dev/bincapz) - A tool for securing container images by applying binary capabilities with fine-grained control.
@@ -267,6 +267,8 @@ A curated list of some of my favorite projects across various domains and techno
 - [TypeScript](https://www.typescriptlang.org/) - A superset of JavaScript that compiles to clean JavaScript output.
 - [Rust CLI's](https://www.rust-lang.org/what/cli) - Building command line tools with Rust. Rust is my favorite language by a mile right now.
 - [Python](https://www.python.org/) - A programming language that lets you work quickly and integrate systems more effectively.
+- [Lua](Lua) - Wins me over for its simplicity. I enjoy modifying my Neovim configs.
+- [Common Lisp) - I've supported production AI Lisp applications.
 
 ## Security and Privacy
 - [Chainguard](https://chainguard.dev/) - Solutions for securing Docker images.
