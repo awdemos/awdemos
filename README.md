@@ -34,7 +34,7 @@ The repository contains several featured projects that demonstrate practical app
 | Quantum-Ready Security   | Security implementations for post-quantum era       | Security       | Post-Quantum Cryptography   |
 
 ## The 25 Verbs DevOps Framework
-A significant component of the repository is the 25 Verbs DevOps Framework, a comprehensive methodology for implementing and assessing DevOps practices.
+A significant component of the repository is the [25 Verbs DevOps Framework](docs/25_Verbs_Devops.md), a comprehensive methodology for implementing and assessing DevOps practices.
 
 <img src="25_verbs_devops.png" alt="25 Verbs DevOps" style="max-width: 100%; height: auto; image-rendering: crisp-edges;">
 
