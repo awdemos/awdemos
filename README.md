@@ -3,7 +3,7 @@
 ![My Repo](repo.png)
 
 
-Welcome to my demos repository—a curated showcase of innovative software projects at the crossroads of AI, DevOps, and advanced cloud technologies. These projects reflect years of research, hands-on development, and a commitment to excellence in shaping the future of software delivery. While this collection represents only a fraction of my work, it offers a glimpse into the high-quality solutions I create to tackle complex challenges. If you're exploring this repository, you're already ahead of the curve in embracing next-generation engineering practices. Please share with anyone who would like it!
+Welcome to my demos repository! This is a carefully curated showcase of small but cutting-edge software projects at the crossroads of AI, DevOps, and advanced cloud technologies. These projects reflect years of hands-on development and a commitment to excellence in shaping the future of software delivery. While this collection is not fully representative of all the kind of work I like to do (which would make it so large it would get overhwelming!), it offers a glimpse into the solutions I create to tackle complex challenges. If you are exploring this repository, you're already ahead of the curve in embracing next-generation engineering practices. Please share with anyone who would like it!
 
 ### Recognitions
 
@@ -15,10 +15,9 @@ Welcome to my demos repository—a curated showcase of innovative software proje
 
 ## Repository Mind Map
 
-The repository encompasses four primary technology domains, each containing multiple sub-areas of expertise: DevOps & Infrastructure, AI & Machine Learning, Security & Quantum Computing, Programming.
+The repository mostly encompasses four primary technology domains, each containing multiple sub-areas of expertise: DevOps & Infrastructure, AI & Machine Learning, Security & Quantum Computing, and Programming.
 
 <img src="awdemos_repo.png" alt="awdemos demo repo" width="800" height="400" style="max-width: 100%; height: auto; image-rendering: crisp-edges;">
-
 
 ## Key Projects and Demonstrations
 The repository contains several featured projects that demonstrate practical applications of various technologies:
@@ -35,32 +34,32 @@ The repository contains several featured projects that demonstrate practical app
 | Quantum-Ready Security   | Security implementations for post-quantum era       | Security       | Post-Quantum Cryptography   |
 
 ## The 25 Verbs DevOps Framework
-A significant component of the repository is the [25 Verbs DevOps Framework](docs/25_Verbs_Devops.md), a comprehensive methodology for implementing and assessing DevOps practices.
+A significant component of the repository is the [25 Verbs DevOps Framework](docs/25_Verbs_Devops.md), a comprehensive methodology for planning on how to implement and assess DevOps practices.
 
 <img src="25_verbs_devops.png" alt="25 Verbs DevOps" style="max-width: 100%; height: auto; image-rendering: crisp-edges;">
 
-I have a modified version of this ready to go for AIOps.
+I have a slightly modified version of this ready to go for AIOps.
 
 ## Why Choose Me as Your AI/DevOps/ML Lead?
 
-Are you navigating the complex changes involved with AI, platform engineering, and DevOps ? I specialize in emerging technology and I have worked with advanced AI chatbots since 2016 and I have worked at software companies for over twenty years. I have seen a lot of good and a lot of bad engineering strategies 
+Are you navigating the complex changes involved with AI, platform engineering, and DevOps ? I specialize in emerging technology and I have worked with advanced AI chatbots since 2016 and I have worked at software companies for over twenty years. I have seen a lot of good and a lot of bad engineering strategies.
 over the years and have worked at many of the worlds leading startup companies, some of which are household names with billions of active users, and some of them are startups you have never heard of. In recent years I have been supporting enteprise-sized AI Center of Excellence at a Fortune 1000 company. I hear a lot about what companies large and small are doing with AI and I am confidant I know how to guide an organization on how to achieve successful outcomes in AI, DevOps, and Platform Engineering solutions. So lets deep dive into some detail about what that entails and why I'm your ideal partner in this journey:
 
 ### Expertise That Drives Innovation
 
-- **AI/ML Mastery**: From LLMs, RAG to AI agents, and complex multi-modal AI platforms, I bring state of the art solutions to life, transforming theoretical concepts into practical, business-driving tools. 
+- **AI/ML Mastery**: From LLMs, RAG to AI agents, and complex multi-modal AI platforms, I bring state of the art solutions to life, transforming theoretical concepts into practical, business-driving tools.
 - **Infrastructure Scaling Wizard**: I don't just manage growth; I architect for it. My owner's mentality ensures your infrastructure evolves as rapidly as your ambitions. I work hard on how to prevent problems occuring in the future through honest assessments of data and customer requirements.
 - **Cloud & Kubernetes Veteran**: I know how to seamlessly integrate AI with software development workflows in CI and CD and the desktop and through APIs, also within cloud infrastructure in AWS, GCP, and Azure, and in various versions of Kubernetes with service meshes, policy controllers, and implement DevSecOps on day one. I aim to create robust, scalable environments that stand the test of time and traffic and I often take the lead on securing Kubernetes clusters, including some for publically traded companies with strict compliance and security auditing requirements.
 - **Simple and elegant solutions delivery**: You may notice I give strong preference to open source tooling, simple standards like Markdown, command line tools and reproducability.
 
 ### LLM Implementation Specialist
 
-- **Custom LLM Solutions**: Proficient in fine-tuning, deployment, and optimization of Large Language Models tailored to your unique business needs.
-- **Multi-LLM Architecture**: Proficient in designing and implementing systems that leverage multiple LLMs for enhanced performance and versatility.
-- **Agentic Frameworks**: I am well versed on all the offerings of agentic and multi-agent systems. 
-- **Finetuning**: 
-- **Inference Optimization**: I know how to utilize Unsloth for 2x inference benefits and I know a lot about additional resources on reducing inference costs.
-- **LLM Security**: Trained in LLM red-teaming and aware of attacking stratigies on models and how to utilize Guardrails.
+- **Custom LLM Solutions**: I am proficient in fine-tuning, deployment, and optimization of Large Language Models tailored to your unique business needs.
+- **Multi-LLM Architecture**: I am proficient in designing and implementing systems that leverage multiple LLMs for enhanced performance and versatility.
+- **Agentic Frameworks**: I am well versed on all the offerings of agentic and multi-agent systems.
+- **Finetuning**: Proficient in fine-tuning, deployment, and optimization of Large Language Models tailored to your unique business needs.
+- **Inference Optimization**: I know how to utilize Unsloth for 2-5x inference benefits and I know a lot about additional resources on reducing inference costs.
+- **LLM Security**: Trained in LLM red-teaming and aware of attacking strategies on models and how to utilize Guardrails.
 
 ### Security-First Approach
 
@@ -75,14 +74,14 @@ over the years and have worked at many of the worlds leading startup companies, 
 
 ### Proven Track Record
 
+- **Award Winning Work**: In January of 2025 my team won an award for an AI Platform by the US Navy that I designed and implemented.
 - **Production-Grade Deployments**: Experience in delivering robust, scalable AI solutions. I have been supporting advanced commerical AI chatbot applications on-premise and in the cloud since 2016.
 - **Innovative Problem-Solver**: I have a history of tackling complex challenges and producing reliable and production ready solutions backed by data and and years of following security, governance, and compliance for companies in regulated industries.
-- **Award Winning Work**: In January of 2025 my team won an award for a prize by the US Navy.
 
 ### Customer Focused Approach
 
-- **Customer Success is my success**: I care about my customers success as critical to my own. 
-- **Trusted Adviusor**: I am confortable with NDAs and am ethical in my dealings.
+- **Customer Success is my success**: I care about my customers success as critical to my own.
+- **Trusted Advisor**: I am comfortable with NDAs and am ethical in my dealings.
 - **Agile Methodology Expert**: I am comfortable with Agile practices or a more relaxed work style. Tell me how you like to work and I'll be accomodate to your style and expectations.
 - **Clear Communication**: I pride myself on the ability to communicate with people with no technical background. I have 80 year old relatives who I have taught about AI. I keep the use of jargon only when in team appropriate meetings.
 - **No time wasted**: I won't waste your time with promises I can't deliver on or drag out engagements for billable hours.
@@ -130,8 +129,8 @@ Tier 2 services are offered exclusively to ensure dedicated, high-quality suppor
 - **DevOps Revolution**: Kubernetes-native AI orchestration and hybrid cloud/on-prem LLM deployments.
 - **Quantum-Ready Solutions**: Q-day is a big deal and no one should take it for granted in the AI era that classic Internet cryptography standards might be broken soon or already are.
 - **Emerging Tech Fusion**: Unique integrations of robotics, Rust, and advanced Linux scripting for next-gen applications.
-- **Programming Language Experiments**: I experiment with a half dozen or so programming languages in this repo and you will 
-see a lot of Bash, Python, Rust, Typescript, Go, I think there is dotnet in here, Lua.
+- **Programming Language Experiments**: I experiment with a half dozen or so programming languages in this repo and you will
+see a lot of Bash, Python, Rust, Typescript, Go, Lua, and I think there is dotnet in there (for the folks who don't know what they are doing).
 
 ### Featured Projects
 
@@ -140,27 +139,24 @@ see a lot of Bash, Python, Rust, Typescript, Go, I think there is dotnet in here
 3. **Rust-Powered Cloud Native Tools**: High-performance, memory-safe utilities for modern cloud environments.
 4. **Robotics AI Integration**: Cutting-edge algorithms for autonomous decision-making in robotic systems.
 
-This repository is not just a code archive; it's an example on how to demonstrate continuous learning and innovation in software engineering. 
+This repository is not just a code archive; it's an example on how to demonstrate continuous learning and innovation in software engineering.
 In some cases I hope shows my ability to tackle complex, future-facing challenges and deliver production-grade solutions across multiple domains challenging companies today.
 
-I also have a lot of open source contributions and I enjoy working on open source projects in my free time. 
-
+I have contributed to a lot of open source projects and I enjoy working on open source projects in my free time.
 
 ## Expertise Highlights
 
 - **Emotional Intelligence and Conflict Resolution**: I base all my interactions at work according to the principles of Emotional Intelligence and Conflict Resolution. I pursue training in cultivating
 body and emotional awareness, empathy to others, the development of active listening skills, and positive outcomes for all the stakeholders and contributors in a work environment.
-- **Engineering Culture Specialist**: I contribute toward building a happy and rewarding engineering culture wherever I can. 
-acheiving goals an organization may have. My interests closely track what you can find on HackerNews and I was strongly influenced on the hacker mindset early in my career on Slashdot.
-- **AI and ML Consulting**: Specializing in cutting-edge AI solutions, including large language models (LLMs), multi-agent systems, and custom AI agent development for clients.
-- **Cloud and On-premise Infrastructure**: I am experinced in deploying complex software applications and resources across public clouds using everything from Ansible, Terraform, and Pulumi.
+- **Engineering Culture Specialist**: I contribute toward building a happy and rewarding engineering culture everywhere I go. My interests closely track what you can find on Hacker News and I was strongly influenced on the hacker as builder mindset early in my career on Slashdot and the open source software pioneers of earlier decades.
+- **AI and ML Consulting**: Specializing in cutting-edge AI solutions, including large language models (LLMs), multi-agent systems, and custom AI agent development for clients. I have bene tracking open source and SaaS solutions in this space for years and I can endorse a wide variety of no code, low code, or pure code solutions depending on your needs.
+- **Cloud and On-premise Infrastructure**: I am experienced in deploying complex software applications and resources across public clouds using everything from Ansible, Terraform, and Pulumi.
 I have managed racks of servers, server rooms, co-location in data centers, and cloud-native applications since the early 2000s. I stay current on the latest industry news on a daily basis.
-- **Advanced Container and Docker security expertise**: I am deeply acquainted with container internals and best practices for secure and performant microservices. My favorite resource for advanced container
-learnings right now is [iximiuz.com](https://iximiuz.com/en/)
-- **Advanced AI Implementations**: Experience with agent build-out, multi-agent systems, and innovative AI architectures. I recently completed 6 months of AI bootcamp training from Stanford, Duke, and others.
-- **DevOps and SRE**: Implementing best practices in Site Reliability Engineering and DevOps methodologies. I have been practicing DevOps since 2013 and SRE since 2023.
+- **Advanced Container and Docker security expertise**: I am deeply knowledgeable about how Docker and containers work and what the best practices for secure and performant microservices. My favorite resource for advanced container security right now is [iximiuz.com](https://iximiuz.com/en/)
+- **Advanced AI Implementations**: Experienced with creating custom AI agents, multi-agent systems, and innovative AI architectures. I recently completed 6 months of AI bootcamp training from AI leaders based at Stanford, Duke, Google, Nvidia, Apple, Microsoft, and many other leading institutions.
+- **DevOps and SRE**: I strongly believe in the business value of implementing best practices with Platform Engineering, Site Reliability Engineering, DevOps, and Well Architected Frameworks. I have been practicing DevOps since 2013 and SRE since 2023.
 - **Linux**: While direct Linux experience seems to be declining in some areas of modern cloud practice, I've been using Linux since the early 2000s and I run atomic and immutable Linux operating systems in my home lab.
-- **Nvidia**: I am Nvidia certified Technical Advisor and I have taken about 80 hours of additional Nvidia training and I manage the Nvidia infrastructure for a Fortune 1000 company including licensing.
+- **Nvidia**: I am Nvidia certified Technical Advisor and I have taken about 150 hours of additional Nvidia training and I manage the Nvidia infrastructure for a Fortune 1000 company including licensing.
 
 ## Some Key Projects and Analyses
 
@@ -170,33 +166,26 @@ learnings right now is [iximiuz.com](https://iximiuz.com/en/)
 - Ultimate Kubernetes Wishlist: Innovative ideas for Kubernetes enhancements.
 - Low-Level Kubernetes Details: Deep dive into Kubernetes internals.
 - SRE Definitions and Best Practices: Comprehensive guide to Site Reliability Engineering.
-- LLM Attack Vectors: Analysis of potential vulnerabilities in large language models. 
+- LLM Attack Vectors: Analysis of potential vulnerabilities in large language models.
 - Red-team LLMs with DSPY.
 - I have not updated this list since 2024 and I have loads more I will update this in the future.
 
 ## How to Engage My Services
 
-If anything strikes you as particularly interesting and you want to speak with me about an opportunity? 
+If anything strikes you as particularly interesting and you want to speak with me about an opportunity?
 
 You can schedule a meeting with me anytime during Eastern Standard Time at [https://cal.com/aiconsulting](https://cal.com/aiconsulting) (no US holidays or weekends without prior agreement please!)
 
 ### Git Repo Highlights:
 
-- **SRE Methodologies**: A detailed explanation of the changes the SRE discipline brings to the world of software delivery. 
-
+- **SRE Methodologies**: A detailed explanation of the changes the SRE discipline brings to the world of software delivery.
 - **Pulumi Projects**: Utilizes Pulumi for infrastructure as code to deploy resources into AWS, with configurations written in Go. For more information, please see [Pulumi's Go documentation](https://www.pulumi.com/docs/languages-sdks/go/).
-
 - **Ethereum Node Deployment**: Features an infrastructure setup including a VPC, public subnet, internet gateway, route table, security group, and an EC2 instance. The EC2 instance is configured to install and run an Ethereum node using the `geth` command.
-
 - **Fargate Integration**: Demonstrates building a local Docker container and pushing it to an AWS ECR repository, presumably for later ingestion into Kubernetes.
-
 - **Golang CLI for Lambda Labs**: Lambda Labs is an cloud on-demand GPU cloud service. My project includes an example and untested Golang CLI using the OpenAPI spec of the service.
-
 - **Grok Large Language Model Analysis**: Includes analysis of how the [https://github.com/xai-org/grok-1](https://github.com/xai-org/grok-1) codebase works.
-
 - **Kubernetes LLM Installs**: This includes examples of installing Mistral LLM and the OpenAI embedding service in Kubernetes via helm charts, showcasing how to run LLMs in Kubernetes.
-
-- **Python Scripts and Packaging**: Some example scripts and best practices I like.
+- **Python Scripts and Packaging**: Some example scripts and best practices I like. I prefer UV in 2025.
 
 ## Some Repo Prerequisites
 
@@ -221,7 +210,7 @@ cd demos
 
 # Some of my favorite tools
 
-A curated list of some of my favorite projects across various domains and technologies.
+A curated list of a few of my favorite projects across various domains and technologies.
 
 ## Infrastructure and Orchestration
 - [Talos](https://www.talos.dev/) - A modern OS for Kubernetes.
@@ -233,7 +222,7 @@ A curated list of some of my favorite projects across various domains and techno
 ## AI and Scripting
 - [GPTScript](https://github.com/gptscript-ai/gptscript) - Natural language gpt scripting engine.
 - [aider](https://github.com/paul-gauthier/aider) - A smart codegen in the terminal.
-- [Neon](https://neon.tech/) - This is the most exciting develop in serverless in a long time with scale-to-zero and branching Postgres. 
+- [Neon](https://neon.tech/) - This is the most exciting develop in serverless in a long time with scale-to-zero and branching Postgres.
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI) - This stable difffusion framework or another like is likely going to change the Internet forever imho.
 - [vLLM](https://github.com/vllm-project/vllm) - vLLM is a fast and easy-to-use library for LLM inference and serving.
 
@@ -251,16 +240,23 @@ A curated list of some of my favorite projects across various domains and techno
 ## CI/CD and Automation
 - [Tekton](https://tekton.dev/) - A powerful and flexible open-source framework for creating CI/CD systems.
 - [Dagger.io](https://dagger.io/) - A programmable deployment system for your applications.
+- [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) - A declarative, GitOps continuous delivery tool for Kubernetes.
+- [Flux](https://fluxcd.io/) - A GitOps operator for Kubernetes.
+- [Argo Workflows](https://argoproj.github.io/argo-workflows/) - A native container-native workflow engine for Kubernetes.
+
 
 ## Development Tools and IDEs
 - [WezTerm](https://wezfurlong.org/wezterm/index.html) - WezTerm is a powerful cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 - [Zed IDE](https://zed.dev/) - Rust written AI enabled IDE.
 - [Devcontainer](https://code.visualstudio.com/docs/remote/containers) - Develop inside a Docker container with Visual Studio Code.
 - [Devpod](https://www.gitpod.io/docs/dev-environments) - Automated, ready-to-code development environments for Gitpod.
+- [NeoVim](https://neovim.io/) - A highly configurable text editor built on top of the Vim editor. Maybe one day I will get used to Helix.
+- [Helix](https://helix-editor.com/) - A modern text editor built on top of the Rust programming language. Maybe one day I will get used to NeoVim.
 
 - ## Homelab
 - [Orange Lab](https://github.com/QC-Labs/orange-lab) - Manage a local kubernetes AI platform through Pulumi with everything you need taken care of.
 - [CowabungaAI](https://github.com/awdemos/cowabungaai) - A fork I made of LeapfrogAI. I hope to start developing on it soon.
+- [Omnia](https://siderolabs.com/) - `
 
 ## Programming Languages and Frameworks
 - [Go](https://golang.org/) - An open source programming language that makes it easy to build simple, reliable, and efficient software.
@@ -279,7 +275,7 @@ A curated list of some of my favorite projects across various domains and techno
 
 ## What Perplexity thinks my resume says about my character and personality
 
-Based on my extensive experience and accomplishments, several aspects of my character and personality can be inferred:
+Based on my extensive experience, several aspects of my character and personality can be inferred:
 
 ## Growth Mindset and Adaptability
 I demonstrate a strong growth mindset, as evidenced by my career progression from IT roles to advanced AI engineering positions. I've consistently adapted to new technologies and challenges, showing a willingness to learn and evolve.
@@ -311,10 +307,12 @@ My ongoing pursuit of certifications and participation in bootcamps, even at a s
 
 These traits paint a picture of me as a well-rounded, technically proficient professional who is proactive, adaptable, and committed to driving innovation while maintaining ethical standards in technology.
 
+## What are my biases?
+I strongly bias towards open source tooling, ethical AI, and confidential computing and I don't see that changing through the rest of my career. I don't want to trust vendor lock-in any further than I have to and you might say I have a snobby ```AI hipster``` attitude towards solutions that may have great marketing teams but don't match my values so I choose to not use those services. I also have a bias towards solutions that are transparent and explainable.
 
 ## Contributing
 
-While this is my demo repo, pull requests made in the spirit of this repository are welcome. For major changes, please open an issue first to discuss what you would like to change.
+While this is my demo repo, bug fixes or PRs are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
