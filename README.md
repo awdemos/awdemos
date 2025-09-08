@@ -1,10 +1,10 @@
-# Cloud Infrastructure & AI Expert | DevOps Architect
+# AI Infrastructure & Automation Expert | DevOps Architect
 
 ## Transform Your Infrastructure with Expert Guidance
 
-**🚀 Solving Complex Cloud Challenges for Modern Enterprises**
+**🚀 Solving Complex AI Challenges for Modern Enterprises**
 
-I help organizations overcome infrastructure bottlenecks, reduce costs by up to 50%, and accelerate their cloud transformation. With deep expertise in Kubernetes, AI/ML operations, and cloud-native technologies, I deliver practical solutions that drive measurable business results.
+I help organizations overcome infrastructure bottlenecks, reduce costs by up to 50%, and accelerate their AI transformation. With deep expertise in Kubernetes, AI/ML operations, and Nvidia technologies, I deliver practical solutions that drive measurable business results.
 
 ### 🎯 Why Clients Choose Me
 
@@ -12,10 +12,11 @@ I help organizations overcome infrastructure bottlenecks, reduce costs by up to 
 - **Production-Ready Solutions** - Battle-tested architectures that scale
 - **End-to-End Expertise** - From strategy to implementation to optimization
 - **Cutting-Edge Technology** - Expert in AI/ML, Kubernetes, and modern DevOps
+- **Nvidia Certified** - I have thousands of hours of Nvidia training and practice under my belt
 
 ## 🏆 Proven Results
 
-> *"Reduced our AWS costs by 60% while improving performance. The infrastructure overhaul was seamless and the team training was invaluable."* - CTO, FinTech Startup
+> *"Reduced our AI costs by 60% while improving performance. The infrastructure overhaul was seamless and the team training was invaluable."* - CTO, FinTech Startup
 
 > *"Helped us transition from legacy systems to Kubernetes with zero downtime. The migration strategy was brilliant and execution flawless."* - VP Engineering, SaaS Company
 
@@ -39,7 +40,7 @@ I help organizations overcome infrastructure bottlenecks, reduce costs by up to 
 
 ## 🚀 Get Started Today
 
-### Schedule Your Free 30-Minute Consultation
+### Schedule Your Free 10-Minute Consultation
 
 Ready to transform your infrastructure? Let's discuss your challenges and explore how we can achieve your goals together.
 
@@ -67,6 +68,7 @@ Ready to transform your infrastructure? Let's discuss your challenges and explor
 
 👉 **Join Now**: [AI School & Community on Patreon](https://www.patreon.com/posts/138377123)
 
+*The Mudskippers AI School rise above the competition!*
 *Be among the first to shape the future of AI education!*
 
 ---
@@ -107,7 +109,7 @@ Ready to transform your infrastructure? Let's discuss your challenges and explor
 - **🔧 Automation**: CI/CD, GitOps, DevOps
 
 ### Development Tools
-- **🎯 Languages**: Go, Python, TypeScript, Bash
+- **🎯 Languages**: Rust, Go, Python, TypeScript, Bash
 - **📊 Monitoring**: Prometheus, Grafana, Observability
 - **🔒 Security**: Zero-trust, Container security, DevSecOps
 - **🚀 AI/ML**: LLM deployment, MLOps, Model optimization
@@ -130,26 +132,26 @@ ls -la demos/
 Here are my latest creations and contributions from the past week:
 
 ### **🎯 AI & Development Tools**
-- **[voiceofthedead](https://github.com/awdemos/voiceofthedead)** - Experimental voice interface project
-- **[efrit](https://github.com/awdemos/efrit)** - Native elisp coding agent running in Emacs
+- **[efrit](https://github.com/awdemos/efrit)** - Native elisp coding agent running in Emacs. I am writing the
+    Nushell port.
+- **[Voice of the Dead](https://github.com/awdemos/voiceofthedead)** - SOTA TTS project
 
-### **🖥️ Systems & OS**
-- **[RegicideOS](https://github.com/awdemos/RegicideOS)** - AI-native Rust first Linux distribution based on Gentoo, BtrFS, Cosmic-Desktop
+### **🖥️Cutting-edge Operating System **
+- **[RegicideOS](https://github.com/awdemos/RegicideOS)** - AI-native, Rust-first, Linux distribution based on Gentoo, BtrFS, Cosmic-Desktop
 
-### **🧠 AI Knowledge Systems**
-- **[symbolic_ai_elisp_knowledge_base](https://github.com/awdemos/symbolic_ai_elisp_knowledge_base)** - Open source reimagining of Cyc knowledge base
+### **🧠 AI Knowledge Systems*
+- **[symbolic_ai_elisp_knowledge_base](https://github.com/awdemos/symbolic_ai_elisp_knowledge_base)** - Open-source reimagining of a Cyc style knowledge base
 
-### **🔧 Utilities**
-- **[merlin](https://github.com/awdemos/merlin)** - Latest utility project
+### **🔧 LLM Utilities**
+- **[Merlin](https://github.com/awdemos/merlin)** - LLM router written in Rust. Utilizes RL to route LLM prompts. GPL 3.0 project.
 
 ---
 
 ## 🛠️ Recommended Tools & Technologies
 
 ### Infrastructure & Orchestration
-- **[Talos](https://www.talos.dev/)** - Modern OS for Kubernetes
-- **[Pulumi](https://www.pulumi.com/)** - Infrastructure as Code in your favorite languages
-- **[Kargo](https://github.com/ContainerCraft/Kargo)** - Kubernetes cluster lifecycle management
+- **[Talos](https://www.talos.dev/)** - Best in class Kubernetes OS.
+- **[Pulumi](https://www.pulumi.com/)** - Infrastructure as Code in general purpose programming languages
 - **[vCluster](https://www.vcluster.com/)** - Virtual Kubernetes clusters
 - **[Cilium](https://cilium.io/)** - eBPF-based networking and security
 - **[Cloudflare](https://developers.cloudflare.com/products/)** - Cost-effective cloud services
@@ -157,8 +159,7 @@ Here are my latest creations and contributions from the past week:
 
 ### AI & Development
 - **[GPTScript](https://github.com/gptscript-ai/gptscript)** - Natural language scripting
-- **[LangChain](https://langchain.com/)** - LLM application framework
-- **[aider](https://github.com/paul-gauthier/aider)** - AI-powered coding assistant
+- **[Claude Code]()** - I use it daily
 - **[pairup](https://github.com/awdemos/pairup.nvim)** - AI Pair Programming in Neovim
 - **[ComfyUI](https://github.com/comfyanonymous/ComfyUI)** - Stable diffusion framework
 
@@ -203,12 +204,12 @@ Here are my latest creations and contributions from the past week:
 ## 📄 License & Contributing
 
 ### Contributing
-While this is my demo repository, I welcome contributions that align with the project's vision. For major changes, please open an issue first to discuss your ideas.
+While this is my demo repository, create an issue if you would like to connect with me further!
 
 ### License
 All original code in this repository is released under the **MIT License**. Third-party components may have different licenses - please refer to their respective documentation.
 
-**© 2024 Cloud Infrastructure & AI Expert. All rights reserved.**
+**© 2025 Cloud Infrastructure & AI Expert. All rights reserved.**
 
 ---
 
