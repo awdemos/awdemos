@@ -136,14 +136,16 @@ Here are my latest creations and contributions from the past week:
     Nushell port.
 - **[Voice of the Dead](https://github.com/awdemos/voiceofthedead)** - SOTA TTS project
 
-### **🖥️Cutting-edge Operating System **
+### **🖥️ Cutting-edge Operating System**
 - **[RegicideOS](https://github.com/awdemos/RegicideOS)** - AI-native, Rust-first, Linux distribution based on Gentoo, BtrFS, Cosmic-Desktop
 
-### **🧠 AI Knowledge Systems*
+### **🧠 AI Knowledge Systems**
 - **[symbolic_ai_elisp_knowledge_base](https://github.com/awdemos/symbolic_ai_elisp_knowledge_base)** - Open-source reimagining of a Cyc style knowledge base
 
 ### **🔧 LLM Utilities**
 - **[Merlin](https://github.com/awdemos/merlin)** - LLM router written in Rust. Utilizes RL to route LLM prompts. GPL 3.0 project.
+- **[Regicide Dotfiles](https://github.com/awdemos/regicide-dotfiles)** - Configuration files and dotfiles for RegicideOS
+- **[DCAP](https://github.com/awdemos/DCAP)** - Dynamic Configuration and Application Platform
 
 ---
 
