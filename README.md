@@ -7,7 +7,7 @@
 
 ## 💡 About This Portfolio
 
-Hi, I go by **awdemos** — a DevOps Architect specializing in **AI/ML infrastructure** and **Kubernetes operations**.
+Hi, I'm Drew— a DevOps Architect specializing in **AI/ML infrastructure** and **Kubernetes operations**.
 
 **What you'll find here:**
 - Production-grade infrastructure code and architectural patterns
@@ -16,10 +16,11 @@ Hi, I go by **awdemos** — a DevOps Architect specializing in **AI/ML infrastru
 - Open-source tools and automation frameworks
 
 **My Focus:**
-- Cloud infrastructure optimization (typically 50% cost reduction for clients)
+- Cloud infrastructure optimization (it is not unusual to reduce cloud spend by 50% for clients)
 - Production-ready Kubernetes deployments
 - LLM deployment and optimization
-- Infrastructure as Code with Pulumi (Go)
+- Infrastructure as Code
+- Unix philosophy, GNU ethos, cypherpunk minded, polymath of the old school.
 
 ---
 
