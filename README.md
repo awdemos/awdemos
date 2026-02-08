@@ -332,6 +332,9 @@ Everything in this portfolio is open source, documented, and reproducible. I bel
 - [MCP Guide](https://github.com/andrewwhitecdw/dotfiles/blob/main/docs/MCP.md) — Comprehensive Model Context Protocol implementation examples
 - [AI Coding Tools](https://github.com/andrewwhitecdw/dotfiles/blob/main/docs/AI_Coding_Tools.md) — Terminal-focused AI assistance workflows
 - [SLSA Implementation](https://github.com/andrewwhitecdw/dotfiles/blob/main/docs/) — Supply chain security hardening
+- [Technology Comparisons](#-technology-comparisons-decision-frameworks) — Deep analysis of Kubernetes, LLM serving, IaC, CI/CD, and service mesh tools
+- [Performance Benchmarks](#-performance-benchmarks-proven-results) — Quantifiable metrics from production deployments
+- [Screenshots Guide](SCREENSHOTS.md) — Instructions for creating visual assets to showcase demo projects
 
 ### Learning Resources
 - Production-ready infrastructure patterns from real deployments
