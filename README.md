@@ -18,8 +18,8 @@ Hi, I'm Drew— a DevOps Architect specializing in **AI/ML infrastructure** and 
 
 **My Focus:**
 - Cloud infrastructure optimization (50%+ cost reduction typical for clients)
-- Production-ready Kubernetes and multi-cloud deployments
-- LLM deployment, GPU orchestration, and model serving
+- Production-ready Kubernetes and multi-cloud deployments with **NVIDIA GPU orchestration**
+- LLM deployment, GPU orchestration, and model serving on **NVIDIA infrastructure**
 - Infrastructure as Code with GitOps principles
 - Multi-agent AI systems and Model Context Protocol (MCP) integration
 - Security-hardened supply chains (SLSA, immutable infrastructure)
@@ -214,9 +214,10 @@ Active areas of investigation and experimentation:
 - **Self-Healing Infrastructure** — Systems that detect and fix issues autonomously
 
 ### Performance Engineering
-- **GPU Optimization** — CUDA kernels and memory management
+- **GPU Optimization** — CUDA kernels, memory management, and NVIDIA TensorRT acceleration
+- **NVIDIA DCGM Integration** — Deep GPU monitoring and telemetry for production systems
 - **Rust-Based AI Infrastructure** — Performance-critical ML tooling
-- **Resource Scheduling** — Efficient GPU allocation for multi-tenant systems
+- **Resource Scheduling** — Efficient NVIDIA GPU allocation for multi-tenant systems
 
 ### Security & Trust
 - **SLSA in Production** — End-to-end supply chain verification
@@ -335,9 +336,10 @@ Everything in this portfolio is open source, documented, and reproducible. I bel
 
 ### Real-World Impact
 This portfolio and the associated dotfiles repository aren't just demos—they represent production patterns that solve actual problems:
-- **Cost Reduction:** GPU scheduling and MIG partitioning that cut AI infrastructure spend by 50%+
+- **Cost Reduction:** NVIDIA GPU scheduling and MIG partitioning that cut AI infrastructure spend by 50%+
 - **Reliability:** GitOps workflows that have maintained 99.9%+ uptime across multiple clients
 - **Velocity:** Automated CI/CD pipelines that reduced deployment times from hours to minutes
+- **Performance:** CUDA optimization and Triton Inference Server deployments that improved inference throughput by 3-5x
 - **Security:** SLSA implementation that passed external audits for regulated industries
 
 **Open Source ≠ Only Open Source**
@@ -348,7 +350,9 @@ While this repository contains openly available tools, patterns, and examples, t
 - **Self-Healing Infrastructure:** Systems that detect and remediate issues autonomously
 - **AI-Native Tooling:** Development environments optimized for AI-assisted workflows
 - **Quantum-Resistant Cryptography:** Preparing infrastructure for post-quantum security requirements
-- **Distributed Training at Scale:** Optimizing ML pipelines across heterogeneous GPU clusters
+- **Distributed Training at Scale:** Optimizing ML pipelines across heterogeneous NVIDIA GPU clusters
+- **CUDA Kernel Development:** Custom GPU kernels for specialized AI workloads
+- **NVIDIA MIG Optimization:** Advanced GPU partitioning strategies for multi-tenant efficiency
 
 ---
 
@@ -371,7 +375,7 @@ Building systems that improve themselves:
 ### Production Hardening
 - **Immutable Infrastructure** — All infrastructure declarative and version-controlled
 - **Security-First Design** — SLSA Level 2/3 implementation, supply chain integrity
-- **Observability** — Comprehensive monitoring (DCGM, MLflow, Prometheus dashboards)
+- **Observability** — Comprehensive monitoring (NVIDIA DCGM, MLflow, Prometheus dashboards)
 
 **Read More:**
 - [Dotfiles AAS Framework](https://github.com/andrewwhitecdw/dotfiles#-aas-artificial-age-score-monad-framework)
