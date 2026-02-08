@@ -1,5 +1,10 @@
 # AI Infrastructure & Automation Expert | Nvidia Certified
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://github.com/awdemos/demos/workflows/lint.yml/badge.svg)](https://github.com/awdemos/demos/actions)
+[![Security Scan](https://github.com/awdemos/demos/workflows/security.yml/badge.svg)](https://github.com/awdemos/demos/security)
+[![CodeQL](https://github.com/awdemos/demos/workflows/codeql.yml/badge.svg)](https://github.com/awdemos/demos/security/code-scanning)
+
 ## 🎯 Quick Navigation
 - [View Portfolio](#featured-projects) | [For Recruiters](#for-recruiters) | [For Consulting Clients](#for-consulting-clients)
 
