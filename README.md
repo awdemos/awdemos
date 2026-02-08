@@ -6,7 +6,7 @@
 [![CodeQL](https://github.com/awdemos/demos/workflows/codeql.yml/badge.svg)](https://github.com/awdemos/demos/security/code-scanning)
 
 ## 🎯 Quick Navigation
-- [View Portfolio](#featured-projects) | [For Recruiters](#for-recruiters) | [For Consulting Clients](#for-consulting-clients) | [Performance Benchmarks](BENCHMARKS.md)
+- [View Portfolio](#featured-projects) | [For Recruiters](#for-recruiters) | [For Consulting Clients](#for-consulting-clients) | [Performance Benchmarks](BENCHMARKS.md) | [Technology Comparisons](COMPARISONS.md)
 
 ---
 
