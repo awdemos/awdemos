@@ -52,52 +52,143 @@ Production-focused optimization:
 
 ### LLM Serving Stack
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Application Layer                   │
-│           (Web, API, Mobile Clients)                  │
-└────────────────────┬──────────────────────────────────┘
-                     │
-┌────────────────────▼──────────────────────────────────┐
-│              API Gateway / Load Balancer              │
-│           (Nginx, Traefik, API Gateway)               │
-└────────────────────┬──────────────────────────────────┘
-                     │
-┌────────────────────▼──────────────────────────────────┐
-│               Model Serving Layer                      │
-│  Triton Inference Server / vLLM / Text Generation   │
-└────────────────────┬──────────────────────────────────┘
-                     │
-┌────────────────────▼──────────────────────────────────┐
-│             GPU Cluster / Inference Nodes             │
-│        NVIDIA GPUs (A100/H100/L40) with MIG         │
-└────────────────────┬──────────────────────────────────┘
-                     │
-┌────────────────────▼──────────────────────────────────┐
-│            MLOps & Orchestration Layer               │
-│    Kubernetes, Ray, MLflow, Monitoring (DCGM)        │
-└─────────────────────────────────────────────────────────┘
+```mermaid
+graph TB
+    subgraph "Application Layer"
+        Web[Web Applications]
+        API[API Clients]
+        Mobile[Mobile Apps]
+    end
+
+    subgraph "API Gateway Layer"
+        Gateway[API Gateway / Load Balancer<br/>Nginx, Traefik, AWS ALB]
+        RateLimit[Rate Limiting]
+        Auth[Authentication]
+    end
+
+    subgraph "Model Serving Layer"
+        Triton[Triton Inference Server<br/>vLLM / TGI / Ollama]
+        Batching[Dynamic Batching<br/>Request Coalescing]
+        Cache[KV Cache<br/>Embedding Cache]
+    end
+
+    subgraph "GPU Infrastructure Layer"
+        GPU_Cluster[GPU Cluster<br/>Inference Nodes]
+        A100[A100 GPUs<br/>80GB HBM3]
+        H100[H100 GPUs<br/>FP8 Support]
+        MIG[MIG Partitions<br/>Cost Optimization]
+    end
+
+    subgraph "MLOps & Orchestration Layer"
+        K8s[Kubernetes<br/>GPU Scheduler]
+        Ray[Ray Distributed<br/>Multi-GPU Training]
+        MLflow[MLflow<br/>Experiment Tracking]
+        DCGM[DCGM Monitoring<br/>GPU Metrics]
+    end
+
+    subgraph "Observability Layer"
+        Prometheus[Prometheus<br/>Metrics]
+        Grafana[Grafana<br/>Dashboards]
+        Logs[Loki Logs<br/>Structured Logs]
+    end
+
+    Web --> Gateway
+    API --> Gateway
+    Mobile --> Gateway
+
+    Gateway --> RateLimit
+    RateLimit --> Auth
+    Auth --> Triton
+
+    Triton --> Batching
+    Batching --> Cache
+    Cache --> GPU_Cluster
+
+    GPU_Cluster --> A100
+    GPU_Cluster --> H100
+    GPU_Cluster --> MIG
+
+    A100 --> K8s
+    H100 --> K8s
+    MIG --> K8s
+
+    K8s --> Ray
+    Ray --> MLflow
+    K8s --> DCGM
+
+    DCGM --> Prometheus
+    MLflow --> Logs
+    Prometheus --> Grafana
+
+    style Gateway fill:#3b82f6,color:#fff
+    style Triton fill:#76b900,color:#fff
+    style GPU_Cluster fill:#10b981,color:#fff
+    style K8s fill:#326ce5,color:#fff
 ```
 
 ### Multi-Agent AI Systems
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                  Orchestrator                        │
-│          (LLM Router, Agent Manager)                 │
-└─────┬────────┬────────┬────────┬─────────┬────────┘
-      │        │        │        │         │
-┌─────▼───┐ ┌─▼────┐ ┌─▼────┐ ┌▼─────┐ ┌─▼──────┐
-│ Agent 1 │ │Agent2│ │Agent3│ │Agent4│ │ Agent5 │
-│ (Code)  │ │(Docs)│ │(Test)│ │(Infra)│ │ (Ops)  │
-└─────────┘ └──────┘ └──────┘ └──────┘ └────────┘
-      │        │        │        │         │
-      └────────┴────────┴────────┴─────────┘
-                     │
-            ┌────────▼─────────┐
-            │  MCP Protocol    │
-            │  (Shared State)  │
-            └──────────────────┘
+```mermaid
+graph TB
+    subgraph "Orchestrator Layer"
+        Router[LLM Router<br/>Request Routing]
+        AgentMgr[Agent Manager<br/>Task Orchestration]
+        Prioritizer[Task Prioritizer<br/>Load Balancing]
+    end
+
+    subgraph "Agent Layer"
+        subgraph "Domain Agents"
+            CodeAgent[Code Agent<br/>Code Generation]
+            DocsAgent[Docs Agent<br/>Documentation]
+            TestAgent[Test Agent<br/>Testing]
+        end
+
+        subgraph "Infrastructure Agents"
+            InfraAgent[Infra Agent<br/>DevOps]
+            OpsAgent[Ops Agent<br/>Monitoring]
+            SecurityAgent[Security Agent<br/>Auditing]
+        end
+    end
+
+    subgraph "MCP Protocol Layer"
+        MCP[MCP Protocol<br/>Model Context Protocol]
+        StateMgr[State Manager<br/>Shared Context]
+        Tooling[Tooling Integration<br/>Claude Desktop]
+    end
+
+    subgraph "Knowledge Base"
+        KB[Symbolic AI<br/>Knowledge Base]
+        Memory[Episodic Memory<br/>Conversation History]
+        RAG[RAG Pipeline<br/>Document Retrieval]
+    end
+
+    Router --> Prioritizer
+    Prioritizer --> AgentMgr
+
+    AgentMgr --> CodeAgent
+    AgentMgr --> DocsAgent
+    AgentMgr --> TestAgent
+    AgentMgr --> InfraAgent
+    AgentMgr --> OpsAgent
+    AgentMgr --> SecurityAgent
+
+    CodeAgent --> MCP
+    DocsAgent --> MCP
+    TestAgent --> MCP
+    InfraAgent --> MCP
+    OpsAgent --> MCP
+    SecurityAgent --> MCP
+
+    MCP --> StateMgr
+    MCP --> Tooling
+
+    StateMgr --> KB
+    StateMgr --> Memory
+    StateMgr --> RAG
+
+    style Router fill:#8b5cf6,color:#fff
+    style MCP fill:#3b82f6,color:#fff
+    style Tooling fill:#f59e0b,color:#fff
 ```
 
 ---

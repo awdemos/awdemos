@@ -49,6 +49,84 @@ Production-focused content:
 
 ## 🏗️ Architecture Patterns
 
+### Production Kubernetes Architecture
+
+```mermaid
+graph TB
+    subgraph "Multi-Cloud Infrastructure"
+        subgraph "AWS EKS"
+            EKS1[Control Plane]
+            NodePool1[Node Pool<br/>GPU + CPU]
+        end
+
+        subgraph "GCP GKE"
+            GKE1[Control Plane]
+            NodePool2[Node Pool<br/>ML Workloads]
+        end
+
+        subgraph "Azure AKS"
+            AKS1[Control Plane]
+            NodePool3[Node Pool<br/>Windows + Linux]
+        end
+    end
+
+    subgraph "Zero-Trust Networking"
+        Cilium[Cilium<br/>eBPF + Service Mesh]
+        NetworkPolicy[Network Policies]
+        ServiceMesh[Service Mesh<br/>Encryption at Rest]
+    end
+
+    subgraph "GPU Infrastructure"
+        NVIDIA[NVIDIA GPUs]
+        MIG[MIG Multi-Instance GPU]
+        Triton[Triton Inference Server]
+        DCGM[DCGM Monitoring]
+    end
+
+    subgraph "Observability"
+        Metrics[Prometheus + Grafana]
+        Logs[Fluentd + Loki]
+        Tracing[Jaeger/Zipkin]
+    end
+
+    subgraph "GitOps"
+        ArgoCD[Argo CD]
+        Flux[Flux CD]
+        Repo[Git Repository]
+    end
+
+    EKS1 --> Cilium
+    GKE1 --> Cilium
+    AKS1 --> Cilium
+
+    NodePool1 --> Cilium
+    NodePool2 --> Cilium
+    NodePool3 --> Cilium
+
+    NodePool1 --> NVIDIA
+    NodePool2 --> NVIDIA
+
+    NVIDIA --> MIG
+    NVIDIA --> Triton
+    NVIDIA --> DCGM
+
+    Cilium --> Metrics
+    Cilium --> Logs
+    Cilium --> Tracing
+
+    ArgoCD --> Repo
+    Flux --> Repo
+    Repo --> EKS1
+    Repo --> GKE1
+    Repo --> AKS1
+
+    style EKS1 fill:#ff9900,color:#fff
+    style GKE1 fill:#4285f4,color:#fff
+    style AKS1 fill:#0078d4,color:#fff
+    style Cilium fill:#00d4aa,color:#fff
+    style NVIDIA fill:#76b900,color:#fff
+```
+
 ### Multi-Cloud Deployment Strategies
 
 Demonstrated approaches for deploying across AWS, GCP, and Azure:
