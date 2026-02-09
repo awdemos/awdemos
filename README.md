@@ -1,9 +1,6 @@
 # AI Infrastructure & Automation Expert | Nvidia Certified
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://github.com/awdemos/demos/workflows/lint.yml/badge.svg)](https://github.com/awdemos/demos/actions)
-[![Security Scan](https://github.com/awdemos/demos/workflows/security.yml/badge.svg)](https://github.com/awdemos/demos/security)
-[![CodeQL](https://github.com/awdemos/demos/workflows/codeql.yml/badge.svg)](https://github.com/awdemos/demos/security/code-scanning)
 
 ## 🎯 Quick Navigation
 - [View Portfolio](#featured-projects) | [For Recruiters](#for-recruiters) | [For Consulting Clients](#for-consulting-clients) | [Performance Benchmarks](BENCHMARKS.md) | [Technology Comparisons](COMPARISONS.md)
@@ -16,7 +13,7 @@ Hi, I'm Drew— a DevOps Architect specializing in **AI/ML infrastructure** and 
 
 **What you'll find here:**
 - Production-grade infrastructure code and architectural patterns
-- 100+ Kubernetes deployment implementations across multi-cloud environments
+- Multi-cloud Kubernetes deployment patterns (50+ implementations)
 - AI/ML infrastructure with **deep Nvidia GPU expertise**
 - Open-source tools and automation frameworks
 - Comprehensive development patterns and developer experience automation
@@ -58,7 +55,7 @@ This portfolio demonstrates practical application of Nvidia technologies across 
 
 **Deep Technical Expertise:**
 - **Nvidia Technologies:** Production experience with GPU-optimized infrastructure
-- **Kubernetes:** 100+ deployment patterns across AWS, GCP, Azure
+ - **Kubernetes:** 50+ deployment patterns across AWS, GCP, Azure
 - **AI/ML Infrastructure:** Production LLM deployments, MLOps pipelines
 - **Modern IaC:** Pulumi (Go), Terraform, GitOps practices
 
