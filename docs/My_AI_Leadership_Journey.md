@@ -135,10 +135,10 @@ footer {
 ## 🌟 Career Highlights  
 ### From Supercomputing to Wikipedia
 
-- 🏗️ Sold Linux supercomputers; built Top 500 HPC systems for research
+- 🏗️ Sold Linux supercomputers; built Top 500 HPC systems used for research
 - 🌉 Launched IT career in San Francisco during Web 2.0  
 - Worked at a large variety of leading startups over the years
-- 💻 Supported wide variety of Mac, Linux, Windows at startups (LiveJournal, OpenDNS)
+- 💻 Supported wide variety of Mac, Linux, Windows and servers at startups (LiveJournal, OpenDNS)
 - 🧠 At Cycorp (Austin, TX), supported symbolic AI and reasoning systems for hospitals, defense, research  
 - Reported to Dr. Doug Lenat and supported AI application development
 
@@ -147,18 +147,20 @@ footer {
 ## 🏅 Expertise, Impact & Leadership
 
 - 🚀 Since 2024: enabling wide variety of AI initiatives in production
-- 🎓 Advanced certifications & industry training:  NVIDIA, IBM, Dell, Google, HPE, Apple
+- 🎓 Advanced certifications & industry training: NVIDIA, IBM, Cisco, Dell, Google, HPE, Apple, Pure Storage, Stanford Medicine, Ardan Labs
+-    Create custom AI applications from scratch using general purpose programming languages or agents in agentic frameworks including all the 
+     popular ones like Copiot Studio, Langchain, OpenAI, Claude, Kimi.
 - 🌐 Diverse customer engagements across regulated & unregulated industries
 
 ---
 
 ## 💪 Professional Strengths
 
-- 🚀 Led enterprise AI adoption & platform engineering POCs  
-- 🔒 Deep AI cybersecurity expertise; RAG, agentic systems, open source
+- 🚀 I lead complex enterprise AI adoption projects in across a large variety of household name companies
+- 🔒 I have deep AI cybersecurity expertise including Red Team, Blue Team, and Purple Team
 - 🎓 Trained by industry leaders; certified in Empathy at Work  
-- 🌍 Broad professional network; continuous learner & mentor  
-- 📈 Informed on latest AI costs, trends, and best practices
+- 🌍 Broad professional network; I am humble and a continuous learner & mentor  
+- 📈 Informed on latest AI news, costs, trends, and best practices and I am regulalrly briefed by Nvidia, Google, and other leading firms.
 - 💪 Team player and accustomed to complex cross-functional requirements
 
 ---
@@ -181,7 +183,7 @@ footer {
 
 - 👥 Founder & organizer, Detroit AI Collective  
 - 🎤 Host events for professionals and underserved groups  
-- Enabled hundreds to upskill in AI/ML
+- I have enabled hundreds of students to upskill in their career and AI/ML
 - 🤝 Bridging enterprise AI expertise & community leadership for real-world impact
 
 ---
