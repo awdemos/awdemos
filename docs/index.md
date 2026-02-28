@@ -1,3 +1,36 @@
+<!--
+meta:
+  title: "AI Infrastructure & Automation Expert | Nvidia Certified | Portfolio"
+  description: "Production-grade AI/ML infrastructure and Kubernetes operations. 100+ deployment patterns, GPU optimization, MLOps pipelines, and enterprise consulting."
+  keywords: "AI infrastructure, Kubernetes, Nvidia GPU, MLOps, DevOps, GPU optimization, LLM deployment, multi-cloud, consulting"
+  author: "Drew"
+  canonical: "https://awdemos.github.io/demos/"
+og:
+  title: "AI Infrastructure & Automation Expert | Nvidia Certified"
+  description: "Production-grade AI/ML infrastructure and Kubernetes operations. 100+ deployment patterns, GPU optimization, MLOps pipelines."
+  type: "website"
+  url: "https://awdemos.github.io/demos/"
+  image: "https://awdemos.github.io/demos/docs/og-image.png"
+twitter:
+  card: "summary_large_image"
+  title: "AI Infrastructure & Automation Expert | Nvidia Certified"
+  description: "Production-grade AI/ML infrastructure and Kubernetes operations."
+  image: "https://awdemos.github.io/demos/docs/og-image.png"
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Drew",
+  "jobTitle": "AI Infrastructure Architect",
+  "description": "AI/ML infrastructure expert with deep expertise in Kubernetes, Nvidia GPU optimization, and production-grade automation",
+  "knowsAbout": ["Kubernetes", "NVIDIA GPU", "CUDA", "LLM Deployment", "MLOps", "DevOps", "Multi-Cloud", "CI/CD"],
+  "url": "https://awdemos.github.io/demos/"
+}
+</script>
+
+
 # AI Infrastructure & Automation Expert | Nvidia Certified
 
 ## 🎯 Quick Navigation
@@ -77,21 +110,21 @@ This portfolio showcases:
 ### Technical Skills
 
 **Cloud & Infrastructure:**
-- ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
-- ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white)
-- ![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat&logo=google-cloud&logoColor=white)
-- ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat&logo=microsoft-azure&logoColor=white)
+- ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white "Kubernetes")
+- ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white "Amazon Web Services")
+- ![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat&logo=google-cloud&logoColor=white "Google Cloud Platform")
+- ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat&logo=microsoft-azure&logoColor=white "Microsoft Azure")
 
 **AI & ML:**
-- ![Nvidia](https://img.shields.io/badge/Nvidia-76B900?style=flat&logo=nvidia&logoColor=white)
-- ![LLM](https://img.shields.io/badge/LLM-10A37F?style=flat&logo=openai&logoColor=white)
-- ![MLOps](https://img.shields.io/badge/MLOps-FF6F00?style=flat)
+- ![Nvidia](https://img.shields.io/badge/Nvidia-76B900?style=flat&logo=nvidia&logoColor=white "Nvidia GPU Technologies")
+- ![LLM](https://img.shields.io/badge/LLM-10A37F?style=flat&logo=openai&logoColor=white "Large Language Models")
+- ![MLOps](https://img.shields.io/badge/MLOps-FF6F00?style=flat "Machine Learning Operations")
 
 **Languages & Tools:**
-- ![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
-- ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
-- ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-- ![Pulumi](https://img.shields.io/badge/Pulumi-8A3391?style=flat&logo=pulumi&logoColor=white)
+- ![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white "Rust Programming Language")
+- ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white "Go Programming Language")
+- ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white "Python Programming Language")
+- ![Pulumi](https://img.shields.io/badge/Pulumi-8A3391?style=flat&logo=pulumi&logoColor=white "Pulumi Infrastructure as Code")
 
 ### Contact
 
@@ -140,7 +173,19 @@ I help organizations:
 
 ## 🔗 Links
 
+### 📚 Documentation
+- [The 25 Verbs of DevOps Framework](25_Verbs_Devops.md) - Comprehensive skills assessment for technology teams
+- [GLM-4.7 Z.ai Setup Guide](GLM-4.7-Z.ai-Setup-Guide.md) - Complete configuration for Claude Code, Cursor, VS Code
+- [repo2txt - Repository Dumper](Repo2txt.md) - Tool for LLM prompts and RAG systems
+- [AI Leadership Journey](My_AI_Leadership_Journey.md) - 20+ years in AI and technology
+- [De Cryptographiae Historia (Latin)](Whitfied_in_Latin.md) - Whitfield Diffie's cryptography lecture
+- [DevOps Presentation Deck](25_Verbs_DevOps_Comprehensive_Skills_Framework.md) - Slide deck for 25 Verbs framework
+
+### 🌐 External
+
 - [Main Repository](https://github.com/awdemos/demos) - Full source code and documentation
+- [GitHub Profile](https://github.com/awdemos) - All open-source projects
+- [Demos Directory](../demos/) - Browse all demos and examples
 - [GitHub Profile](https://github.com/awdemos) - All open-source projects
 - [Demos Directory](../demos/) - Browse all demos and examples
 

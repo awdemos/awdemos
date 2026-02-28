@@ -1,3 +1,84 @@
+<!--
+meta:
+  title: "repo2txt - Repository Dumper for LLM Prompts & RAG Systems"
+  description: "repo2txt dumps Git repository contents into a single file optimized for LLM prompts and RAG systems. Supports .gitignore, file filtering, and tree structure generation."
+  keywords: "repo2txt, LLM RAG tool, repo to text converter, Git repository dumper, LLM context dump, codebase to text, RAG knowledge base"
+  author: "Drew"
+  type: "technical-tool"
+  canonical: "https://awdemos.github.io/demos/docs/Repo2txt.html"
+
+og:
+  title: "repo2txt - Repository Dumper for LLM Prompts & RAG Systems"
+  description: "Dump Git repository contents into a single file optimized for LLM prompts and RAG systems. Free, open-source, respects .gitignore."
+  type: "article"
+  url: "https://awdemos.github.io/demos/docs/Repo2txt.html"
+  image: "https://awdemos.github.io/demos/docs/og-repo2txt.png"
+
+twitter:
+  card: "summary_large_image"
+  title: "repo2txt - Repository Dumper for LLM Prompts & RAG Systems"
+  description: "Dump Git repository contents into a single file optimized for LLM prompts and RAG systems."
+  image: "https://awdemos.github.io/demos/docs/og-repo2txt.png"
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "repo2txt",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Linux, macOS, Windows",
+  "description": "repo2txt dumps contents of a Git repository into a single file, optimized for use in Retrieval-Augmented Generation (RAG) systems or as part of prompts for Large Language Models (LLMs).",
+  "featureList": ["Repository content dumping", ".gitignore support", "Tree structure generation", "File type filtering", "Standalone binary"],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Drew",
+    "knowsAbout": ["RAG Systems", "LLM Integration", "Git Tools", "Python Development", "DevOps"]
+  },
+  "about": [
+    {"@type": "Thing", "name": "RAG Systems"},
+    {"@type": "Thing", "name": "Large Language Models"},
+    {"@type": "Thing", "name": "Git Repository Management"},
+    {"@type": "Thing", "name": "Codebase Analysis"}
+  ],
+  "keywords": "repo2txt, LLM RAG tool, repo to text converter, Git repository dumper, LLM context dump, codebase to text"
+}
+</script>
+
+---
+
+**Quick Summary**: repo2txt consolidates entire Git repositories into a single text file optimized for LLM context and RAG systems. Ideal for developers who need to feed codebase context to AI assistants or build knowledge bases for retrieval-augmented generation.
+
+---
+
+## Comparison: repo2txt vs Similar Tools
+
+| Feature | repo2txt | git ls-files | grep -r | gpt-repo-extractor |
+|---------|-----------|--------------|----------|---------------------|
+| **Output Format** | Structured tree + file contents | File paths only | File contents only | JSON format |
+| **.gitignore Support** | ✅ Yes | ❌ No | ❌ No | ⚠️ Partial |
+| **File Filtering** | ✅ Custom extensions | ⚠️ Limited | ✅ Glob patterns | ❌ No |
+| **Tree Structure** | ✅ Visual tree | ❌ No | ❌ No | ✅ Yes |
+| **Performance** | Fast (binary) | Fast | Slow on large repos | Medium |
+| **LLM Optimized** | ✅ Yes | ❌ No | ❌ No | ✅ Yes |
+| **Standalone Binary** | ✅ Yes | N/A (built-in) | N/A (built-in) | ❌ Requires Python |
+| **Privacy** | ✅ Runs locally | ✅ Runs locally | ✅ Runs locally | ⚠️ May call APIs |
+
+**Why repo2txt?**
+- Combines the best of both worlds: structured tree view + full file contents
+- Optimized specifically for LLM context limits and token efficiency
+- Respects .gitignore to exclude sensitive data automatically
+- Runs as a standalone binary with no dependencies after build
+- Perfect for RAG knowledge bases and LLM code review workflows
+
+---
+
+
 # repo2txt: Repository Content Dumper for LLM Prompts
 
 ## Overview
@@ -129,3 +210,37 @@ CMD ["/repo2txt"]
 ```
 
 This comprehensive documentation now covers all the key aspects of repo2txt, including its purpose, features, installation, usage, and best practices for LLM integration.
+
+---
+
+## FAQ - Common Questions
+
+### Q: Is repo2txt safe for private repositories?
+**A:** Yes, repo2txt runs entirely locally on your machine. No data is sent to external servers. The output file stays on your filesystem.
+
+### Q: How do I handle large repositories that exceed LLM token limits?
+**A:** Use file extension filtering feature to dump only relevant file types. For example, include only `.ts`, `.tsx`, and `.md` files for a TypeScript project to stay within context windows.
+
+### Q: Can I use repo2txt for sensitive codebases?
+**A:** Absolutely. Since it runs locally and respects .gitignore, you can safely dump production code. Just ensure your .gitignore excludes any truly sensitive files like `.env` or secrets.
+
+### Q: What's the difference between repo2txt and git ls-files?
+**A:** git ls-files only lists file paths. repo2txt provides both directory tree structure AND actual file contents, formatted specifically for LLM consumption.
+
+### Q: How do I integrate repo2txt into a CI/CD pipeline?
+**A:** Build the binary, then run `repo2txt . repo-dump.txt exclude.txt` as a step in your pipeline. The dump.txt can be stored in your knowledge base or fed to an LLM for automated code review.
+
+### Q: Can repo2txt handle monorepos?
+**A:** Yes, repo2txt can handle any Git repository structure. For monorepos, run it on the root directory and it will recursively dump all subdirectories.
+
+### Q: What file types should I include for best LLM results?
+**A:** Depends on your goal:
+- For code review: `.ts`, `.js`, `.py`, `.go`, `.rs`, `.java`, `.cpp`, `.h`
+- For documentation: `.md`, `.rst`, `.txt`
+- For configuration: `.json`, `.yaml`, `.yml`, `.toml`, `.env.example`
+
+---
+
+**Last Updated:** January 2026
+
+[← Back to Main Documentation](index.md)
