@@ -322,3 +322,29 @@ All demos and code in this directory are licensed under MIT License. See [LICENS
 ---
 
 **Built with ❤️ using Rust for performance-critical applications.**
+
+### Quick Start with AI Demos
+
+```bash
+# Navigate to AI demos
+cd demos/rust/ai/
+
+# Build LLM inference server
+cd llm_inference_server/
+cargo build --release
+
+# Build vector database
+cd vector_database/
+cargo build --release
+
+# Build MCP servers
+cd mcp_servers/
+cargo build --release
+```
+
+### Featured AI Projects
+
+**[Merlin](https://github.com/awdemos/merlin)** — LLM router with reinforcement learning
+**[RegicideOS](https://github.com/awdemos/RegicideOS)** — AI-native Linux distribution
+**[Rust for AI Guide](https://awdemos.github.io/demos/docs/blog/rust-for-ai/) — Comprehensive AI development guide
+**[CUDA Rust Performance](https://awdemos.github.io/demos/docs/blog/cuda-rust-performance/) — Deep dive: 40x faster
