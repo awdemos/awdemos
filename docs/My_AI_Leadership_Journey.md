@@ -1,3 +1,57 @@
+<!--
+meta:
+  title: "AI Leadership Journey | From Supercomputing to Enterprise AI"
+  description: "20+ years of AI and technology leadership journey. Award-winning AI platform architect, NVIDIA certified specialist, founder of Detroit AI Collective."
+  keywords: "AI leadership, AI infrastructure, NVIDIA certified, supercomputing, AI consulting, Detroit AI Collective, naval AI platform"
+  author: "Drew"
+  date: "2025-01"
+  type: "presentation"
+og:
+  title: "AI Leadership Journey | From Supercomputing to Enterprise AI"
+  description: "20+ years of AI and technology leadership journey, featuring award-winning AI platform development and community leadership."
+  type: "article"
+  image: "https://awdemos.github.io/demos/docs/og-leadership.png"
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PresentationDigitalDocument",
+  "name": "AI Leadership Journey: From Supercomputing to Enterprise AI",
+  "description": "20+ years of AI and technology leadership journey, featuring award-winning AI platform development and community leadership.",
+  "author": {
+    "@type": "Person",
+    "name": "Drew",
+    "jobTitle": "AI Infrastructure Architect",
+    "knowsAbout": ["AI Infrastructure", "NVIDIA GPU", "Supercomputing", "Enterprise AI", "MLOps", "Kubernetes"]
+  },
+  "dateCreated": "2025-01",
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Artificial Intelligence Leadership"
+    },
+    {
+      "@type": "Thing",
+      "name": "Supercomputing"
+    },
+    {
+      "@type": "Thing",
+      "name": "NVIDIA AI Platform"
+    },
+    {
+      "@type": "Organization",
+      "name": "Detroit AI Collective"
+    }
+  ]
+}
+</script>
+
+---
+marp: true
+theme: uncover
+size: 1920x1080
+paginate: true
 ---
 marp: true
 theme: uncover

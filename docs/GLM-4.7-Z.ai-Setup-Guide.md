@@ -1,4 +1,70 @@
-This is an AI generated format of the messages made by Cobra in the Z.AI Discord #faq server.
+<!--
+meta:
+  title: "GLM-4.7 Z.ai Setup Guide | Complete Configuration for Claude Code, Cursor, VS Code"
+  description: "Complete setup guide for GLM-4.7 with Z.ai API. Configure Claude Code, Cursor, VS Code, Zed, and popular IDEs with working endpoint configurations, troubleshooting tips, and MCP integration."
+  keywords: "GLM-4.7 setup, Z.ai API configuration, Claude Code Z.ai, Cursor Z.ai, VS Code Z.ai, GLM Coding Plan, API endpoint configuration, troubleshooting GLM-4.7"
+  author: "Drew"
+  date: "2026-01"
+  type: "technical-guide"
+  canonical: "https://awdemos.github.io/demos/docs/GLM-4.7-Z.ai-Setup-Guide.html"
+
+og:
+  title: "GLM-4.7 Z.ai Setup Guide | Complete Configuration"
+  description: "Complete setup guide for GLM-4.7 with Z.ai API. Configure Claude Code, Cursor, VS Code with working endpoints and troubleshooting."
+  type: "article"
+  url: "https://awdemos.github.io/demos/docs/GLM-4.7-Z.ai-Setup-Guide.html"
+  image: "https://awdemos.github.io/demos/docs/og-zai-setup.png"
+
+twitter:
+  card: "summary_large_image"
+  title: "GLM-4.7 Z.ai Setup Guide"
+  description: "Configure Claude Code, Cursor, VS Code with Z.ai API endpoints and troubleshooting."
+  image: "https://awdemos.github.io/demos/docs/og-zai-setup.png"
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "name": "GLM-4.7 Z.ai Setup Guide: Complete Configuration for Claude Code, Cursor, VS Code",
+  "description": "Complete setup guide for GLM-4.7 with Z.ai API. Configure Claude Code, Cursor, VS Code, Zed, and popular IDEs with working endpoint configurations, troubleshooting tips, and MCP integration.",
+  "author": {
+    "@type": "Person",
+    "name": "Drew",
+    "knowsAbout": ["API Configuration", "GLM Models", "Claude Code", "VS Code Extensions", "MCP Servers", "AI Integration"]
+  },
+  "datePublished": "2026-01",
+  "dateModified": "2026-01",
+  "about": [
+    {"@type": "SoftwareApplication", "name": "GLM-4.7"},
+    {"@type": "SoftwareApplication", "name": "Z.ai API"},
+    {"@type": "SoftwareApplication", "name": "Claude Code"},
+    {"@type": "SoftwareApplication", "name": "Cursor Editor"},
+    {"@type": "SoftwareApplication", "name": "VS Code"}
+  ],
+  "keywords": "GLM-4.7, Z.ai setup, API configuration, Claude Code, Cursor, VS Code, troubleshooting, MCP, GLM Coding Plan"
+}
+</script>
+
+---
+
+# Table of Contents
+
+1. [When Things Break: Always Test Raw API](#1-when-things-break-always-test-raw-api)
+2. [GLM Coding Plan: Endpoints, Models, and Confusion](#2-glm-coding-plan-endpoints-models-and-confusion)
+3. [Key / Account Issues: Quick Checklist](#3-key--account-issues-quick-checklist)
+4. [Claude Code / Anthropic‑style Config](#4-claude-code--anthropicstyle-config)
+5. [GLM‑4.7 vs GLM‑5: Trade‑offs and Quotas](#5-glm47-vs-glm5-tradeoffs-and-quotas)
+6. [Popular Tool Configurations](#6-popular-tool-configurations-zai--glm47)
+7. [Plugins, MCPs, and Agent‑style Workflows](#7-plugins-mcps-and-agentstyle-workflows)
+8. [Pricing, Quotas, and "Truncated" Messages](#8-pricing-quotas-and-truncated-messages)
+9. [Practical Workflow for DevOps / Platform‑AI Engineer](#9-practical-workflow-for-you-devops--platformai-engineer)
+10. [FAQ - Common Questions](#faq---common-questions)
+
+---
+
+
+This is an AI generated format of messages made by Cobra in Z.AI Discord #faq server.
 I share this in the hope that it is useful for someone in the future.
 If this article helped you it is my extreme hope that you can be extra kind to someone today in return.
 
@@ -264,3 +330,70 @@ Given your stack (Linux, Rust, Neovim, Pulumi, Zed, etc.), a robust setup looks 
 
 This keeps your AI stack API‑portable, open‑tool‑oriented, and avoids depending on any one big‑tech vendor.
 
+
+
+---
+
+## FAQ - Common Questions
+
+### Q: How do I fix the "1113 Insufficient balance" error?
+**A:** The 1113 error is almost always due to incorrect endpoint configuration, not actual balance issues. Verify you're using:
+- `https://api.z.ai/api/anthropic` for Claude Code
+- `https://api.z.ai/api/coding/paas/v4` for other tools
+
+Test with the `curl` command in Section 1 first - if it works, the issue is your client configuration.
+
+### Q: What's the difference between GLM-4.7 and GLM-5?
+**A:** GLM-4.7 is faster, more stable, and has higher quotas. GLM-5 has deeper reasoning but is subject to newer automatic quota limits. For most coding tasks, prefer GLM-4.7 unless you specifically need GLM-5's advanced reasoning capabilities.
+
+### Q: Can I use Z.ai with VS Code Copilot?
+**A:** Yes, configure the OAI-Compatible or Cline extension with the Z.ai Coding endpoint `https://api.z.ai/api/coding/paas/v4` and model `glm-4.7`.
+
+### Q: Why are my responses getting truncated?
+**A:** Truncation usually means tools are disabled in your client config. For OpenClaw, set `profile: "full"` in `~/.openclaw/openclaw.json`. Check that MCP servers are properly configured and authorized.
+
+### Q: How do I add MCP servers to Claude Code?
+**A:** Use the CLI to add MCP servers:
+```bash
+claude mcp add -s user -t http web-search-prime \
+  https://api.z.ai/api/mcp/web_search_prime/mcp \
+  --header "Authorization: Bearer your_api_key"
+```
+
+### Q: What should I do if my API key isn't working?
+**A:** 1) Test with raw API using curl. 2) Regenerate key from Z.ai Console. 3) Verify your GLM Coding Plan subscription is active. 4) Check endpoint URL matches your client type.
+
+### Q: Is GLM-4.7 better than GLM-5 for coding?
+**A:** For most coding tasks, GLM-4.7 is preferred due to its speed, stability, and higher quota limits. Use GLM-5 only when you need advanced reasoning beyond GLM-4.7's capabilities.
+
+### Q: How do I configure Zed Editor with Z.ai?
+**A:** Add Z.ai as an OpenAI-compatible provider in `settings.json`:
+```jsonc
+"language_models": {
+  "openai_compatible": {
+    "Z_AI": {
+      "api_url": "https://api.z.ai/api/coding/paas/v4",
+      "available_models": [
+        {"name": "glm-4.7", "max_tokens": 200000}
+      ]
+    }
+  }
+}
+```
+
+### Q: Can I use Z.ai with Cursor?
+**A:** Yes, set provider to "Z AI", endpoint to `https://api.z.ai/api/coding/paas/v4`, and model to `glm-4.7` (uppercase in some clients).
+
+### Q: What MCPs does Z.ai provide?
+**A:** Z.ai provides Vision MCP server for browser automation, Web-Search MCP for web search, and Web-Reader MCP for fetching web pages. These integrate with Claude Code, OpenClaw, and other MCP-compatible agents.
+
+### Q: How do I configure OpenClaw with Z.ai?
+**A:** Set `base_url` to `https://api.z.ai/api/coding/paas/v4` and `profile: "full"` in `~/.openclaw/openclaw.json` to enable full tool support.
+
+---
+
+**Last Updated:** January 2026
+
+**Need Help?** Check [Z.ai API Documentation](https://docs.z.ai/api-reference/api-code) or the [Z.ai Discord FAQ](https://discord.gg/zai)
+
+[← Back to Main Documentation](index.md)

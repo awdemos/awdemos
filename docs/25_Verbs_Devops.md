@@ -1,3 +1,66 @@
+<!--
+meta:
+  title: "The 25 Verbs of DevOps - Comprehensive Skills Assessment Framework"
+  description: "The 25 Verbs of DevOps framework provides a comprehensive skills assessment methodology for technology teams. Learn the four pillars: Strategy, Provisioning, Operations, and Support with competency levels and upskilling roadmap."
+  keywords: "DevOps skills assessment, DevOps competency framework, 25 Verbs DevOps, technology adoption checklist, DevOps training roadmap, platform engineering skills, MLOps skills, Kubernetes operations"
+  author: "Drew (based on Michael Forrester's webinar)"
+  date: "2025-01"
+  type: "technical-framework"
+  canonical: "https://awdemos.github.io/demos/docs/25_Verbs_Devops.html"
+
+og:
+  title: "The 25 Verbs of DevOps - Comprehensive Skills Assessment Framework"
+  description: "A universal framework for DevOps skills assessment. 25 action verbs across Strategy, Provisioning, Operations, and Support pillars with competency levels and upskilling roadmap."
+  type: "article"
+  url: "https://awdemos.github.io/demos/docs/25_Verbs_Devops.html"
+  image: "https://awdemos.github.io/demos/docs/og-25-verbs.png"
+
+twitter:
+  card: "summary_large_image"
+  title: "The 25 Verbs of DevOps - Comprehensive Skills Assessment Framework"
+  description: "Universal framework for DevOps skills assessment across Strategy, Provisioning, Operations, and Support."
+  image: "https://awdemos.github.io/demos/docs/og-25-verbs.png"
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "name": "The 25 Verbs of DevOps: A Comprehensive Skills Framework",
+  "description": "The 25 Verbs of DevOps framework provides a comprehensive skills assessment methodology for technology teams, grouping core actions into four pillars: Strategy, Provisioning, Operations, and Support. Includes 5-level competency model and upskilling roadmap.",
+  "author": {
+    "@type": "Person",
+    "name": "Drew",
+    "knowsAbout": ["DevOps", "Platform Engineering", "Kubernetes", "MLOps", "Skills Assessment", "Technology Adoption", "Infrastructure as Code"]
+  },
+  "datePublished": "2025-01",
+  "about": [
+    {"@type": "Thing", "name": "DevOps"},
+    {"@type": "Thing", "name": "Platform Engineering"},
+    {"@type": "Thing", "name": "Kubernetes Operations"},
+    {"@type": "Thing", "name": "MLOps"},
+    {"@type": "Thing", "name": "Skills Assessment Framework"}
+  ],
+  "keywords": "DevOps skills assessment, DevOps competency framework, 25 Verbs DevOps, technology adoption checklist, DevOps training roadmap"
+}
+</script>
+
+---
+
+## Table of Contents
+
+1. [Why 25 Verbs Matter](#-why-25-verbs-matter)
+2. [The Four Pillars and 25 Verbs](#-the-four-pillars-and-25-verbs)
+3. [The 25 Verbs Table](#-the-25-verbs-table)
+4. [Applying 25 Verbs: Example with Kubernetes](#-applying-25-verbs-example-with-kubernetes)
+5. [The 5-Level DevOps Competency Model](#-the-5-level-devops-competency-model)
+6. [Skills Assessment and Upskilling Roadmap](#-skills-assessment-and-upskilling-roadmap)
+7. [Best Practices and Industry Guidance](#-best-practices-and-industry-guidance)
+8. [Summary](#-summary)
+
+---
+
+
 # The 25 Verbs of DevOps: A Comprehensive Skills Framework
 
 This briefing distills the webinar by Michael Forrester, "Mind the Gap: DevOps Skills Assessment Made Simple," integrating the **complete set of 25 DevOps action verbs** you need to know in order to successfully deploy a technology for a commercial application. This framework is designed for technical leaders, DevOps engineers, and platform teams to systematically identify, benchmark, and close skills gaps for any technology adoption-from Kubernetes to IaC, ML Ops, and beyond.
@@ -123,3 +186,11 @@ The 25 verbs of DevOps provide a **universal, actionable framework** for assessi
 ---
 
 _Want a printable checklist or a template for team assessment? Drop an issue or PR!_
+
+
+---
+
+**Last Updated:** January 2025
+**Based On:** "Mind the Gap: DevOps Skills Assessment Made Simple" webinar by Michael Forrester
+
+[← Back to Main Documentation](index.md) | [See Related AI Infrastructure Work](index.md) | [Explore DevOps Demos](#)
