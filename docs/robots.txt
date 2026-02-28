@@ -1,0 +1,22 @@
+# robots.txt for awdemos.github.io/demos
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Block presentation HTML exports in favor of markdown versions (for better SEO)
+Disallow: /docs/My_AI_Leadership_Journey.html
+
+# Block temporary or backup files
+Disallow: /*.tmp$
+Disallow: /*.bak$
+Disallow: /*.swp$
+
+# Disallow node_modules and common development directories
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /dist/
+Disallow: /build/
+
+# Allow sitemap
+Sitemap: https://awdemos.github.io/demos/docs/sitemap.xml
