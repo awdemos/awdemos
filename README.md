@@ -74,22 +74,69 @@ Hi, I'm Drew— a **Rust developer** building advanced **AI infrastructure** and
 
 ---
 
-## 🎖️ Nvidia Certification & Expertise
+## 🎖️ Certifications & Professional Development
 
-**Thousands of Hours of Nvidia Training and Practice**
+**Verified Expertise Across AI Infrastructure, GPU Computing, and Cloud Engineering**
 
-This portfolio demonstrates practical application of Nvidia technologies across multiple projects:
+### NVIDIA Certifications
 
-| Project | Nvidia Technologies Used |
+| Certification | Focus Area |
+|---------------|------------|
+| AI Advisor - Technical Sales | AI solutions architecture & sales engineering |
+| AI Infrastructure Operations Fundamentals | GPU cluster operations & management |
+| BCM Administration | NVIDIA BlueField Controller management |
+| DGX SuperPOD Administration | Enterprise AI infrastructure deployment |
+| InfiniBand Essentials | High-performance networking fundamentals |
+| InfiniBand Network Administration | Network configuration & optimization |
+| Introduction to Networking | Network architecture foundations |
+| NVIDIA Pro: Agentic AI | Agentic AI systems & implementation |
+| NVIDIA Pro: AI Infrastructure | Advanced AI infrastructure design |
+
+### Cisco Certifications
+
+| Certification | Focus Area |
+|---------------|------------|
+| AI Business Practitioner | Business AI strategy & implementation |
+| AI Technical Practitioner | Technical AI solution design |
+| Partner Certification (EAP Comms) | Partner technical enablement |
+
+### Other Technical Certifications
+
+| Certification | Provider | Focus Area |
+|---------------|----------|------------|
+| AI Certificate | IBM / edX | AI fundamentals & applications |
+| Technical Sales Professional | Pure Storage | Storage infrastructure & solutions |
+| Securing Software Supply Chain with Sigstore | Linux Foundation | Supply chain security |
+
+### Supply Chain Security
+
+| Credential | Focus Area |
+|------------|------------|
+| Supply Chain Security | Chainguard | Container security & minimal images |
+| Securing Software Supply Chain | Sigstore / Linux Foundation | Software provenance & verification |
+
+### Professional Development
+
+| Course | Focus Area |
+|--------|------------|
+| Acting Responsibly with Generative AI | AI ethics & responsible use |
+| Empathy and Emotional Intelligence at Work | Leadership & collaboration |
+| AI Empathy Certificate | Human-AI interaction |
+| Dignity and Respect in the Global Workplace | Inclusive workplace practices |
+| Preventing Workplace Violence | Workplace safety |
+| Healthcare Introduction | Healthcare industry fundamentals |
+
+### NVIDIA Expertise in Practice
+
+This portfolio demonstrates practical application of NVIDIA technologies across multiple projects:
+
+| Project | NVIDIA Technologies Used |
 |---------|------------------------|
-| LLM Deployment Demos | Nvidia GPUs, CUDA optimization |
-| AI Infrastructure Demos | Nvidia container runtime, MIG (Multi-Instance GPU) |
-| MLOps Pipelines | Nvidia Triton Inference Server, RAPIDS |
+| LLM Deployment Demos | NVIDIA GPUs, CUDA optimization |
+| AI Infrastructure Demos | NVIDIA container runtime, MIG (Multi-Instance GPU) |
+| MLOps Pipelines | NVIDIA Triton Inference Server, RAPIDS |
 
-**Certifications:** Multiple Nvidia Deep Learning and GPU Computing certifications
-
-*Looking for engineers with Nvidia expertise? My code demonstrates hands-on production experience.*
-
+*All certificates available in the [`certs/`](certs/) directory for verification.*
 ---
 
 ## 👔 For Recruiters & Hiring Managers
