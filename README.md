@@ -1,10 +1,3 @@
-# GitHub Profile README
-
-> Copy the contents below into your `awdemos/awdemos` repository's `README.md`.
-
----
-
-```markdown
 <div align="center">
 
 # 👨‍💻 Andrew White
@@ -79,13 +72,6 @@ Memory safety and zero-cost abstractions aren't just Rust features — they're h
 
 <div align="center">
 
-## 📊 GitHub Stats
-
-![Andrew's GitHub Stats](https://github-readme-stats.vercel.app/api?username=awdemos&show_icons=true&theme=dark&hide_border=true&count_private=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=awdemos&layout=compact&theme=dark&hide_border=true)
-
 **© 2026 Andrew White**
 
 </div>
-```
