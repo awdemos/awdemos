@@ -19,7 +19,11 @@ AI and DevOps platform leader with 20+ years in technology — from selling Linu
 
 ## Professional Experience
 
-**Lead AI Infrastructure Engineer** | Helix Center for Applied AI and Robotics (Present)
+**AI Factory Lead** | Fortune 500 Company (Present)
+- Leading AI Factory initiatives and enterprise AI transformation
+- Driving AI/ML strategy and platform engineering at scale
+
+**Lead AI Infrastructure Engineer** | Helix Center for Applied AI and Robotics
 - Spearheaded AI, ML, and LLM strategy for a Fortune 1000 company's AI division
 - Led development of an award-winning AI platform for the US Navy (January 2025)
 - Managed cloud and on-premise GPU infrastructure; led 120+ sales professionals on NVIDIA infrastructure
