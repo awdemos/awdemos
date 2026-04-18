@@ -21,7 +21,8 @@
 
 ## 🎯 At a Glance
 
-- 🔭 **Current:** Lead AI Infrastructure Engineer at [Helix Center for Applied AI](https://www.abileneisd.org/helix) — built an **award-winning AI platform for the US Navy** (Jan 2025)
+- 🔭 **Current:** AI Factory Lead at a Fortune 500 company
+- 🎖️ **Former:** Lead AI Infrastructure Engineer at [Helix Center for Applied AI](https://www.abileneisd.org/helix) — built an **award-winning AI platform for the US Navy** (Jan 2025)
 - 🧠 **Former:** Cycorp Inc. — reported to **Dr. Doug Lenat**, supported symbolic AI for defense & healthcare
 - 🚀 **Early Career:** Sold Linux supercomputers, built Top 500 HPC systems, infrastructure at **LiveJournal** & **OpenDNS**
 - 🏆 **NVIDIA Certified:** DGX SuperPOD · AI Infrastructure · InfiniBand
