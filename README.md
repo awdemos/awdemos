@@ -67,6 +67,8 @@ git clone https://github.com/awdemos/demos.git
 
 > **Reproducible. Observable. Composable.**
 
+I think from **first principles**. I design systems the way **Unix intended**: small, focused tools that do one thing well and compose cleanly. I believe in **symbolic AI** and **systems thinking** over hype cycles. I **distrust big tech** consolidation and I'm a big fan of **AI sovereignty** — models you own, data you control, infrastructure you can audit.
+
 Memory safety and zero-cost abstractions aren't just Rust features — they're how I think about infrastructure architecture.
 
 ---
