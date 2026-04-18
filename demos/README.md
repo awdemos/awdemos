@@ -1,112 +1,46 @@
-# Demos & Examples
+# Demos Index
 
-This directory contains production-ready demonstrations, architectural patterns, and learning resources across multiple domains.
+This directory contains working examples, reference architectures, and learning projects organized by technology area.
 
----
+## AI & Machine Learning
 
-## 📂 Directory Overview
+- **`llm/`** — Large language model infrastructure, RAG pipelines, and fine-tuning
+  - `chainlit_rust_rag/` — RAG pipeline with Chainlit, LangGraph, Qdrant, and Cohere reranking
+  - `finetuning/` — Model fine-tuning experiments
+  - `grok/` — Grok-1 architecture research
+  - `alpha_maze_finder_grpo/` — GRPO reinforcement learning experiments
+  - `attacks/` — LLM security and adversarial testing
 
-| Directory | Description | Technologies |
-|-----------|-------------|--------------|
-| **[kubernetes/](kubernetes/)** | 100+ deployment patterns | K8s, EKS, GKE, Talos, Cilium |
-| **[llm/](llm/)** | AI/ML infrastructure demos | Mistral, OpenAI, NVIDIA GPUs |
-| **[dagger-go-ci/](dagger-go-ci/)** | CI/CD pipelines | Dagger, Tekton, Go |
-| **[pulumi-azure-tenant/](pulumi-azure-tenant/)** | Multi-tenant IaC | Pulumi (Go), Azure |
-| **[cdebug/](cdebug/)** | Container debugging tool | Docker, Podman, Kubernetes |
-| **[rust/](rust/)** | Rust CLI tools | Rust, Tokio |
-| **[python/](python/)** | Python best practices | Poetry, Type hints |
-| **[linux/](linux/)** | Linux infrastructure | Systemd, Containers |
-| **[lambactl/](lambactl/)** | Lambda automation | AWS Lambda, Go |
-| **[QubesOS/](QubesOS/)** | Security-focused OS | Xen, Qubes |
+## Cloud & Infrastructure
 
----
+- **`kubernetes/`** — Deployment patterns, debugging guides, and cluster architecture
+  - `100_ways_to_deploy_kubernetes/` — Multiple cluster bootstrapping strategies
+  - `eks_node_aws_pulumi/` — EKS node management with Pulumi
+  - Various guides: debugging, etcd inspection, deterministic builds, multi-cluster networking
+- **`pulumi-azure-tenant/`** — Azure AD B2C multi-tenant infrastructure with Pulumi TypeScript
+- **`dagger-go-ci/`** — Dagger-based CI/CD pipeline in Go with Trivy scanning
+- **`eks-gha-aws-demo/`** — EKS provisioning with Pulumi Go and GitHub Actions
+- **`vpc_eks_terraform-demo/`** — Terraform baseline for VPC and EKS
 
-## 🚀 Quick Start
+## Systems & Languages
 
-```bash
-# Clone the repository
-git clone https://github.com/awdemos/demos.git
-cd demos
-
-# Explore available demos
-ls -la
-```
-
----
-
-## 🎯 Featured Demos
-
-### AI/ML Infrastructure
-
-- **[llm/finetuning](llm/finetuning)** - LLM fine-tuning workflows with MLflow
-- **[llm/grok](llm/grok)** - Grok model integration examples
-- **[llm/chainlit_rust_rag](llm/chainlit_rust_rag)** - RAG pipeline with Rust backend
-- **[llm/attacks](llm/attacks)** - Adversarial attack demonstrations
-
-### Kubernetes & Cloud Native
-
-- **[kubernetes/](kubernetes/)** - Comprehensive K8s patterns (100+ examples)
-- **[eks-gha-aws-demo](eks-gha-aws-demo)** - EKS with GitHub Actions
-- **[vpc_eks_terraform-demo](vpc_eks_terraform-demo)** - VPC + EKS with Terraform
-
-### CI/CD & Automation
-
-- **[dagger-go-ci/](dagger-go-ci/)** - Container-native CI/CD pipelines
-- **[cdebug/](cdebug/)** - Container debugging across runtimes
-
-### Development Tools
-
-- **[rust/user_boilerplate](rust/user_boilerplate)** - Rust CLI boilerplate
-- **[python/flask_best_practices](python/flask_best_practices)** - Production Flask patterns
-- **[python/poetry-container-sample](python/poetry-container-sample)** - Poetry in containers
+- **`rust/`** — Rust learning projects and patterns
+  - `rust_matrix_multiplication/` — Ndarray-based matrix operations
+  - `user_boilerplate/` — CLI application boilerplate
+  - `fizzbuzz/` — Language fundamentals
+  - `databases/` — Database connectivity patterns
+- **`python/`** — Production Python patterns
+  - `poetry-container-sample/` — Poetry packaging in containers
+  - `flask_best_practices/` — Flask application structure
+  - `fargate-docker-python/` — AWS Fargate deployment patterns
+  - `ai_analysis_crew.py` — CrewAI agent workflow
+- **`linux/`** — Linux systems programming notes
+  - `Kernel.md` — Kernel concepts
+  - `capabilities.h` — Linux capabilities reference
+  - `Make-Python-Binary-Basic.md` — Static Python binary compilation
+- **`lambactl/`** — Go CLI for Lambda Cloud GPU instance management
+- **`QubesOS/`** — Kubernetes on QubesOS research
 
 ---
 
-## 📚 Usage Guidelines
-
-Each demo directory includes:
-- `README.md` - Detailed documentation and usage instructions
-- Configuration files - Production-ready examples
-- Scripts - Automation helpers where applicable
-
-**Best Practices:**
-- Review README.md before running any demo
-- Check requirements for each demo (tools, versions, dependencies)
-- Many demos require AWS/GCP/Azure credentials for cloud resources
-- Kubernetes demos typically assume a running cluster
-
----
-
-## 🔧 Prerequisites
-
-### Core Tools
-- [Docker](https://docs.docker.com/get-docker/) or [Podman](https://podman.io/)
-- [kubectl](https://kubernetes.io/docs/tasks/tools/)
-- [Git](https://git-scm.com/)
-
-### Cloud Tools (as needed)
-- [AWS CLI](https://aws.amazon.com/cli/)
-- [GCP CLI (gcloud)](https://cloud.google.com/sdk/gcloud)
-- [Azure CLI](https://docs.microsoft.com/cli/azure/)
-
-### Development Tools
-- [Go](https://golang.org/) - For Go-based demos
-- [Python 3.10+](https://www.python.org/) - For Python demos
-- [Rust](https://www.rust-lang.org/) - For Rust demos
-- [Node.js](https://nodejs.org/) - For TypeScript/JavaScript demos
-
----
-
-## 🤝 Contributing
-
-While this is a demonstration repository, feedback is welcome! Create an [issue](https://github.com/awdemos/demos/issues) for questions or suggestions.
-
----
-
-## 📄 License
-
-All original code in this repository is released under the **MIT License**. Third-party components may have different licenses.
-
----
-
-*Explore the demos to see production-ready infrastructure patterns in action!*
+For a complete list of my original open-source projects, see [PROJECTS.md](../PROJECTS.md) in the repository root.
