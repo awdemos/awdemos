@@ -4,5 +4,6 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-ndarray = "0.15.3"
-
+ndarray = "0.15.6"
+cudarc = { version = "0.12.1", features = ["nvrtc", "driver", "cuda-12020"] }
+rand = "0.8.5"
