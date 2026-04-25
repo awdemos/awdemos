@@ -42,6 +42,7 @@
 | 🔧 | [**opencode-pushguard**](https://github.com/awdemos/opencode-pushguard) | 📘 TS | Pre-push git hook for AI-assisted workflows |
 | 🛡️ | [**opencode-watchtower**](https://github.com/awdemos/opencode-watchtower) | 🐚 Shell | Safer agent tool calling with utcp isolation |
 | 🧠 | [**opencode-memento**](https://github.com/awdemos/opencode-memento) | 📘 TS | Preserves project context across AI coding sessions |
+| 🔮 | [**Xfiles**](https://github.com/awdemos/Xfiles) | 🌐 Protocol | Modern Plan 9 protocol with quantum AI reinforcement learning system |
 
 Full list over at [PROJECTS.md](https://github.com/awdemos/demos/blob/main/PROJECTS.md).
 
