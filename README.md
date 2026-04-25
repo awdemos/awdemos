@@ -69,7 +69,7 @@ git clone https://github.com/awdemos/demos.git
 
 I like building from **first principles**. I design systems the way **Unix intended**: small, focused tools that do one thing well and compose cleanly. I'm into **symbolic AI** and **systems thinking** — not just chasing the latest hype. I **don't trust big tech** consolidation much, and I'm a big believer in **AI sovereignty**: models you own, data you control, infrastructure you can actually audit.
 
-I almost always reach for a **general-purpose programming language** when solving problems — no YAML-only solutions if I can help it. I pull in everything I've learned from **a decade of DevOps** and **decades of systems automation** to keep things reproducible and maintainable.
+I almost always reach for a **general-purpose programming language** when solving problems — no YAML-only solutions if I can help it. I pull in everything I've learned from **a decade of DevOps**, **decades of systems automation**, and **decades with Linux** to keep things reproducible and maintainable.
 
 Memory safety and zero-cost abstractions aren't just Rust features — they're how I think about infrastructure.
 
