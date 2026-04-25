@@ -11,7 +11,7 @@
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://kernel.org/)
 
-**20+ years** building systems — from Linux supercomputers & Top 500 HPC clusters → Web 2.0 startups → award-winning AI platforms for the US Navy.
+**20+ years** of building stuff — from Linux supercomputers & Top 500 HPC clusters → Web 2.0 startups → award-winning AI platforms for the US Navy.
 
 [📝 Resume](https://github.com/awdemos/demos/blob/main/Resume.md) · [🏆 Certs](https://github.com/awdemos/demos/tree/main/certs) · [📂 Projects](https://github.com/awdemos/demos/blob/main/PROJECTS.md)
 
@@ -19,12 +19,12 @@
 
 ---
 
-## 🎯 At a Glance
+## 🎯 The Short Version
 
-- 🔭 **Current:** AI Factory Lead at a Fortune 500 company
-- 🎖️ **Former:** Lead AI Infrastructure Engineer at [Helix Center for Applied AI](https://www.abileneisd.org/helix) — built an **award-winning AI platform for the US Navy** (Jan 2025)
-- 🧠 **Former:** Cycorp Inc. — reported to **Dr. Doug Lenat**, supported symbolic AI for defense & healthcare
-- 🚀 **Early Career:** Sold Linux supercomputers, built Top 500 HPC systems, infrastructure at **LiveJournal** & **OpenDNS**
+- 🔭 **Now:** AI Factory Lead at a Fortune 500 company
+- 🎖️ **Before:** Lead AI Infrastructure Engineer at [Helix Center for Applied AI](https://www.abileneisd.org/helix) — built an **award-winning AI platform for the US Navy** (Jan 2025)
+- 🧠 **Way back:** Cycorp Inc. — reported to **Dr. Doug Lenat**, worked on symbolic AI for defense & healthcare
+- 🚀 **Early days:** Sold Linux supercomputers, built Top 500 HPC systems, infrastructure at **LiveJournal** & **OpenDNS**
 - 🏆 **NVIDIA Certified:** DGX SuperPOD · AI Infrastructure · InfiniBand
 - 🌆 **Community:** Founder, Detroit AI Collective
 
@@ -32,10 +32,10 @@
 
 ---
 
-## 🏆 Flagship Projects
+## 🏆 Stuff I'm Pretty Proud Of
 
-| ⭐ | Project | Lang | What It Is |
-|---|---------|------|------------|
+| ⭐ | Project | Lang | What It Does |
+|---|---------|------|--------------|
 | 🥇 | [**RegicideOS**](https://github.com/awdemos/RegicideOS) | 🦀 Rust | AI-native Linux distribution (Gentoo + Btrfs + Cosmic Desktop) |
 | 🥈 | [**zerochain**](https://github.com/awdemos/zerochain) | 🦀 Rust | Multi-agent orchestration via plain text files |
 | 🥉 | [**merlin**](https://github.com/awdemos/merlin) | 🦀 Rust | RL-based LLM prompt router (sub-ms async routing) |
@@ -43,13 +43,13 @@
 | 🛡️ | [**opencode-watchtower**](https://github.com/awdemos/opencode-watchtower) | 🐚 Shell | Safer agent tool calling with utcp isolation |
 | 🧠 | [**opencode-memento**](https://github.com/awdemos/opencode-memento) | 📘 TS | Preserves project context across AI coding sessions |
 
-See the full [project index](https://github.com/awdemos/demos/blob/main/PROJECTS.md) for demos & infrastructure patterns.
+Full list over at [PROJECTS.md](https://github.com/awdemos/demos/blob/main/PROJECTS.md).
 
 ---
 
 ## 📂 Demos & Reference Architecture
 
-This repo ([awdemos/demos](https://github.com/awdemos/demos)) contains production-grade patterns:
+This repo ([awdemos/demos](https://github.com/awdemos/demos)) is where I dump production-grade patterns I actually use:
 
 - **Kubernetes** — 100+ deployment patterns, Cilium eBPF, multi-cluster
 - **LLM Infrastructure** — RAG pipelines, fine-tuning, multimodal benchmarks
@@ -63,13 +63,13 @@ git clone https://github.com/awdemos/demos.git
 
 ---
 
-## 🧭 Philosophy
+## 🧭 How I Think About Things
 
 > **Reproducible. Observable. Composable.**
 
-I think from **first principles**. I design systems the way **Unix intended**: small, focused tools that do one thing well and compose cleanly. I believe in **symbolic AI** and **systems thinking** over hype cycles. I **distrust big tech** consolidation and I'm a big fan of **AI sovereignty** — models you own, data you control, infrastructure you can audit.
+I like building from **first principles**. I design systems the way **Unix intended**: small, focused tools that do one thing well and compose cleanly. I'm into **symbolic AI** and **systems thinking** — not just chasing the latest hype. I **don't trust big tech** consolidation much, and I'm a big believer in **AI sovereignty**: models you own, data you control, infrastructure you can actually audit.
 
-Memory safety and zero-cost abstractions aren't just Rust features — they're how I think about infrastructure architecture.
+Memory safety and zero-cost abstractions aren't just Rust features — they're how I think about infrastructure.
 
 ---
 
