@@ -41,6 +41,11 @@ This directory contains working examples, reference architectures, and learning 
 - **`lambactl/`** — Go CLI for Lambda Cloud GPU instance management
 - **`QubesOS/`** — Kubernetes on QubesOS research
 
+## Emerging & Research
+
+- **`Xfiles/`** *(parent directory)* — Plan 9 protocol for agents and quantum AI
+- **`Routage/`** — Intelligent message routing, mesh networking, and fault-tolerant cluster coordination
+
 ---
 
 For a complete list of my original open-source projects, see [PROJECTS.md](../PROJECTS.md) in the repository root.

@@ -164,6 +164,8 @@ This document organizes all demos by technology category for quick navigation. E
 |-------|-------------|-------|-------------|
 | [Research.md](../Research.md) | AI/ML, Kubernetes, security research | Ongoing studies | [Read](../Research.md) |
 | [History.md](../History.md) | Technology evolution timeline | Historical context | [Read](../History.md) |
+| **Xfiles** *(parent directory)* | Plan 9 protocol for agents and quantum AI | Distributed systems, AI protocols | In Progress |
+| **Routage** | Intelligent message routing, mesh networking, and fault-tolerant cluster coordination | Distributed systems | In Progress |
 
 ---
 
@@ -180,6 +182,7 @@ This document organizes all demos by technology category for quick navigation. E
 | Cloud Infrastructure | 3+ | Intermediate | ✅ Yes |
 | Linux & Systems | 3+ | Advanced | ⚠️ Experimental |
 | Research | 2 | N/A | N/A |
+| Emerging Systems | 2 | Advanced | ⚠️ Experimental |
 
 ---
 
