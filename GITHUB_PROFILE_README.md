@@ -20,7 +20,7 @@
 
 **20+ years** building systems — from Linux supercomputers & Top 500 HPC clusters → Web 2.0 startups → award-winning AI platforms for the US Navy.
 
-[📝 Resume](https://github.com/awdemos/demos/blob/main/Resume.md) · [🏆 Certs](https://github.com/awdemos/demos/tree/main/certs) · [📂 Projects](https://github.com/awdemos/demos/blob/main/PROJECTS.md)
+[🏆 Certs](https://github.com/awdemos/demos/tree/main/certs) · [📂 Projects](https://github.com/awdemos/demos/blob/main/PROJECTS.md)
 
 </div>
 
@@ -35,7 +35,7 @@
 - 🏆 **NVIDIA Certified:** DGX SuperPOD · AI Infrastructure · InfiniBand
 - 🌆 **Community:** Founder, Detroit AI Collective
 
-📄 **[Full career history →](https://github.com/awdemos/demos/blob/main/Resume.md)**
+
 
 ---
 
