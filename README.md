@@ -71,6 +71,8 @@ I like building from **first principles**. I design systems the way **Unix inten
 
 I almost always reach for a **general-purpose programming language** when solving problems — no YAML-only solutions if I can help it. I pull in everything I've learned from **a decade of DevOps**, **decades of systems automation**, and **decades with Linux** to keep things reproducible and maintainable.
 
+My formative years were spent on **Slashdot** and deep in **open source culture** — that ethos stuck. I've been contributing to open source for decades.
+
 Memory safety and zero-cost abstractions aren't just Rust features — they're how I think about infrastructure.
 
 ---
