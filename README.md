@@ -62,13 +62,13 @@ The repos above are just the surface. The full stack spans autonomous agents, di
 
 ### Toward AI Pangaea: Unifying Intelligence Islands
 
-This work is anchored in the belief that the future of intelligence is unified, not fragmented. The software here is written for the inevitable formation of **AI Pangaea**—the convergence of distributed intelligence islands into a cohesive, secure, superintelligent continuum.
+This work is anchored in the belief that the future of intelligence is unified, not fragmented. It explores ideas around **AI Pangaea**—the convergence of distributed intelligence islands into a more cohesive, secure, and capable continuum.
 
 - **Superintelligent Entities** — Implemented agents with advanced cognitive architectures, persistent memory, and recursive self-improvement
 - **AI Security at Every Layer** — Tool-calling sandboxing, LLM input/output guardrails, multi-agent consensus verification, and confidential execution
 - **Memory & Continuity** — Long-horizon agent memory systems that persist across sessions, devices, and intelligence islands
 
-> **Read the paper**: [*AI Pangaea: Unifying Intelligence Islands*](https://arxiv.org/pdf/2509.17460) — the theoretical foundation for this stack.
+> **Read the paper**: [*AI Pangaea: Unifying Intelligence Islands*](https://arxiv.org/pdf/2509.17460) — one of many inspirations for me recently.
 
 ---
 
