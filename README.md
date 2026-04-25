@@ -47,6 +47,31 @@ Full list over at [PROJECTS.md](https://github.com/awdemos/demos/blob/main/PROJE
 
 ---
 
+## 🌌 The Bigger Ecosystem
+
+The repos above are just the surface. The full stack spans autonomous agents, distributed systems, LLM infrastructure, OS research, and confidential computing:
+
+| Project | Domain | What It Does |
+|---------|--------|-------------|
+| **Nexus** | 🤖 Autonomous Agents | Multi-agent orchestration with self-improving capabilities and recursive task decomposition |
+| **Routage** | 🌐 Distributed Systems | Intelligent message routing, mesh networking, and fault-tolerant cluster coordination |
+| **Merlin** | 🧠 LLM Infrastructure | End-to-end pipeline for model training, fine-tuning, quantization, and high-throughput serving |
+| **RegicideOS** | 💻 Operating Systems | Experimental kernel with AI-native syscalls, scheduler awareness for inference workloads, and capability-based security |
+| **DCAP** | 🔒 Confidential Computing | Remote attestation frameworks, secure enclaves, and zero-trust verification for AI workloads |
+| **AAS-Monad** | 📐 Formal Methods | Mathematically-grounded scoring framework for self-improving systems |
+
+### Toward AI Pangaea: Unifying Intelligence Islands
+
+This work is anchored in the belief that the future of intelligence is unified, not fragmented. The software here is written for the inevitable formation of **AI Pangaea**—the convergence of distributed intelligence islands into a cohesive, secure, superintelligent continuum.
+
+- **Superintelligent Entities** — Implemented agents with advanced cognitive architectures, persistent memory, and recursive self-improvement
+- **AI Security at Every Layer** — Tool-calling sandboxing, LLM input/output guardrails, multi-agent consensus verification, and confidential execution
+- **Memory & Continuity** — Long-horizon agent memory systems that persist across sessions, devices, and intelligence islands
+
+> **Read the paper**: [*AI Pangaea: Unifying Intelligence Islands*](https://arxiv.org/pdf/2509.17460) — the theoretical foundation for this stack.
+
+---
+
 ## 📂 Demos & Reference Architecture
 
 This repo ([awdemos/demos](https://github.com/awdemos/demos)) is where I dump production-grade patterns I actually use:
