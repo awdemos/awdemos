@@ -1,8 +1,11 @@
 <div align="center">
 
-# 👨‍💻 Andrew White
+> *Quotidie est ratio plenae laetitiae in miraculo vitae*  
+> *Every day is the reason for complete joy in the miracle of life*
 
-### 🦀 Rust · 🚀 AI Infrastructure · ⚡ GPU Computing · 🐳 Kubernetes
+# 👋 Hi, I'm Andrew
+
+### I build systems that think — and think about systems
 
 [![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/)
@@ -11,77 +14,62 @@
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://kernel.org/)
 
-**20+ years** of building stuff — from Linux supercomputers & Top 500 HPC clusters → Web 2.0 startups → award-winning AI platforms for the US Navy.
-
-[🏆 Certs](https://github.com/awdemos/demos/tree/main/certs) · [📂 Projects](https://github.com/awdemos/demos/blob/main/PROJECTS.md)
-
 </div>
 
 ---
 
-## 🎯 The Short Version
+## 🗺️ New here? Start Here
 
-- 🔭 **Now:** AI Factory Lead at a Fortune 500 company
-- 🎖️ **Before:** Lead AI Infrastructure Engineer at [Helix Center for Applied AI](https://www.abileneisd.org/helix) — built an **award-winning AI platform for the US Navy** (Jan 2025)
-- 🧠 **Way back:** Cycorp Inc. — reported to **Dr. Doug Lenat**, worked on symbolic AI for defense & healthcare
-- 🚀 **Early days:** Sold Linux supercomputers, built Top 500 HPC systems, infrastructure at **LiveJournal** & **OpenDNS**
-- 🏆 **NVIDIA Certified:** DGX SuperPOD · AI Infrastructure · InfiniBand
-- 🌆 **Community:** Founder, Detroit AI Collective
+If you just stumbled across this profile, welcome! Here's the quickest way to get oriented:
 
-
-
----
-
-## 🏆 Stuff I'm Pretty Proud Of
-
-| ⭐ | Project | Lang | What It Does |
-|---|---------|------|--------------|
-| 🥇 | [**RegicideOS**](https://github.com/awdemos/RegicideOS) | 🦀 Rust | AI-native Linux distribution (Gentoo + Btrfs + Cosmic Desktop) |
-| 🥈 | [**zerochain**](https://github.com/awdemos/zerochain) | 🦀 Rust | Multi-agent orchestration via plain text files |
-| 🥉 | [**merlin**](https://github.com/awdemos/merlin) | 🦀 Rust | RL-based LLM prompt router (sub-ms async routing) |
-| 🔧 | [**opencode-pushguard**](https://github.com/awdemos/opencode-pushguard) | 📘 TS | Pre-push git hook for AI-assisted workflows |
-| 🛡️ | [**opencode-watchtower**](https://github.com/awdemos/opencode-watchtower) | 🐚 Shell | Safer agent tool calling with utcp isolation |
-| 🧠 | [**opencode-memento**](https://github.com/awdemos/opencode-memento) | 📘 TS | Preserves project context across AI coding sessions |
-| 🔮 | [**Xfiles**](https://github.com/awdemos/Xfiles) | 🌐 Protocol | Modern Plan 9 protocol with quantum AI reinforcement learning system |
-
-Full list over at [PROJECTS.md](https://github.com/awdemos/demos/blob/main/PROJECTS.md).
+| If you want to... | Check out... |
+|---|---|
+| **See what I'm building right now** | [🔭 Current Work](#-what-im-working-on-now) |
+| **Browse my best projects** | [🏆 Featured Projects](#-featured-projects) |
+| **Grab code you can actually use** | [📂 Demos & Patterns](#-demos--reference-architecture) |
+| **Understand how I think** | [🧭 My Approach](#-how-i-think-about-building) |
+| **See if we should collaborate** | [🤝 Let's Connect](#-lets-connect) |
 
 ---
 
-## 🌌 The Bigger Ecosystem
+## 🔭 What I'm Working On Now
 
-The repos above are just the surface. The full stack spans autonomous agents, distributed systems, LLM infrastructure, OS research, and confidential computing:
+**AI Factory Lead** at a Fortune 500 — building the infrastructure that lets teams ship AI products reliably, safely, and fast.
 
-| Project | Domain | What It Does |
-|---------|--------|-------------|
-| **Nexus** | 🤖 Autonomous Agents | Multi-agent orchestration with self-improving capabilities and recursive task decomposition |
-| **Routage** | 🌐 Distributed Systems | Intelligent message routing, mesh networking, and fault-tolerant cluster coordination |
-| **Merlin** | 🧠 LLM Infrastructure | End-to-end pipeline for model training, fine-tuning, quantization, and high-throughput serving |
-| **RegicideOS** | 💻 Operating Systems | Experimental kernel with AI-native syscalls, scheduler awareness for inference workloads, and capability-based security |
-| **DCAP** | 🔒 Confidential Computing | Remote attestation frameworks, secure enclaves, and zero-trust verification for AI workloads |
-| **AAS-Monad** | 📐 Formal Methods | Mathematically-grounded scoring framework for self-improving systems |
+Outside of work, I'm deep in a few long-term obsessions:
 
-### Toward AI Pangaea: Unifying Intelligence Islands
+- **[RegicideOS](https://github.com/awdemos/RegicideOS)** — An AI-native Linux distribution. Think: Gentoo meets Cosmic Desktop, with every layer optimized for ML workloads.
+- **[zerochain](https://github.com/awdemos/zerochain)** — Multi-agent systems that coordinate through plain text files. No brokers, no databases, no complexity — just files, inodes, and watchers.
+- **[OpenLatinium](https://github.com/awdemos/OpenLatinium)** — A programming language and VM inspired by Latin. Because why shouldn't code be beautiful?
 
-This work is anchored in the belief that the future of intelligence is unified, not fragmented. It explores ideas around **AI Pangaea**—the convergence of distributed intelligence islands into a more cohesive, secure, and capable continuum.
+---
 
-- **Superintelligent Entities** — Implemented agents with advanced cognitive architectures, persistent memory, and recursive self-improvement
-- **AI Security at Every Layer** — Tool-calling sandboxing, LLM input/output guardrails, multi-agent consensus verification, and confidential execution
-- **Memory & Continuity** — Long-horizon agent memory systems that persist across sessions, devices, and intelligence islands
+## 🏆 Featured Projects
 
-> **Read the paper**: [*AI Pangaea: Unifying Intelligence Islands*](https://arxiv.org/pdf/2509.17460) — one of many inspirations for me recently.
+These are the ones I'd show someone if I only had five minutes:
+
+| Project | What It Is | Why It Might Matter to You |
+|---------|-----------|---------------------------|
+| [**RegicideOS**](https://github.com/awdemos/RegicideOS) | AI-native Linux distro (Rust + Gentoo + Cosmic) | If you run ML workloads on bare metal and want an OS that actually understands GPUs |
+| [**zerochain**](https://github.com/awdemos/zerochain) | Multi-agent orchestration via plain text | If you think agent systems are over-engineered and want to see how simple they can be |
+| [**merlin**](https://github.com/awdemos/merlin) | RL-based LLM prompt router in Rust | If you run multiple models and need sub-millisecond routing without GC pauses |
+| [**opencode-memento**](https://github.com/awdemos/opencode-memento) | Preserves context across AI coding sessions | If you use AI agents and are tired of repeating yourself every session |
+| [**opencode-watchtower**](https://github.com/awdemos/opencode-watchtower) | Safer agent tool calling with isolation | If you want AI agents to actually be safe by default |
+| [**opencode-pushguard**](https://github.com/awdemos/opencode-pushguard) | Pre-push hook for AI-assisted workflows | If AI-generated code sometimes embarrasses you in code review |
+
+**Want the full catalog?** → [PROJECTS.md](https://github.com/awdemos/demos/blob/main/PROJECTS.md)
 
 ---
 
 ## 📂 Demos & Reference Architecture
 
-This repo ([awdemos/demos](https://github.com/awdemos/demos)) is where I dump production-grade patterns I actually use:
+This repo ([awdemos/demos](https://github.com/awdemos/demos)) is where I keep production-grade patterns I actually use — not toy examples, but the real stuff:
 
-- **Kubernetes** — 100+ deployment patterns, Cilium eBPF, multi-cluster
-- **LLM Infrastructure** — RAG pipelines, fine-tuning, multimodal benchmarks
-- **CI/CD** — Dagger Go pipelines with container-native builds
-- **IaC** — Pulumi (Go/TypeScript) for Azure & AWS multi-tenant infra
-- **Rust** — Matrix operations, CLI boilerplate, async patterns
+- **Kubernetes** — 100+ deployment patterns, Cilium eBPF, multi-cluster federation
+- **LLM Infrastructure** — RAG pipelines, fine-tuning setups, multimodal benchmarks
+- **CI/CD** — Dagger Go pipelines with container-native builds and security scanning
+- **IaC** — Pulumi (Go/TypeScript) for Azure & AWS multi-tenant infrastructure
+- **Rust** — Matrix operations, CLI boilerplate, async patterns that don't leak memory
 
 ```bash
 git clone https://github.com/awdemos/demos.git
@@ -89,22 +77,64 @@ git clone https://github.com/awdemos/demos.git
 
 ---
 
-## 🧭 How I Think About Things
+## 🧭 How I Think About Building
 
 > **Reproducible. Observable. Composable.**
 
-I like building from **first principles**. I design systems the way **Unix intended**: small, focused tools that do one thing well and compose cleanly. I'm into **symbolic AI** and **systems thinking** — not just chasing the latest hype. I **don't trust big tech** consolidation much, and I'm a big believer in **AI sovereignty**: models you own, data you control, infrastructure you can actually audit.
+I design systems from first principles. Small tools that do one thing well and compose cleanly — the Unix way, but for the AI era.
 
-I almost always reach for a **general-purpose programming language** when solving problems — no YAML-only solutions if I can help it. I pull in everything I've learned from **a decade of DevOps**, **decades of systems automation**, and **decades with Linux** to keep things reproducible and maintainable.
+**What that means in practice:**
 
-My formative years were spent on **Slashdot** and deep in **open source culture** — that ethos stuck. I've been contributing to open source for decades.
+- **I don't trust black boxes.** If I can't audit it, I don't ship it.
+- **I prefer general-purpose languages over YAML.** If it can be code, it should be code.
+- **I believe in AI sovereignty.** Models you own, data you control, infrastructure you can audit.
+- **I value memory safety.** Not because Rust told me to, but because debugging segfaults at 3am is a waste of a life.
+- **I'm skeptical of hype cycles.** Symbolic AI and systems thinking age better than trend-chasing.
 
-Memory safety and zero-cost abstractions aren't just Rust features — they're how I think about infrastructure.
+My formative years were spent on **Slashdot** and deep in **open source culture** — that ethos of transparency, collaboration, and building in public is still how I work today.
+
+---
+
+## 🎖️ A Little History
+
+For context on how I got here:
+
+- **Now:** AI Factory Lead at a Fortune 500
+- **2024-2025:** Lead AI Infrastructure Engineer at [Helix Center for Applied AI](https://www.abileneisd.org/helix) — built an award-winning AI platform for the US Navy
+- **Earlier:** Cycorp Inc. — reported to **Dr. Doug Lenat**, worked on symbolic AI for defense & healthcare
+- **Way back:** Sold Linux supercomputers, built Top 500 HPC systems, infrastructure at **LiveJournal** & **OpenDNS**
+- **Certifications:** NVIDIA DGX SuperPOD · AI Infrastructure · InfiniBand
+- **Community:** Founder, Detroit AI Collective
+
+---
+
+## 🌌 The Bigger Picture: AI Pangaea
+
+A lot of this work is anchored in one idea: **the future of intelligence is unified, not fragmented.**
+
+I'm exploring what it means to build **AI Pangaea** — the convergence of distributed intelligence islands into a more cohesive, secure, and capable continuum. That means:
+
+- **Superintelligent entities** with persistent memory and recursive self-improvement
+- **Security at every layer** — sandboxing, guardrails, consensus verification, confidential execution
+- **Memory & continuity** across sessions, devices, and intelligence islands
+
+> 📄 **Read the paper**: [*AI Pangaea: Unifying Intelligence Islands*](https://arxiv.org/pdf/2509.17460)
+
+---
+
+## 🤝 Let's Connect
+
+- **💼 Professional:** [LinkedIn](https://linkedin.com/in/andrewwhite)
+- **🐦 Thoughts:** [Twitter/X](https://twitter.com/awdemos)
+- **📧 Direct:** andrew@awdemos.com
+- **🏢 Organization:** [Detroit AI Collective](https://detroitaicollective.com)
+
+If you're working on something in the intersection of **systems, AI, and security**, I'd genuinely love to hear about it.
 
 ---
 
 <div align="center">
 
-**© 2026 Andrew White**
+**© 2026 Andrew White** — Built with curiosity, caffeine, and a deep distrust of complexity for its own sake.
 
 </div>
