@@ -141,6 +141,8 @@ I design systems from first principles. Small tools that do one thing well and c
 
 My formative years were spent on **Slashdot** and deep in **open source culture** — that ethos of transparency, collaboration, and building in public is still how I work today.
 
+> **What Kimi 2.7 has to say about my coding style:** *A technically deep, curiosity-driven engineer with strong systems programming instincts, a Rust-centric toolchain, and heavy involvement in AI/automation tooling. Likely experiments broadly and iterates fast rather than shipping polished products. Possible backgrounds: systems engineer, game dev, AI/ML tooling, or indie hacker.*
+
 ---
 
 ## 🎖️ Background
