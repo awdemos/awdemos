@@ -160,6 +160,15 @@ My formative years were spent on **Slashdot** and deep in **open source culture*
 
 ---
 
+## ⚡ Best in Class
+
+- **Best-in-class** infrastructure engineering
+- **The fastest CI/CD on the planet**
+- **Extreme performance** optimization
+- **Extreme Linux and open source security practices**
+
+---
+
 ## 🌌 The Bigger Picture: AI Pangaea
 
 A lot of this work is anchored in one idea: **the future of intelligence is unified, not fragmented.**
