@@ -154,6 +154,7 @@ My formative years were spent on **Slashdot** and deep in **open source culture*
 | **Earlier** | Cycorp Inc. — reported to **Dr. Doug Lenat**, symbolic AI for defense & healthcare |
 | **Way back** | Sold Linux supercomputers · Built Top 500 HPC systems · Infrastructure at **OpenDNS** & **Wikimedia Foundation** |
 | **Certifications** | NVIDIA DGX SuperPOD · AI Infrastructure · InfiniBand · NVIDIA Pro Certifications · Agentic Certified |
+| **Awards** | Award-winning developer |
 | **Community** | Founder, Detroit AI Collective |
 | **Aspiration** | I aspire to motivate, lead, teach, and inspire every single day and it is not so much about me but the unbelievable mentors and colleagues whose shoulders I stand on who showed me the way. I don't believe in limitations — I only believe in the limits of imagination. |
 
