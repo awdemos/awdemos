@@ -179,6 +179,7 @@ I'm exploring what it means to build **AI Pangaea** — the convergence of distr
 - [**Twitter/X**](https://twitter.com/awdemos)
 - **andrew@awdemos.com**
 - [**Detroit AI Collective**](https://detroitaicollective.com)
+- [**Vibe Coding Agency**](https://vibecodingagency.com/)
 
 If you're working on something in the intersection of **systems, AI, and security**, I'd genuinely love to hear about it.
 
