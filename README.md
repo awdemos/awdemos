@@ -5,7 +5,7 @@
 
 # 👋 Hi, I'm Andrew
 
-### I build everything from scratch — and give it all away
+### I build everything from scratch — open-source systems, commercial AI infrastructure, and hands-on consulting
 
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://kernel.org/)
 [![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
@@ -13,6 +13,8 @@
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
 [![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
+[![Vibe Coding Agency](https://img.shields.io/badge/🚀_Vibe_Coding_Agency-000000?style=for-the-badge)](https://vibecodingagency.com/)
+[![Book a Call](https://img.shields.io/badge/📅_Book_a_call-2ea44f?style=for-the-badge)](https://calendly.com/aicareerpathllc/30min)
 
 </div>
 
@@ -24,7 +26,7 @@
 
 An operating system. A text editor. An AI coding assistant. A blockchain. A borrow checker. An agent orchestrator. Neural networks. Programming languages. Simulators for synthetic life.
 
-All written in Rust. All free. All open source.
+Most of it is open source; the commercial products and services below help me keep building in public.
 
 > **Personal stretch goal:** Build *every* tool I rely on — nothing I use should be something I couldn't have written myself. Full ownership of the stack.
 
