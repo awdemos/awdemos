@@ -168,11 +168,12 @@ I'm exploring what it means to build **AI Pangaea** — the convergence of distr
 
 ## 🤝 Let's Connect
 
+- [**Vibe Coding Agency**](https://vibecodingagency.com/) — products, consulting, and the Open Superintelligence Stack
+- [**Book a call**](https://calendly.com/aicareerpathllc/30min)
 - [**LinkedIn**](https://linkedin.com/in/andrewwhite)
 - [**Twitter/X**](https://twitter.com/awdemos)
 - **andrew@awdemos.com**
 - [**Detroit AI Collective**](https://detroitaicollective.com)
-- [**Vibe Coding Agency**](https://vibecodingagency.com/)
 
 If you're working on something in the intersection of **systems, AI, and security**, I'd genuinely love to hear about it.
 
