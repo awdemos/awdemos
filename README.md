@@ -34,6 +34,22 @@ I give all of this away for free as a shoutout to all the known and unknown open
 
 ---
 
+## 💼 Products & Services
+
+I run [Vibe Coding Agency](https://vibecodingagency.com/) — shipping production AI infrastructure, agentic systems, and GPU cloud access for teams that need to move fast.
+
+| Offering | What it is | Investment | Get started |
+|---|---|---|---|
+| [UltraWork](https://vibecodingagency.com/gpu-cloud/) | GPU cloud chat & console for AI inference | $399/mo | [Sign up →](https://vibecodingagency.com/gpu-cloud/start/) |
+| [KV Cache Store](https://kvcachestore.com/) | Hosted KV-cache storage & sharing for LLMs | Pay-as-you-go | [Dashboard →](https://kvcachestore.com/app) |
+| [kvcdn-cli](https://github.com/kvcachestore/kvcdn-cli) | Open-source CLI to generate, verify, quantize, and upload KV caches | Free / OSS | [Install →](https://github.com/kvcachestore/kvcdn-cli#install) |
+| [Open Superintelligence Stack](https://vibecodingagency.com/pricing/#oss) | The same OpenCode environment we use to ship | $199/mo | [Subscribe →](https://buy.stripe.com/cNi5kw1COcki9INdgJ0gw08) |
+| [Hourly Vibe Coding](https://vibecodingagency.com/payments/hourly/) | Hands-on AI infrastructure pair-programming | $199/hr | [Book hours →](https://vibecodingagency.com/payments/hourly/) |
+| [Monthly Retainer](https://vibecodingagency.com/monthly-retainer/) | 10 hours of dedicated agency support per month | $1,999/mo | [Start retainer →](https://vibecodingagency.com/monthly-retainer/) |
+| [Private Discord Community](https://vibecodingagency.com/resources/private-community/) | Members-only community & early access | $4.99/mo | [Join →](https://vibecodingagency.com/resources/private-community/) |
+
+---
+
 ## 🏆 The Trinity — Full Stack Ownership
 
 These three represent my core thesis: **if you use it every day, you should own it.**
