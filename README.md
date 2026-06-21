@@ -62,16 +62,9 @@ These three represent my core thesis: **if you use it every day, you should own 
 
 ---
 
-## 🧠 Everything I've Built From Scratch
+## 🧠 Selected Open Source
 
-### 🖥️ Operating Systems & Low-Level
-
-| Project | Description | Lang |
-|---------|-------------|------|
-| [**RegicideOS**](https://github.com/awdemos/RegicideOS) | AI-native Rust Linux distro — Gentoo + Cosmic Desktop, GPU-optimized kernel | Rust |
-| [**ZFG**](https://github.com/awdemos/ZFG) | Zero Fugazis Linux — minimal, from-scratch Linux build | Shell |
-| [**stasis-borrow-checker**](https://github.com/awdemos/stasis-borrow-checker) | A Rust borrow checker written in Rust — ownership, moves, lifetimes, all from scratch | Rust |
-| [**cuda-oxide-demos**](https://github.com/awdemos/cuda-oxide-demos) | 25+ GPU demos: ML inference, N-body, matrix ops, KV cache, attention — all in Rust → CUDA | Rust |
+A curated set of projects that power my commercial work and research. See the full [awdemos](https://github.com/awdemos) org for experiments in blockchain, languages, simulations, and games.
 
 ### 🤖 AI / Agent Infrastructure
 
@@ -79,51 +72,22 @@ These three represent my core thesis: **if you use it every day, you should own 
 |---------|-------------|------|
 | [**openlibertas**](https://github.com/awdemos/openlibertas) | Full AI coding assistant — 15 agent personas, MCP tools, voice, session management | Rust |
 | [**kairo**](https://github.com/awdemos/kairo) | Agentic orchestrator — model-agnostic routing, ReAct agents, WASM sandboxing | Rust |
-| [**zerochain**](https://github.com/awdemos/zerochain) | Multi-agent orchestration via plain text files — no brokers, no databases, just files & watchers | Rust |
+| [**zerochain**](https://github.com/awdemos/zerochain) | Multi-agent orchestration via plain text files — no brokers, no databases | Rust |
 | [**Routage**](https://github.com/awdemos/Routage) | Async LLM router — sub-millisecond model dispatch, zero GC pauses | Rust |
-| [**Xfiles**](https://github.com/awdemos/Xfiles) | Plan 9-inspired agent communication hub with quantum-mode AI routing | Rust |
-| [**synapse-tutor**](https://github.com/awdemos/synapse-tutor) | Neural network from scratch — learns XOR via backprop, no ML frameworks | Rust |
-| [**mnist-nn-rust**](https://github.com/awdemos/mnist-nn-rust) | MNIST digit classifier from scratch in Rust using ndarray | Rust |
-| [**tiny-llm-template**](https://github.com/awdemos/tiny-llm-template) | Minimal LLM project template for rapid experimentation | Python |
 
 ### ✏️ Developer Tools
 
 | Project | Description | Lang |
 |---------|-------------|------|
-| [**neoxide**](https://github.com/awdemos/neoxide) | Neovim-inspired terminal editor — LSP, tree-sitter, Lua plugins, splits, macros, marks, diff mode | Rust |
-| [**opencode-memento**](https://github.com/awdemos/opencode-memento) | Context preservation across AI coding sessions — no more repeating yourself | TypeScript |
-| [**opencode-caveman-plugin**](https://github.com/awdemos/opencode-caveman-plugin) | Aggressive language compression for AI — grunt mode with preserved accuracy | TypeScript |
-| [**opencode-poke-plugin**](https://github.com/awdemos/opencode-poke-plugin) | Lightweight agent wake-up / poke plugin | TypeScript |
+| [**neoxide**](https://github.com/awdemos/neoxide) | Neovim-inspired terminal editor — LSP, tree-sitter, Lua plugins, splits, macros | Rust |
+| [**opencode-memento**](https://github.com/awdemos/opencode-memento) | Context preservation across AI coding sessions | TypeScript |
 
-### ⛓️ Blockchain & Finance
+### 🖥️ Systems & GPU
 
 | Project | Description | Lang |
 |---------|-------------|------|
-| [**etch**](https://github.com/awdemos/etch) | Immutable timestamp chain — 1024 payloads/block, Scrypt PoW, Ed25519, libp2p gossip | Rust |
-| [**etch-gen**](https://github.com/awdemos/etch-gen) | AI-powered blockchain generator using Etch architecture | Rust |
-| [**usdai-gpu-vault**](https://github.com/awdemos/usdai-gpu-vault) | Solana program — collateralized GPU lending, NFT minting, permissionless liquidation | Rust |
-
-### 🔤 Languages & Compilers
-
-| Project | Description | Lang |
-|---------|-------------|------|
-| [**OpenLatinium**](https://github.com/awdemos/OpenLatinium) | Programming language + VM inspired by Latin — because code should be beautiful | Python → Rust |
-| [**latinium-roguelike**](https://github.com/awdemos/latinium-roguelike) | Turn-based dungeon crawler written *entirely* in OpenLatinium | Shell |
-
-### 🌍 Simulations
-
-| Project | Description | Lang |
-|---------|-------------|------|
-| [**xenobot-sim**](https://github.com/awdemos/xenobot-sim) | Synthetic biological machine evolution — XPBD physics, LBM fluid, genetic algorithms | Rust |
-| [**drone-sim**](https://github.com/awdemos/drone-sim) | Human pilots + AI co-pilots flying together in real-world cities | Rust |
-| [**shuttle-tile-sim**](https://github.com/awdemos/shuttle-tile-sim) | Space shuttle tile thermodynamics simulation | Rust |
-
-### 🎲 Fun
-
-| Project | Description | Lang |
-|---------|-------------|------|
-| [**openarcanum**](https://github.com/awdemos/openarcanum) | RPG character generator — for humans *and* AI agent personas | Rust |
-| [**top-github-vibe-coders**](https://github.com/awdemos/top-github-vibe-coders) | Leaderboard for developers shipping AI-assisted code | Rust |
+| [**RegicideOS**](https://github.com/awdemos/RegicideOS) | AI-native Rust Linux distro — Gentoo + Cosmic Desktop, GPU-optimized kernel | Rust |
+| [**cuda-oxide-demos**](https://github.com/awdemos/cuda-oxide-demos) | 25+ GPU demos: ML inference, N-body, matrix ops, KV cache, attention | Rust |
 
 ---
 
