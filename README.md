@@ -99,6 +99,7 @@ Not everything is scratch-built. Some things are battle-tested patterns you can 
 
 - **Kubernetes** — 100+ deployment patterns, Cilium eBPF, multi-cluster federation
 - **LLM Infrastructure** — RAG pipelines, fine-tuning, multimodal benchmarks
+- **KV Cache Infrastructure** — Generate, quantize, and host KV caches for LLMs with [kvcdn-cli](https://github.com/kvcachestore/kvcdn-cli) + [KV Cache Store](https://kvcachestore.com/)
 - **CI/CD** — Dagger Go pipelines, container-native builds, security scanning
 - **IaC** — Pulumi (Go/TypeScript) for Azure & AWS multi-tenant infrastructure
 - **Rust** — Matrix ops, CLI boilerplate, async patterns that don't leak memory
