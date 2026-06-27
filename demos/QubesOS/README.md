@@ -127,7 +127,7 @@ Research on running isolated Kubernetes clusters within QubesOS:
 - **Network**: Isolated virtual networks between qubes
 - **Storage**: Template-based images with persistent volumes
 
-Status: See `KubernetesClusterProject.md` for ongoing research.
+Status: Kubernetes isolation research is tracked in `demos/kubernetes/`.
 
 ## Security Best Practices
 
