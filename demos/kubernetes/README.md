@@ -212,7 +212,7 @@ Each node runs:
 ### CI/CD
 - **Dagger** - Programmable deployment pipelines
 - **Tekton** - Cloud-native CI/CD framework
-- **GitHub Actions** - Automated workflows
+- **Jenkins** - Self-hosted automation server
 
 ---
 
