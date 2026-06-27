@@ -116,7 +116,7 @@ This document organizes all demos by technology category for quick navigation. E
 |-------|-------------|-------------|----------|
 | [SBOM Integration](./) | Software Bill of Materials generation | Syft, SPDX, CycloneDX | In Progress |
 | [SLSA Attestations](./) | Supply chain Levels for Software Artifacts | Sigstore, Cosign, SLSA | In Progress |
-| [Image Scanning](./) | Container vulnerability scanning | Trivy, Grype, GitHub Actions | Implemented |
+| [Image Scanning](./) | Container vulnerability scanning | Trivy, Grype | Implemented |
 
 ### Zero-Trust Architecture
 

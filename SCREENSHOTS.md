@@ -250,12 +250,10 @@ poetry run mypy src/
 
 **Screenshot Required:**
 - **Terminal**: Running Dagger pipeline locally
-- **Terminal**: GitHub Actions workflow run output
 - **Dashboard**: Pipeline execution visualization
 
 **GIF Required:**
 - **Terminal**: `dagger run` showing steps executing
-- **GitHub Actions**: Workflow run progressing
 
 **Commands to Capture:**
 ```bash
