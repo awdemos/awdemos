@@ -1,6 +1,6 @@
-# EKS + GitHub Actions Demo
+# EKS + Pulumi Go Demo
 
-**Automated Kubernetes infrastructure deployment with Pulumi, GitHub Actions, and AWS.**
+**Automated Kubernetes infrastructure deployment with Pulumi Go and AWS.**
 
 ## Overview
 
@@ -8,18 +8,11 @@ This demo showcases production-grade infrastructure as code using:
 
 - **Pulumi (Go)**: Infrastructure as code with general-purpose programming language
 - **AWS EKS**: Elastic Kubernetes Service for managed Kubernetes
-- **GitHub Actions**: CI/CD pipeline for automated deployment
 - **Private Subnet Nodes**: Secure worker nodes in private subnets
 
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                     GitHub Actions CI/CD                    │
-│  (push → build → test → pulumi up)                       │
-└───────────────────────┬─────────────────────────────────────┘
-                        │
-                        ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                      AWS Region                          │
 │                                                             │
@@ -110,7 +103,7 @@ cluster, err := lbrlabs.NewCluster(ctx, "cluster", &lbrlabs.ClusterArgs{
 
 4. **Install dependencies**:
    ```bash
-   cd demos/eks-gha-aws-demo
+   cd demos/eks-pulumi-go-demo
    go mod download
    ```
 
@@ -134,46 +127,10 @@ cluster, err := lbrlabs.NewCluster(ctx, "cluster", &lbrlabs.ClusterArgs{
    kubectl get nodes
    ```
 
-### GitHub Actions Integration
-
-Create `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy EKS Cluster
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-go@v4
-        with:
-          go-version: '1.21'
-
-      - name: Install Pulumi
-        run: curl -fsSL https://get.pulumi.com | sh
-
-      - name: Configure AWS
-        run: |
-          echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
-          echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
-
-      - name: Deploy to EKS
-        run: |
-          pulumi login
-          pulumi stack init
-          pulumi up --yes
-```
-
 ## File Structure
 
 ```
-eks-gha-aws-demo/
+eks-pulumi-go-demo/
 ├── main.go              # Pulumi infrastructure definition
 ├── go.mod               # Go module dependencies
 ├── go.sum               # Dependency checksums
@@ -241,12 +198,11 @@ eks-gha-aws-demo/
 - **Multi-AZ**: Deployed across availability zones
 - **Horizontal scaling**: Add/remove nodes dynamically
 
-### 4. GitOps
+### 4. Reproducibility
 
-- **GitHub Actions**: Automated deployment on push
 - **Infrastructure versioning**: Changes tracked in Git
 - **Rollback**: `pulumi down` to destroy, `pulumi up` to redeploy
-- **Environment parity**: Same pipeline for dev/staging/prod
+- **Environment parity**: Same code for dev/staging/prod
 
 ## Cost Estimates
 
@@ -314,8 +270,6 @@ ping google.com  # Should work via NAT gateway
 - [Pulumi Go SDK](https://www.pulumi.com/docs/reference/pkg/go/)
 - [AWS EKS Documentation](https://docs.aws.amazon.com/eks/)
 - [lbrlabs EKS Provider](https://github.com/lbrlabs/pulumi-lbrlabs-eks)
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-
 ---
 
-**Status**: ✅ Working demo - deployable infrastructure with Pulumi and GitHub Actions
+**Status**: ✅ Working demo - deployable infrastructure with Pulumi Go

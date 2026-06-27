@@ -1,1 +1,0 @@
-This is under development, more details to be added soon.
