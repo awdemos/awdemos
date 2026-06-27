@@ -495,7 +495,7 @@ resource "aws_subnet" "demo_subnet_az2" {
 
 ## Related Demos
 
-- `demos/eks-gha-aws-demo/` - Pulumi version of EKS deployment
+- `demos/eks-pulumi-go-demo/` - Pulumi version of EKS deployment
 - `demos/kubernetes/100_ways_to_deploy_kubernetes/` - More EKS patterns
 - `demos/pulumi-azure-tenant/` - Multi-tenant IaC
 

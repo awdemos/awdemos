@@ -129,7 +129,7 @@ These live in the `demos/` directory of this repo and represent working examples
 - **`demos/kubernetes/`** — 100+ deployment patterns, debugging guides, deterministic build strategies, and multi-cluster architecture notes. Includes Cilium eBPF networking setup.
 - **`demos/pulumi-azure-tenant/`** — Multi-tenant Azure AD B2C infrastructure provisioned with Pulumi TypeScript.
 - **`demos/dagger-go-ci/`** — Container-native CI/CD pipeline using Dagger's Go SDK. Includes test, lint, build, and serve stages with Trivy security scanning.
-- **`demos/eks-gha-aws-demo/`** — AWS EKS cluster provisioning with Pulumi Go and GitHub Actions integration.
+- **`demos/eks-pulumi-go-demo/`** — AWS EKS cluster provisioning with Pulumi Go.
 - **`demos/vpc_eks_terraform-demo/`** — Terraform modules for VPC and EKS baseline infrastructure.
 
 ### Systems & Languages

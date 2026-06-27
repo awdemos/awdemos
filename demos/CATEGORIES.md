@@ -74,7 +74,7 @@ This document organizes all demos by technology category for quick navigation. E
 | Demo | Description | Tech Stack | Quick Start |
 |-------|-------------|-------------|-------------|
 | [Dagger Go CI](./dagger-go-ci/) | Container-native programmable pipelines | Dagger, Go, Kubernetes, Tekton | [Quick Start](./dagger-go-ci/) |
-| [GitHub Actions](./eks-gha-aws-demo/) | EKS deployment via GitHub Actions | GitHub Actions, Pulumi, AWS | [Quick Start](./eks-gha-aws-demo/) |
+| [AWS EKS with Pulumi](./eks-pulumi-go-demo/) | EKS deployment via Pulumi Go | Pulumi, AWS | [Quick Start](./eks-pulumi-go-demo/) |
 
 ### Testing & Debugging
 
@@ -134,7 +134,7 @@ This document organizes all demos by technology category for quick navigation. E
 | Demo | Description | Clouds | Quick Start |
 |-------|-------------|---------|-------------|
 | [Pulumi Azure Tenant](./pulumi-azure-tenant/) | Multi-tenant IaC on Azure | Azure, Pulumi (Go), Azure AD | [Quick Start](./pulumi-azure-tenant/) |
-| [AWS EKS Demo](./eks-gha-aws-demo/) | EKS deployment automation | AWS, Pulumi, GitHub Actions | [Quick Start](./eks-gha-aws-demo/) |
+| [AWS EKS Demo](./eks-pulumi-go-demo/) | EKS deployment automation | AWS, Pulumi | [Quick Start](./eks-pulumi-go-demo/) |
 
 ### Serverless & Edge
 
