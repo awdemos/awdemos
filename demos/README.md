@@ -19,7 +19,7 @@ This directory contains working examples, reference architectures, and learning 
   - Various guides: debugging, etcd inspection, deterministic builds, multi-cluster networking
 - **`pulumi-azure-tenant/`** — Azure AD B2C multi-tenant infrastructure with Pulumi TypeScript
 - **`dagger-go-ci/`** — Dagger-based CI/CD pipeline in Go with Trivy scanning
-- **`eks-gha-aws-demo/`** — EKS provisioning with Pulumi Go and GitHub Actions
+- **`eks-pulumi-go-demo/`** — EKS provisioning with Pulumi Go
 - **`vpc_eks_terraform-demo/`** — Terraform baseline for VPC and EKS
 
 ## Systems & Languages

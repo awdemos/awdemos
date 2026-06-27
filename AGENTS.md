@@ -74,6 +74,6 @@ cd demos/<demo-name>/ && follow demo-specific README
 
 ## NOTES
 
-- `eks-gha-aws-demo/` is named for GitHub Actions but contains **no actual Actions workflows** — consistent with the anti-pattern above.
+- `eks-pulumi-go-demo/` was renamed from `eks-gha-aws-demo/` to remove the GitHub Actions implication; it contains no Actions workflows.
 - `dagger-go-ci/` uses a `go.work` workspace with nested modules — more complex than typical demos.
 - CONTRIBUTING.md references GitHub Actions CI; this is aspirational/outdated. No `.github/workflows/` exists.
