@@ -123,8 +123,7 @@ Recording [on Drive](https://drive.google.com/file/d/1mWthDw6lFa_Z-WQgPvyinVodtn
 - CI
 	- push a commit
     - show `.circleci/config.yml` 🎥 9:17
-    - show `.github/workflows/test.yml`
-	- see run in Github Actions 🎥 10:00
+    - show `Jenkinsfile`
 - Cloud 🎥 10:25
 	- look at all runs
 	- look at [a run](https://dagger.cloud/runs/7b77ca7f-c408-4a9b-a493-8637986b0597)
