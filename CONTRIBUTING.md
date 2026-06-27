@@ -71,7 +71,7 @@ This repository is a learning resource. Feel free to:
 
 ### Continuous Integration
 
-This repository uses GitHub Actions for:
+This repository uses Dagger and Jenkins for:
 - Build verification
 - Linting and formatting checks
 - Security scanning
