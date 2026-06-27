@@ -332,15 +332,9 @@ cd demos/rust/ai/
 # Build LLM inference server
 cd llm_inference_server/
 cargo build --release
-
-# Build vector database
-cd vector_database/
-cargo build --release
-
-# Build MCP servers
-cd mcp_servers/
-cargo build --release
 ```
+
+See [`ai/specs/`](ai/specs/) for design documents covering vector databases and MCP servers.
 
 ### Featured AI Projects
 
