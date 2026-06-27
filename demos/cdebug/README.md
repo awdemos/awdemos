@@ -433,13 +433,6 @@ Try `cdebug exec --privileged` instead.
 
 - [`kpexec`](https://github.com/ssup2/kpexec) - a CLI that runs commands in a Kubernetes container with high privileges (via a privileged Pod with Node access).
 
-## TODO:
-
-- More `exec` flags (like in `docker run`): `--cap-add`, `--cap-drop`, `--env`, `--volume`, etc.
-- Helper command(s) suggesting nix(ery) packages
-- Non-docker runtimes (Podman, CRI, OCI)
-- More E2E Tests
-
 ## Contributions
 
 It's a pre-alpha with no sound design yet, so I may not be accepting all PRs. Sorry about that :)
