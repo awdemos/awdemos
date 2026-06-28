@@ -137,6 +137,8 @@ This portfolio showcases:
 
 ### How I Can Help
 
+I’m a senior AI/infrastructure engineer who shipped **180 repos** this year and has launched enterprise AI products. I help teams ship LLM/GPU/AI tooling fast. Here is my work. Let’s talk.
+
 I help organizations:
 - **Reduce cloud costs by up to 50%**
 - **Accelerate AI/ML infrastructure deployment**
