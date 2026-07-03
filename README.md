@@ -22,7 +22,7 @@
 
 ## 🚀 The Pitch
 
-**I build the full stack — from kernel to UI — entirely in Rust, entirely from scratch.**
+**I build the full stack — systems, languages, and developer tools — almost entirely in Rust, almost entirely from scratch.**
 
 An operating system. A text editor. An AI coding assistant. A blockchain. A borrow checker. An agent orchestrator. Neural networks. Programming languages. Simulators for synthetic life.
 
