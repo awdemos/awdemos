@@ -18,14 +18,14 @@ llm/
 
 ## WHERE TO LOOK
 
-| Task | Location | Notes |
-|------|----------|-------|
-| RAG pipeline | `chainlit_rust_rag/` | Mixed doc types (PDF/HTML/Markdown), HuggingFace embeddings |
-| Fine-tuning | `finetuning/` | Config-driven experiments |
-| Multi-agent patterns | `MLOPS.md` | MCP-based orchestration notes |
-| NVIDIA GPU setup | `Nvidia_software.md`, `Nvidia_cloud_vendors.md` | Cloud vendor GPU options |
-| Adversarial testing | `attacks/` | Prompt injection, jailbreak research |
-| GRPO experiments | `alpha_maze_finder_grpo/` | Group Relative Policy Optimization |
+| Task                 | Location                                        | Notes                                                       |
+| -------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
+| RAG pipeline         | `chainlit_rust_rag/`                            | Mixed doc types (PDF/HTML/Markdown), HuggingFace embeddings |
+| Fine-tuning          | `finetuning/`                                   | Config-driven experiments                                   |
+| Multi-agent patterns | `MLOPS.md`                                      | MCP-based orchestration notes                               |
+| NVIDIA GPU setup     | `Nvidia_software.md`, `Nvidia_cloud_vendors.md` | Cloud vendor GPU options                                    |
+| Adversarial testing  | `attacks/`                                      | Prompt injection, jailbreak research                        |
+| GRPO experiments     | `alpha_maze_finder_grpo/`                       | Group Relative Policy Optimization                          |
 
 ## CONVENTIONS
 

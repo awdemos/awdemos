@@ -12,13 +12,13 @@ High-performance vector search implementation in Rust using HNSW algorithm for R
 
 ## Performance
 
-| Metric | Value | Notes |
-|---------|-------|-------|
-| Index 1M vectors (768-dim) | 12s | Parallel construction |
-| Query latency (p99) | 8ms | HNSW-16, M=32 |
-| Memory usage | 1.2GB | 768-dim, 1M vectors |
-| Throughput | 8,500 queries/sec | 8 threads |
-| Recall@10 | 0.97 | HNSW-16 accuracy |
+| Metric                     | Value             | Notes                 |
+| -------------------------- | ----------------- | --------------------- |
+| Index 1M vectors (768-dim) | 12s               | Parallel construction |
+| Query latency (p99)        | 8ms               | HNSW-16, M=32         |
+| Memory usage               | 1.2GB             | 768-dim, 1M vectors   |
+| Throughput                 | 8,500 queries/sec | 8 threads             |
+| Recall@10                  | 0.97              | HNSW-16 accuracy      |
 
 ## Quick Start
 
@@ -104,7 +104,7 @@ impl Hnsw {
     pub fn search(&self, query: &[f32], k: usize) -> Vec<(usize, f32)> {
         let mut visited = HashMap::new();
         let mut candidates = BinaryHeap::new();
-        
+
         // Greedy search with beam width
         self.greedy_search(query, k, &mut visited, &mut candidates)
     }
@@ -135,7 +135,7 @@ unsafe fn euclidean_avx512(a: &[f32], b: &[f32]) -> f32 {
         let diff = _mm512_sub_ps(_mm512_loadu_ps(&a[i * 16]), _mm512_loadu_ps(&b[i * 16]));
         _mm512_dp_ps(diff, diff) // Sum of squares
     }).reduce(_mm512_setzero_ps(), |acc, x| _mm512_add_ps(acc, x));
-    
+
     // Horizontal sum
     let mut sum_arr = [0f32; 16];
     _mm512_storeu_ps(sum_arr.as_mut_ptr(), sum);
@@ -221,20 +221,20 @@ async fn rag_query(
 ) -> Result<String, Box<dyn Error>> {
     // Embed query
     let query_embedding = embed_text_async(prompt, client).await?;
-    
+
     // Search vector database
     let results = index.search(&query_embedding, k=5);
-    
+
     // Build context from results
     let context = results
         .iter()
         .map(|(doc_id, _)| format_documents(doc_id))
         .collect::<Vec<_>>()
         .join("\n\n");
-    
+
     // Query LLM with context
     let full_prompt = format!("Context:\n{}\n\nQuestion: {}", context, prompt);
-    
+
     Ok(full_prompt)
 }
 ```
@@ -249,7 +249,7 @@ async fn stream_search_results(
     index: Arc<Hnsw>,
 ) -> mpsc::UnboundedReceiver<SearchResult> {
     let (tx, rx) = mpsc::unbounded_channel();
-    
+
     // Background search task
     tokio::spawn(async move {
         let results = index.search(query, k=10);
@@ -257,25 +257,25 @@ async fn stream_search_results(
             tx.send(result).await.unwrap();
         }
     });
-    
+
     rx
 }
 ```
 
 ## Benchmarks vs FAISS
 
-| Dataset | FAISS (C++) | Rust HNSW | Improvement |
-|---------|--------------|------------|-------------|
-| SIFT 1M | 0.45s | 0.38s | **15% faster** |
-| GIST 1M | 0.62s | 0.51s | **18% faster** |
-| MNIST 784-dim | 0.28s | 0.23s | **18% faster** |
+| Dataset       | FAISS (C++) | Rust HNSW | Improvement    |
+| ------------- | ----------- | --------- | -------------- |
+| SIFT 1M       | 0.45s       | 0.38s     | **15% faster** |
+| GIST 1M       | 0.62s       | 0.51s     | **18% faster** |
+| MNIST 784-dim | 0.28s       | 0.23s     | **18% faster** |
 
 ### Memory Comparison
 
-| Framework | Base Memory | Peak Memory | Difference |
-|-----------|-------------|-------------|------------|
-| FAISS | 890MB | 1.2GB | +310MB |
-| Rust HNSW | 520MB | 720MB | **42% less** |
+| Framework | Base Memory | Peak Memory | Difference   |
+| --------- | ----------- | ----------- | ------------ |
+| FAISS     | 890MB       | 1.2GB       | +310MB       |
+| Rust HNSW | 520MB       | 720MB       | **42% less** |
 
 ## Deployment
 
@@ -313,17 +313,17 @@ spec:
         app: vector-db
     spec:
       containers:
-      - name: vector-db
-        image: awdemos/vector-db:latest
-        resources:
-          requests:
-            memory: "2Gi"
-            cpu: "2000m"
-          limits:
-            memory: "4Gi"
-            cpu: "4000m"
-        ports:
-          - containerPort: 8080
+        - name: vector-db
+          image: awdemos/vector-db:latest
+          resources:
+            requests:
+              memory: "2Gi"
+              cpu: "2000m"
+            limits:
+              memory: "4Gi"
+              cpu: "4000m"
+          ports:
+            - containerPort: 8080
 ```
 
 ## Production Considerations
@@ -353,16 +353,16 @@ fn save_index(index: &Hnsw, path: &Path) -> Result<(), SaveError> {
         point_count: index.len(),
         created_at: Utc::now(),
     };
-    
+
     let metadata_bytes = serde_json::to_vec(&metadata)?;
     let index_bytes = bincode::serialize(&index)?;
-    
+
     // Write metadata + index atomically
     use std::fs::File;
     let mut file = File::create(path)?;
     file.write_all(&metadata_bytes)?;
     file.write_all(&index_bytes)?;
-    
+
     Ok(())
 }
 
@@ -370,15 +370,15 @@ fn save_index(index: &Hnsw, path: &Path) -> Result<(), SaveError> {
 fn load_index(path: &Path) -> Result<Hnsw, LoadError> {
     use std::fs::File;
     let mut file = File::open(path)?;
-    
+
     // Read metadata
     let metadata: IndexMetadata = serde_json::from_reader(&mut file)?;
-    
+
     // Read index data
     let mut index_data = Vec::new();
     file.read_to_end(&mut index_data)?;
     let index: Hnsw = bincode::deserialize(&index_data)?;
-    
+
     Ok(index)
 }
 ```
@@ -416,6 +416,7 @@ This implementation demonstrates all four using Rust's ownership model, zero-cop
 ---
 
 **See Also:**
+
 - [LLM Inference Server](../llm_inference_server/)
 - [Rust for AI Guide](https://awdemos.github.io/demos/docs/blog/rust-for-ai/)
 - [Performance Benchmarks](https://awdemos.github.io/demos/BENCHMARKS.md)

@@ -1,13 +1,12 @@
 ## Frameworks
 
-- [MLFlow] - (https://mlflow.org/) 
+- [MLFlow] - (https://mlflow.org/)
 - [Axolotl](https://github.com/OpenAccess-AI-Collective/axolotl) - Axolotl is a tool designed to streamline the fine-tuning of various AI models, offering support for multiple configurations and architectures.
 - [Kubeflow](https://github.com/kubeflow/kubeflow) - A popular k8 native mlops toolkit.
 - [ZenML](https://github.com/zenml-io/zenml) - A popular open source commercially supported solution.
 - [TinyLLM](https://github.com/jasonacox/TinyLLM) - As it says.
 - [Karpathy's llm.c](https://twitter.com/karpathy/status/1778153659106533806) - Andrew Karpathy on 04-10-2024 announced llm.c, a gpt-2 training script that reduces the library dependency producing a 99.97% reduction in lines of code compared to the PyTorch project.
 - [VLLM](https://github.com/vllm-project/vllm) - VLLM is a versatile language learning model project aimed at providing comprehensive tools and resources for fine-tuning language models across various languages and dialects.
-
 
 ## RAG
 
@@ -34,7 +33,7 @@ python convert_checkpoint.py --model_dir /tmp/llama-v2-13b-hf \
                          --dtype float16 \
                          --tp_size 2 \
                          --hf_lora_dir /tmp/chinese-llama-2-lora-13b
-                          
+
 trtllm-build --checkpoint_dir ./tllm_checkpoint_2gpu_lora \
             --output_dir /tmp/new_lora_13b/trt_engines/fp16/2-gpu/ \
             --gpt_attention_plugin float16 \
@@ -53,7 +52,7 @@ mpirun -n 2 python ../run.py --engine_dir "/tmp/new_lora_13b/trt_engines/fp16/2-
               --lora_task_uids 0 \
               --no_add_special_tokens \
               --use_py_session
- 
+
  Input: "今天天气很好，我到公园的时后，"
 Output: "发现公园里人很多，有的在打羽毛球，有的在打乒乓球，有的在跳绳，还有的在跑步。我和妈妈来到一个空地上，我和妈妈一起跳绳，我跳了1"
 ```
@@ -62,6 +61,6 @@ Output: "发现公园里人很多，有的在打羽毛球，有的在打乒乓�
 
 - [Axolotl Quickstart Guide](https://openaccess-ai-collective.github.io/axolotl/#quickstart) - A quickstart guide for getting up and running with Axolotl, a tool for fine-tuning AI models.
 
-# Kubefflow 
+# Kubefflow
 
 [Kubeflow Installation Guide] - (https://dagshub.com/blog/how-to-install-kubeflow-locally/)

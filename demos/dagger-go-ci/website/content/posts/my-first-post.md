@@ -7,4 +7,3 @@ featured_image = '/images/spaceman.jpg'
 ## Frontend for the Greetings API
 
 The greeting is: {{<greeting>}}
-

@@ -71,10 +71,7 @@ This repository is a learning resource. Feel free to:
 
 ### Continuous Integration
 
-This repository uses Dagger and Jenkins for:
-- Build verification
-- Linting and formatting checks
-- Security scanning
+This repository uses Dagger and Jenkins for build verification, linting and formatting checks, and security scanning. GitHub Actions is intentionally not used.
 
 Make sure all CI checks pass before submitting PRs.
 

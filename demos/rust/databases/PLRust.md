@@ -1,32 +1,39 @@
 PL/Rust enables developers to write high-performance, memory-safe PostgreSQL functions in Rust, combining native code execution with Rust's safety guarantees. Here's why it stands out:
 
 ### Key Advantages
+
 **1. Performance Benchmarks**  
 PL/Rust functions compile to native machine code, achieving speeds **4-17x faster** than PL/pgSQL or PL/v8 for compute-intensive tasks[2][21]. For example:
+
 - **Array magnitude calculation**: 3.13s (PL/Rust) vs. 13.81s (PL/pgSQL)[21]
 - **Null-checking**: 3.13s (PL/Rust) vs. 53.55s (PL/v8)[21]
 
-**2. Memory Safety**  
+**2. Memory Safety**
+
 - Blocks `unsafe` Rust code at compile time[1][6]
 - Uses `postgrestd` in trusted mode to restrict filesystem/OS access on Linux x86_64/aarch64[1][6]
 - Inherits Rust's compile-time checks for null/dangling pointers[1][6]
 
-**3. Cloud Integration**  
+**3. Cloud Integration**
+
 - Supported as a **trusted language** on AWS RDS PostgreSQL (v13+)[2][8][26]
 - Enables Rust-based Trusted Language Extensions (TLEs) without privileged access[2][9]
 
-**4. PostgreSQL Feature Support**  
+**4. PostgreSQL Feature Support**
+
 - Full Server Programming Interface (SPI) access: queries, cursors, triggers[1][7][24]
 - Safe Rust bindings for built-in types (`TEXT`, `NUMERIC`, arrays)[1][7]
 - Cross-compilation support for multi-architecture replication[1]
 
 ### Ideal Use Cases
+
 - **Data-intensive computations** (e.g., vector math, ML inference)
 - **High-throughput API endpoints** via PostgreSQL functions
 - **Security-critical extensions** requiring memory safety
 - **Legacy PL/pgSQL optimization** without rewriting in C
 
 ### Tradeoffs
+
 - **Initial compilation latency**: ~3s per function (AWS RDS benchmarks)[2]
 - **Learning curve**: Rust's ownership model vs. SQL scripting[28][29]
 - **Limited platform support**: Trusted mode requires Linux x86_64/aarch64[1][6]

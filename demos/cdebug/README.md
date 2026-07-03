@@ -14,12 +14,12 @@ With this tool you can:
 
 The following _commands_ x _runtimes_ are supported:
 
-|                       | Docker | Podman | containerd | OCI (runc, crun) | Kubernetes | CRI    |
-| :---                  | :---:  | :---:  | :---:      | :---:            | :---:      | :---:  |
-| `exec`                | ✅     | -      | ✅         | -                | ✅          | -      |
-| `port-forward` local  | ✅     | -      | -          | -                | -          | -      |
-| `port-forward` remote | 🛠️      | -      | -          | -                | -          | -      |
-| `export`              | -      | -      | -          | -                | -          | -      |
+|                       | Docker | Podman | containerd | OCI (runc, crun) | Kubernetes | CRI |
+| :-------------------- | :----: | :----: | :--------: | :--------------: | :--------: | :-: |
+| `exec`                |   ✅   |   -    |     ✅     |        -         |     ✅     |  -  |
+| `port-forward` local  |   ✅   |   -    |     -      |        -         |     -      |  -  |
+| `port-forward` remote |   🛠️   |   -    |     -      |        -         |     -      |  -  |
+| `export`              |   -    |   -    |     -      |        -         |     -      |  -  |
 
 ## Installation
 
@@ -210,7 +210,7 @@ drwxr-xr-x    5 root     root        4.0K Jan  1  1970 nodejs
 ...
 ```
 
-Notice 👉  above - that's where the debugging tools live:
+Notice 👉 above - that's where the debugging tools live:
 
 ```sh
 / $# echo $PATH

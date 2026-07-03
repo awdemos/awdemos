@@ -2,7 +2,8 @@
 
 How do we explore the state of our Kubernetes cluster? Well lets start with taking a look in the etcd server!
 
-First set some of the shell variables the ```etcdctl``` command expects to be present:
+First set some of the shell variables the `etcdctl` command expects to be present:
+
 ```
 export ETCDCTL_API=3
 export ETCDCTL_CACERT=/etc/kubernetes/pki/etcd/ca.crt
@@ -23,11 +24,11 @@ Okay cool, as expected, the root-ca-cert-publisher isn't changing too often.
 
 Let's save the database state so we don't do anything harmful:
 
-```etcdctl snapshot save backup.db```
+`etcdctl snapshot save backup.db`
 
 And lets restore it back:
 
-```etcdctl snapshot restore backup.db```
+`etcdctl snapshot restore backup.db`
 
 Lists all members in the etcd cluster. Helps in understanding the current cluster membership and health.
 
@@ -37,4 +38,3 @@ Lists all members in the etcd cluster. Helps in understanding the current cluste
    etcdctl alarm list
    etcdctl auth status
 ```
-

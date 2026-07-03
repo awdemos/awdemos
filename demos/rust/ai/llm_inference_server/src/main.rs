@@ -7,8 +7,8 @@ use axum::{
     Router,
 };
 use candle::{Device, Tensor};
-use candle_transformers::models::quantized_llama::{ModelWeights, QLlama};
 use candle_nn::VarBuilder;
+use candle_transformers::models::quantized_llama::{ModelWeights, QLlama};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use tokio::sync::RwLock;
@@ -66,17 +66,17 @@ impl InferenceState {
 
     fn load_model(&mut self, model_path: &str) -> Result<()> {
         info!("Loading model from: {}", model_path);
-        
+
         let model_weights = ModelWeights::from_file(model_path)
             .with_context(|| format!("Failed to load model from {}", model_path))?;
-        
+
         let device = &self.device;
         let config = candle_transformers::models::quantized_llama::Config::from_hf(model_path)?;
-        
+
         let vb = VarBuilder::new();
         let model = QLlama::load(&model_weights, &config, &vb, device)
             .with_context(|| "Failed to load QLlama model")?;
-        
+
         self.model = Some(model);
         info!("Model loaded successfully");
         Ok(())
@@ -103,9 +103,8 @@ async fn main() -> Result<()> {
     info!("Starting LLM Inference Server");
 
     // Initialize CUDA device
-    let device = Device::cuda_if_available(0)
-        .with_context(|| "CUDA device not available")?;
-    
+    let device = Device::cuda_if_available(0).with_context(|| "CUDA device not available")?;
+
     info!("Using device: {:?}", device);
 
     // Initialize inference state
@@ -120,7 +119,7 @@ async fn main() -> Result<()> {
     let listener = tokio::net::TcpListener::bind("0.0.0.0:8000")
         .await
         .with_context(|| "Failed to bind to port 8000")?;
-    
+
     info!("Server listening on http://0.0.0.0:8000");
     axum::serve(listener, app).await?;
 
@@ -130,7 +129,7 @@ async fn main() -> Result<()> {
 /// Health check endpoint
 async fn health_check(State(state): State<Arc<RwLock<InferenceState>>>) -> Json<HealthStatus> {
     let state = state.read().await;
-    
+
     Json(HealthStatus {
         status: "healthy".to_string(),
         model_loaded: state.model.is_some(),
@@ -145,7 +144,7 @@ async fn completions(
     Json(req): Json<CompletionRequest>,
 ) -> Result<Json<CompletionResponse>, (StatusCode, Json<ErrorResponse>)> {
     let mut state = state.write().await;
-    
+
     // Load model if not loaded
     if state.model.is_none() {
         if let Err(e) = state.load_model(&req.model) {
@@ -161,23 +160,20 @@ async fn completions(
 
     // Increment active requests
     state.increment_requests().await;
-    
+
     // Get model reference
     let model = state.model.as_ref().unwrap();
-    
+
     info!("Processing completion request: {} tokens", req.max_tokens);
-    
+
     // Zero-copy inference (simplified for demo)
-    let response_text = format!(
-        "AI inference response for: {}",
-        req.prompt.trim()
-    );
-    
+    let response_text = format!("AI inference response for: {}", req.prompt.trim());
+
     let tokens_used = req.prompt.split_whitespace().count() as u32;
-    
+
     // Decrement active requests
     state.decrement_requests().await;
-    
+
     Ok(Json(CompletionResponse {
         text: response_text,
         model: req.model,

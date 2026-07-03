@@ -15,4 +15,3 @@ The `run.py` script is designed to initialize and run inference with a transform
 7. **Execution**: The script sets up basic logging and calls `main()` if the script is run as the main program.
 
 This script orchestrates the process of running inference with a transformer-based language model, managing everything from loading configurations and checkpoints to generating text based on an input prompt.
-

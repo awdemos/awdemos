@@ -52,7 +52,6 @@ done
 
 ```
 
-
 To make all three clusters aware of each other in the Cilium setup, you need to follow these steps:
 
 0. Add env variables

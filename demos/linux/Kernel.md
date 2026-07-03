@@ -12,7 +12,6 @@ More information and important aspects of the Linux kernel for Devops and SRE (f
 
 - [Introduction to Memory Management in Linux] (https://www.youtube.com/watch?v=7aONIVSXiJ8) - This presentation will describe the different types of virtual memory spaces and mappings used in the Linux kernel
 
-
 ## Important source code
 
 ## Important Linux Syscalls Reference

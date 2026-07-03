@@ -1,6 +1,5 @@
 - [Universal and Transferable Adversarial Attacks on Aligned Language Models] (https://arxiv.org/abs/2307.15043)
 
-
 (https://github.com/llm-attacks/llm-attacks
 )
 
@@ -13,6 +12,5 @@ These are well known issues in the AI field and should not be terribly surprisin
 04-09-2024 Jailbreak GPT-4-TURBO-2024-04-09 (https://twitter.com/elder_plinius/status/1778188202664169724)
 
 04-11-2024 Cohere Jailbreak (https://twitter.com/elder_plinius/status/1778499289498411455)
-
 
 This content is shared for educational purposes only.

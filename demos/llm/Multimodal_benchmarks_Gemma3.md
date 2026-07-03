@@ -3,6 +3,7 @@ Sourced from (https://ollama.com/library/gemma3)
 The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI capabilities across tasks involving text, images, and reasoning. Here’s a detailed explanation of each benchmark:
 
 ### **1. COCOcap**
+
 - **Purpose**: Evaluates image captioning performance.
 - **Dataset**: Derived from MS COCO, this benchmark tests a model's ability to generate descriptive captions for images.
 - **Relevance**: Measures how well the model integrates visual and textual modalities for content generation[1][2].
@@ -10,6 +11,7 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 ---
 
 ### **2. DocVQA (Validation)**
+
 - **Purpose**: Assesses performance on Document Visual Question Answering (DocVQA).
 - **Dataset**: Contains document images paired with questions requiring text extraction and reasoning.
 - **Metric**: Aggregated Normalized Levenshtein Similarity (ANLS) is often used to evaluate accuracy.
@@ -18,6 +20,7 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 ---
 
 ### **3. InfoVQA (Validation)**
+
 - **Purpose**: Evaluates performance on answering questions about visual information in images.
 - **Dataset**: Includes images with embedded textual and contextual information.
 - **Relevance**: Focuses on the model's ability to reason about both visual and textual data simultaneously[11].
@@ -25,6 +28,7 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 ---
 
 ### **4. MMMU (Pretraining)**
+
 - **Purpose**: Massive Multi-discipline Multimodal Understanding benchmark designed for expert-level reasoning across disciplines.
 - **Dataset**: Includes diverse questions requiring reasoning over charts, diagrams, and text from college-level materials.
 - **Relevance**: Tests advanced perception, domain knowledge, and reasoning[20][21].
@@ -32,6 +36,7 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 ---
 
 ### **5. TextVQA (Validation)**
+
 - **Purpose**: Measures a model's ability to answer questions based on text in images.
 - **Dataset**: TextVQA dataset includes images containing text (e.g., signs, labels).
 - **Relevance**: Highlights OCR capabilities and reasoning over textual elements in visual contexts[28][29].
@@ -39,6 +44,7 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 ---
 
 ### **6. RealWorldQA**
+
 - **Purpose**: Evaluates spatial reasoning and real-world understanding using images.
 - **Dataset**: Features real-world scenarios, such as vehicle-captured images, with spatially grounded questions.
 - **Relevance**: Tests practical applications of multimodal AI in physical environments[34][36].
@@ -46,6 +52,7 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 ---
 
 ### **7. ReMI**
+
 - **Purpose**: Reasoning with Multiple Images benchmark assesses multi-image reasoning capabilities.
 - **Dataset**: Includes tasks requiring integration of information from multiple images for logical conclusions.
 - **Relevance**: Challenges models to synthesize information across visual inputs[41][42].
@@ -53,6 +60,7 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 ---
 
 ### **8. AI2D**
+
 - **Purpose**: Diagram understanding and reasoning benchmark.
 - **Dataset**: Features diagrams with associated questions that require interpreting visual structures and relationships.
 - **Relevance**: Useful for evaluating structured visual reasoning[14][16].
@@ -60,6 +68,7 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 ---
 
 ### **9. ChartQA**
+
 - **Purpose**: Tests question answering based on charts and graphs.
 - **Dataset**: Includes chart images paired with questions about trends, data points, or patterns.
 - **Relevance**: Evaluates vision-language alignment and reasoning over structured data[50][51].
@@ -67,6 +76,7 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 ---
 
 ### **10. OKVQA**
+
 - **Purpose**: Open-ended Knowledge Visual Question Answering benchmark.
 - **Dataset**: Combines general knowledge with image-based questions that require external knowledge to answer correctly.
 - **Relevance**: Tests the integration of general knowledge into multimodal reasoning[11][14].
@@ -74,6 +84,7 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 ---
 
 ### **11. TallyQA**
+
 - **Purpose**: Evaluates numerical reasoning based on counting objects in an image.
 - **Dataset**: Includes images with questions requiring precise object counting or quantitative analysis.
 - **Relevance**: Highlights numerical precision in multimodal tasks[19].
@@ -81,6 +92,7 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 ---
 
 ### **12. SpatialSense VQA**
+
 - **Purpose**: Spatial understanding benchmark focusing on relationships between objects in an image.
 - **Dataset**: Includes questions about relative positions or orientations of objects.
 - **Relevance**: Tests spatial reasoning capabilities critical for real-world applications like robotics or navigation[34].
@@ -89,20 +101,20 @@ The benchmarks listed in the Gemma 3 model card evaluate various multimodal AI c
 
 ### Summary Table
 
-| Benchmark        | Focus Area                          | Key Skill Tested                              |
-|-------------------|-------------------------------------|-----------------------------------------------|
-| COCOcap          | Image Captioning                   | Visual-to-text generation                     |
-| DocVQA           | Document QA                        | OCR + Textual Reasoning                       |
-| InfoVQA          | Visual QA                          | Multimodal Reasoning                          |
-| MMMU             | Multidisciplinary Reasoning         | Advanced Perception + Domain Knowledge        |
-| TextVQA          | Text in Images                     | OCR + Visual Context Reasoning                |
-| RealWorldQA      | Spatial Understanding               | Physical World Comprehension                  |
-| ReMI             | Multi-image Reasoning              | Synthesizing Information Across Images        |
-| AI2D             | Diagram Reasoning                  | Structured Visual Understanding               |
-| ChartQA          | Chart/Graph QA                     | Data Visualization Analysis                   |
-| OKVQA            | Open Knowledge QA                  | General Knowledge Integration                 |
-| TallyQA          | Numerical Reasoning                | Counting + Quantitative Analysis              |
-| SpatialSense VQA | Spatial Relationships               | Object Position/Orientation Reasoning         |
+| Benchmark        | Focus Area                  | Key Skill Tested                       |
+| ---------------- | --------------------------- | -------------------------------------- |
+| COCOcap          | Image Captioning            | Visual-to-text generation              |
+| DocVQA           | Document QA                 | OCR + Textual Reasoning                |
+| InfoVQA          | Visual QA                   | Multimodal Reasoning                   |
+| MMMU             | Multidisciplinary Reasoning | Advanced Perception + Domain Knowledge |
+| TextVQA          | Text in Images              | OCR + Visual Context Reasoning         |
+| RealWorldQA      | Spatial Understanding       | Physical World Comprehension           |
+| ReMI             | Multi-image Reasoning       | Synthesizing Information Across Images |
+| AI2D             | Diagram Reasoning           | Structured Visual Understanding        |
+| ChartQA          | Chart/Graph QA              | Data Visualization Analysis            |
+| OKVQA            | Open Knowledge QA           | General Knowledge Integration          |
+| TallyQA          | Numerical Reasoning         | Counting + Quantitative Analysis       |
+| SpatialSense VQA | Spatial Relationships       | Object Position/Orientation Reasoning  |
 
 These benchmarks collectively assess diverse multimodal AI capabilities, pushing models towards more complex and human-like understanding across text, visuals, and structured data.
 
@@ -248,4 +260,3 @@ Citations:
 [139] https://www.youtube.com/watch?v=fiTc-ohDwMk
 [140] https://dl.acm.org/doi/10.1007/978-3-031-73337-6_9
 [141] https://www.harmonious.ai/t/weekly-paper-roundup-blink-multimodal-llms-can-see-but-not-perceive-4-15-2024/161
-

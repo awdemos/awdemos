@@ -4,12 +4,12 @@ metadata:
   name: ethereum-node-job
 spec:
   destination:
-    name: 'ethnode'
+    name: "ethnode"
     namespace: ethnode0
-    server: 'https://kubernetes.default.svc'
+    server: "https://kubernetes.default.svc"
   source:
     path: ethereum-node-job
-    repoURL: 'https://github.com/yourusername/your-repo'
+    repoURL: "https://github.com/yourusername/your-repo"
     targetRevision: HEAD
   project: default
   syncPolicy:

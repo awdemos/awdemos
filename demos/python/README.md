@@ -8,11 +8,11 @@ This directory contains Python demonstrations of **production-grade patterns**, 
 
 ### What You'll Find Here
 
-| Category | Description | Files |
-|----------|-------------|--------|
-| **Testing** | Comprehensive testing strategies | `tests/` directories with pytest examples |
-| **Type Safety** | Type hints and mypy integration | Type-annotated Python files |
-| **Packaging** | Modern Python packaging with Poetry | `pyproject.toml`, Poetry workflows |
+| Category           | Description                                | Files                                      |
+| ------------------ | ------------------------------------------ | ------------------------------------------ |
+| **Testing**        | Comprehensive testing strategies           | `tests/` directories with pytest examples  |
+| **Type Safety**    | Type hints and mypy integration            | Type-annotated Python files                |
+| **Packaging**      | Modern Python packaging with Poetry        | `pyproject.toml`, Poetry workflows         |
 | **Best Practices** | Code organization, logging, error handling | Various `.py` files demonstrating patterns |
 
 ---
@@ -153,6 +153,7 @@ asyncio.run(main())
 ## 🔧 Technologies & Libraries
 
 ### Core Libraries
+
 - **Poetry** - Modern Python dependency management
 - **pytest** - Testing framework with fixtures
 - **mypy** - Static type checking
@@ -161,12 +162,14 @@ asyncio.run(main())
 - **ruff** - Fast Python linter
 
 ### Testing
+
 - **pytest** - Testing framework
 - **pytest-cov** - Coverage reporting
 - **pytest-asyncio** - Async test support
 - **hypothesis** - Property-based testing
 
 ### Type Checking
+
 - **mypy** - Static type checker
 - **types-requests** - Type stubs for popular libraries
 - **pyright** - Alternative type checker
@@ -177,19 +180,19 @@ asyncio.run(main())
 
 ### Test Coverage
 
-| Component | Coverage | Target | Status |
-|-----------|----------|--------|--------|
-| Core Logic | 95%+ | 90% | ✅ Pass |
-| Edge Cases | 80%+ | 75% | ✅ Pass |
-| Integration | 70%+ | 60% | ✅ Pass |
+| Component   | Coverage | Target | Status  |
+| ----------- | -------- | ------ | ------- |
+| Core Logic  | 95%+     | 90%    | ✅ Pass |
+| Edge Cases  | 80%+     | 75%    | ✅ Pass |
+| Integration | 70%+     | 60%    | ✅ Pass |
 
 ### Type Checking
 
-| File | Type Errors | Status |
-|------|-------------|--------|
-| module1.py | 0 | ✅ Clean |
-| module2.py | 0 | ✅ Clean |
-| utils.py | 0 | ✅ Clean |
+| File       | Type Errors | Status   |
+| ---------- | ----------- | -------- |
+| module1.py | 0           | ✅ Clean |
+| module2.py | 0           | ✅ Clean |
+| utils.py   | 0           | ✅ Clean |
 
 ---
 
@@ -377,18 +380,21 @@ def test_addition_commutative(a: int, b: int):
 ## 🎓 Learning Path
 
 ### Beginner
+
 1. Understand Python type hints and their benefits
 2. Learn pytest for writing tests
 3. Practice with basic code examples
 4. Set up Poetry for dependency management
 
 ### Intermediate
+
 5. Implement async/await patterns
 6. Write comprehensive tests with fixtures
 7. Use mypy for type checking
 8. Apply logging best practices
 
 ### Advanced
+
 9. Implement property-based testing with Hypothesis
 10. Optimize for performance with profiling tools
 11. Set up comprehensive CI/CD pipelines
@@ -399,11 +405,13 @@ def test_addition_commutative(a: int, b: int):
 ## 🔗 External Resources
 
 ### Official Documentation
+
 - [Python Documentation](https://docs.python.org/) - Official docs
 - [Python Type Hints](https://docs.python.org/3/library/typing.html) - Type system
 - [Poetry Documentation](https://python-poetry.org/) - Dependency management
 
 ### Best Practices
+
 - [Python Guide](https://docs.python-guide.org/) - Comprehensive guide
 - [Real Python](https://realpython.com/) - Tutorials and articles
 - [Awesome Python](https://awesome-python.com/) - Curated list of libraries

@@ -18,12 +18,12 @@ rust/
 
 ## WHERE TO LOOK
 
-| Task | Location | Notes |
-|------|----------|-------|
-| CLI boilerplate | `user_boilerplate/` | Production-ready clap + tracing setup |
-| Matrix math | `rust_matrix_multiplication/` | ndarray, GPU-acceleration prep |
-| DB patterns | `databases/` | PL/Rust notes |
-| LLM inference | `ai/llm_inference_server/` | Cross-categorized; see also `demos/llm/` |
+| Task            | Location                      | Notes                                    |
+| --------------- | ----------------------------- | ---------------------------------------- |
+| CLI boilerplate | `user_boilerplate/`           | Production-ready clap + tracing setup    |
+| Matrix math     | `rust_matrix_multiplication/` | ndarray, GPU-acceleration prep           |
+| DB patterns     | `databases/`                  | PL/Rust notes                            |
+| LLM inference   | `ai/llm_inference_server/`    | Cross-categorized; see also `demos/llm/` |
 
 ## CONVENTIONS
 

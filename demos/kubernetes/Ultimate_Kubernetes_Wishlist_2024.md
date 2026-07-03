@@ -4,7 +4,7 @@ This ultimate list is designed for minimalism, security, and latest trends.
 
 ## Base Infrastructure with Talos and Omni
 
-- **Talos**: A modern OS for Kubernetes that provides a secure, immutable, and minimal environment for running Kubernetes. The OS is immutable, consists of only 12 binaries(!) and only knows how to run kubernetes. [Learn more about Talos](https://www.talos.dev/). 
+- **Talos**: A modern OS for Kubernetes that provides a secure, immutable, and minimal environment for running Kubernetes. The OS is immutable, consists of only 12 binaries(!) and only knows how to run kubernetes. [Learn more about Talos](https://www.talos.dev/).
 
 - **Omni**: A tool for managing multi-cluster Kubernetes environments. [Discover Omni](https://www.omniproject.io/).
 
@@ -77,7 +77,6 @@ This design spec guide outlines a comprehensive approach to building a Kubernete
 ## Secrets Management
 
 - **Amazon CSI Secrets**: Implement Amazon CSI Secrets for managing secrets securely in EKS. Amazon CSI Secrets provides a seamless integration with AWS Secrets Manager to store and retrieve sensitive information such as API keys, passwords, and tokens securely. After trying multiple solutions in EKS I think I like this one the most, but I'm open minded. [Learn more about Amazon CSI Secrets](https://aws.amazon.com/secrets-manager/).
-
 
 ## EKS Security
 

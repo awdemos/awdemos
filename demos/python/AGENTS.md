@@ -18,12 +18,12 @@ python/
 
 ## WHERE TO LOOK
 
-| Task | Location | Notes |
-|------|----------|-------|
-| Poetry + containers | `poetry-container-sample/` | Modern Python packaging |
-| Flask production | `flask_best_practices/` | Dockerfile, Pipfile |
-| Fargate deployment | `fargate-docker-python/` | Pulumi Go + task definition |
-| CrewAI agents | `ai_analysis_crew.py` | Multi-agent workflow |
+| Task                | Location                   | Notes                       |
+| ------------------- | -------------------------- | --------------------------- |
+| Poetry + containers | `poetry-container-sample/` | Modern Python packaging     |
+| Flask production    | `flask_best_practices/`    | Dockerfile, Pipfile         |
+| Fargate deployment  | `fargate-docker-python/`   | Pulumi Go + task definition |
+| CrewAI agents       | `ai_analysis_crew.py`      | Multi-agent workflow        |
 
 ## CONVENTIONS
 

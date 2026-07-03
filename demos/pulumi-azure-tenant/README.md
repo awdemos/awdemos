@@ -22,23 +22,26 @@ Create or modify the `index.ts` file in your project directory with the followin
 import * as pulumi from "@pulumi/pulumi";
 import * as azure from "@pulumi/azure-native";
 
-const tenantConfiguration = new azure.portal.TenantConfiguration("tenantConfiguration", {
+const tenantConfiguration = new azure.portal.TenantConfiguration(
+  "tenantConfiguration",
+  {
     configurationName: "default",
     properties: {
-        enforcePrivateMarkdownStorage: true,
+      enforcePrivateMarkdownStorage: true,
     },
-});
+  },
+);
 
 const b2cTenant = new azure.azureactivedirectory.B2CTenant("b2cTenant", {
-    countryCode: "US",
-    displayName: "YourTenantName",
-    location: "United States",
-    resourceGroupName: "YourResourceGroupName",
-    resourceName: "yourtenant.onmicrosoft.com",
-    sku: {
-        name: azure.azureactivedirectory.B2CResourceSKUName.Standard,
-        tier: azure.azureactivedirectory.B2CResourceSKUTier.A0,
-    },
+  countryCode: "US",
+  displayName: "YourTenantName",
+  location: "United States",
+  resourceGroupName: "YourResourceGroupName",
+  resourceName: "yourtenant.onmicrosoft.com",
+  sku: {
+    name: azure.azureactivedirectory.B2CResourceSKUName.Standard,
+    tier: azure.azureactivedirectory.B2CResourceSKUTier.A0,
+  },
 });
 
 export const tenantId = b2cTenant.tenantId;
@@ -84,7 +87,7 @@ To watch the progress of your Pulumi deployment:
    - Navigate to your resource group
    - Monitor the creation of your new tenant and related resources
 
-Remember to clean up your resources when you're done by running `pulumi destroy` to avoid unnecessary costs[5][15]. 
+Remember to clean up your resources when you're done by running `pulumi destroy` to avoid unnecessary costs[5][15].
 MIT License
 
 Citations:

@@ -1,6 +1,7 @@
 Here's a step-by-step guide to create a container from scratch using Linux namespace tools:
 
 ## Create Root Filesystem
+
 ```bash
 # Create base directory
 mkdir -p container/rootfs
@@ -11,6 +12,7 @@ mkdir -p rootfs/{bin,dev,etc,home,lib,proc,sys}
 ```
 
 ## Setup Namespaces and Container Environment
+
 ```bash
 # Create new namespaces
 unshare --fork --pid --mount --net --uts /bin/bash
@@ -25,6 +27,7 @@ echo $$ > /sys/fs/cgroup/cpu/container1/tasks
 ```
 
 ## Enter Container Namespace
+
 ```bash
 # Get container PID
 PID=$(ps -ef | grep unshare | grep -v grep | awk '{print $2}')
@@ -34,6 +37,7 @@ nsenter --target $PID --mount --uts --ipc --net --pid chroot rootfs /bin/sh
 ```
 
 ## Resource Management
+
 ```bash
 # Set memory limits
 echo "50M" > /sys/fs/cgroup/memory/container1/memory.limit_in_bytes
@@ -43,6 +47,7 @@ echo "512" > /sys/fs/cgroup/cpu/container1/cpu.shares
 ```
 
 ## Cleanup
+
 ```bash
 # Unmount filesystems
 umount rootfs/proc
@@ -53,6 +58,7 @@ rmdir /sys/fs/cgroup/memory/container1
 ```
 
 These commands create a basic container with:
+
 - Isolated process namespace
 - Resource limitations
 - Separate mount points

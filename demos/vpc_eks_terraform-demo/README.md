@@ -89,6 +89,7 @@ resource "aws_vpc" "demo-vpc" {
 ```
 
 **Features**:
+
 - **CIDR block**: Configurable IP range
 - **DNS support**: AWS DNS resolution
 - **Tenancy**: Default (multi-tenant)
@@ -110,6 +111,7 @@ resource "aws_subnet" "demo_subnet" {
 ```
 
 **Features**:
+
 - **Public IP association**: EC2 instances get public IP
 - **AZ awareness**: Deployed in specific availability zone
 - **Tagging**: Resource identification
@@ -129,6 +131,7 @@ resource "aws_internet_gateway" "demo-igw" {
 ```
 
 **Features**:
+
 - **VPC attachment**: Connects VPC to internet
 - **Bidirectional**: Inbound and outbound traffic
 - **Redundant**: AWS-managed high availability
@@ -153,6 +156,7 @@ resource "aws_route_table" "demo-rt" {
 ```
 
 **Features**:
+
 - **Default route**: All traffic to internet gateway
 - **VPC association**: Applied to subnets
 - **Tagging**: Route table identification
@@ -169,6 +173,7 @@ resource "aws_route_table_association" "demo-rt_association" {
 ```
 
 **Features**:
+
 - **Explicit association**: Subnet → route table binding
 - **Controlled routing**: Ensures correct routing
 
@@ -204,6 +209,7 @@ resource "aws_security_group" "demo-vpc-sg" {
 ```
 
 **Security Rules**:
+
 - **Ingress**: SSH (port 22) from anywhere
 - **Egress**: All outbound traffic allowed
 - **IPv6**: Dual-stack support
@@ -225,6 +231,7 @@ resource "aws_instance" "demo-server" {
 ```
 
 **Features**:
+
 - **Custom AMI**: Configurable OS image
 - **SSH access**: Key pair authentication
 - **Public IP**: Direct internet access
@@ -235,6 +242,7 @@ resource "aws_instance" "demo-server" {
 ### Prerequisites
 
 1. **Terraform**: https://www.terraform.io/downloads.html
+
    ```bash
    # macOS
    brew install terraform
@@ -246,6 +254,7 @@ resource "aws_instance" "demo-server" {
    ```
 
 2. **AWS CLI**: https://aws.amazon.com/cli/
+
    ```bash
    brew install awscli
    aws configure
@@ -300,22 +309,26 @@ variable "instance-type" {
 ### Quick Start
 
 1. **Initialize Terraform**:
+
    ```bash
    cd demos/vpc_eks_terraform-demo
    terraform init
    ```
 
 2. **Plan deployment**:
+
    ```bash
    terraform plan
    ```
 
 3. **Apply infrastructure**:
+
    ```bash
    terraform apply -auto-approve
    ```
 
 4. **Get instance IP**:
+
    ```bash
    terraform output
    ```
@@ -353,15 +366,15 @@ variable "instance-type" {
 
 ## Cost Estimates
 
-| Resource | Type | Price (us-west-2) | Hourly Cost |
-|----------|-------|---------------------|--------------|
-| VPC | N/A | Free | $0 |
-| Subnet | N/A | Free | $0 |
-| Internet Gateway | Per hour | $0.025 | $0.025 |
-| Route Table | N/A | Free | $0 |
-| Security Group | N/A | Free | $0 |
-| EC2 (t3.medium) | 2 vCPU, 4GB RAM | $0.0416 | $0.0416 |
-| **Total** | | | **$0.0666/hour** |
+| Resource         | Type            | Price (us-west-2) | Hourly Cost      |
+| ---------------- | --------------- | ----------------- | ---------------- |
+| VPC              | N/A             | Free              | $0               |
+| Subnet           | N/A             | Free              | $0               |
+| Internet Gateway | Per hour        | $0.025            | $0.025           |
+| Route Table      | N/A             | Free              | $0               |
+| Security Group   | N/A             | Free              | $0               |
+| EC2 (t3.medium)  | 2 vCPU, 4GB RAM | $0.0416           | $0.0416          |
+| **Total**        |                 |                   | **$0.0666/hour** |
 
 **Monthly Cost (24/7)**: ~$48.25
 
@@ -466,21 +479,23 @@ resource "aws_subnet" "demo_subnet_az2" {
 
 ## Comparison: Terraform vs Pulumi
 
-| Feature | Terraform | Pulumi |
-|---------|-----------|---------|
-| Language | HCL (domain-specific) | Go, Python, TypeScript |
-| Testing | Limited | Full test framework |
-| State management | Built-in | Built-in |
-| Learning curve | Moderate | Lower (if you know language) |
-| Community | Large | Growing |
-| Conditional logic | Complex expressions | Native language features |
+| Feature           | Terraform             | Pulumi                       |
+| ----------------- | --------------------- | ---------------------------- |
+| Language          | HCL (domain-specific) | Go, Python, TypeScript       |
+| Testing           | Limited               | Full test framework          |
+| State management  | Built-in              | Built-in                     |
+| Learning curve    | Moderate              | Lower (if you know language) |
+| Community         | Large                 | Growing                      |
+| Conditional logic | Complex expressions   | Native language features     |
 
 **When to use Terraform**:
+
 - You prefer declarative IaC
 - You want AWS-native tooling
 - Your team knows HCL
 
 **When to use Pulumi**:
+
 - You want real programming languages
 - You need complex conditional logic
 - You want better testing
