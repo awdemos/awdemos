@@ -21,12 +21,12 @@ pulumi-azure-tenant/
 
 ## WHERE TO LOOK
 
-| Task | Location | Notes |
-|------|----------|-------|
+| Task             | Location        | Notes                         |
+| ---------------- | --------------- | ----------------------------- |
 | Tenant resources | `src/tenant.ts` | B2C tenant, app registrations |
-| Config logic | `src/config.ts` | Environment-specific values |
-| Stack exports | `src/index.ts` | Output references |
-| Entry point | `index.ts` | Program bootstrap |
+| Config logic     | `src/config.ts` | Environment-specific values   |
+| Stack exports    | `src/index.ts`  | Output references             |
+| Entry point      | `index.ts`      | Program bootstrap             |
 
 ## CONVENTIONS
 

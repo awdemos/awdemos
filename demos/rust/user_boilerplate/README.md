@@ -49,13 +49,14 @@ CREATE TABLE IF NOT EXISTS users (
 ### Configuration
 
 The `docker-compose.yaml` provides a development environment with:
+
 - PostgreSQL database service
 - Volume persistence for database data
 - Health checks for service readiness
 - Environment variable configuration
 
 ```yaml
-version: '3.8'
+version: "3.8"
 
 services:
   app:
@@ -94,16 +95,19 @@ volumes:
 ## Quick Start
 
 1. Start the services:
+
 ```bash
 docker compose up -d
 ```
 
 2. Run the application:
+
 ```bash
 cargo run
 ```
 
 3. Verify database entries:
+
 ```bash
 docker exec -it db psql -U postgres -d users_db -c "SELECT * FROM users;"
 ```
@@ -113,11 +117,13 @@ docker exec -it db psql -U postgres -d users_db -c "SELECT * FROM users;"
 ### Database Operations
 
 Check database connection:
+
 ```bash
 docker exec -it db psql -U postgres -d users_db
 ```
 
 View table structure:
+
 ```bash
 docker exec -it db psql -U postgres -d users_db -c "\d users"
 ```
@@ -125,16 +131,19 @@ docker exec -it db psql -U postgres -d users_db -c "\d users"
 ### Container Management
 
 Start services:
+
 ```bash
 docker compose up -d
 ```
 
 Stop services:
+
 ```bash
 docker compose down
 ```
 
 View logs:
+
 ```bash
 docker compose logs -f
 ```
@@ -142,6 +151,7 @@ docker compose logs -f
 ## Expected Output
 
 After running the application:
+
 ```
 ✅ Successfully inserted user: alanturing
 ✅ Successfully inserted user: gracehopper
@@ -151,7 +161,7 @@ After running the application:
 ## Database Query Results
 
 ```sql
- id |  username   |      email       |        uri         | active 
+ id |  username   |      email       |        uri         | active
 ----+-------------+------------------+--------------------+--------
   1 | alanturing  | alan@turing.com  | https://turing.com | t
   2 | gracehopper | grace@hopper.com | https://hopper.com | t
@@ -172,6 +182,7 @@ After running the application:
 ## Cleanup
 
 Remove all containers and volumes:
+
 ```bash
 docker compose down -v
 ```

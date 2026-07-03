@@ -8,12 +8,12 @@ This directory contains Rust implementations of various tools and utilities, sho
 
 ### What You'll Find Here
 
-| Project | Description | Key Features |
-|---------|-------------|--------------|
-| **[databases/](databases/)** | Database tooling and utilities | Performance benchmarks, connection pooling |
-| **[fizzbuzz/](fizzbuzz/)** | Classic problem optimized in Rust | Multiple implementations, performance comparison |
-| **[rust_matrix_multiplication/](rust_matrix_multiplication/)** | GPU-accelerated matrix operations | CUDA integration, parallel processing |
-| **[user_boilerplate/](user_boilerplate/)** | CLI application scaffolding | Argument parsing, error handling, testing patterns |
+| Project                                                        | Description                       | Key Features                                       |
+| -------------------------------------------------------------- | --------------------------------- | -------------------------------------------------- |
+| **[databases/](databases/)**                                   | Database tooling and utilities    | Performance benchmarks, connection pooling         |
+| **[fizzbuzz/](fizzbuzz/)**                                     | Classic problem optimized in Rust | Multiple implementations, performance comparison   |
+| **[rust_matrix_multiplication/](rust_matrix_multiplication/)** | GPU-accelerated matrix operations | CUDA integration, parallel processing              |
+| **[user_boilerplate/](user_boilerplate/)**                     | CLI application scaffolding       | Argument parsing, error handling, testing patterns |
 
 ---
 
@@ -76,13 +76,13 @@ done
 
 ### Performance Optimization Stack
 
-| Layer | Technique | Implementation |
-|-------|-----------|----------------|
-| **Algorithm** | Efficient algorithms | Big-O optimization, smart data structures |
-| **Memory** | Zero-copy, stack allocation | `Cow<T>`, `Box<str>`, stack-allocated structs |
-| **Parallelism** | Multi-threading | Rayon for data parallelism, Tokio for I/O parallelism |
-| **I/O** | Async operations | Tokio runtime, non-blocking syscalls |
-| **GPU** | CUDA acceleration | rust-cuda, bindings for NVIDIA GPU |
+| Layer           | Technique                   | Implementation                                        |
+| --------------- | --------------------------- | ----------------------------------------------------- |
+| **Algorithm**   | Efficient algorithms        | Big-O optimization, smart data structures             |
+| **Memory**      | Zero-copy, stack allocation | `Cow<T>`, `Box<str>`, stack-allocated structs         |
+| **Parallelism** | Multi-threading             | Rayon for data parallelism, Tokio for I/O parallelism |
+| **I/O**         | Async operations            | Tokio runtime, non-blocking syscalls                  |
+| **GPU**         | CUDA acceleration           | rust-cuda, bindings for NVIDIA GPU                    |
 
 ---
 
@@ -156,22 +156,26 @@ async fn main() {
 ## 🔧 Technologies & Crates Used
 
 ### Core Libraries
+
 - **Tokio** - Async runtime for modern I/O
 - **Clap** - Command-line argument parsing
 - **Serde** - Serialization/deserialization
 - **Anyhow** - Error handling with context
 
 ### Database & Networking
+
 - **SQLx** - Compile-time checked SQL
 - **Diesel** - ORM for relational databases
 - **Hyper** - HTTP client/server
 
 ### Performance
+
 - **Rayon** - Data parallelism
 - **Crossbeam** - Concurrent programming
 - **ndarray** - N-dimensional arrays
 
 ### GPU Computing
+
 - **rust-cuda** - CUDA bindings for GPU acceleration
 - **ArrayFire** - High-performance GPU arrays
 
@@ -181,19 +185,19 @@ async fn main() {
 
 ### FizzBuzz Implementations
 
-| Approach | Time (1M iterations) | Memory | Notes |
-|----------|---------------------|--------|-------|
-| Naive string concatenation | ~150ms | High | Slow string allocation |
-| Pre-allocated vector | ~45ms | Medium | Better memory management |
-| Zero-copy with `Cow` | ~30ms | Low | Optimized for hot paths |
+| Approach                   | Time (1M iterations) | Memory | Notes                    |
+| -------------------------- | -------------------- | ------ | ------------------------ |
+| Naive string concatenation | ~150ms               | High   | Slow string allocation   |
+| Pre-allocated vector       | ~45ms                | Medium | Better memory management |
+| Zero-copy with `Cow`       | ~30ms                | Low    | Optimized for hot paths  |
 
 ### Matrix Multiplication
 
-| Implementation | Size | CPU Time | GPU Time | Speedup |
-|---------------|-------|----------|----------|---------|
-| Rust (CPU) | 1024x1024 | 1.2s | - | 1x |
-| CUDA (GPU) | 1024x1024 | - | 0.08s | 15x |
-| CuBLAS (GPU) | 1024x1024 | - | 0.03s | 40x |
+| Implementation | Size      | CPU Time | GPU Time | Speedup |
+| -------------- | --------- | -------- | -------- | ------- |
+| Rust (CPU)     | 1024x1024 | 1.2s     | -        | 1x      |
+| CUDA (GPU)     | 1024x1024 | -        | 0.08s    | 15x     |
+| CuBLAS (GPU)   | 1024x1024 | -        | 0.03s    | 40x     |
 
 ---
 
@@ -202,6 +206,7 @@ async fn main() {
 ### When to Use Rust
 
 ✅ **Ideal for:**
+
 - Performance-critical CLI tools
 - Systems programming
 - Networking and I/O-heavy applications
@@ -210,18 +215,19 @@ async fn main() {
 - GPU-accelerated computing
 
 ❌ **Not ideal for:**
+
 - Rapid prototyping (Python better)
 - Enterprise applications (Go/Java ecosystems more mature)
 - Data science (Python ecosystem more complete)
 
 ### Rust vs Other Languages
 
-| Language | Performance | Memory Safety | Ecosystem | Learning Curve |
-|----------|-------------|---------------|-----------|----------------|
-| **Rust** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ |
-| **Go** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| **Python** | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **C++** | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ |
+| Language   | Performance | Memory Safety | Ecosystem  | Learning Curve |
+| ---------- | ----------- | ------------- | ---------- | -------------- |
+| **Rust**   | ⭐⭐⭐⭐⭐  | ⭐⭐⭐⭐⭐    | ⭐⭐⭐⭐   | ⭐⭐           |
+| **Go**     | ⭐⭐⭐⭐    | ⭐⭐⭐⭐      | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐       |
+| **Python** | ⭐⭐        | ⭐⭐⭐        | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐     |
+| **C++**    | ⭐⭐⭐⭐⭐  | ⭐⭐          | ⭐⭐⭐⭐⭐ | ⭐⭐           |
 
 ---
 
@@ -277,18 +283,21 @@ fn parallel_sum(data: &[u64]) -> u64 {
 ## 🎓 Learning Path
 
 ### Beginner
+
 1. Understand Rust's ownership model
 2. Explore [fizzbuzz/](fizzbuzz/) - Classic problem with Rust
 3. Learn `clap` for CLI argument parsing
 4. Practice basic error handling with `Result`
 
 ### Intermediate
+
 5. Study [databases/](databases/) - Database interactions
 6. Learn async programming with Tokio
 7. Understand [user_boilerplate/](user_boilerplate/) patterns
 8. Implement a CLI tool with robust error handling
 
 ### Advanced
+
 9. Deep dive into [rust_matrix_multiplication/](rust_matrix_multiplication/)
 10. Learn CUDA bindings and GPU programming
 11. Optimize for performance with profiling tools
@@ -299,11 +308,13 @@ fn parallel_sum(data: &[u64]) -> u64 {
 ## 🔗 External Resources
 
 ### Official Documentation
+
 - [The Rust Book](https://doc.rust-lang.org/book/) - Comprehensive guide
 - [Rust by Example](https://doc.rust-lang.org/rust-by-example/) - Code examples
 - [Tokio Documentation](https://tokio.rs/) - Async runtime guide
 
 ### Crates & Libraries
+
 - [crates.io](https://crates.io/) - Rust package registry
 - [docs.rs](https://docs.rs/) - Crate documentation
 

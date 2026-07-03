@@ -43,7 +43,7 @@ This directory contains working examples, reference architectures, and learning 
 
 ## Emerging & Research
 
-- **`Xfiles/`** *(parent directory)* — Plan 9 protocol for agents and quantum AI
+- **`Xfiles/`** _(parent directory)_ — Plan 9 protocol for agents and quantum AI
 - **`Routage/`** — Intelligent message routing, mesh networking, and fault-tolerant cluster coordination
 
 ---

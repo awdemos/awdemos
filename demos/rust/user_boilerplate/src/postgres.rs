@@ -1,4 +1,4 @@
-use tokio_postgres::{NoTls, Error};
+use tokio_postgres::{Error, NoTls};
 
 #[derive(Debug)]
 pub struct User {
@@ -26,8 +26,9 @@ pub async fn initialize_database() -> Result<tokio_postgres::Client, Error> {
          password=mysecretpassword \
          dbname=users_db \
          port=5432",
-        NoTls
-    ).await?;
+        NoTls,
+    )
+    .await?;
 
     tokio::spawn(async move {
         if let Err(e) = connection.await {
@@ -60,4 +61,3 @@ pub async fn insert_user(client: &tokio_postgres::Client, user: &User) -> Result
         .await?;
     Ok(())
 }
-

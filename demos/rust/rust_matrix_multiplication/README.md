@@ -45,7 +45,7 @@ cargo run --release
 🚀 Speedup                55.34×
 ```
 
-*Your numbers will vary by CPU and GPU. Expect **20–60× speedup** on modern NVIDIA hardware.*
+_Your numbers will vary by CPU and GPU. Expect **20–60× speedup** on modern NVIDIA hardware._
 
 ---
 
@@ -91,9 +91,11 @@ cargo run --release
 ## 🧪 How It Works
 
 ### CPU Path
+
 Uses `ndarray::Array2` and `.dot()` for a highly optimized BLAS-like CPU matrix multiply.
 
 ### GPU Path
+
 1. **Runtime compilation**: The CUDA C kernel is embedded as a string and compiled at runtime via NVRTC — no `nvcc` build step required.
 2. **Memory management**: Host vectors are copied to device memory with `htod_copy`.
 3. **Kernel launch**: A 2D grid of 16×16 thread blocks is launched. Each thread computes one output element.
@@ -101,6 +103,7 @@ Uses `ndarray::Array2` and `.dot()` for a highly optimized BLAS-like CPU matrix 
 5. **Verification**: CPU and GPU outputs are compared with relative error checking.
 
 ### CUDA Kernel
+
 ```cuda
 __global__ void matmul_f32(const float* a, const float* b, float* c, int n) {
     int row = blockIdx.y * blockDim.y + threadIdx.y;
@@ -120,11 +123,11 @@ __global__ void matmul_f32(const float* a, const float* b, float* c, int n) {
 
 ## 📦 Dependencies
 
-| Crate | Purpose |
-|-------|---------|
+| Crate     | Purpose                                           |
+| --------- | ------------------------------------------------- |
 | `ndarray` | CPU n-dimensional arrays and BLAS-like operations |
-| `cudarc` | Safe Rust CUDA bindings (driver + NVRTC) |
-| `rand` | Random matrix generation for benchmarks |
+| `cudarc`  | Safe Rust CUDA bindings (driver + NVRTC)          |
+| `rand`    | Random matrix generation for benchmarks           |
 
 ---
 

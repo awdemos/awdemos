@@ -18,27 +18,30 @@ pyinstaller --onefile \
 ```
 
 Key implementation details:
+
 1. **Single-file artifact**: The `--onefile` flag creates self-contained ELF binary in `dist/` directory
 2. **Resource bundling**: `--add-data` embeds exclude.txt in the binary package
 3. **Optimization**: Strips debug symbols and clears build cache for minimal footprint
 
 To use the generated binary:
+
 ```bash
 ./dist/repo-scanner <start_path> <output_file> [exclusion_file] [file_extensions...]
 ```
 
 For enterprise deployment considerations:
+
 - **Multi-arch builds**: Use Dockerized build chain for cross-platform compatibility
 - **Signature verification**: Implement code signing during CI/CD pipeline
 - **Observability**: Add Prometheus metrics endpoint using `prometheus-client`
 
 Alternative compilation methods from search results:
 
-| Tool       | Command                          | Output Type       | Size  | Startup Time |
-|------------|----------------------------------|-------------------|-------|--------------|
-| PyInstaller| `--onefile`                      | Single executable | ~15MB | 200-400ms    |
-| Nuitka     | `--standalone --onefile`         | Optimized C binary| ~8MB  | 50-100ms     |
-| cx_Freeze  | `setup.py build_exe`             | Directory bundle  | ~12MB | 150-300ms    |
+| Tool        | Command                  | Output Type        | Size  | Startup Time |
+| ----------- | ------------------------ | ------------------ | ----- | ------------ |
+| PyInstaller | `--onefile`              | Single executable  | ~15MB | 200-400ms    |
+| Nuitka      | `--standalone --onefile` | Optimized C binary | ~8MB  | 50-100ms     |
+| cx_Freeze   | `setup.py build_exe`     | Directory bundle   | ~12MB | 150-300ms    |
 
 The PyInstaller solution provides the best balance of simplicity and compatibility with your current stack. For production deployments, consider containerizing the binary in a scratch Docker image using:
 

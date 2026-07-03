@@ -12,11 +12,11 @@ Model Context Protocol (MCP) servers implemented in Rust for production AI agent
 
 ## Available Servers
 
-| Server | Purpose | Features |
-|---------|----------|-----------|
-| **mcp_web_search** | Web search for AI agents | DuckDuckGo, streaming results |
-| **mcp_file_system** | File system operations | Read/write files, directory listing |
-| **mcp_cli_executor** | Execute shell commands | Isolated execution, timeout handling |
+| Server               | Purpose                  | Features                             |
+| -------------------- | ------------------------ | ------------------------------------ |
+| **mcp_web_search**   | Web search for AI agents | DuckDuckGo, streaming results        |
+| **mcp_file_system**  | File system operations   | Read/write files, directory listing  |
+| **mcp_cli_executor** | Execute shell commands   | Isolated execution, timeout handling |
 
 ## Quick Start
 
@@ -117,12 +117,12 @@ pub struct McpServer {
 impl McpServer {
     pub async fn run_stdio(&self) -> Result<()> {
         info!("Starting MCP server: {}", self.name);
-        
+
         loop {
             // Read JSON-RPC from stdin
             let input = Self::read_line_from_stdin()?;
             let request: JsonRpcRequest = serde_json::from_str(&input)?;
-            
+
             // Process request
             match request.method {
                 JsonRpcMethod::Initialize => self.handle_initialize(request),
@@ -130,7 +130,7 @@ impl McpServer {
                 JsonRpcMethod::CallTool => self.handle_call_tool(request),
                 _ => error!("Unknown method: {:?}", request.method),
             }
-            
+
             // Write JSON-RPC to stdout
             let response = serde_json::to_string_pretty(&response)?;
             Self::write_line_to_stdout(&response)?;
@@ -139,7 +139,7 @@ impl McpServer {
 
     fn handle_initialize(&self, request: JsonRpcRequest) -> String {
         info!("Initialize: {:?}", request.params);
-        
+
         let init_response = serde_json::json!({
             "jsonrpc": "2.0",
             "id": request.id,
@@ -151,7 +151,7 @@ impl McpServer {
                 }
             }
         });
-        
+
         serde_json::to_string_pretty(&init_response)
     }
 
@@ -163,7 +163,7 @@ impl McpServer {
                 "inputSchema": tool.input_schema,
             })
         }).collect();
-        
+
         let response = serde_json::json!({
             "jsonrpc": "2.0",
             "id": request.id,
@@ -171,7 +171,7 @@ impl McpServer {
                 "tools": tools
             }
         });
-        
+
         serde_json::to_string_pretty(&response)
     }
 }
@@ -205,10 +205,10 @@ pub async fn web_search(query: &str, limit: usize) -> Vec<String> {
         "https://api.duckduckgo.com/?q={}&format=json&no_html=1&skip_disambig=false",
         query.replace(' ', "+")
     );
-    
+
     let response: DuckDuckGoResponse = client.get(&url).send().await?.json().await?;
     let mut results = Vec::new();
-    
+
     for item in response.Abstract.iter().take(limit) {
         results.push(format!(
             "{}\nURL: {}",
@@ -216,7 +216,7 @@ pub async fn web_search(query: &str, limit: usize) -> Vec<String> {
             response.AbstractURL[item]
         ));
     }
-    
+
     results
 }
 ```
@@ -240,14 +240,14 @@ use tokio::fs;
 pub async fn read_file(path: &Path) -> Result<String, FsError> {
     // Validate path is within allowed directory
     let absolute = std::fs::canonicalize(path)?;
-    
+
     // Check file size limit (10MB default)
     let metadata = fs::metadata(&absolute).await?;
     let size = metadata.len();
     if size > 10 * 1024 * 1024 {
         return Err(FsError::FileTooLarge(size));
     }
-    
+
     // Read file asynchronously
     let contents = fs::read_to_string(&absolute).await?;
     Ok(contents)
@@ -258,10 +258,10 @@ pub async fn write_file(path: &Path, contents: &str) -> Result<(), FsError> {
     if let Some(parent) = path.parent() {
         fs::create_dir_all(parent).await?;
     }
-    
+
     // Write file atomically
     fs::write(path, contents).await?;
-    
+
     info!("Wrote file: {}", path.display());
     Ok(())
 }
@@ -269,7 +269,7 @@ pub async fn write_file(path: &Path, contents: &str) -> Result<(), FsError> {
 pub async fn list_directory(path: &Path) -> Result<Vec<FileInfo>, FsError> {
     let mut entries = Vec::new();
     let mut dir = fs::read_dir(path).await?;
-    
+
     while let Some(entry) = dir.next_entry().await? {
         let metadata = entry.metadata().await?;
         entries.push(FileInfo {
@@ -280,7 +280,7 @@ pub async fn list_directory(path: &Path) -> Result<Vec<FileInfo>, FsError> {
             permissions: format!("{:o}", metadata.permissions().mode()),
         });
     }
-    
+
     Ok(entries)
 }
 ```
@@ -307,7 +307,7 @@ pub async fn execute_command(
     timeout_secs: u64,
 ) -> Result<ExecutionResult, ExecError> {
     let duration = Duration::from_secs(timeout_secs);
-    
+
     let output = timeout(
         duration,
         async {
@@ -315,7 +315,7 @@ pub async fn execute_command(
                 .args(args)
                 .output()
                 .await?;
-            
+
             Ok(ExecutionResult {
                 exit_code: output.status.code(),
                 stdout: String::from_utf8_lossy(&output.stdout),
@@ -323,7 +323,7 @@ pub async fn execute_command(
             })
         }
     ).await;
-    
+
     output.map_err(|_| ExecError::Timeout)
 }
 
@@ -339,24 +339,26 @@ fn is_command_safe(command: &str) -> bool {
 ### Docker Compose
 
 ```yaml
-version: '3.8'
+version: "3.8"
 
 services:
   mcp-web-search:
     build: .
     command: ["cargo", "run", "--release", "--bin", "mcp_web_search", "--stdio"]
     restart: unless-stopped
-    
+
   mcp-file-system:
     build: .
-    command: ["cargo", "run", "--release", "--bin", "mcp_file_system", "--stdio"]
+    command:
+      ["cargo", "run", "--release", "--bin", "mcp_file_system", "--stdio"]
     volumes:
       - ./workspace:/workspace
     restart: unless-stopped
-    
+
   mcp-cli-executor:
     build: .
-    command: ["cargo", "run", "--release", "--bin", "mcp_cli_executor", "--stdio"]
+    command:
+      ["cargo", "run", "--release", "--bin", "mcp_cli_executor", "--stdio"]
     restart: unless-stopped
 ```
 
@@ -443,7 +445,7 @@ async fn safe_tool_execution(
         .map_err(|e| {
             // Log error for debugging
             error!("Tool error: {}: {:?}", e);
-            
+
             // Return user-friendly error response
             ToolResponse {
                 content: String::new(),
@@ -467,15 +469,15 @@ pub struct RateLimiter {
 impl RateLimiter {
     pub fn check(&mut self) -> Result<(), RateLimitError> {
         let now = Instant::now();
-        
+
         // Remove timestamps older than 1 minute
         self.timestamps.retain(|t| now.duration(*t) < Duration::from_secs(60));
-        
+
         // Check rate limit
         if self.timestamps.len() >= self.calls_per_minute as usize {
             return Err(RateLimitError::TooManyRequests(self.calls_per_minute));
         }
-        
+
         self.timestamps.push(now);
         Ok(())
     }
@@ -490,14 +492,14 @@ impl RateLimiter {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[tokio::test]
     async fn test_web_search() {
         let results = web_search("Rust AI", 5).await.unwrap();
         assert!(!results.is_empty());
         assert!(results.len() <= 5);
     }
-    
+
     #[tokio::test]
     async fn test_file_operations() {
         let path = Path::new("/tmp/test_file.txt");
@@ -537,12 +539,12 @@ echo "All tests passed!"
 
 **Compile-time guarantees prevent entire classes of bugs:**
 
-| Bug Type | Python | Rust |
-|----------|--------|-------|
-| Protocol mismatch | Runtime error | **Compile error** |
-| Invalid JSON | Crash during parsing | **Parse error at load** |
-| Missing fields | AttributeError | **Field access compile error** |
-| Type coercion | Runtime crash | **Type mismatch at compile** |
+| Bug Type          | Python               | Rust                           |
+| ----------------- | -------------------- | ------------------------------ |
+| Protocol mismatch | Runtime error        | **Compile error**              |
+| Invalid JSON      | Crash during parsing | **Parse error at load**        |
+| Missing fields    | AttributeError       | **Field access compile error** |
+| Type coercion     | Runtime crash        | **Type mismatch at compile**   |
 
 ### 2. Performance
 
@@ -580,7 +582,7 @@ struct McpState {
 // Automatic cleanup on shutdown
 impl Drop for McpState {
     fn drop(&mut self) {
-        info!("Shutting down MCP server, draining {} connections", 
+        info!("Shutting down MCP server, draining {} connections",
                  *self.connections.read());
     }
 }
@@ -618,4 +620,4 @@ impl Drop for McpState {
 
 **Rust + AI = Production-ready MCP servers with type safety, performance, and reliability.**
 
-*Last Updated: January 2026*
+_Last Updated: January 2026_

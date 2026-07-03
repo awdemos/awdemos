@@ -30,14 +30,14 @@ By declaring a desired state (e.g., three Nginx pods running continuously), Kube
 
 Here are some more working definitions of the underlying components in Kubernetes:
 
-| Component          | Description                                                                                       |
-|--------------------|---------------------------------------------------------------------------------------------------|
-| **API Server**     | The front-end of the control plane, exposing a REST API over HTTPS for `kubectl` and pod communications via service accounts. |
-| **Scheduler**      | Watches for new pod submissions and selects nodes for their execution based on various criteria.  |
-| **Controller Manager** | Manages internal components like the `kube-controller-manager` which observes node availability.  |
-| **etcd**           | The distributed key-value database that serves as Kubernetes' data store, replicated across instances for high availability. |
-| **Kubelet**        | Runs on each node (outside of pods/containers) managing pod lifecycles and communicating with the API server. |
-| **Kube-proxy**     | Routes traffic between pods or from pods to external networks, running as a DaemonSet on every node. |
-| **Container Runtime** | The software that runs the containers, such as Docker, CRI-O, or containerd.                       |
+| Component              | Description                                                                                                                   |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **API Server**         | The front-end of the control plane, exposing a REST API over HTTPS for `kubectl` and pod communications via service accounts. |
+| **Scheduler**          | Watches for new pod submissions and selects nodes for their execution based on various criteria.                              |
+| **Controller Manager** | Manages internal components like the `kube-controller-manager` which observes node availability.                              |
+| **etcd**               | The distributed key-value database that serves as Kubernetes' data store, replicated across instances for high availability.  |
+| **Kubelet**            | Runs on each node (outside of pods/containers) managing pod lifecycles and communicating with the API server.                 |
+| **Kube-proxy**         | Routes traffic between pods or from pods to external networks, running as a DaemonSet on every node.                          |
+| **Container Runtime**  | The software that runs the containers, such as Docker, CRI-O, or containerd.                                                  |
 
 This overview encapsulates my understanding of Kubernetes' operation.

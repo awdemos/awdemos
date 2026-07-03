@@ -3,7 +3,7 @@ dataset:
   name: "TuringsSolutions/PFAF750"
   test_size: 0.2
   random_seed: 42
-  input_column: "question"  # Verify actual column name
+  input_column: "question" # Verify actual column name
   output_column: "answer"
 
 # Model configuration
@@ -16,9 +16,9 @@ model:
 # Training parameters
 training:
   epochs: 2
-  batch_size: 1  # Current implementation processes single examples
+  batch_size: 1 # Current implementation processes single examples
   save_dir: "./checkpoints"
-  save_every: 100  # Save every N examples
+  save_every: 100 # Save every N examples
 
 # Reasoning configuration
 reasoning:
@@ -34,18 +34,17 @@ teleprompter:
 
 # Hardware configuration
 hardware:
-  device: "cuda"  # auto-detected but can override
+  device: "cuda" # auto-detected but can override
   fp16: true
   gradient_accumulation_steps: 1
 
 # Validation parameters
 validation:
-  check_interval: 50  # Run validation every N examples
-  max_examples: 100   # Max examples to use for validation
+  check_interval: 50 # Run validation every N examples
+  max_examples: 100 # Max examples to use for validation
 
 # Logging configuration
 logging:
   level: "INFO"
   format: "%(asctime)s - %(levelname)s - %(message)s"
   file: "./training.log"
-

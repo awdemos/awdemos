@@ -19,7 +19,6 @@ To build deterministic and reproducible images with nerdctl and BuildKit, you ne
 
 Here is an example of a Dockerfile that is deterministic and reproducible:
 
-
 ```sh
 FROM ghcr.io/chainguard-images/wolfi-base:latest
 RUN apk add --no-cache build-base

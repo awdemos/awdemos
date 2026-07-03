@@ -12,4 +12,3 @@ fn main() {
         println!("{}", fizz_buzz(i));
     }
 }
-

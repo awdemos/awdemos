@@ -81,6 +81,7 @@ cluster, err := lbrlabs.NewCluster(ctx, "cluster", &lbrlabs.ClusterArgs{
 ### Prerequisites
 
 1. **AWS Account**: Configure AWS credentials
+
    ```bash
    export AWS_ACCESS_KEY_ID="your-access-key"
    export AWS_SECRET_ACCESS_KEY="your-secret-key"
@@ -88,6 +89,7 @@ cluster, err := lbrlabs.NewCluster(ctx, "cluster", &lbrlabs.ClusterArgs{
    ```
 
 2. **Install Pulumi**: https://www.pulumi.com/docs/get-started/install/
+
    ```bash
    # macOS
    brew install pulumi
@@ -97,6 +99,7 @@ cluster, err := lbrlabs.NewCluster(ctx, "cluster", &lbrlabs.ClusterArgs{
    ```
 
 3. **Install Go**: https://golang.org/doc/install
+
    ```bash
    brew install go
    ```
@@ -110,12 +113,14 @@ cluster, err := lbrlabs.NewCluster(ctx, "cluster", &lbrlabs.ClusterArgs{
 ### Quick Start
 
 1. **Create Pulumi stack**:
+
    ```bash
    pulumi stack init eks-demo
    pulumi config set aws:region us-west-2
    ```
 
 2. **Deploy infrastructure**:
+
    ```bash
    pulumi up
    ```
@@ -206,16 +211,16 @@ eks-pulumi-go-demo/
 
 ## Cost Estimates
 
-| Resource | Quantity | Price (us-west-2) | Monthly Cost |
-|----------|-----------|---------------------|--------------|
-| EKS Control Plane | 1 cluster | $73/month | $73 |
-| t3.medium (system nodes) | 2 nodes | $0.0416/hr | $60.12 |
-| t3.medium (worker nodes) | 4 nodes | $0.0416/hr | $120.24 |
-| Load Balancer | 1 ALB | $0.025/hr + LCU | ~$40 |
-| NAT Gateway | 1 gateway | $0.045/hr + $0.045/GB | ~$60 |
-| **Total** | | | **~$353/month** |
+| Resource                 | Quantity  | Price (us-west-2)     | Monthly Cost    |
+| ------------------------ | --------- | --------------------- | --------------- |
+| EKS Control Plane        | 1 cluster | $73/month             | $73             |
+| t3.medium (system nodes) | 2 nodes   | $0.0416/hr            | $60.12          |
+| t3.medium (worker nodes) | 4 nodes   | $0.0416/hr            | $120.24         |
+| Load Balancer            | 1 ALB     | $0.025/hr + LCU       | ~$40            |
+| NAT Gateway              | 1 gateway | $0.045/hr + $0.045/GB | ~$60            |
+| **Total**                |           |                       | **~$353/month** |
 
-*Estimates based on 24/7 uptime. Costs vary by usage and region.*
+_Estimates based on 24/7 uptime. Costs vary by usage and region._
 
 ## Troubleshooting
 
@@ -270,6 +275,7 @@ ping google.com  # Should work via NAT gateway
 - [Pulumi Go SDK](https://www.pulumi.com/docs/reference/pkg/go/)
 - [AWS EKS Documentation](https://docs.aws.amazon.com/eks/)
 - [lbrlabs EKS Provider](https://github.com/lbrlabs/pulumi-lbrlabs-eks)
+
 ---
 
 **Status**: ✅ Working demo - deployable infrastructure with Pulumi Go

@@ -13,12 +13,12 @@ Production-ready LLM inference server built with Rust using Candle framework.
 
 ## Performance
 
-| Metric | Value | Notes |
-|---------|-------|-------|
-| Throughput | 38.5 t/s (LLaMA-7B) | 4.7x faster than Python |
-| Latency (p95) | 45ms | Consistent, no GC pauses |
-| Memory | 18MB base | 85% less than Python |
-| Concurrent Requests | 100+ | Tokio async, thread-per-core |
+| Metric              | Value               | Notes                        |
+| ------------------- | ------------------- | ---------------------------- |
+| Throughput          | 38.5 t/s (LLaMA-7B) | 4.7x faster than Python      |
+| Latency (p95)       | 45ms                | Consistent, no GC pauses     |
+| Memory              | 18MB base           | 85% less than Python         |
+| Concurrent Requests | 100+                | Tokio async, thread-per-core |
 
 ## Quick Start
 
@@ -92,13 +92,13 @@ async fn run_inference(
 ) -> Result<Vec<String>, InferenceError> {
     // Allocate tensors once, reuse across all prompts
     let mut output = Tensor::zeros((prompts.len(), model.config.max_len), &device)?;
-    
+
     // Zero-copy token processing
     for (i, prompt) in prompts.iter().enumerate() {
         let tokens = tokenize_zero_copy(prompt)?;
         output = model.forward(&tokens, &output[i * model.config.max_len..])?;
     }
-    
+
     // Decode without allocation
     Ok(decode_tokens(&output))
 }
@@ -132,7 +132,7 @@ impl InferenceServer {
                 }
             })
             .collect();
-        
+
         // Wait for all tasks to complete
         JoinSet::new(tasks).await.into_iter().collect()
     }
@@ -194,7 +194,7 @@ async fn parallel_inference(prompts: Vec<String>) -> Vec<Response> {
         .into_iter()
         .map(|p| tokio::spawn(async move { inference(p).await }))
         .collect();
-    
+
     // All tasks run truly in parallel
     join_all(tasks).await
 }
@@ -252,7 +252,7 @@ async fn serve_inference(
 ) -> Result<Response, ServerError> {
     let tokens = tokenize(&prompt)
         .with_context(|| format!("Failed to tokenize prompt: {}", prompt))?;
-    
+
     model.forward(&tokens)
         .await
         .map_err(|e| ServerError::InferenceFailed {
@@ -270,18 +270,18 @@ use tokio::signal;
 /// Drain existing connections before shutdown
 async fn graceful_shutdown(server: Server) {
     let (shutdown_tx, mut shutdown_rx) = channel(1);
-    
+
     // Wait for SIGTERM/SIGINT
     signal::ctrl_c().await?;
-    
+
     // Signal all workers to stop accepting new work
     let _ = shutdown_tx.send(());
-    
+
     // Wait for active requests to complete
     while server.active_connections() > 0 {
         tokio::time::sleep(Duration::from_secs(1)).await;
     }
-    
+
     // Clean shutdown
     server.stop().await;
 }
@@ -328,20 +328,20 @@ spec:
         app: llm-inference-server
     spec:
       containers:
-      - name: server
-        image: awdemos/rust-llm-server:latest
-        resources:
-          limits:
-            nvidia.com/gpu: 1
-            memory: "16Gi"
-          requests:
-            nvidia.com/gpu: "0.5"
-            memory: "8Gi"
-        env:
-        - name: CUDA_VISIBLE_DEVICES
-          value: "0"
-        ports:
-        - containerPort: 8000
+        - name: server
+          image: awdemos/rust-llm-server:latest
+          resources:
+            limits:
+              nvidia.com/gpu: 1
+              memory: "16Gi"
+            requests:
+              nvidia.com/gpu: "0.5"
+              memory: "8Gi"
+          env:
+            - name: CUDA_VISIBLE_DEVICES
+              value: "0"
+          ports:
+            - containerPort: 8000
 ```
 
 ## Monitoring
@@ -386,11 +386,11 @@ async fn health_check() -> Json<HealthStatus> {
 
 See [demos/rust/rust_matrix_multiplication](../rust_matrix_multiplication/) for CUDA performance.
 
-| Operation | Python | Rust | Speedup |
-|-----------|--------|-------|---------|
-| LLaMA-7B inference | 8.2 t/s | 38.5 t/s | **4.7x** |
-| Memory usage | 120MB | 18MB | **85% reduction** |
-| Concurrency | 1 (GIL) | 100+ | **100x+** |
+| Operation          | Python  | Rust     | Speedup           |
+| ------------------ | ------- | -------- | ----------------- |
+| LLaMA-7B inference | 8.2 t/s | 38.5 t/s | **4.7x**          |
+| Memory usage       | 120MB   | 18MB     | **85% reduction** |
+| Concurrency        | 1 (GIL) | 100+     | **100x+**         |
 
 ## Why This Matters
 
@@ -407,6 +407,7 @@ This server demonstrates all five using Rust.
 ---
 
 **See Also:**
+
 - [Rust for AI Guide](https://awdemos.github.io/demos/docs/blog/rust-for-ai/)
 - [Matrix Multiplication Demo](../rust_matrix_multiplication/)
 - [Merlin Router](https://github.com/awdemos/merlin/)

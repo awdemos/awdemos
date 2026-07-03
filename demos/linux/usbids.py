@@ -2,13 +2,16 @@ import subprocess
 import requests
 import re
 
+
 def get_usb_ids():
     output = subprocess.check_output(["lsusb"]).decode("utf-8")
     return re.findall(r"ID (\w+:\w+)", output)
 
+
 def download_usb_ids():
     response = requests.get("http://www.linux-usb.org/usb.ids")
     return response.text
+
 
 def parse_usb_ids(content):
     usb_ids = {}
@@ -25,6 +28,7 @@ def parse_usb_ids(content):
             usb_ids[current_vendor]["devices"][device_id] = device_name.strip()
     return usb_ids
 
+
 def main():
     usb_ids = get_usb_ids()
     usb_database = parse_usb_ids(download_usb_ids())
@@ -40,6 +44,7 @@ def main():
                 print(f"Found the USB ID: {vendor_name} Unknown Device ({usb_id})")
         else:
             print(f"Not found: {usb_id}")
+
 
 if __name__ == "__main__":
     main()

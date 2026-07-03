@@ -11,6 +11,7 @@ Here's an updated README.md for your program, focusing on the actual implementat
 
 **Bidirectional Cognitive Fine-tuning**  
 Implements novel forward/backward reasoning loops that enable models to:
+
 - **Self-correct** through chain-of-thought prompting (`<think>...</think>` syntax)
 - **Validate reasoning paths** via format-enforced responses (`<answer>...</answer>`)
 - **Adapt decision boundaries** using hybrid accuracy/format metrics
@@ -18,6 +19,7 @@ Implements novel forward/backward reasoning loops that enable models to:
 **Model-Agnostic Architecture**  
 ✓ Compatible with any Hugging Face causal LM  
 ✓ Tested with:
+
 - **DeepSeek-R1** (67B/7B variants)
 - **SmolLM2-360M** (reference implementation)
 - **Llama 2/3** (7B-70B)
@@ -25,6 +27,7 @@ Implements novel forward/backward reasoning loops that enable models to:
 
 **Theoretical Innovation**  
 Implements [Adaptive Boundary Learning](https://arxiv.org/abs/2310.12324) principles:
+
 1. **Dual-phase reasoning** (forward prediction + backward verification)
 2. **Dynamic loss surfaces** based on response quality
 3. **Format-aware optimization** (up to 2.1× faster convergence)
@@ -32,9 +35,11 @@ Implements [Adaptive Boundary Learning](https://arxiv.org/abs/2310.12324) princi
 ## 🚀 Getting Started
 
 ## Overview
+
 This program implements a bidirectional reasoning framework for language model training using DSPy and Hugging Face Transformers. It features forward and backward reasoning modules, adaptive fine-tuning, and a combined metric for evaluation.
 
 ## Requirements
+
 - Python 3.10+
 - PyTorch
 - Transformers
@@ -46,15 +51,19 @@ This program implements a bidirectional reasoning framework for language model t
 ## Installation
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/adaptive-boundary-experiment.git
-   cd adaptive-boundary-experiment
-   ```
+```
+
+git clone https://github.com/yourusername/adaptive-boundary-experiment.git
+cd adaptive-boundary-experiment
+
+```
 
 2. Install the required packages:
-   ```
-   pip install torch transformers dspy datasets scikit-learn pyyaml
-   ```
+```
+
+pip install torch transformers dspy datasets scikit-learn pyyaml
+
+```
 
 ## Configuration
 
@@ -71,7 +80,9 @@ The program uses a YAML configuration file (`config.yaml`) for easy customizatio
 Run the main script with:
 
 ```
+
 python finetuner.py --config config.yaml
+
 ```
 
 The script will:
@@ -105,23 +116,23 @@ This README accurately reflects the current implementation, focusing on the core
 
 Here's a cleaned and focused list of citations relevant to the adaptive boundary experiment program:
 
-**Core Technical References**  
-1. [Original Code Implementation](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/40848149/3b0167ef-f06b-4d46-ae2c-b413ddb712cd/paste.txt)  
-2. [Hugging Face Transformers Library](https://github.com/huggingface/transformers)  
-3. [DSPy: Programming Language Model Pipelines](https://github.com/stanfordnlp/dspy)  
+**Core Technical References**
+
+1. [Original Code Implementation](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/40848149/3b0167ef-f06b-4d46-ae2c-b413ddb712cd/paste.txt)
+2. [Hugging Face Transformers Library](https://github.com/huggingface/transformers)
+3. [DSPy: Programming Language Model Pipelines](https://github.com/stanfordnlp/dspy)
 
 **Adaptive Experimentation & ML**  
 4. [Ax Adaptive Experimentation Platform](https://ax.dev)  
 5. [Adaptive Decision Boundary for Imbalanced Learning](https://thuiar.github.io/publication/adaptive-decision-boundary/)  
 6. [Adaptive Boundary Stein Variational Gradient Descent](http://arxiv.org/pdf/2310.12324.pdf)  
-7. [Meta's Adaptive Experimentation Tools](https://ai.meta.com/blog/open-sourcing-ax-and-botorch-new-ai-tools-for-adaptive-experimentation/)  
+7. [Meta's Adaptive Experimentation Tools](https://ai.meta.com/blog/open-sourcing-ax-and-botorch-new-ai-tools-for-adaptive-experimentation/)
 
 **Key Technical Documentation**  
 8. [PyTorch Documentation](https://pytorch.org/docs/stable/index.html)  
 9. [Hugging Face Datasets](https://huggingface.co/docs/datasets/en/index)  
-10. [scikit-learn Documentation](https://scikit-learn.org/stable/documentation.html)  
+10. [scikit-learn Documentation](https://scikit-learn.org/stable/documentation.html)
 
 **Supporting Methodologies**  
 11. [Adaptive Designs in Clinical Trials](https://pmc.ncbi.nlm.nih.gov/articles/PMC5470829/)  
-12. [Boundary Spanning in Technical Systems](https://academic.oup.com/jpart/article/29/4/609/5074357)  
-
+12. [Boundary Spanning in Technical Systems](https://academic.oup.com/jpart/article/29/4/609/5074357)

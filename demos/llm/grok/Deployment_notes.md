@@ -1,4 +1,4 @@
-On March 19 2024, Grok a large language model is released by Elon Musk. One of the largest models released open source to date, 314 Billion parameter model, is released without fine-tuning and may require "model shaping." 
+On March 19 2024, Grok a large language model is released by Elon Musk. One of the largest models released open source to date, 314 Billion parameter model, is released without fine-tuning and may require "model shaping."
 
 On march 22nd a twitter user reports running it on a MBP laptop: (https://twitter.com/ggerganov/status/1771273402013073697) and got these changes merged (https://github.com/ggerganov/llama.cpp/pull/6204)
 
@@ -34,8 +34,8 @@ Open source Grok is likely going to need a couple iterations of contributions fr
    - Adjust logging levels to effectively monitor model performance and identify issues.
 
 **Code Organization:**
-   - Maintain modularity in model, runners, and checkpoint management for easier maintenance.
-   - Adhere to code structure best practices for streamlined updates and troubleshooting.
+
+- Maintain modularity in model, runners, and checkpoint management for easier maintenance.
+- Adhere to code structure best practices for streamlined updates and troubleshooting.
 
 Adopting these strategies will enhance your interaction with Grok, ensuring better performance, reduced memory footprint, and greater scalability.
-

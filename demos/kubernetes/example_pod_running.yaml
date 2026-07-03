@@ -4,14 +4,13 @@ metadata:
   name: continuous-running-pod
 spec:
   containers:
-  - name: alpine-container
-    image: alpine:latest
-    command: ["/bin/sh"]
-    args:
-    - -c
-    - |
-      while true; do
-        echo "Pod is running... $(date)"
-        sleep 30
-      done
-
+    - name: alpine-container
+      image: alpine:latest
+      command: ["/bin/sh"]
+      args:
+        - -c
+        - |
+          while true; do
+            echo "Pod is running... $(date)"
+            sleep 30
+          done

@@ -38,7 +38,6 @@ The front page of the app which includes the greetings-api message
 
 Sample post which includes the greetings-api message
 
-
 ## The CI
 
 Lives under `/ci/`
@@ -98,35 +97,34 @@ Install Dagger CLI 0.9.3 or above
 Recording [on Drive](https://drive.google.com/file/d/1mWthDw6lFa_Z-WQgPvyinVodtn9ELl-d/view?usp=sharing)
 
 - Lead with [Daggerverse](https://daggerverse.dev)
-	- browse to Hugo module 🎥 0:52
-	- run module against `./frontend`: `dagger download -m github.com/jedevc/daggerverse/hugo build --target ./ci/frontend`
+  - browse to Hugo module 🎥 0:52
+  - run module against `./frontend`: `dagger download -m github.com/jedevc/daggerverse/hugo build --target ./ci/frontend`
 - Now pull together multiple modules in `./ci`. This ci uses: 🎥 3:02
-    - hugo module in `ci/frontend/main.go`
-    - golang module in `ci/frontend/main.go` and `ci/backend/main.go` 🎥 4:20
-    - proxy module in `ci/main.go` <- written in python!
-    - netlify module in `ci/main.go` <- written in python!
-    - fly module in `ci/main.go` <- written in python!
-    - github releases in `ci/main.go`
-    - infisical in `ci/main.go` <- written in python!
+  - hugo module in `ci/frontend/main.go`
+  - golang module in `ci/frontend/main.go` and `ci/backend/main.go` 🎥 4:20
+  - proxy module in `ci/main.go` <- written in python!
+  - netlify module in `ci/main.go` <- written in python!
+  - fly module in `ci/main.go` <- written in python!
+  - github releases in `ci/main.go`
+  - infisical in `ci/main.go` <- written in python!
 - Show in code:
-    - running in containers
-    - declarative environments
-    - secrets!
-    - services
+  - running in containers
+  - declarative environments
+  - secrets!
+  - services
 - Local runs 🎥 6:12
-    - `dagger functions -m ./ci`
-    - `dagger serve ./ci serve --help`
-    - `dagger serve -m ./ci -p 8080,8081 serve --dir "."`
-    - `curl localhost:8080` to show the result from the backend API
-    - navigate to [localhost:8081](http://localhost:8081/) in browser
-    - notice "Hello Kubecon!" greeting coming from backend API 🎥 8:12
+  - `dagger functions -m ./ci`
+  - `dagger serve ./ci serve --help`
+  - `dagger serve -m ./ci -p 8080,8081 serve --dir "."`
+  - `curl localhost:8080` to show the result from the backend API
+  - navigate to [localhost:8081](http://localhost:8081/) in browser
+  - notice "Hello Kubecon!" greeting coming from backend API 🎥 8:12
 - CI
-	- push a commit
-    - show `.circleci/config.yml` 🎥 9:17
-    - show `Jenkinsfile`
+  - push a commit
+  - show `.circleci/config.yml` 🎥 9:17
+  - show `Jenkinsfile`
 - Cloud 🎥 10:25
-	- look at all runs
-	- look at [a run](https://dagger.cloud/runs/7b77ca7f-c408-4a9b-a493-8637986b0597)
-	- errors? debugging?
-	- caching
-
+  - look at all runs
+  - look at [a run](https://dagger.cloud/runs/7b77ca7f-c408-4a9b-a493-8637986b0597)
+  - errors? debugging?
+  - caching

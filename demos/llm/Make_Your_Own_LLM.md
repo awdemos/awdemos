@@ -1,7 +1,6 @@
 # Fine-Tuning and Deploying a Machine Learning Model with Cog and Replicate
 
-This guide provides the easiest possible step-by-step process for preparing and deploying a machine learning model using Cog and Replicate. It covers everything from prerequisites to pushing your model to Replicate's registry. This example is not suitable for production but the build, train, deploy lifecycle is inherent to MLOps. 
-
+This guide provides the easiest possible step-by-step process for preparing and deploying a machine learning model using Cog and Replicate. It covers everything from prerequisites to pushing your model to Replicate's registry. This example is not suitable for production but the build, train, deploy lifecycle is inherent to MLOps.
 
 ## Prerequisites
 
@@ -52,4 +51,4 @@ result = replicate.run(
 This guide walked you through the process of preparing, fine-tuning, and deploying a machine learning model using Cog and Replicate. For further details, consult the Cog documentation and explore more features on the Replicate website!
 
 More resources: https://replicate.com/docs/guides/fine-tune-a-language-model
-                https://github.com/replicate/cog-examples
+https://github.com/replicate/cog-examples

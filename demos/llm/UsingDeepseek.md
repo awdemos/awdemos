@@ -1,6 +1,7 @@
 ```ollama pull deepseek-r1:671b
 huggingface-cli download bartowski/DeepSeek-R1-GGUF --include "DeepSeek-R1-Q6_K/*" --local-dir ./
 ```
+
 # DeepSeek's Open Source Revolution: Impact on the Hugging Face Ecosystem
 
 DeepSeek has emerged as a transformative force in the open source AI landscape, with recent releases that have significantly influenced model development on Hugging Face and beyond. This report summarizes DeepSeek's major contributions and their ripple effects throughout the open source AI community.
@@ -130,4 +131,3 @@ Citations:
 [26] https://www.byteplus.com/en/topic/384041
 [27] https://github.com/deepseek-ai/DeepSeek-MoE
 [28] https://github.com/deepseek-ai/DeepSeek-Coder-V2
-

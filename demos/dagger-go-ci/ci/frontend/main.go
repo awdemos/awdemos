@@ -21,7 +21,7 @@ func (f *Frontend) Build(
 ) *Directory {
 	return dag.
 		Hugo().
-		Build(dir, HugoBuildOpts{ HugoEnv: env })
+		Build(dir, HugoBuildOpts{HugoEnv: env})
 }
 
 // Lint the frontend Go code
@@ -41,4 +41,3 @@ func (f *Frontend) Serve(dir *Directory) *Service {
 		WithExposedPort(80).
 		AsService()
 }
-

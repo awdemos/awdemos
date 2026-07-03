@@ -22,14 +22,14 @@ dagger-go-ci/
 
 ## WHERE TO LOOK
 
-| Task | Location | Notes |
-|------|----------|-------|
-| Pipeline definition | `ci/main.go` | Dagger Go SDK pipelines |
-| Root entry point | `main.go` | Workspace-level Dagger calls |
-| CI orchestration | `Jenkinsfile` | Jenkins, not GitHub Actions |
-| Frontend build | `ci/frontend/` | Isolated frontend module |
-| Backend build | `ci/backend/` | Isolated backend module |
-| Pipeline tests | `main_test.go` | Dagger pipeline unit tests |
+| Task                | Location       | Notes                        |
+| ------------------- | -------------- | ---------------------------- |
+| Pipeline definition | `ci/main.go`   | Dagger Go SDK pipelines      |
+| Root entry point    | `main.go`      | Workspace-level Dagger calls |
+| CI orchestration    | `Jenkinsfile`  | Jenkins, not GitHub Actions  |
+| Frontend build      | `ci/frontend/` | Isolated frontend module     |
+| Backend build       | `ci/backend/`  | Isolated backend module      |
+| Pipeline tests      | `main_test.go` | Dagger pipeline unit tests   |
 
 ## CONVENTIONS
 

@@ -31,6 +31,7 @@ def sieve_of_eratosthenes(limit):
 
     return primes
 
+
 # Example usage
 if __name__ == "__main__":
     limit = 50
@@ -38,4 +39,3 @@ if __name__ == "__main__":
     print(f"Prime numbers up to {limit}:")
     print(primes)
     print(f"Total primes found: {len(primes)}")
-

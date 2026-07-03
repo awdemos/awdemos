@@ -5,11 +5,11 @@ This document outlines a series of commands useful for managing a Kubernetes clu
 ## Talos Commands
 
 List Talos Config Contexts:
-```talosctl config contexts```
+`talosctl config contexts`
 
 Bootstrap Talos Cluster:
 
-```talosctl bootstrap --talosconfig=/home/a/.talos/talosconfig --nodes=10.5.0.2```
+`talosctl bootstrap --talosconfig=/home/a/.talos/talosconfig --nodes=10.5.0.2`
 
 Configure New Cluster Context:
 
@@ -21,24 +21,27 @@ talosctl config node 10.5.0.2
 ```
 
 ## Docker Commands
+
 Remove All Containers of a Specific Image:
 
-```docker rm --force $(docker ps -aq --filter "ancestor=ghcr.io/siderolabs/talos:v1.6.5")```
+`docker rm --force $(docker ps -aq --filter "ancestor=ghcr.io/siderolabs/talos:v1.6.5")`
 
 Remove Docker Network:
 
-```docker network rm my-new-cluster-v6BvU```
+`docker network rm my-new-cluster-v6BvU`
 
 ## Kubernetes Commands
+
 Set KUBECONFIG Environment Variable:
 
-```export KUBECONFIG=/home/a/.talos/kubeconfig```
+`export KUBECONFIG=/home/a/.talos/kubeconfig`
 
 Get Kubernetes Nodes:
 
-```kubectl --kubeconfig=/home/a/.talos/kubeconfig get nodes```
+`kubectl --kubeconfig=/home/a/.talos/kubeconfig get nodes`
 
 ## Omni Commands
+
 Validate and Sync Cluster Template:
 
 ```omnictl cluster template validate -f omnictl-cluster-create.yaml
@@ -47,7 +50,7 @@ omnictl cluster template sync --file omnictl-cluster-create.yaml
 
 Generate and Export Kubeconfig for the Cluster:
 
-```omnictl kubeconfig -c my-cluster > my-cluster-kubeconfig.yaml
+````omnictl kubeconfig -c my-cluster > my-cluster-kubeconfig.yaml
 export KUBECONFIG=$(pwd)/my-cluster-kubeconfig.yaml```
 
 ## Additional Tools
@@ -118,3 +121,4 @@ Another example:
     --auth-auth0-client-id=${AUTH0_CLIENT_ID} \
     --initial-users=${AUTH0_USER_EMAIL}
     ```
+````

@@ -8,14 +8,14 @@ This directory contains comprehensive demonstrations of Kubernetes concepts, pro
 
 ### What You'll Find Here
 
-| Category | Description | Files |
-|----------|-------------|--------|
-| **Core Concepts** | Deep dives into Kubernetes fundamentals | [Why_Kubernetes.md](Why_Kubernetes.md), [Why_Containers.md](Why_Containers.md), [How_pod_gets_deployed.md](How_pod_gets_deployed.md) |
-| **Advanced Topics** | Multi-cluster, determinism, debugging | [MultiCluster.md](MultiCluster.md), [Deterministic_builds.md](Deterministic_builds.md), [Debugging_Kubernetes.md](Debugging_Kubernetes.md) |
-| **Controllers** | Custom controllers and automation | [Controllers.md](Controllers.md) |
-| **Container Internals** | Building from scratch, image inspection | [ContainerFromScratch.md](ContainerFromScratch.md), [Inspect_images.md](Inspect_images.md) |
-| **Operations** | etcd internals, troubleshooting | [Inspect_etcd.md](Inspect_etcd.md) |
-| **Future Vision** | Strategic roadmap and wishlist | [Ultimate_Kubernetes_Wishlist_2024.md](Ultimate_Kubernetes_Wishlist_2024.md) |
+| Category                | Description                             | Files                                                                                                                                      |
+| ----------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Core Concepts**       | Deep dives into Kubernetes fundamentals | [Why_Kubernetes.md](Why_Kubernetes.md), [Why_Containers.md](Why_Containers.md), [How_pod_gets_deployed.md](How_pod_gets_deployed.md)       |
+| **Advanced Topics**     | Multi-cluster, determinism, debugging   | [MultiCluster.md](MultiCluster.md), [Deterministic_builds.md](Deterministic_builds.md), [Debugging_Kubernetes.md](Debugging_Kubernetes.md) |
+| **Controllers**         | Custom controllers and automation       | [Controllers.md](Controllers.md)                                                                                                           |
+| **Container Internals** | Building from scratch, image inspection | [ContainerFromScratch.md](ContainerFromScratch.md), [Inspect_images.md](Inspect_images.md)                                                 |
+| **Operations**          | etcd internals, troubleshooting         | [Inspect_etcd.md](Inspect_etcd.md)                                                                                                         |
+| **Future Vision**       | Strategic roadmap and wishlist          | [Ultimate_Kubernetes_Wishlist_2024.md](Ultimate_Kubernetes_Wishlist_2024.md)                                                               |
 
 ---
 
@@ -131,15 +131,16 @@ graph TB
 
 Demonstrated approaches for deploying across AWS, GCP, and Azure:
 
-| Cloud | Platform | Use Case |
-|-------|----------|----------|
-| AWS | EKS | Enterprise applications, deep AWS integration |
-| GCP | GKE | Machine learning workloads, managed services |
-| Azure | AKS | Windows workloads, enterprise security |
+| Cloud | Platform | Use Case                                      |
+| ----- | -------- | --------------------------------------------- |
+| AWS   | EKS      | Enterprise applications, deep AWS integration |
+| GCP   | GKE      | Machine learning workloads, managed services  |
+| Azure | AKS      | Windows workloads, enterprise security        |
 
 ### Zero-Trust Networking
 
 Implementation of Cilium with eBPF for:
+
 - Network policies
 - Service mesh functionality
 - Deep observability
@@ -147,6 +148,7 @@ Implementation of Cilium with eBPF for:
 ### GPU-Enabled Clusters
 
 NVIDIA GPU integration patterns:
+
 - MIG (Multi-Instance GPU) for cost optimization
 - Triton Inference Server for model serving
 - DCGM monitoring integration
@@ -160,56 +162,60 @@ NVIDIA GPU integration patterns:
 Kubernetes operates on the principle of **desired state**. You define what you want, and Kubernetes works to achieve and maintain that state.
 
 **Example:**
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
 spec:
-  replicas: 3  # Desired state: 3 replicas
+  replicas: 3 # Desired state: 3 replicas
   template:
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+        - name: nginx
+          image: nginx:latest
 ```
 
 ### The Control Plane
 
 The Kubernetes control plane consists of:
 
-| Component | Responsibility |
-|-----------|---------------|
-| **API Server** | Frontend REST API, authentication, authorization |
-| **Scheduler** | Assigns pods to nodes based on resources/affinity |
-| **Controller Manager** | Maintains desired state (replica sets, services) |
-| **etcd** | Distributed key-value store for cluster state |
+| Component              | Responsibility                                    |
+| ---------------------- | ------------------------------------------------- |
+| **API Server**         | Frontend REST API, authentication, authorization  |
+| **Scheduler**          | Assigns pods to nodes based on resources/affinity |
+| **Controller Manager** | Maintains desired state (replica sets, services)  |
+| **etcd**               | Distributed key-value store for cluster state     |
 
 ### The Node Components
 
 Each node runs:
 
-| Component | Responsibility |
-|-----------|---------------|
-| **Kubelet** | Manages pod lifecycle, communicates with API server |
-| **Kube-proxy** | Handles network routing, load balancing |
-| **Container Runtime** | Runs containers (containerd, CRI-O) |
+| Component             | Responsibility                                      |
+| --------------------- | --------------------------------------------------- |
+| **Kubelet**           | Manages pod lifecycle, communicates with API server |
+| **Kube-proxy**        | Handles network routing, load balancing             |
+| **Container Runtime** | Runs containers (containerd, CRI-O)                 |
 
 ---
 
 ## 🔧 Technologies Demonstrated
 
 ### Core Kubernetes
+
 - **Talos** - Immutable, minimal Kubernetes OS
 - **EKS** (AWS), **GKE** (GCP), **AKS** (Azure)
 - **Cilium** - eBPF-based networking and security
 - **vCluster** - Virtual Kubernetes clusters
 
 ### Infrastructure as Code
+
 - **Pulumi** (Go) - Infrastructure as code in general-purpose languages
 - **Terraform** - Declarative infrastructure provisioning
 
 ### CI/CD
+
 - **Dagger** - Programmable deployment pipelines
 - **Tekton** - Cloud-native CI/CD framework
 - **Jenkins** - Self-hosted automation server
@@ -221,6 +227,7 @@ Each node runs:
 ### When to Use Kubernetes
 
 ✅ **Ideal for:**
+
 - Microservices architecture
 - Need for auto-scaling
 - Multi-cloud or hybrid deployment
@@ -229,6 +236,7 @@ Each node runs:
 - GPU-accelerated workloads
 
 ❌ **Not ideal for:**
+
 - Simple single-container applications
 - Applications with high deployment complexity needs
 - Resource-constrained environments
@@ -258,12 +266,12 @@ Each node runs:
 
 ### Common Issues
 
-| Issue | Symptoms | Solution |
-|-------|----------|----------|
-| **CrashLoopBackOff** | Pod repeatedly crashes | Check logs, resource limits, container images |
-| **ImagePullBackOff** | Can't pull container image | Verify image name, credentials, registry access |
-| **Pending** | Pod stuck in pending state | Insufficient resources, scheduling constraints, taints |
-| **OOMKilled** | Container out of memory | Increase memory limit, optimize application |
+| Issue                | Symptoms                   | Solution                                               |
+| -------------------- | -------------------------- | ------------------------------------------------------ |
+| **CrashLoopBackOff** | Pod repeatedly crashes     | Check logs, resource limits, container images          |
+| **ImagePullBackOff** | Can't pull container image | Verify image name, credentials, registry access        |
+| **Pending**          | Pod stuck in pending state | Insufficient resources, scheduling constraints, taints |
+| **OOMKilled**        | Container out of memory    | Increase memory limit, optimize application            |
 
 ### Tools & Commands
 
@@ -292,18 +300,21 @@ kubectl get events --sort-by='.lastTimestamp'
 ## 🎓 Learning Path
 
 ### Beginner
+
 1. Read [Why_Containers.md](Why_Containers.md)
 2. Read [Why_Kubernetes.md](Why_Kubernetes.md)
 3. Read [How_pod_gets_deployed.md](How_pod_gets_deployed.md)
 4. Practice with basic pod and deployment manifests
 
 ### Intermediate
+
 5. Read [MultiCluster.md](MultiCluster.md)
 6. Read [Debugging_Kubernetes.md](Debugging_Kubernetes.md)
 7. Study [Deterministic_builds.md](Deterministic_builds.md)
 8. Implement services and ingress controllers
 
 ### Advanced
+
 9. Read [Controllers.md](Controllers.md) and write a custom controller
 10. Deep dive into [Inspect_etcd.md](Inspect_etcd.md)
 11. Build production deployment patterns
@@ -314,11 +325,13 @@ kubectl get events --sort-by='.lastTimestamp'
 ## 🔗 External Resources
 
 ### Official Documentation
+
 - [Kubernetes.io](https://kubernetes.io/docs/) - Official documentation
 - [Talos Linux](https://www.talos.dev/docs/) - Best-in-class Kubernetes OS
 - [Cilium](https://docs.cilium.io/) - eBPF-based networking
 
 ### Community & Learning
+
 - [CNCF Landscape](https://landscape.cncf.io/) - Cloud Native ecosystem
 - [Kubernetes Blog](https://kubernetes.io/blog/) - Latest announcements
 

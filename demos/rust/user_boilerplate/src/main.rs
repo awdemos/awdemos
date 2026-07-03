@@ -38,4 +38,3 @@ async fn main() {
 
     println!("🎉 All users have been processed.");
 }
-

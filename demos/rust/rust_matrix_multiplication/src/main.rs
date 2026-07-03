@@ -113,7 +113,10 @@ fn benchmark_size(n: usize) {
             let gpu_ms = t0.elapsed().as_secs_f64() * 1000.0;
 
             let max_err = max_relative_error(c_cpu.as_slice().unwrap(), c_gpu.as_slice().unwrap());
-            println!("⚡ GPU (CUDA)         {:>10.3} ms  ✅ max rel err: {:.2e}", gpu_ms, max_err);
+            println!(
+                "⚡ GPU (CUDA)         {:>10.3} ms  ✅ max rel err: {:.2e}",
+                gpu_ms, max_err
+            );
             println!("🚀 Speedup           {:>10.2}×", cpu_ms / gpu_ms);
         }
         Err(e) => {
