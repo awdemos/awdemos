@@ -66,14 +66,16 @@ These three represent my core thesis: **if you use it every day, you should own 
 
 A curated set of projects that power my commercial work and research. See the full [awdemos](https://github.com/awdemos) org for experiments in blockchain, languages, simulations, and games.
 
-### 🤖 AI / Agent Infrastructure
+### 🤖 Agentic Work
+
+These projects form the core of how I build, orchestrate, and reason with AI agents — from terminal assistants to distributed multi-agent systems.
 
 | Project | Description | Lang |
 |---------|-------------|------|
 | [**openlibertas**](https://github.com/awdemos/openlibertas) | Full AI coding assistant — 15 agent personas, MCP tools, voice, session management | Rust |
-| [**kairo**](https://github.com/awdemos/kairo) | Agentic orchestrator — model-agnostic routing, ReAct agents, WASM sandboxing | Rust |
-| [**zerochain**](https://github.com/awdemos/zerochain) | Multi-agent orchestration via plain text files — no brokers, no databases | Rust |
-| [**Routage**](https://github.com/awdemos/Routage) | Async LLM router — sub-millisecond model dispatch, zero GC pauses | Rust |
+| [**kairo**](https://github.com/awdemos/kairo) | Agentic orchestrator — model council routing, ReAct agents, WASM sandboxing, DAG workflows | Rust |
+| [**Xfiles**](https://github.com/awdemos/Xfiles) | Plan 9-inspired agent communication hub — VFS namespaces, quantum-mode routing, MCP | Rust |
+| [**zerochain**](https://github.com/awdemos/zerochain) | Filesystem-native multi-agent workflows — content-addressed, deterministic, zero-unsafe Rust | Rust |
 
 ### ✏️ Developer Tools
 
@@ -87,7 +89,14 @@ A curated set of projects that power my commercial work and research. See the fu
 | Project | Description | Lang |
 |---------|-------------|------|
 | [**RegicideOS**](https://github.com/awdemos/RegicideOS) | AI-native Rust Linux distro — Gentoo + Cosmic Desktop, GPU-optimized kernel | Rust |
-| [**cuda-oxide-demos**](https://github.com/awdemos/cuda-oxide-demos) | 25+ GPU demos: ML inference, N-body, matrix ops, KV cache, attention | Rust |
+| [**RegicideOSArch**](https://github.com/awdemos/RegicideOSArch) | Arch Linux variant of RegicideOS — bootable QCOW2, COSMIC, Dagger pipeline | Rust/Shell |
+| [**cuda-oxide**](https://github.com/awdemos/cuda-oxide) | Custom rustc backend for CUDA kernels in pure Rust — single-source Rust → PTX | Rust |
+
+### 🏢 Enterprise & Research
+
+| Project | Description | Lang |
+|---------|-------------|------|
+| [**enterprise-ai-atlas-profile**](https://github.com/enterprise-ai-atlas/.github) | A curated index of enterprise-grade AI systems, patterns, and reference architectures for production AI factories | Markdown |
 
 ---
 
@@ -138,7 +147,7 @@ My formative years were spent on **Slashdot** and deep in **open source culture*
 | **Way back** | Sold Linux supercomputers · Built Top 500 HPC systems · Infrastructure at **OpenDNS** & **Wikimedia Foundation** |
 | **Certifications** | NVIDIA DGX SuperPOD · AI Infrastructure · InfiniBand · NVIDIA Pro Certifications · Agentic Certified |
 | **Awards** | Award-winning developer |
-| **Community** | Founder, Detroit AI Collective |
+| **Community** | Founder, Enterprise AI Atlas |
 | **Aspiration** | I aspire to motivate, lead, teach, and inspire every single day and it is not so much about me but the unbelievable mentors and colleagues whose shoulders I stand on who showed me the way. I don't believe in limitations — I only believe in the limits of imagination. |
 
 ---
@@ -173,7 +182,7 @@ I'm exploring what it means to build **AI Pangaea** — the convergence of distr
 - [**LinkedIn**](https://linkedin.com/in/andrewwhite)
 - [**Twitter/X**](https://twitter.com/awdemos)
 - **andrew@awdemos.com**
-- [**Detroit AI Collective**](https://detroitaicollective.com)
+- [**Enterprise AI Atlas**](https://github.com/enterprise-ai-atlas)
 
 If you're working on something in the intersection of **systems, AI, and security**, I'd genuinely love to hear about it.
 
