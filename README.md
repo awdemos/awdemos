@@ -56,7 +56,7 @@ These three represent my core thesis: **if you use it every day, you should own 
 
 | Project | What | Why It Exists |
 |---------|------|---------------|
-| [**RegicideOS**](https://github.com/awdemos/RegicideOS) ![Rust](https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust) | AI-native Linux distribution — Gentoo + BtrFS + Cosmic Desktop, every layer optimized for ML | Because an OS that doesn't understand GPUs is obsolete |
+| [**RegicideOS**](https://github.com/awdemos/RegicideOS) ![Rust](https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust) | Foundation OS for higher-layer AI products — Gentoo + BtrFS + COSMIC Desktop, every layer optimized for ML. Variants: RegicideOSArch (available now) and musl-based builds (future) | Because an OS that doesn't understand GPUs is obsolete |
 | [**openlibertas**](https://github.com/awdemos/openlibertas) ![Rust](https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust) | Terminal-based AI coding assistant with multi-provider, MCP tools, multi-agent delegation, voice mode | Because your coding assistant should be yours — free forever, no subscriptions |
 | [**neoxide**](https://github.com/awdemos/neoxide) ![Rust](https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust) | Neovim-inspired terminal editor with LSP, tree-sitter, Lua plugins, splits, registers, macros, marks | Because every developer deserves an editor that matches how *they* think |
 
