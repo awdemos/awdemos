@@ -3,9 +3,13 @@
 > *Quotidie est ratio plenae laetitiae in miraculo vitae*  
 > *Every day is the reason for complete joy in the miracle of life*
 
-# 👋 Hi, I'm Andrew
+# Andrew (awdemos) — AI Engineering, Rust Agents, OpenCode Plugins & Local LLM Tools
 
-### I build everything from scratch — open-source systems, commercial AI infrastructure, and hands-on consulting
+Open-source AI infrastructure by Andrew: Rust agent orchestrators, OpenCode plugins, local LLM tooling, NVIDIA GPU utilities, and experimental operating systems. Building production-grade agents from scratch.
+
+## 👋 About
+
+I build everything from scratch — open-source systems, commercial AI infrastructure, and hands-on consulting.
 
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://kernel.org/)
 [![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
