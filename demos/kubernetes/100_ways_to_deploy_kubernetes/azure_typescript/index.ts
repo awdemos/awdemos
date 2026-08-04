@@ -18,6 +18,13 @@ const cluster = new azure.containerservice.ManagedCluster(
   },
 );
 
-export const kubeconfig = cluster.kubeConfigs.apply(
-  (configs) => configs[0].value,
+export const kubeconfig = pulumi.all([
+  resourceGroup.name,
+  cluster.name,
+]).apply(([rgName, clusterName]) =>
+  azure.containerservice.listManagedClusterAccessProfile({
+    resourceGroupName: rgName,
+    resourceName: clusterName,
+    roleName: "admin",
+  }).then((profile) => profile.kubeConfig),
 );
