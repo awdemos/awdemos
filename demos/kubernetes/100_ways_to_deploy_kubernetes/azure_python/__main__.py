@@ -1,5 +1,5 @@
 import pulumi
-from pulumi_azure_native import resources, containerservice
+from pulumi_azure_native import containerservice, resources
 
 resource_group = resources.ResourceGroup("myResourceGroup")
 

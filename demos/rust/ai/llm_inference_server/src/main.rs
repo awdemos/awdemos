@@ -6,13 +6,13 @@ use axum::{
     routing::{get, post},
     Router,
 };
-use candle::{Device, Tensor};
+use candle::Device;
 use candle_nn::VarBuilder;
 use candle_transformers::models::quantized_llama::{ModelWeights, QLlama};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use tokio::sync::RwLock;
-use tracing::{error, info};
+use tracing::info;
 
 /// Zero-copy inference state
 struct InferenceState {

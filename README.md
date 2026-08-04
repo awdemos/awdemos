@@ -24,6 +24,10 @@ I build everything from scratch — open-source systems, commercial AI infrastru
 
 ---
 
+<img src="scorecard.png" width="100%" alt="Desloppify code health scorecard">
+
+---
+
 ## 🚀 The Pitch
 
 **I build the full stack — systems, languages, and developer tools — almost entirely in Rust, almost entirely from scratch.**

@@ -4,15 +4,15 @@
 # print("Packages installed. Please restart kernel if required.")
 
 # %% Configuration and imports
+
+from crewai import Agent, Crew, Process, Task
 from dotenv import load_dotenv
-from typing import List, Dict, Any
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_openai import OpenAI
-from crewai import Agent, Task, Crew, Process
 
 # Environment setup
 if not load_dotenv():
-    raise EnvironmentError("Could not load .env file")
+    raise OSError("Could not load .env file")
 
 # Constants
 VERBOSE_LEVEL = 2  # Control logging verbosity (0-2)
@@ -28,7 +28,7 @@ def create_llm() -> OpenAI:
         raise RuntimeError("Failed to initialize LLM") from e
 
 
-def create_agents(llm: OpenAI) -> Dict[str, Agent]:
+def create_agents(llm: OpenAI) -> dict[str, Agent]:
     """Create and configure CrewAI agents with proper separation of concerns"""
     search_tool = DuckDuckGoSearchRun()
 
@@ -60,7 +60,7 @@ def create_agents(llm: OpenAI) -> Dict[str, Agent]:
     }
 
 
-def create_tasks(agents: Dict[str, Agent]) -> List[Task]:
+def create_tasks(agents: dict[str, Agent]) -> list[Task]:
     """Define clear, maintainable tasks with proper documentation"""
     return [
         Task(
@@ -105,9 +105,9 @@ def main():
         result = crew.kickoff()
 
         # Save output with timestamp
-        from datetime import datetime
+        from datetime import datetime, timezone
 
-        filename = f"ai_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
+        filename = f"ai_analysis_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}.md"
         with open(filename, "w") as f:
             f.write(result)
 
@@ -116,7 +116,7 @@ def main():
         print(result[:500] + "...")  # Preview first 500 characters
 
     except Exception as e:
-        print(f"❌ Execution failed: {str(e)}")
+        print(f"❌ Execution failed: {e!s}")
         raise
 
 

@@ -1,40 +1,31 @@
-import os
-from dotenv import load_dotenv
-import chainlit as cl
+from typing import Annotated, TypedDict
 
-import pandas as pd
-from langchain_community.vectorstores import FAISS
-from langchain_openai.embeddings import OpenAIEmbeddings
-from langchain_core.documents import Document
-from langchain_community.document_loaders import DirectoryLoader
-from langchain_community.document_loaders import BSHTMLLoader
+import chainlit as cl
+from dotenv import load_dotenv
+from langchain.chat_models import init_chat_model
+from langchain.prompts import ChatPromptTemplate
+from langchain.retrievers.contextual_compression import ContextualCompressionRetriever
+from langchain_cohere import CohereRerank
 from langchain_community.document_loaders import (
+    BSHTMLLoader,
     DirectoryLoader,
     PyPDFLoader,
     TextLoader,
     UnstructuredMarkdownLoader,
 )
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
+from langchain_core.messages import AnyMessage, HumanMessage
+from langchain_core.rate_limiters import InMemoryRateLimiter
+from langchain_core.tools import tool
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_qdrant import QdrantVectorStore
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langgraph.graph import END, START, StateGraph
+from langgraph.graph.message import add_messages
+from langgraph.prebuilt import ToolNode
 from qdrant_client import QdrantClient
 from qdrant_client.http.models import Distance, VectorParams
-from langchain.retrievers.contextual_compression import ContextualCompressionRetriever
-from langchain_cohere import CohereRerank
-from langchain.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
-from langchain.chat_models import init_chat_model
-from langchain_core.rate_limiters import InMemoryRateLimiter
-from langgraph.graph import START, StateGraph, END
-from typing_extensions import List, TypedDict
-from langchain_core.documents import Document
-from langchain_core.messages import HumanMessage
-from langchain_core.tools import tool
-from langgraph.prebuilt import ToolNode
-from langchain_core.messages import AnyMessage
-from langgraph.graph.message import add_messages
-from typing import TypedDict, Annotated
-from langchain_core.documents import Document
+from typing_extensions import TypedDict
 
 # Load API Keys
 load_dotenv()
@@ -131,7 +122,7 @@ def generate(state):
 # Build RAG graph
 class State(TypedDict):
     question: str
-    context: List[Document]
+    context: list[Document]
     response: str
 
 
@@ -160,7 +151,7 @@ llm_with_tools = llm.bind_tools(tool_belt)
 # Build an agent graph
 class AgentState(TypedDict):
     messages: Annotated[list[AnyMessage], add_messages]
-    context: List[Document]
+    context: list[Document]
 
 
 def call_mode(state):
