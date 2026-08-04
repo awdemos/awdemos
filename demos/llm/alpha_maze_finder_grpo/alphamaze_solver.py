@@ -1,22 +1,22 @@
 # AlphaMaze Solver using GRPO and Unsloth
 
 # Install UV for module management
-#!pip install uv
-#!uv pip install unsloth vllm pillow datasets torch pandas numpy
+# pip install uv
+# uv pip install unsloth vllm pillow datasets torch pandas numpy
 
 # Import necessary libraries
-from unsloth import FastLanguageModel
-from unsloth import PatchFastRL
+from unsloth import FastLanguageModel, PatchFastRL
 
 PatchFastRL("GRPO", FastLanguageModel)
-from unsloth import is_bfloat16_supported
-from trl import GRPOTrainer, GRPOConfig
-from peft import LoraConfig, get_peft_model
-from datasets import Dataset
-import torch
-import pandas as pd
-import numpy as np
 import random
+
+import numpy as np
+import pandas as pd
+import torch
+from datasets import Dataset
+from peft import LoraConfig, get_peft_model
+from trl import GRPOConfig, GRPOTrainer
+from unsloth import is_bfloat16_supported
 
 
 # Define the MazeGame class

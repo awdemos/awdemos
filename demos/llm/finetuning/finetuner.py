@@ -1,24 +1,23 @@
+import argparse
+import logging
+import re
+import sys
+from difflib import SequenceMatcher
+from typing import Annotated, Any
+
 import dspy
 import torch
-from datasets import load_dataset, Dataset
+import yaml
+from datasets import Dataset, load_dataset
+from pydantic import BaseModel, Field, ValidationError
+from sklearn.model_selection import train_test_split
+from torch.utils.data import DataLoader
 from transformers import (
-    AutoTokenizer,
-    AutoModelForCausalLM,
     AdamW,
+    AutoModelForCausalLM,
+    AutoTokenizer,
     get_linear_schedule_with_warmup,
 )
-import re
-from difflib import SequenceMatcher
-from sklearn.model_selection import train_test_split
-import logging
-from torch.utils.data import DataLoader
-import numpy as np
-from rouge_score import rouge_scorer
-import argparse
-import yaml
-import os
-from pydantic import BaseModel, Field, ValidationError
-from typing import Annotated, Dict, Any
 
 
 # --- Pydantic Models for Config Validation ---
@@ -48,8 +47,8 @@ class FullConfig(BaseModel):
     dataset: DatasetConfig
     model: ModelConfig
     training: TrainingConfig
-    hardware: Dict[str, Any]
-    validation: Dict[str, Any]
+    hardware: dict[str, Any]
+    validation: dict[str, Any]
 
 
 # --- Initialization ---
@@ -110,7 +109,7 @@ def prepare_dataset(config: FullConfig):
         )
 
     except Exception as e:
-        logging.error(f"Dataset preparation failed: {str(e)}")
+        logging.error(f"Dataset preparation failed: {e!s}")
         raise
 
 
@@ -141,7 +140,7 @@ def setup_model_and_tokenizer(config: FullConfig):
 
         return hf_model, tokenizer, lm
     except Exception as e:
-        logging.error(f"Model setup failed: {str(e)}")
+        logging.error(f"Model setup failed: {e!s}")
         raise
 
 
@@ -200,8 +199,8 @@ if __name__ == "__main__":
                 pass
 
     except ValidationError as ve:
-        logging.error(f"Configuration error: {str(ve)}")
-        exit(1)
+        logging.error(f"Configuration error: {ve!s}")
+        sys.exit(1)
     except Exception as e:
-        logging.error(f"Fatal error: {str(e)}")
-        exit(1)
+        logging.error(f"Fatal error: {e!s}")
+        sys.exit(1)

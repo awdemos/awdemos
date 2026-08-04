@@ -1,6 +1,7 @@
-import subprocess
-import requests
 import re
+import subprocess
+
+import requests
 
 
 def get_usb_ids():
