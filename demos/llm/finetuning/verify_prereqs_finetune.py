@@ -2,7 +2,6 @@
 import dspy
 import torch
 from datasets import load_dataset
-from transformers import AutoTokenizer
 
 print("dspy version:", dspy.__version__)
 print("torch version:", torch.__version__)
