@@ -10,7 +10,7 @@ This structured approach ensures a systematic investigation, with each phase yie
 
 **Initiating the Workflow:**
 
-The workflow is can be triggered manually or by an alert, which could be:
+The workflow can be triggered manually or by an alert, which could be:
 
 - An automated notification due to a Service Level Objective (SLO) breach, detailing the metrics involved.
 - A problem report from a user, ideally specifying the expected vs. actual behavior.
