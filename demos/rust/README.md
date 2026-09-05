@@ -12,6 +12,7 @@ This directory contains Rust implementations of various tools and utilities, sho
 | -------------------------------------------------------------- | --------------------------------- | -------------------------------------------------- |
 | **[databases/](databases/)**                                   | Database tooling and utilities    | Performance benchmarks, connection pooling         |
 | **[fizzbuzz/](fizzbuzz/)**                                     | Classic problem optimized in Rust | Multiple implementations, performance comparison   |
+| **[lisp/](lisp/)**                                             | Minimal Lisp interpreter with REPL | Parser, closures, zero dependencies                |
 | **[rust_matrix_multiplication/](rust_matrix_multiplication/)** | GPU-accelerated matrix operations | CUDA integration, parallel processing              |
 | **[user_boilerplate/](user_boilerplate/)**                     | CLI application scaffolding       | Argument parsing, error handling, testing patterns |
 
