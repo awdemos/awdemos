@@ -12,6 +12,7 @@ rust/
 ├── rust_matrix_multiplication/ # ndarray-based linear algebra
 ├── databases/                  # PL/Rust and DB interaction patterns
 ├── fizzbuzz/                   # Language fundamentals
+├── lisp/                       # Minimal Lisp interpreter (parser, eval, closures)
 └── ai/
     └── llm_inference_server/   # Rust LLM serving experiment
 ```
@@ -23,6 +24,7 @@ rust/
 | CLI boilerplate | `user_boilerplate/`           | Production-ready clap + tracing setup    |
 | Matrix math     | `rust_matrix_multiplication/` | ndarray, GPU-acceleration prep           |
 | DB patterns     | `databases/`                  | PL/Rust notes                            |
+| Lisp interpreter | `lisp/`                      | Zero-dep REPL; `Rc<RefCell<Env>>` closures (recursion, mutable state) |
 | LLM inference   | `ai/llm_inference_server/`    | Cross-categorized; see also `demos/llm/` |
 
 ## CONVENTIONS
