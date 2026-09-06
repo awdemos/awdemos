@@ -77,3 +77,17 @@ cd demos/<demo-name>/ && follow demo-specific README
 - `eks-pulumi-go-demo/` was renamed from `eks-gha-aws-demo/` to remove the GitHub Actions implication; it contains no Actions workflows.
 - `dagger-go-ci/` uses a `go.work` workspace with nested modules — more complex than typical demos.
 - CONTRIBUTING.md references GitHub Actions CI; this is aspirational/outdated. No `.github/workflows/` exists.
+
+## Deployment
+
+This project has a Dagger module (`dagger.json` in `./demos/dagger-go-ci/`).
+From the repository root, run:
+
+```bash
+# list available functions
+dagger call --help -m ./demos/dagger-go-ci/
+```
+
+The module loaded but no functions were parsed from `dagger call --help`; inspect the source manually.
+
+You may need to export required tokens before calling deploy functions (e.g., `GH_TOKEN`, `CLOUDFLARE_API_TOKEN`, `REGISTRY_TOKEN`).
