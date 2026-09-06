@@ -1,7 +1,7 @@
 # TensorZero demo — LLM gateway observability on a self-hosted stack
 
 A production-style TensorZero deployment: the [TensorZero gateway](https://github.com/tensorzero/tensorzero)
-routes named functions over local vLLM models through a [Switchyard](https://github.com/NousResearch/switchyard)
+routes named functions over local model-serving endpoints through a [Switchyard](https://github.com/NousResearch/switchyard)
 proxy, records every inference and raw model call in Postgres, and the TensorZero UI
 renders observability, traces, and a working playground over that data.
 
@@ -27,14 +27,13 @@ tensorzero-gateway/
 ├── systemd/tz-gateway.service    # gateway on :3000 (migrations run as ExecStartPre)
 ├── systemd/tz-ui.service         # UI on :8181, plus optional caddy reverse proxy
 ├── etc/caddy/Caddyfile           # TLS-terminating reverse proxy for the UI (optional)
-├── bin/tz-ui-run.sh              # UI launcher (loopback bind or behind caddy)
 └── README.md
 ```
 
 ## Topology
 
 ```
-client ──► TensorZero gateway :3000 ──► Switchyard :4000 ──► vLLM fleet
+client ──► TensorZero gateway :3000 ──► Switchyard :4000 ──► model fleet
                 │
                 ├── Postgres :5433 (inferences, model calls, feedback)
                 └── UI :8181 ──gateway internal API──► dashboard over the same store
@@ -99,7 +98,7 @@ and the detail view carries the full model-call trace (raw request/response).
 
 - **"No datasets found" / empty Evaluations are real states** — the pages render
   correctly with zero rows when you haven't created datasets or run evaluations yet.
-- **Loopback-only UI can look "unreachable from my laptop."** Bind the UI to your
-  tailnet/host IP (edit `bin/tz-ui-run.sh` publish port) or front it with the provided
-  caddy config — don't poke a hole through the gateway.
+- **Loopback-only UI can look "unreachable from my laptop."** Publish the UI port on
+  your host/tailnet IP (edit the systemd unit's ExecStart) or front it with the
+  provided caddy config — don't poke a hole through the gateway.
 - **`du` over NFS-backed pgdata hangs** — check disk usage another way.
