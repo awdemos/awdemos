@@ -93,6 +93,14 @@ and the detail view carries the full model-call trace (raw request/response).
   `enabled`, `format`, `extra_headers`, `include_content` — there is no `protocol`
   key (older docs use it); an unknown key makes the gateway exit on boot. Pre-flight
   a new config with a throwaway container before restarting the real gateway.
+- **`include_content` defaults to off — traces arrive without prompts/responses.**
+  Even with OTLP export enabled, the gateway only emits the content-carrying GenAI
+  attributes (`gen_ai.input.messages`, `gen_ai.output.messages`,
+  `gen_ai.system_instructions`, `gen_ai.tool.definitions`) when
+  `include_content = true` is set under `[gateway.export.otlp.traces]` (and the
+  format is the default `opentelemetry`; it is a no-op under `openinference`).
+  Leave it off unless you accept prompt/response payloads landing in the trace
+  backend.
 
 ## Common traps
 
