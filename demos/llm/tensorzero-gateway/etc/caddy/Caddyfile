@@ -1,0 +1,8 @@
+# Reverse proxy for the TensorZero UI (optional). Terminates TLS and forwards
+# to the loopback-published UI container. The UI talks to the gateway directly
+# from the browser via TENSORZERO_GATEWAY_URL, so no proxy rewrite for the
+# gateway is required.
+:9443 {
+	tls /etc/caddy/certs/cert.pem /etc/caddy/certs/key.pem
+	reverse_proxy 127.0.0.1:8181
+}

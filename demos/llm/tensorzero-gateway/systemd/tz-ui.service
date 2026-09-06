@@ -1,0 +1,16 @@
+[Unit]
+Description=TensorZero UI (:8181, loopback only)
+After=tz-gateway.service
+Requires=tz-gateway.service
+
+[Service]
+Type=simple
+Environment=PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/raid/awhite/tensorzero/tz-ui-run.sh
+ExecStop=/home/linuxbrew/.linuxbrew/bin/podman --root /raid/awhite/containers/storage stop -t 10 tz-ui
+Restart=always
+RestartSec=15
+TimeoutStartSec=300
+
+[Install]
+WantedBy=default.target

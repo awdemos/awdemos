@@ -1,0 +1,118 @@
+# TensorZero gateway backed by the local Switchyard proxy (OpenAI-compatible).
+# Every model below is a Switchyard route; model_name is the exact route id.
+
+[gateway]
+auth.enabled = true
+
+# OpenTelemetry trace export (spans ship when OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
+# is set; leave disabled until a collector/Jaeger/Tempo exists — enabled with no
+# receiver = perpetual export-error spam in journald).
+[gateway.export.otlp.traces]
+enabled = false
+
+[models.auto]
+routing = ["switchyard"]
+
+[models.auto.providers.switchyard]
+type = "sglang"
+api_base = "http://127.0.0.1:4000/v1/"
+api_key_location = "none"
+model_name = "switchyard/auto"
+timeouts = { non_streaming.total_ms = 120_000, streaming.ttft_ms = 120_000, streaming.total_ms = 300_000 }
+
+[models.glm]
+routing = ["switchyard"]
+
+[models.glm.providers.switchyard]
+type = "sglang"
+api_base = "http://127.0.0.1:4000/v1/"
+api_key_location = "none"
+model_name = "glm/nvfp4"
+timeouts = { non_streaming.total_ms = 120_000, streaming.ttft_ms = 120_000, streaming.total_ms = 300_000 }
+
+[models.flash_next]
+routing = ["switchyard"]
+
+[models.flash_next.providers.switchyard]
+type = "sglang"
+api_base = "http://127.0.0.1:4000/v1/"
+api_key_location = "none"
+model_name = "qwen/flash-next"
+timeouts = { non_streaming.total_ms = 120_000, streaming.ttft_ms = 120_000, streaming.total_ms = 300_000 }
+
+[models.qwen27b]
+routing = ["switchyard"]
+
+[models.qwen27b.providers.switchyard]
+type = "sglang"
+api_base = "http://127.0.0.1:4000/v1/"
+api_key_location = "none"
+model_name = "qwen/27b"
+timeouts = { non_streaming.total_ms = 120_000, streaming.ttft_ms = 120_000, streaming.total_ms = 300_000 }
+
+[models.vl_vision]
+routing = ["switchyard"]
+
+[models.vl_vision.providers.switchyard]
+type = "sglang"
+api_base = "http://127.0.0.1:4000/v1/"
+api_key_location = "none"
+model_name = "ollama/vl-vision"
+timeouts = { non_streaming.total_ms = 120_000, streaming.ttft_ms = 120_000, streaming.total_ms = 300_000 }
+
+# ---------------------------------------------------------------------------
+# Functions: named, observable, A/B-testable units on top of the raw models.
+# Clients call tensorzero::function_name::router_chat. Traffic is split across
+# the local models by weight; if every candidate fails, the gateway falls back
+# to the switchyard/auto route. Variant assignment is recorded per inference,
+# which powers per-variant analytics in the UI and adaptive A/B tests later.
+# ---------------------------------------------------------------------------
+
+[functions.router_chat]
+type = "chat"
+
+[functions.router_chat.experimentation]
+type = "static"
+candidate_variants = { glm = 0.45, flash_next = 0.33, qwen27b = 0.22 }
+fallback_variants = ["auto"]
+
+[functions.router_chat.variants.glm]
+type = "chat_completion"
+model = "glm"
+retries = { num_retries = 1, max_delay_s = 5 }
+
+[functions.router_chat.variants.flash_next]
+type = "chat_completion"
+model = "flash_next"
+retries = { num_retries = 1, max_delay_s = 5 }
+
+[functions.router_chat.variants.qwen27b]
+type = "chat_completion"
+model = "qwen27b"
+retries = { num_retries = 1, max_delay_s = 5 }
+
+[functions.router_chat.variants.auto]
+type = "chat_completion"
+model = "auto"
+
+# ---------------------------------------------------------------------------
+# Rate limiting: per-API-key inference caps, backed by Postgres. Protects the
+# local vLLM fleet from runaway agent loops. NOTE: this gateway build rejects
+# duplicate resources within one rule AND duplicate scopes across rules, so
+# only a single per-minute cap per scope is expressible here.
+# ---------------------------------------------------------------------------
+
+[[rate_limiting.rules]]
+priority = 1
+model_inferences_per_minute = 300
+scope = [{ api_key_public_id = "tensorzero::each" }]
+
+[metrics.useful]
+type = "boolean"
+optimize = "max"
+level = "inference"
+
+[metrics.quality]
+type = "float"
+optimize = "max"
+level = "inference"

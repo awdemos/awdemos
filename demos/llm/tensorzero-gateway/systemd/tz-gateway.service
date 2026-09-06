@@ -1,0 +1,23 @@
+[Unit]
+Description=TensorZero gateway (:3000, backed by Switchyard)
+After=tz-postgres.service network.target
+Requires=tz-postgres.service
+
+[Service]
+Type=simple
+Environment=PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
+# Migrations run as a one-shot container before the gateway starts.
+ExecStartPre=/home/linuxbrew/.linuxbrew/bin/podman --root /raid/awhite/containers/storage run --env-file /raid/awhite/tensorzero/secrets/tz-postgres.env --rm --name tz-migrations --network host \
+  docker.io/tensorzero/gateway:latest --run-postgres-migrations
+ExecStart=/home/linuxbrew/.linuxbrew/bin/podman --root /raid/awhite/containers/storage run --env-file /raid/awhite/tensorzero/secrets/tz-postgres.env --rm --replace --name tz-gateway --network host \
+  -v /raid/awhite/tensorzero/config:/app/config:ro \
+  docker.io/tensorzero/gateway:latest --config-file /app/config/tensorzero.toml --bind-address 0.0.0.0:3000
+ExecStop=/home/linuxbrew/.linuxbrew/bin/podman --root /raid/awhite/containers/storage stop -t 10 tz-gateway
+# OTEL trace export endpoint, if enable_export is set in tensorzero.toml:
+# Environment=OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http://127.0.0.1:4317
+Restart=always
+RestartSec=15
+TimeoutStartSec=300
+
+[Install]
+WantedBy=default.target
