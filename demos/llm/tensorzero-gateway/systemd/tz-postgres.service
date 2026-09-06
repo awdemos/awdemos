@@ -1,0 +1,17 @@
+[Unit]
+Description=TensorZero Postgres (observability store)
+After=network.target
+
+[Service]
+Type=simple
+Environment=PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/home/linuxbrew/.linuxbrew/bin/podman --root /raid/awhite/containers/storage run --env-file /raid/awhite/tensorzero/secrets/tz-postgres.env --rm --replace --name tz-postgres --network host \
+  -v /raid/awhite/tensorzero/pgdata:/var/lib/postgresql/data:U \
+  docker.io/tensorzero/postgres:17 \
+  postgres -c port=5433 -c cron.database_name=tensorzero
+Restart=always
+RestartSec=10
+TimeoutStartSec=300
+
+[Install]
+WantedBy=default.target

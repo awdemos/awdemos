@@ -10,6 +10,7 @@ This directory contains working examples, reference architectures, and learning 
   - `grok/` — Grok-1 architecture research
   - `alpha_maze_finder_grpo/` — GRPO reinforcement learning experiments
   - `attacks/` — LLM security and adversarial testing
+  - `tensorzero-gateway/` — TensorZero gateway + UI observability (Postgres store, A/B function routing, cost + OTEL trace export) over Switchyard and a local vLLM fleet
 
 ## Cloud & Infrastructure
 
