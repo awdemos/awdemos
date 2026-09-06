@@ -13,6 +13,7 @@ This directory contains comprehensive demonstrations of AI/ML infrastructure, LL
 | **Getting Started**        | LLM fundamentals and deployment basics | [LLM_Getting_Started.md](LLM_Getting_Started.md), [Make_Your_Own_LLM.md](Make_Your_Own_LLM.md)       |
 | **NVIDIA Technologies**    | Deep GPU optimization and tooling      | [Nvidia_software.md](Nvidia_software.md), [Nvidia_cuda_optimization.md](Nvidia_cuda_optimization.md) |
 | **Infrastructure & MLOps** | Production AI infrastructure pipelines | [MLOPS.md](MLOPS.md), [Mlflow.md](Mlflow.md), [Ray.md](Ray.md)                                       |
+| **LLM Gateway Observability** | TensorZero gateway + UI over self-hosted vLLM | [tensorzero-gateway/](tensorzero-gateway/README.md)                                          |
 | **Enterprise Solutions**   | Vertex AI and production platforms     | [Vertex.md](Vertex.md)                                                                               |
 | **Advanced Topics**        | Inference optimization and scaling     | [Inference.md](Inference.md)                                                                         |
 
