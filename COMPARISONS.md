@@ -376,7 +376,7 @@ Reevaluate technology choices when:
 
 ## 📄 License
 
-All comparisons and analysis are licensed under MIT License. See [LICENSE](../LICENSE) for details.
+All comparisons and analysis are licensed under MIT License. See [LICENSE](./LICENSE) for details.
 
 ---
 
