@@ -5,8 +5,8 @@ To get started:
 ```bash
 
 # If you prefer running in a container
-podman build -t lambdactl .
-podman run lambdactl -- lambdactl --help
+podman build -t lambactl .
+podman run lambactl -- lambactl --help
 
 # Install packages, build client
 go install github.com/spf13/cobra@latest
@@ -14,15 +14,15 @@ go install github.com/go-resty/resty/v2@latest
 
 go mod tidy
 
-go build -o lambdactl
+go build -o lambactl
 
 # Run the cli
-./lambdactl
+./lambactl
 A Fast and Flexible CLI built with love by Lambda and friends
 in Go for managing Lambda Cloud resources.
 
 Usage:
-  lambdactl [command]
+  lambactl [command]
 
 Available Commands:
   add-ssh-key         Add an SSH key
@@ -39,7 +39,7 @@ Available Commands:
 
 Flags:
       --api-key string   API key for accessing Lambda Cloud
-  -h, --help             help for lambdactl
+  -h, --help             help for lambactl
 
-Use "lambdactl [command] --help" for more information about a command.
+Use "lambactl [command] --help" for more information about a command.
 ```
