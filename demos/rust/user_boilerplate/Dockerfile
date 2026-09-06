@@ -1,10 +1,10 @@
-# Build stage# Build stage
+# Build stage
 FROM cgr.dev/chainguard/rust:latest-dev AS builder
 
 WORKDIR /workspace
 
 # Copy dependency files first for caching
-COPY Cargo.toml Cargo.lock /workspace
+COPY Cargo.toml Cargo.lock /workspace/
 RUN mkdir -p src && \
     echo "fn main() {}" > src/main.rs && \
     cargo build --release && \
@@ -22,7 +22,7 @@ FROM cgr.dev/chainguard/rust:latest-dev
 WORKDIR /app
 
 # Copy the built binary from builder
-COPY --from=builder /workspace/target/release/user_boilerplate .
+COPY --from=builder /workspace/target/release/user_boilerplate /app/
 
 # Run the binary
 CMD ["./user_boilerplate"]
