@@ -506,16 +506,22 @@ fn print_value(v: &Value) {
 // REPL
 // ---------------------------------------------------------------------------
 
-fn main() {
+fn run_repl() -> Result<(), String> {
     println!("Rust Lisp — type (quit) to exit");
     let env = builtins();
 
     loop {
         print!("> ");
-        io::stdout().flush().unwrap();
+        io::stdout()
+            .flush()
+            .map_err(|e| format!("failed to flush stdout: {}", e))?;
 
         let mut line = String::new();
-        if io::stdin().read_line(&mut line).unwrap() == 0 {
+        if io::stdin()
+            .read_line(&mut line)
+            .map_err(|e| format!("failed to read line: {}", e))?
+            == 0
+        {
             break;
         }
 
@@ -539,10 +545,19 @@ fn main() {
                         print_value(&v);
                         println!();
                     }
-                    Err(e) => println!("Error: {}", e),
+                    Err(e) => eprintln!("Error: {}", e),
                 }
             }
-            Err(e) => println!("Parse error: {}", e),
+            Err(e) => eprintln!("Read error: {}", e),
         }
+    }
+
+    Ok(())
+}
+
+fn main() {
+    if let Err(e) = run_repl() {
+        eprintln!("Fatal: {}", e);
+        std::process::exit(1);
     }
 }
