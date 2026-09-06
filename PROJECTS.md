@@ -124,7 +124,7 @@ These live in the `demos/` directory of this repo and represent working examples
 - **`demos/llm/grok/`** — Research into the Grok-1 model architecture.
 - **`demos/llm/alpha_maze_finder_grpo/`** — GRPO (Group Relative Policy Optimization) maze-solving experiments.
 - **`demos/llm/attacks/`** — LLM security research and adversarial testing.
-- **`demos/llm/tensorzero-gateway/`** — TensorZero gateway observability demo: A/B function routing over Switchyard and a local vLLM fleet, Postgres-only store, per-inference raw request/response traces, cost tracking, OTLP trace export, and the TensorZero UI (playground included). Verified end-to-end live.
+- **`demos/llm/tensorzero-gateway/`** — TensorZero gateway observability demo: A/B function routing over Switchyard and a local model-serving fleet, Postgres-only store, per-inference raw request/response traces, OTLP trace export, and the TensorZero UI (playground included). Verified end-to-end live.
 
 ### Infrastructure
 - **`demos/kubernetes/`** — 100+ deployment patterns, debugging guides, deterministic build strategies, and multi-cluster architecture notes. Includes Cilium eBPF networking setup.

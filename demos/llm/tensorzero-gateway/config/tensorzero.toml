@@ -97,7 +97,7 @@ model = "auto"
 
 # ---------------------------------------------------------------------------
 # Rate limiting: per-API-key inference caps, backed by Postgres. Protects the
-# local vLLM fleet from runaway agent loops. NOTE: this gateway build rejects
+# local model fleet from runaway agent loops. NOTE: this gateway build rejects
 # duplicate resources within one rule AND duplicate scopes across rules, so
 # only a single per-minute cap per scope is expressible here.
 # ---------------------------------------------------------------------------

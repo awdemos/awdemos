@@ -3,16 +3,21 @@ Description=TensorZero gateway (:3000, backed by Switchyard)
 After=tz-postgres.service network.target
 Requires=tz-postgres.service
 
+# NOTE: paths use %h (the user's home) and $HOME-relative dirs — adjust to your box.
+# The podman storage root and config/secrets dirs are regular user-writable dirs;
+# all state lives under a dedicated workdir, e.g. ~/tensorzero/.
+# (units here are systemd --user units, no root required)
+
 [Service]
 Type=simple
-Environment=PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
 # Migrations run as a one-shot container before the gateway starts.
-ExecStartPre=/home/linuxbrew/.linuxbrew/bin/podman --root /raid/awhite/containers/storage run --env-file /raid/awhite/tensorzero/secrets/tz-postgres.env --rm --name tz-migrations --network host \
+ExecStartPre=podman --root %h/tensorzero/podman-storage run --env-file %h/tensorzero/secrets/tz-postgres.env --rm --name tz-migrations --network host \
   docker.io/tensorzero/gateway:latest --run-postgres-migrations
-ExecStart=/home/linuxbrew/.linuxbrew/bin/podman --root /raid/awhite/containers/storage run --env-file /raid/awhite/tensorzero/secrets/tz-postgres.env --rm --replace --name tz-gateway --network host \
-  -v /raid/awhite/tensorzero/config:/app/config:ro \
+ExecStart=podman --root %h/tensorzero/podman-storage run --env-file %h/tensorzero/secrets/tz-postgres.env --rm --replace --name tz-gateway --network host \
+  -v %h/tensorzero/config:/app/config:ro \
   docker.io/tensorzero/gateway:latest --config-file /app/config/tensorzero.toml --bind-address 0.0.0.0:3000
-ExecStop=/home/linuxbrew/.linuxbrew/bin/podman --root /raid/awhite/containers/storage stop -t 10 tz-gateway
+ExecStop=podman --root %h/tensorzero/podman-storage stop -t 10 tz-gateway
 # OTEL trace export endpoint, if enable_export is set in tensorzero.toml:
 # Environment=OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http://127.0.0.1:4317
 Restart=always
