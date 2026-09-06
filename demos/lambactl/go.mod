@@ -1,4 +1,4 @@
-module github.com/awdemos/demos/lambdactl
+module github.com/awdemos/demos/lambactl
 
 go 1.22.1
 

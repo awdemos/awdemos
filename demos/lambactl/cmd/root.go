@@ -5,8 +5,8 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "lambdactl",
-	Short: "lambdactl is a CLI tool for managing Lambda Cloud resources",
+	Use:   "lambactl",
+	Short: "lambactl is a CLI tool for managing Lambda Cloud resources",
 	Long: `A Fast and Flexible CLI built with love by Lambda and friends
 in Go for managing Lambda Cloud resources.`,
 }
