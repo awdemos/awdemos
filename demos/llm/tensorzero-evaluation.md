@@ -1,7 +1,7 @@
 # TensorZero Teardown — Observability, Traces, Playground
 
 Field notes from auditing the TensorZero stack (gateway, UI, Postgres store) as deployed
-against a Switchyard proxy in front of a self-hosted vLLM fleet. Question going in:
+against a Switchyard proxy in front of self-hosted model endpoints. Question going in:
 "observability, traces, and playground all seem like stubs." Verdict going out:
 
 > **They are not stubs.** All three features work against the Postgres-only store.

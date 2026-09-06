@@ -4,9 +4,9 @@ After=network.target
 
 [Service]
 Type=simple
-Environment=PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
-ExecStart=/home/linuxbrew/.linuxbrew/bin/podman --root /raid/awhite/containers/storage run --env-file /raid/awhite/tensorzero/secrets/tz-postgres.env --rm --replace --name tz-postgres --network host \
-  -v /raid/awhite/tensorzero/pgdata:/var/lib/postgresql/data:U \
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=podman --root %h/tensorzero/podman-storage run --env-file %h/tensorzero/secrets/tz-postgres.env --rm --replace --name tz-postgres --network host \
+  -v %h/tensorzero/pgdata:/var/lib/postgresql/data:U \
   docker.io/tensorzero/postgres:17 \
   postgres -c port=5433 -c cron.database_name=tensorzero
 Restart=always
