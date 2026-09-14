@@ -35,7 +35,7 @@ Portfolio axiom from the original ideation: *talk is cheap; a live, instrumented
 - Ternary Q2_0 has no mainline llama.cpp CUDA support yet (CPU/Metal merged upstream; CUDA still in migration as of 2026-09) and vLLM's GGUF path cannot run ternary blocks. CUDA requires building `PrismML-Eng/llama.cpp` (`prism` branch) with `GGML_CUDA=ON`.
 - Proven on consumer NVIDIA silicon (third-party RTX testing of ternary Q2_0 via the fork).
 - Consequences, stated honestly:
-  - Serving is `llama-server` (OpenAI-compatible API), commit-pinned fork build.
+  - Serving is `llama-server` (OpenAI-compatible API), commit-pinned fork build; the exact pin is recorded in `shared/llama-server/`.
   - No native OTel server spans → tracing is client-side from `platctl` + server logs (queue/prefill/decode still observable via the SSE stream).
   - Server-side metrics via llama-server's Prometheus endpoint.
 
@@ -64,7 +64,7 @@ Five demos in dependency order. D1 is built first and owns creation of the share
 ### D4 · `cost-dashboard` — cost per token
 
 - GPU util + power via NVML exporter (DCGM is datacenter-only; GeForce needs the NVML path).
-- $/1M tokens computed from measured wall power × electricity rate, per model/route; CPU path (`-ngl 0`) enables a CPU-vs-GPU cost comparison for a 436 MB model.
+- $/1M tokens computed from measured wall power × electricity rate, per model/route; CPU path (`-ngl 0`) enables a CPU-vs-GPU cost comparison for a 442 MB model.
 - Out of scope: billing integration.
 
 ### D5 · `quant-bakeoff` — quantized serving teardown (capstone)
