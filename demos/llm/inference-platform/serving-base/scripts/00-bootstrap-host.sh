@@ -6,6 +6,10 @@ set -euo pipefail
 K3S=/var/home/a/.local/bin/k3s
 CTK=/var/home/a/.local/bin/nvidia-ctk
 
+echo "==> install k3s binary to /usr/local/bin (SELinux: init cannot exec from home)"
+install -m 0755 "$K3S" /usr/local/bin/k3s
+K3S=/usr/local/bin/k3s
+
 echo "==> subuid/subgid for rootless podman (user a)"
 grep -q '^a:' /etc/subuid || usermod --add-subuids 100000-165535 a
 grep -q '^a:' /etc/subgid || usermod --add-subgids 100000-165535 a
@@ -20,7 +24,7 @@ Description=k3s (inference-platform)
 After=network-online.target
 Wants=network-online.target
 [Service]
-ExecStart=/var/home/a/.local/bin/k3s server --disable=traefik --disable=servicelb --flannel-backend=host-gw
+ExecStart=/usr/local/bin/k3s server --disable=traefik --disable=servicelb --flannel-backend=host-gw
 Restart=always
 Type=notify
 Delegate=yes
