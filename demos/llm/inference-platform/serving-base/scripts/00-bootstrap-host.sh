@@ -20,7 +20,7 @@ Description=k3s (inference-platform)
 After=network-online.target
 Wants=network-online.target
 [Service]
-ExecStart=/var/home/a/.local/bin/k3s server --disable=traefik --disable=servicelb --write-kubeconfig-mode=644 --flannel-backend=host-gw
+ExecStart=/var/home/a/.local/bin/k3s server --disable=traefik --disable=servicelb --flannel-backend=host-gw
 Restart=always
 Type=notify
 Delegate=yes
@@ -32,6 +32,7 @@ UNIT
 
 echo "==> insecure localhost registry (must exist before first start)"
 mkdir -p /etc/rancher/k3s
+# Intentionally insecure: localhost-only registry for a single-user demo box.
 cat > /etc/rancher/k3s/registries.yaml <<'YAML'
 mirrors:
   "localhost:5000":
@@ -41,19 +42,29 @@ YAML
 
 systemctl daemon-reload
 systemctl enable --now k3s
-until "$K3S" kubectl get nodes 2>/dev/null | grep -q ' Ready'; do sleep 2; done
+for _ in $(seq 1 90); do
+  "$K3S" kubectl get nodes 2>/dev/null | grep -q ' Ready' && break
+  sleep 2
+done
+"$K3S" kubectl get nodes 2>/dev/null | grep -q ' Ready' \
+  || { journalctl -u k3s --no-pager -n 100; exit 1; }
 echo "==> k3s up"
 
-echo "==> nvidia containerd runtime (persists via config.toml.tmpl)"
-"$CTK" runtime configure --runtime=containerd \
-  --config=/var/lib/rancher/k3s/agent/etc/containerd/config.toml
-sed -i 's/^default_runtime_name = "runc"$/default_runtime_name = "nvidia"/' \
-  /var/lib/rancher/k3s/agent/etc/containerd/config.toml
-grep -q '^default_runtime_name = "nvidia"' /var/lib/rancher/k3s/agent/etc/containerd/config.toml
+echo "==> nvidia containerd runtime (drop-in + config.toml.tmpl)"
+"$CTK" runtime configure --runtime=containerd --set-as-default=true \
+  --config=/var/lib/rancher/k3s/agent/etc/containerd/config.toml \
+  || { echo "ERROR: nvidia-ctk runtime configure failed"; exit 1; }
+grep -qE '^\s*default_runtime_name\s*=\s*"nvidia"' /etc/containerd/conf.d/99-nvidia.toml \
+  || { echo "ERROR: nvidia default runtime missing from drop-in"; exit 1; }
 cp /var/lib/rancher/k3s/agent/etc/containerd/config.toml \
    /var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
 systemctl restart k3s
-until "$K3S" kubectl get nodes 2>/dev/null | grep -q ' Ready'; do sleep 2; done
+for _ in $(seq 1 90); do
+  "$K3S" kubectl get nodes 2>/dev/null | grep -q ' Ready' && break
+  sleep 2
+done
+"$K3S" kubectl get nodes 2>/dev/null | grep -q ' Ready' \
+  || { journalctl -u k3s --no-pager -n 100; exit 1; }
 
 echo "==> kubeconfig for user a"
 mkdir -p /var/home/a/.kube
