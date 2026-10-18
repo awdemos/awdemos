@@ -1,15 +1,9 @@
 <div align="center">
 
-> *Quotidie est ratio plenae laetitiae in miraculo vitae*  
+> *Quotidie est ratio plenae laetitiae in miraculo vitae*
 > *Every day is the reason for complete joy in the miracle of life*
 
-# Andrew (awdemos) — AI Engineering, Rust Agents, OpenCode Plugins & Local LLM Tools
-
-Open-source AI infrastructure by Andrew: Rust agent orchestrators, OpenCode plugins, local LLM tooling, NVIDIA GPU utilities, and experimental operating systems. Building production-grade agents from scratch.
-
-## 👋 About
-
-I build everything from scratch — open-source systems, commercial AI infrastructure, and hands-on consulting.
+# awdemos — open-source systems and AI infrastructure, built from scratch
 
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://kernel.org/)
 [![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
@@ -17,182 +11,89 @@ I build everything from scratch — open-source systems, commercial AI infrastru
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
 [![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
-[![Vibe Coding Agency](https://img.shields.io/badge/🚀_Vibe_Coding_Agency-000000?style=for-the-badge)](https://vibecodingagency.com/)
-[![Book a Call](https://img.shields.io/badge/📅_Book_a_call-2ea44f?style=for-the-badge)](https://calendly.com/aicareerpathllc/30min)
 
 </div>
 
 ---
 
-<img src="scorecard.png" width="100%" alt="Desloppify code health scorecard">
+## What this is
 
----
+awdemos is my open-source workshop: a growing collection of systems and AI
+infrastructure tools that I build almost entirely in Rust, almost entirely from
+scratch — an operating system, a text editor, agent harnesses, GPU utilities,
+and the odd flight simulator. The premise is simple: **if you use a tool every
+day, you should understand it well enough to have written it yourself.** Most of
+these projects started as "I wonder how that works" and ended up as things other
+people run in production.
 
-## 🚀 The Pitch
+## Who it's for
 
-**I build the full stack — systems, languages, and developer tools — almost entirely in Rust, almost entirely from scratch.**
+- Systems and infrastructure engineers who like reading real code more than docs
+- Rust developers looking for non-toy projects to contribute to
+- People running local or on-prem LLMs who want tooling that doesn't phone home
+- Anyone who shares the suspicion that a tool you can't audit is a tool you don't own
 
-An operating system. A text editor. An AI coding assistant. A blockchain. A borrow checker. An agent orchestrator. Neural networks. Programming languages. Simulators for synthetic life.
+No prior connection needed — if a project here solves a problem you have, or
+creates one you want to solve, you're in the right place.
 
-Most of it is open source; the commercial products and services below help me keep building in public.
+## Flagship projects
 
-> **Personal stretch goal:** Build *every* tool I rely on — nothing I use should be something I couldn't have written myself. Full ownership of the stack.
+Everything below is real, public, and under active development in this org:
 
-I give all of this away for free as a shoutout to all the known and unknown open source hackers out there who influenced me, either directly or indirectly.
-
----
-
-## 💼 Products & Services
-
-I run [Vibe Coding Agency](https://vibecodingagency.com/) — shipping production AI infrastructure, agentic systems, and GPU cloud access for teams that need to move fast.
-
-| Offering | What it is | Investment | Get started |
-|---|---|---|---|
-| [UltraWork](https://vibecodingagency.com/gpu-cloud/) | GPU cloud chat & console for AI inference | $399/mo | [Sign up →](https://vibecodingagency.com/gpu-cloud/start/) |
-| [KV Cache Store](https://kvcachestore.com/) | Hosted KV-cache storage & sharing for LLMs | Pay-as-you-go | [Dashboard →](https://kvcachestore.com/app) |
-| [kvcdn-cli](https://github.com/kvcachestore/kvcdn-cli) | Open-source CLI to generate, verify, quantize, and upload KV caches | Free / OSS | [Install →](https://github.com/kvcachestore/kvcdn-cli#install) |
-| [Open Superintelligence Stack](https://vibecodingagency.com/pricing/#oss) | The same OpenCode environment we use to ship | $199/mo | [Subscribe →](https://buy.stripe.com/cNi5kw1COcki9INdgJ0gw08) |
-| [Hourly Vibe Coding](https://vibecodingagency.com/payments/hourly/) | Hands-on AI infrastructure pair-programming | $199/hr | [Book hours →](https://vibecodingagency.com/payments/hourly/) |
-| [Monthly Retainer](https://vibecodingagency.com/monthly-retainer/) | 10 hours of dedicated agency support per month | $1,999/mo | [Start retainer →](https://vibecodingagency.com/monthly-retainer/) |
-| [Private Discord Community](https://vibecodingagency.com/resources/private-community/) | Members-only community & early access | $4.99/mo | [Join →](https://vibecodingagency.com/resources/private-community/) |
-
----
-
-## 🏆 The Trinity — Full Stack Ownership
-
-These three represent my core thesis: **if you use it every day, you should own it.**
-
-| Project | What | Why It Exists |
-|---------|------|---------------|
-| [**RegicideOS**](https://github.com/awdemos/RegicideOS) ![Rust](https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust) | Foundation OS for higher-layer AI products — Gentoo + BtrFS + COSMIC Desktop, every layer optimized for ML. Variants: RegicideOSArch (available now) and musl-based builds (future) | Because an OS that doesn't understand GPUs is obsolete |
-| [**openlibertas**](https://github.com/awdemos/openlibertas) ![Rust](https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust) | Terminal-based AI coding assistant with multi-provider, MCP tools, multi-agent delegation, voice mode | Because your coding assistant should be yours — free forever, no subscriptions |
-| [**neoxide**](https://github.com/awdemos/neoxide) ![Rust](https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust) | Neovim-inspired terminal editor with LSP, tree-sitter, Lua plugins, splits, registers, macros, marks | Because every developer deserves an editor that matches how *they* think |
-
----
-
-## 🧠 Selected Open Source
-
-A curated set of projects that power my commercial work and research. See the full [awdemos](https://github.com/awdemos) org for experiments in blockchain, languages, simulations, and games.
-
-### 🤖 Agentic Work
-
-These projects form the core of how I build, orchestrate, and reason with AI agents — from terminal assistants to distributed multi-agent systems.
-
-| Project | Description | Lang |
-|---------|-------------|------|
-| [**openlibertas**](https://github.com/awdemos/openlibertas) | Full AI coding assistant — 15 agent personas, MCP tools, voice, session management | Rust |
-| [**kairo**](https://github.com/awdemos/kairo) | Agentic orchestrator — model council routing, ReAct agents, WASM sandboxing, DAG workflows | Rust |
-| [**Xfiles**](https://github.com/awdemos/Xfiles) | Plan 9-inspired agent communication hub — VFS namespaces, quantum-mode routing, MCP | Rust |
-| [**zerochain**](https://github.com/awdemos/zerochain) | Filesystem-native multi-agent workflows — content-addressed, deterministic, zero-unsafe Rust | Rust |
-
-### ✏️ Developer Tools
-
-| Project | Description | Lang |
-|---------|-------------|------|
-| [**neoxide**](https://github.com/awdemos/neoxide) | Neovim-inspired terminal editor — LSP, tree-sitter, Lua plugins, splits, macros | Rust |
-| [**opencode-memento**](https://github.com/awdemos/opencode-memento) | Context preservation across AI coding sessions | TypeScript |
-
-### 🖥️ Systems & GPU
-
-| Project | Description | Lang |
-|---------|-------------|------|
-| [**RegicideOS**](https://github.com/awdemos/RegicideOS) | AI-native Rust Linux distro — Gentoo + Cosmic Desktop, GPU-optimized kernel | Rust |
-| [**RegicideOSArch**](https://github.com/awdemos/RegicideOSArch) | Arch Linux variant of RegicideOS — bootable QCOW2, COSMIC, Dagger pipeline | Rust/Shell |
-| [**cuda-oxide**](https://github.com/awdemos/cuda-oxide) | Custom rustc backend for CUDA kernels in pure Rust — single-source Rust → PTX | Rust |
-
-### 🏢 Enterprise & Research
-
-| Project | Description | Lang |
-|---------|-------------|------|
-| [**enterprise-ai-atlas-profile**](https://github.com/enterprise-ai-atlas/.github) | A curated index of enterprise-grade AI systems, patterns, and reference architectures for production AI factories | Markdown |
-
----
-
-## 📂 Production Demos & Reference Patterns
-
-Not everything is scratch-built. Some things are battle-tested patterns you can actually use in production:
-
-[![Demos Repo](https://img.shields.io/badge/awdemos/demos-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/awdemos/demos)
-
-- **Kubernetes** — 100+ deployment patterns, Cilium eBPF, multi-cluster federation
-- **LLM Infrastructure** — RAG pipelines, fine-tuning, multimodal benchmarks
-- **KV Cache Infrastructure** — Generate, quantize, and host KV caches for LLMs with [kvcdn-cli](https://github.com/kvcachestore/kvcdn-cli) + [KV Cache Store](https://kvcachestore.com/)
-- **CI/CD** — Dagger Go pipelines, container-native builds, security scanning
-- **IaC** — Pulumi (Go/TypeScript) for Azure & AWS multi-tenant infrastructure
-- **Rust** — Matrix ops, CLI boilerplate, async patterns that don't leak memory
-
-```bash
-git clone https://github.com/awdemos/demos.git
-```
-
----
-
-## 🧭 How I Think About Building
-
-> **Reproducible. Observable. Composable.**
-
-I design systems from first principles. Small tools that do one thing well and compose cleanly — the Unix way, but for the AI era.
-
-- **I don't trust black boxes.** If I can't audit it, I don't ship it.
-- **I prefer code over YAML.** If it can be code, it should be code.
-- **I believe in AI sovereignty.** Models you own, data you control, infrastructure you can audit.
-- **I value memory safety.** Not because Rust told me to, but because debugging segfaults at 3am is a waste of a life.
-- **I'm a huge fan of tried and true principles and underappreciated technologies.** I can work on everything from a PDP-11 to FreeBSD and post-Linux kernels with equal fluency.
-
-My formative years were spent on **Slashdot** and deep in **open source culture** — that ethos of transparency, collaboration, and building in public is still how I work today.
-
-> **What Kimi 2.7 has to say about my coding style:** *A technically deep, curiosity-driven engineer with strong systems programming instincts, a Rust-centric toolchain, and heavy involvement in AI/automation tooling. Likely experiments broadly and iterates fast rather than shipping polished products. Possible backgrounds: systems engineer, game dev, AI/ML tooling, or indie hacker.*
-
----
-
-## 🎖️ Background
-
-| | |
+| Project | What it is |
 |---|---|
-| **Now** | AI Factory Lead at a Fortune 500 — led technical collaborations with NVIDIA, building AI infrastructure that ships reliably, safely, and fast |
-| **2024–2025** | Lead AI Infrastructure Engineer, Helix Center for Applied AI |
-| **Earlier** | Cycorp Inc. — reported to **Dr. Doug Lenat**, symbolic AI for defense & healthcare |
-| **Way back** | Sold Linux supercomputers · Built Top 500 HPC systems · Infrastructure at **OpenDNS** & **Wikimedia Foundation** |
-| **Certifications** | NVIDIA DGX SuperPOD · AI Infrastructure · InfiniBand · NVIDIA Pro Certifications · Agentic Certified |
-| **Awards** | Award-winning developer |
-| **Community** | Founder, Enterprise AI Atlas |
-| **Aspiration** | I aspire to motivate, lead, teach, and inspire every single day and it is not so much about me but the unbelievable mentors and colleagues whose shoulders I stand on who showed me the way. I don't believe in limitations — I only believe in the limits of imagination. |
+| [**RegicideOS**](https://github.com/awdemos/RegicideOS) | Immutable Linux distribution built on Gentoo, BtrFS, and the COSMIC desktop — an OS that actually understands GPUs |
+| [**RegicideOSArch**](https://github.com/awdemos/RegicideOSArch) | The Arch-based sibling of RegicideOS: bootable images, BTRFS, AI tooling out of the box |
+| [**neoxide**](https://github.com/awdemos/neoxide) | A Vim-inspired terminal editor in Rust — LSP, tree-sitter, Lua plugins, splits, registers, and a voice mode |
+| [**Xfiles**](https://github.com/awdemos/Xfiles) | A Plan 9-inspired communication hub for AI agents, built around virtual filesystem namespaces and MCP |
+| [**kache**](https://github.com/awdemos/kache) | Zero-copy, content-addressed build cache for Rust and C/C++ — hardlinks locally, S3 when you want to share |
+| [**llm-visuals**](https://github.com/awdemos/llm-visuals) | Live terminal dashboard for a local llama.cpp model: tok/s, TTFT, GPU load, context, expert routing |
+| [**spark-doctor**](https://github.com/awdemos/spark-doctor) | Diagnostic CLI for the NVIDIA DGX Spark — catches power caps, thermal issues, and CUDA wheel mismatches early |
+| [**veloGB10**](https://github.com/awdemos/veloGB10) | An inference engine purpose-built and tuned for the GB10 |
+| [**wetware-rs**](https://github.com/awdemos/wetware-rs) | Compute on a real brain — the complete fruit-fly connectome run as a reservoir, with a trained readout |
+| [**octox**](https://github.com/awdemos/octox) | A Unix-like operating system in Rust, inspired by xv6-riscv — small enough to read in a weekend |
+| [**phosphor**](https://github.com/awdemos/phosphor) | A truecolor, self-learning terminal screensaver, because the machine idling should still be interesting |
+| [**oomwrap**](https://github.com/awdemos/oomwrap) | Wraps commands that might exhaust memory and stops them before they freeze your machine |
 
----
+The org has 400+ repositories — experiments in languages, simulations, security,
+and games. Dig around; the rough drafts are public on purpose.
 
-## ⚡ Best in Class
+## How to get involved
 
-- **Best-in-class** infrastructure engineering
-- **The fastest CI/CD on the planet**
-- **Extreme performance** optimization
-- **Extreme Linux and open source security practices**
+1. **Pick a project and run it.** Every repo has its own README and build instructions. If something doesn't work, that's a bug — file it.
+2. **Open an issue before a PR.** Good first contributions: bug reports with reproduction steps, documentation fixes, failing tests, performance observations.
+3. **Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting.** The short version: small focused changes, clear commit messages, GPG-signed commits, `cargo fmt`/`cargo clippy` for Rust, and no GitHub Actions (Dagger or Jenkins instead).
+4. **Security issues:** do not open a public issue. Report privately with reproduction steps; I hold a 90-day embargo before any disclosure.
 
----
+Everything here is MIT-licensed unless a repo says otherwise.
 
-## 🌌 The Bigger Picture: AI Pangaea
+## A note on how I build
 
-A lot of this work is anchored in one idea: **the future of intelligence is unified, not fragmented.**
+I design from first principles and distrust black boxes: if it can't be audited,
+it doesn't ship. I prefer code over YAML where a choice exists, I care about
+memory safety because 3 a.m. segfaults are a waste of a life, and I believe in
+AI sovereignty — models you own, data you control, infrastructure you can read.
+I grew up on Slashdot and open source culture, and building in public is still
+how I work.
 
-I'm exploring what it means to build **AI Pangaea** — the convergence of distributed intelligence islands into a more cohesive, secure, and capable continuum:
+By day I'm an AI Factory Lead at a Fortune 500, collaborating with NVIDIA on
+infrastructure that ships reliably and fast. Before that: lead AI infrastructure
+engineer at the Helix Center for Applied AI, symbolic AI at Cycorp under
+Dr. Doug Lenat, Top 500 HPC systems, and time at OpenDNS and the Wikimedia
+Foundation. I also run [Vibe Coding Agency](https://vibecodingagency.com/),
+which funds the open-source work you see here.
 
-- **Superintelligent entities** with persistent memory and recursive self-improvement
-- **Security at every layer** — sandboxing, guardrails, consensus verification, confidential execution
-- **Memory & continuity** across sessions, devices, and intelligence islands
+## Get in touch
 
-> 📄 [*AI Pangaea: Unifying Intelligence Islands*](https://arxiv.org/pdf/2509.17460) — arXiv:2509.17460
+- **Email:** andrew@awdemos.com
+- **X/Twitter:** [@awdemos](https://twitter.com/awdemos)
+- **LinkedIn:** [andrewwhite](https://linkedin.com/in/andrewwhite)
+- **Book a call:** [Calendly](https://calendly.com/aicareerpathllc/30min)
+- **Community:** [Enterprise AI Atlas](https://github.com/enterprise-ai-atlas)
 
----
-
-## 🤝 Let's Connect
-
-- [**Vibe Coding Agency**](https://vibecodingagency.com/) — products, consulting, and the Open Superintelligence Stack
-- [**Book a call**](https://calendly.com/aicareerpathllc/30min)
-- [**LinkedIn**](https://linkedin.com/in/andrewwhite)
-- [**Twitter/X**](https://twitter.com/awdemos)
-- **andrew@awdemos.com**
-- [**Enterprise AI Atlas**](https://github.com/enterprise-ai-atlas)
-
-If you're working on something in the intersection of **systems, AI, and security**, I'd genuinely love to hear about it.
+If you're working at the intersection of systems, AI, and security — or you
+want to argue about any of the decisions in these repos — open an issue or
+send me a message. Collaboration is the point.
 
 ---
 
