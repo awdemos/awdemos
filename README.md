@@ -23,6 +23,14 @@ If you're building something ambitious and would value another experienced engin
 - **GPU and Linux systems:** Work through the full stack, including GPU configuration, CUDA environments, Linux performance, storage, networking, and difficult system behavior.
 - **Production reliability:** Improve observability, reproducibility, security boundaries, and operational readiness so your team can run the system with confidence.
 
+## Products, standards, and research
+
+- [**Vibe Coding Agency**](https://vibecodingagency.com/): AI infrastructure consulting and hands-on product engineering.
+- [**score-centering**](https://scorecentering.com/): Managed training observability for GRPO, PPO, and REINFORCE.
+- [**Adversarial Review**](https://adversarial-review.com/): An open standard for evidence-backed, severity-rated code review.
+- [**Loops and Graphs**](https://loopsandgraphs.dev/): A control framework for AI coding agents built around deterministic checks and planned graphs.
+- [**Neuron Engineering**](https://neuronengineering.dev/): Research and engineering for inference-time model steering and neuron interventions.
+
 ## Selected products and engineering work
 
 These projects show the kind of problems I enjoy: AI infrastructure, systems software, model internals, and tools that make complex behavior easier to understand.
