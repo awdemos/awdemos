@@ -1,5 +1,6 @@
 .DS_Store
 .omo/
+.worktrees/
 .desloppify/
 dotfiles/*_outreach_execution_notes.md
 
