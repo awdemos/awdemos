@@ -12,7 +12,7 @@ Through [Vibe Coding Agency](https://vibecodingagency.com/), I partner with tech
 
 If you're building something ambitious and would value another experienced engineer, I'd be glad to hear about it.
 
-**[Discuss a project](https://vibecodingagency.com/strategy-call/)** · **[Explore consulting services](https://vibecodingagency.com/)** · **[Email me](mailto:andrew@awdemos.com)**
+**[Discuss a project](https://vibecodingagency.com/strategy-call/)** · **[Explore consulting services](https://vibecodingagency.com/)** · **[Email me](mailto:contact@vibecodingagency.com)**
 
 ## How I can help
 
@@ -60,8 +60,8 @@ If you're responsible for an AI platform, planning a private inference deploymen
 
 - **Discuss a project:** [Strategy call](https://vibecodingagency.com/strategy-call/)
 - **Consulting:** [Vibe Coding Agency](https://vibecodingagency.com/)
-- **Email:** [andrew@awdemos.com](mailto:andrew@awdemos.com)
-- **LinkedIn:** [andrewwhite](https://linkedin.com/in/andrewwhite)
+- **Email:** [contact@vibecodingagency.com](mailto:contact@vibecodingagency.com)
+- **LinkedIn:** none I refuse to use this service
 
 ---
 

@@ -20,7 +20,7 @@ Place these actions immediately after the introduction:
 
 - Book an introductory call through the existing Calendly link.
 - Explore consulting services at `https://vibecodingagency.com/`.
-- Email `andrew@awdemos.com`.
+- Email `contact@vibecodingagency.com`.
 
 ## Page structure
 
