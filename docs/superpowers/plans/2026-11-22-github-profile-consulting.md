@@ -68,7 +68,7 @@ Set `README.md` to exactly this content:
 
 # Hi, I'm Andrew White
 
-### AI infrastructure consulting for teams solving difficult systems problems
+### I'm a professional AI consulting engineer for startups and big companies
 
 </div>
 
