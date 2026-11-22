@@ -76,6 +76,8 @@ Thanks for stopping by. I help AI platform teams turn complex ideas into reliabl
 
 Through [Vibe Coding Agency](https://vibecodingagency.com/), I partner with technical leaders on architecture, hands-on implementation, and careful debugging across model routing, private inference, GPU computing, Linux, and production operations.
 
+I work with some of the largest namebrand companies you have heard of and stealth mode startups nobody has heard of.
+
 If you're building something ambitious and would value another experienced engineer, I'd be glad to hear about it.
 
 **[Discuss a project](https://vibecodingagency.com/strategy-call/)** · **[Explore consulting services](https://vibecodingagency.com/)** · **[Email me](mailto:contact@vibecodingagency.com)**
