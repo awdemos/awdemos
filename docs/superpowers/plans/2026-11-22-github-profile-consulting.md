@@ -8,6 +8,8 @@
 
 **Tech Stack:** GitHub-flavored Markdown, Python 3 standard library for content checks, Git and GitHub CLI for verification.
 
+**Execution note:** Independent link review replaced the broken scheduler with the working strategy-call page, removed an unavailable social link and an unpublished C-port claim, and canonicalized the repository link.
+
 ---
 
 ### Task 1: Establish the content checks
@@ -16,7 +18,7 @@
 - Modify: `README.md`
 - Reference: `docs/superpowers/specs/2026-11-22-github-profile-consulting-design.md`
 
-- [ ] **Step 1: Run the pre-change content check**
+- [x] **Step 1: Run the pre-change content check**
 
 Run from the repository root:
 
@@ -39,7 +41,7 @@ PY
 
 Expected: FAIL with missing approved sections. The current profile also contains em dash characters.
 
-- [ ] **Step 2: Confirm repository visibility before writing links**
+- [x] **Step 2: Confirm repository visibility before writing links**
 
 Run:
 
@@ -57,7 +59,7 @@ Expected: the first six repositories are `PUBLIC`; `score-centering` is `PRIVATE
 **Files:**
 - Modify: `README.md`
 
-- [ ] **Step 1: Replace the complete profile with the approved structure and copy**
+- [x] **Step 1: Replace the complete profile with the approved structure and copy**
 
 Set `README.md` to exactly this content:
 
@@ -76,7 +78,7 @@ Through [Vibe Coding Agency](https://vibecodingagency.com/), I partner with tech
 
 If you're building something ambitious and would value another experienced engineer, I'd be glad to hear about it.
 
-**[Book an introductory call](https://calendly.com/aicareerpathllc/30min)** · **[Explore consulting services](https://vibecodingagency.com/)** · **[Email me](mailto:andrew@awdemos.com)**
+**[Discuss a project](https://vibecodingagency.com/strategy-call/)** · **[Explore consulting services](https://vibecodingagency.com/)** · **[Email me](mailto:andrew@awdemos.com)**
 
 ## How I can help
 
@@ -92,15 +94,15 @@ These projects show the kind of problems I enjoy: AI infrastructure, systems sof
 | Project | What it demonstrates |
 |---|---|
 | [**Merlin**](https://github.com/awdemos/merlin) | Multi-provider LLM routing in Rust with semantic routing, policy controls, cost and latency awareness, and observability. |
-| **score-centering** | A commercial Rust library for differentiable per-token score centering in GRPO, PPO, and REINFORCE trainers, with integration tooling. |
+| **score-centering** | A private commercial Rust library for differentiable per-token score centering in GRPO, PPO, and REINFORCE trainers, with integration tooling. |
 | [**RegicideOS**](https://github.com/awdemos/RegicideOS) | An AI-native Linux distribution built on Gentoo, Btrfs, and COSMIC, with GPU and ML tooling integrated into the system. |
-| [**gpt2.s**](https://github.com/awdemos/gpt2.s) | GPT-2 small in handwritten AArch64 assembly with raw syscalls and output verified against PyTorch, plus a portable C implementation. |
+| [**gpt2.s**](https://github.com/awdemos/gpt2.s) | GPT-2 small in handwritten AArch64 assembly with raw syscalls and output verified against PyTorch. |
 | [**needle-rs**](https://github.com/awdemos/needle-rs) | A pure Rust runtime for on-device tool calling, including quantized model loading, incremental inference, and grammar-constrained decoding. |
 | [**MAS-Steer**](https://github.com/awdemos/mas-steer) | A Rust multi-agent search system for discovering activation-steering interventions while measuring damage to model behavior. |
 | [**tiny-lm-rs**](https://github.com/awdemos/tiny-lm-rs) | A Rust and WebAssembly GPT that trains live in the browser using handwritten, finite-difference-checked backpropagation. |
-| **oxidatedBSD** | A `no_std` amd64 kernel with preemptive ring-3 processes, syscalls, virtio-blk, and isolated address spaces. |
+| **oxidatedBSD** | An unpublished `no_std` amd64 kernel with preemptive ring-3 processes, syscalls, virtio-blk, and isolated address spaces. |
 
-You can find more open-source experiments and reference architectures in my [project index](PROJECTS.md) and [demos repository](https://github.com/awdemos/demos).
+You can find more open-source experiments and reference architectures in my [project index](PROJECTS.md) and [awdemos repository](https://github.com/awdemos/awdemos).
 
 ## Experience you can draw on
 
@@ -122,11 +124,10 @@ Many of my experiments are public, including rough drafts, research implementati
 
 If you're responsible for an AI platform, planning a private inference deployment, or untangling a difficult systems problem, I'd be happy to discuss it.
 
-- **Book a call:** [Calendly](https://calendly.com/aicareerpathllc/30min)
+- **Discuss a project:** [Strategy call](https://vibecodingagency.com/strategy-call/)
 - **Consulting:** [Vibe Coding Agency](https://vibecodingagency.com/)
 - **Email:** [andrew@awdemos.com](mailto:andrew@awdemos.com)
 - **LinkedIn:** [andrewwhite](https://linkedin.com/in/andrewwhite)
-- **X/Twitter:** [@awdemos](https://twitter.com/awdemos)
 
 ---
 
@@ -140,7 +141,7 @@ If you're responsible for an AI platform, planning a private inference deploymen
 </div>
 ````
 
-- [ ] **Step 2: Check the Markdown diff for accidental changes**
+- [x] **Step 2: Check the Markdown diff for accidental changes**
 
 Run:
 
@@ -157,7 +158,7 @@ Expected: no whitespace errors; only `README.md` is reported by the diff stat.
 - Verify: `README.md`
 - Verify local targets: `PROJECTS.md`, `CONTRIBUTING.md`
 
-- [ ] **Step 1: Run the approved structure and em dash checks**
+- [x] **Step 1: Run the approved structure and em dash checks**
 
 Run:
 
@@ -173,41 +174,89 @@ required = [
     '## How I work',
     '## Open source',
     '## Get in touch',
-    'https://calendly.com/aicareerpathllc/30min',
+    '**[Discuss a project](https://vibecodingagency.com/strategy-call/)**',
+    '- **Discuss a project:** [Strategy call](https://vibecodingagency.com/strategy-call/)',
     'https://vibecodingagency.com/',
     'mailto:andrew@awdemos.com',
+    '[awdemos repository](https://github.com/awdemos/awdemos)',
+    'A private commercial Rust library',
+    'An unpublished `no_std` amd64 kernel',
 ]
 missing = [item for item in required if item not in text]
 assert not missing, f'Missing required content: {missing}'
+forbidden = [
+    'https://calendly.com/aicareerpathllc/30min',
+    'https://twitter.com/awdemos',
+    'https://x.com/awdemos',
+    'https://github.com/awdemos/demos',
+    'portable C implementation',
+]
+present = [item for item in forbidden if item in text]
+assert not present, f'Stale or broken content remains: {present}'
 assert '\u2014' not in text, 'README.md contains an em dash'
-assert text.index('## How I can help') < text.index('## Selected products and engineering work')
-assert text.index('## Selected products and engineering work') < text.index('## Experience you can draw on')
-print('PASS: approved sections, calls to action, section order, and no em dashes')
+sections = [
+    "# Hi, I'm Andrew White",
+    '## How I can help',
+    '## Selected products and engineering work',
+    '## Experience you can draw on',
+    '## How I work',
+    '## Open source',
+    '## Get in touch',
+]
+positions = [text.index(section) for section in sections]
+assert positions == sorted(positions), f'Incorrect section order: {sections}'
+print('PASS: current content, seven-heading order, rejected stale URLs and claims, and no em dashes')
 PY
 ```
 
-Expected: `PASS: approved sections, calls to action, section order, and no em dashes`.
+Expected: `PASS: current content, seven-heading order, rejected stale URLs and claims, and no em dashes`.
 
-- [ ] **Step 2: Validate local Markdown links and public project links**
+- [x] **Step 2: Validate local Markdown links and public project links**
 
 Run:
 
 ```bash
 python3 - <<'PY'
+import json
+import subprocess
 from pathlib import Path
+
 for target in ('PROJECTS.md', 'CONTRIBUTING.md'):
     assert Path(target).is_file(), f'Missing local link target: {target}'
 print('PASS: local Markdown link targets exist')
-PY
 
-for repo in merlin RegicideOS gpt2.s needle-rs mas-steer tiny-lm-rs; do
-  gh repo view "awdemos/$repo" --json url,visibility --jq 'select(.visibility == "PUBLIC") | .url'
-done
+expected = {
+    'merlin': 'https://github.com/awdemos/merlin',
+    'RegicideOS': 'https://github.com/awdemos/RegicideOS',
+    'gpt2.s': 'https://github.com/awdemos/gpt2.s',
+    'needle-rs': 'https://github.com/awdemos/needle-rs',
+    'mas-steer': 'https://github.com/awdemos/mas-steer',
+    'tiny-lm-rs': 'https://github.com/awdemos/tiny-lm-rs',
+}
+actual_urls = []
+for repo, expected_url in expected.items():
+    result = subprocess.run(
+        ['gh', 'repo', 'view', f'awdemos/{repo}', '--json', 'url,visibility'],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert result.returncode == 0, f'gh repo view failed for {repo}: {result.stderr.strip()}'
+    record = json.loads(result.stdout)
+    assert record.get('visibility') == 'PUBLIC', f'{repo} is not PUBLIC: {record}'
+    assert record.get('url') == expected_url, f'Unexpected URL for {repo}: {record}'
+    actual_urls.append(record['url'])
+
+assert len(actual_urls) == 6, f'Expected exactly six repository URLs, got {len(actual_urls)}'
+assert actual_urls == list(expected.values()), f'Unexpected repository URL set: {actual_urls}'
+print('\n'.join(actual_urls))
+print('PASS: all six expected repositories are PUBLIC with exact URLs')
+PY
 ```
 
-Expected: the local check prints `PASS`, followed by all six public repository URLs.
+Expected: the local check prints `PASS`, followed by exactly six expected public repository URLs and a final `PASS` for repository visibility and URLs. Any `gh` error, non-public visibility, missing repository, or unexpected URL fails the check.
 
-- [ ] **Step 3: Review the final content as a buyer**
+- [x] **Step 3: Review the final content as a buyer**
 
 Read `README.md` from top to bottom and confirm:
 
@@ -225,15 +274,15 @@ git diff --name-only
 git status --short
 ```
 
-Expected: the only modified content file is `README.md`; the already committed design and plan documents may appear only if they are not yet committed.
+Expected: the only modified files are `README.md` and `docs/superpowers/plans/2026-11-22-github-profile-consulting.md`.
 
 ### Task 4: Commit the profile update
 
 **Files:**
 - Modify: `README.md`
-- Create: `docs/superpowers/plans/2026-11-22-github-profile-consulting.md`
+- Modify: `docs/superpowers/plans/2026-11-22-github-profile-consulting.md`
 
-- [ ] **Step 1: Commit the plan and verified profile**
+- [x] **Step 1: Commit the plan and verified profile**
 
 Run:
 
@@ -245,7 +294,7 @@ git commit -S -m "docs: make GitHub profile warmer and buyer focused"
 
 Expected: a signed commit containing the profile rewrite and this implementation plan.
 
-- [ ] **Step 2: Confirm the final repository state**
+- [x] **Step 2: Confirm the final repository state**
 
 Run:
 

@@ -1,104 +1,75 @@
 <div align="center">
 
-> *Quotidie est ratio plenae laetitiae in miraculo vitae*
-> *Every day is the reason for complete joy in the miracle of life*
+# Hi, I'm Andrew White
 
-# awdemos — open-source systems and AI infrastructure, built from scratch
-
-[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://kernel.org/)
-[![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
-[![NVIDIA](https://img.shields.io/badge/NVIDIA-76B900?style=for-the-badge&logo=nvidia&logoColor=white)](https://www.nvidia.com/)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
-[![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
+### AI infrastructure consulting for teams solving difficult systems problems
 
 </div>
 
----
+Thanks for stopping by. I help AI platform teams turn complex ideas into reliable, auditable systems.
 
-## What this is
+Through [Vibe Coding Agency](https://vibecodingagency.com/), I partner with technical leaders on architecture, hands-on implementation, and careful debugging across model routing, private inference, GPU computing, Linux, and production operations.
 
-awdemos is my open-source workshop: a growing collection of systems and AI
-infrastructure tools that I build almost entirely in Rust, almost entirely from
-scratch — an operating system, a text editor, agent harnesses, GPU utilities,
-and the odd flight simulator. The premise is simple: **if you use a tool every
-day, you should understand it well enough to have written it yourself.** Most of
-these projects started as "I wonder how that works" and ended up as things other
-people run in production.
+If you're building something ambitious and would value another experienced engineer, I'd be glad to hear about it.
 
-## Who it's for
+**[Discuss a project](https://vibecodingagency.com/strategy-call/)** · **[Explore consulting services](https://vibecodingagency.com/)** · **[Email me](mailto:andrew@awdemos.com)**
 
-- Systems and infrastructure engineers who like reading real code more than docs
-- Rust developers looking for non-toy projects to contribute to
-- People running local or on-prem LLMs who want tooling that doesn't phone home
-- Anyone who shares the suspicion that a tool you can't audit is a tool you don't own
+## How I can help
 
-No prior connection needed — if a project here solves a problem you have, or
-creates one you want to solve, you're in the right place.
+- **AI platform architecture:** Design practical, observable platforms for deploying and operating AI systems, from early technical decisions through production.
+- **Inference and model routing:** Build private inference stacks, model gateways, routing policies, and evaluation loops that balance quality, latency, cost, and control.
+- **GPU and Linux systems:** Work through the full stack, including GPU configuration, CUDA environments, Linux performance, storage, networking, and difficult system behavior.
+- **Production reliability:** Improve observability, reproducibility, security boundaries, and operational readiness so your team can run the system with confidence.
 
-## Flagship projects
+## Selected products and engineering work
 
-Everything below is real, public, and under active development in this org:
+These projects show the kind of problems I enjoy: AI infrastructure, systems software, model internals, and tools that make complex behavior easier to understand.
 
-| Project | What it is |
+| Project | What it demonstrates |
 |---|---|
-| [**RegicideOS**](https://github.com/awdemos/RegicideOS) | Immutable Linux distribution built on Gentoo, BtrFS, and the COSMIC desktop — an OS that actually understands GPUs |
-| [**RegicideOSArch**](https://github.com/awdemos/RegicideOSArch) | The Arch-based sibling of RegicideOS: bootable images, BTRFS, AI tooling out of the box |
-| [**neoxide**](https://github.com/awdemos/neoxide) | A Vim-inspired terminal editor in Rust — LSP, tree-sitter, Lua plugins, splits, registers, and a voice mode |
-| [**Xfiles**](https://github.com/awdemos/Xfiles) | A Plan 9-inspired communication hub for AI agents, built around virtual filesystem namespaces and MCP |
-| [**kache**](https://github.com/awdemos/kache) | Zero-copy, content-addressed build cache for Rust and C/C++ — hardlinks locally, S3 when you want to share |
-| [**llm-visuals**](https://github.com/awdemos/llm-visuals) | Live terminal dashboard for a local llama.cpp model: tok/s, TTFT, GPU load, context, expert routing |
-| [**spark-doctor**](https://github.com/awdemos/spark-doctor) | Diagnostic CLI for the NVIDIA DGX Spark — catches power caps, thermal issues, and CUDA wheel mismatches early |
-| [**veloGB10**](https://github.com/awdemos/veloGB10) | An inference engine purpose-built and tuned for the GB10 |
-| [**wetware-rs**](https://github.com/awdemos/wetware-rs) | Compute on a real brain — the complete fruit-fly connectome run as a reservoir, with a trained readout |
-| [**octox**](https://github.com/awdemos/octox) | A Unix-like operating system in Rust, inspired by xv6-riscv — small enough to read in a weekend |
-| [**phosphor**](https://github.com/awdemos/phosphor) | A truecolor, self-learning terminal screensaver, because the machine idling should still be interesting |
-| [**oomwrap**](https://github.com/awdemos/oomwrap) | Wraps commands that might exhaust memory and stops them before they freeze your machine |
+| [**Merlin**](https://github.com/awdemos/merlin) | Multi-provider LLM routing in Rust with semantic routing, policy controls, cost and latency awareness, and observability. |
+| **score-centering** | A private commercial Rust library for differentiable per-token score centering in GRPO, PPO, and REINFORCE trainers, with integration tooling. |
+| [**RegicideOS**](https://github.com/awdemos/RegicideOS) | An AI-native Linux distribution built on Gentoo, Btrfs, and COSMIC, with GPU and ML tooling integrated into the system. |
+| [**gpt2.s**](https://github.com/awdemos/gpt2.s) | GPT-2 small in handwritten AArch64 assembly with raw syscalls and output verified against PyTorch. |
+| [**needle-rs**](https://github.com/awdemos/needle-rs) | A pure Rust runtime for on-device tool calling, including quantized model loading, incremental inference, and grammar-constrained decoding. |
+| [**MAS-Steer**](https://github.com/awdemos/mas-steer) | A Rust multi-agent search system for discovering activation-steering interventions while measuring damage to model behavior. |
+| [**tiny-lm-rs**](https://github.com/awdemos/tiny-lm-rs) | A Rust and WebAssembly GPT that trains live in the browser using handwritten, finite-difference-checked backpropagation. |
+| **oxidatedBSD** | An unpublished `no_std` amd64 kernel with preemptive ring-3 processes, syscalls, virtio-blk, and isolated address spaces. |
 
-The org has 400+ repositories — experiments in languages, simulations, security,
-and games. Dig around; the rough drafts are public on purpose.
+You can find more open-source experiments and reference architectures in my [project index](PROJECTS.md) and [awdemos repository](https://github.com/awdemos/awdemos).
 
-## How to get involved
+## Experience you can draw on
 
-1. **Pick a project and run it.** Every repo has its own README and build instructions. If something doesn't work, that's a bug — file it.
-2. **Open an issue before a PR.** Good first contributions: bug reports with reproduction steps, documentation fixes, failing tests, performance observations.
-3. **Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting.** The short version: small focused changes, clear commit messages, GPG-signed commits, `cargo fmt`/`cargo clippy` for Rust, and no GitHub Actions (Dagger or Jenkins instead).
-4. **Security issues:** do not open a public issue. Report privately with reproduction steps; I hold a 90-day embargo before any disclosure.
+By day, I'm an AI Factory Lead at a Fortune 500 company, collaborating with NVIDIA on infrastructure designed to ship reliably and quickly. Previously, I was lead AI infrastructure engineer at the Helix Center for Applied AI, worked on symbolic AI at Cycorp under Dr. Doug Lenat, built Top 500 HPC systems, and spent time at OpenDNS and the Wikimedia Foundation.
 
-Everything here is MIT-licensed unless a repo says otherwise.
+That background helps me move comfortably between business constraints, platform architecture, and low-level technical details. I care about finding the useful path forward and leaving your team with a system it can understand and own.
 
-## A note on how I build
+## How I work
 
-I design from first principles and distrust black boxes: if it can't be audited,
-it doesn't ship. I prefer code over YAML where a choice exists, I care about
-memory safety because 3 a.m. segfaults are a waste of a life, and I believe in
-AI sovereignty — models you own, data you control, infrastructure you can read.
-I grew up on Slashdot and open source culture, and building in public is still
-how I work.
+I care about systems you can inspect, reproduce, and maintain. I prefer small, composable tools, clear interfaces, useful tests, and documentation that explains important decisions. For AI systems, that means models you can evaluate, data you can control, and infrastructure your team can understand.
 
-By day I'm an AI Factory Lead at a Fortune 500, collaborating with NVIDIA on
-infrastructure that ships reliably and fast. Before that: lead AI infrastructure
-engineer at the Helix Center for Applied AI, symbolic AI at Cycorp under
-Dr. Doug Lenat, Top 500 HPC systems, and time at OpenDNS and the Wikimedia
-Foundation. I also run [Vibe Coding Agency](https://vibecodingagency.com/),
-which funds the open-source work you see here.
+I aim to make collaboration straightforward: listen carefully, share context, be candid about tradeoffs, and focus on work that creates lasting value for your team.
+
+## Open source
+
+Many of my experiments are public, including rough drafts, research implementations, and production-oriented tools. You're welcome to explore them, open an issue, or share an idea. If you'd like to contribute, please start with [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Get in touch
 
-- **Email:** andrew@awdemos.com
-- **X/Twitter:** [@awdemos](https://twitter.com/awdemos)
-- **LinkedIn:** [andrewwhite](https://linkedin.com/in/andrewwhite)
-- **Book a call:** [Calendly](https://calendly.com/aicareerpathllc/30min)
-- **Community:** [Enterprise AI Atlas](https://github.com/enterprise-ai-atlas)
+If you're responsible for an AI platform, planning a private inference deployment, or untangling a difficult systems problem, I'd be happy to discuss it.
 
-If you're working at the intersection of systems, AI, and security — or you
-want to argue about any of the decisions in these repos — open an issue or
-send me a message. Collaboration is the point.
+- **Discuss a project:** [Strategy call](https://vibecodingagency.com/strategy-call/)
+- **Consulting:** [Vibe Coding Agency](https://vibecodingagency.com/)
+- **Email:** [andrew@awdemos.com](mailto:andrew@awdemos.com)
+- **LinkedIn:** [andrewwhite](https://linkedin.com/in/andrewwhite)
 
 ---
 
 <div align="center">
 
-**© 2026 Andrew White** — Built with curiosity, caffeine, and a deep distrust of complexity for its own sake.
+*Quotidie est ratio plenae laetitiae in miraculo vitae*<br>
+*Every day is the reason for complete joy in the miracle of life*
+
+**© 2026 Andrew White**
 
 </div>
