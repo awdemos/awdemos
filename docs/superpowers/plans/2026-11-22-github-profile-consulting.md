@@ -96,13 +96,13 @@ These projects show the kind of problems I enjoy: AI infrastructure, systems sof
 | Project | What it demonstrates |
 |---|---|
 | [**Merlin**](https://github.com/awdemos/merlin) | Multi-provider LLM routing in Rust with semantic routing, policy controls, cost and latency awareness, and observability. |
-| **score-centering** | A private commercial Rust library for differentiable per-token score centering in GRPO, PPO, and REINFORCE trainers, with integration tooling. |
+| [**score-centering**](https://scorecentering.com/) | A commercial Rust library for differentiable per-token score centering in GRPO, PPO, and REINFORCE trainers, with a managed observability service. |
 | [**RegicideOS**](https://github.com/awdemos/RegicideOS) | An AI-native Linux distribution built on Gentoo, Btrfs, and COSMIC, with GPU and ML tooling integrated into the system. |
 | [**gpt2.s**](https://github.com/awdemos/gpt2.s) | GPT-2 small in handwritten AArch64 assembly with raw syscalls and output verified against PyTorch. |
 | [**needle-rs**](https://github.com/awdemos/needle-rs) | A pure Rust runtime for on-device tool calling, including quantized model loading, incremental inference, and grammar-constrained decoding. |
 | [**MAS-Steer**](https://github.com/awdemos/mas-steer) | A Rust multi-agent search system for discovering activation-steering interventions while measuring damage to model behavior. |
 | [**tiny-lm-rs**](https://github.com/awdemos/tiny-lm-rs) | A Rust and WebAssembly GPT that trains live in the browser using handwritten, finite-difference-checked backpropagation. |
-| **oxidatedBSD** | An unpublished `no_std` amd64 kernel with preemptive ring-3 processes, syscalls, virtio-blk, and isolated address spaces. |
+| [**oxidatedBSD**](docs/projects/oxidatedbsd.md) | An unpublished `no_std` amd64 OS with an interactive shell, disk-loaded programs, per-process address spaces, and preemptible syscalls. |
 
 You can find more open-source experiments and reference architectures in my [project index](PROJECTS.md) and [awdemos repository](https://github.com/awdemos/awdemos).
 
@@ -129,7 +129,7 @@ If you're responsible for an AI platform, planning a private inference deploymen
 - **Discuss a project:** [Strategy call](https://vibecodingagency.com/strategy-call/)
 - **Consulting:** [Vibe Coding Agency](https://vibecodingagency.com/)
 - **Email:** [contact@vibecodingagency.com](mailto:contact@vibecodingagency.com)
-- **LinkedIn:** none I refuse to use this service
+- **LinkedIn:** not available
 
 ---
 

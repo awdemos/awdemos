@@ -4,6 +4,21 @@ This document lists only repositories and projects I created myself. Forks and c
 
 ---
 
+## Recent Products and Engineering Work
+
+| Project | Focus |
+|---|---|
+| [Merlin](https://github.com/awdemos/merlin) | Multi-provider LLM routing, policy controls, and observability in Rust. |
+| [score-centering](https://scorecentering.com/) | Commercial Rust library and managed observability service for reinforcement learning training. |
+| [RegicideOS](https://github.com/awdemos/RegicideOS) | AI-native Linux distribution with integrated GPU and ML tooling. |
+| [gpt2.s](https://github.com/awdemos/gpt2.s) | GPT-2 small in handwritten AArch64 assembly with output verified against PyTorch. |
+| [needle-rs](https://github.com/awdemos/needle-rs) | Pure Rust on-device tool-calling runtime with quantized model support. |
+| [MAS-Steer](https://github.com/awdemos/mas-steer) | Adversarial search for activation-steering interventions in frozen language models. |
+| [tiny-lm-rs](https://github.com/awdemos/tiny-lm-rs) | Rust and WebAssembly GPT training in the browser with handwritten backpropagation. |
+| [oxidatedBSD](docs/projects/oxidatedbsd.md) | `no_std` amd64 OS with an interactive shell, disk-loaded programs, and preemptible syscalls. |
+
+---
+
 ## 🚩 Flagship Repositories
 
 ### [RegicideOS](https://github.com/awdemos/RegicideOS) ⭐ 10
@@ -165,4 +180,4 @@ These are repositories I forked to study, contribute to, or extend. They are **n
 
 ---
 
-*Last updated: April 2026*
+*Last updated: November 2026*
