@@ -72,6 +72,8 @@ If you're responsible for an AI platform, planning a private inference deploymen
 *Quotidie est ratio plenae laetitiae in miraculo vitae*<br>
 *Every day is the reason for complete joy in the miracle of life*
 
+*My favorite song is "Rainbow Connection" by Kermit the Frog from The Muppet Movie.*
+
 **© 2026 Andrew White**
 
 </div>
