@@ -1,0 +1,12 @@
+models/
+out/
+*.log
+*.json
+!pyproject.toml
+!smoke_prompts.json
+!chat_smoke_prompts.json
+__pycache__/
+*.pyc
+preflight.json
+dry_run_report.json
+

@@ -13,6 +13,7 @@ llm/
 ├── grok/                   # Grok-1 architecture research
 ├── alpha_maze_finder_grpo/ # GRPO maze-solving experiments
 ├── attacks/                # LLM security research
+├── vocab_surgery/          # Reproducible embedding/output-head intervention experiments
 └── *.md                    # NVIDIA setup, MLOps, deepseek guides
 ```
 
@@ -26,6 +27,7 @@ llm/
 | NVIDIA GPU setup     | `Nvidia_software.md`, `Nvidia_cloud_vendors.md` | Cloud vendor GPU options                                    |
 | Adversarial testing  | `attacks/`                                      | Prompt injection, jailbreak research                        |
 | GRPO experiments     | `alpha_maze_finder_grpo/`                       | Group Relative Policy Optimization                          |
+| Vocab surgery        | `vocab_surgery/`                                | Reproducible, reversible embedding/output-head edits        |
 
 ## CONVENTIONS
 

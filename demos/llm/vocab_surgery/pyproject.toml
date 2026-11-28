@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "vocab-surgery"
+version = "0.1.0"
+description = "Reproducible, reversible vocabulary-surgery experiment on local language-model checkpoints"
+authors = ["Andrew White <awhite@example.com>"]
+readme = "README.md"
+packages = [{include = "vocab_surgery.py"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = "^2.11.0"
+transformers = "^4.57.0"
+numpy = "^1.26.0"
+huggingface-hub = "^0.36.0"
+
+[tool.poetry.scripts]
+vocab-surgery = "vocab_surgery:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
