@@ -83,24 +83,31 @@ installed k3s binary, the systemd unit, `registries.yaml`, the copied
 kubeconfig, and the containerd config/drop-in/template changed by `nvidia-ctk`.
 It removes only the exact recorded lines from `/etc/subuid` and `/etc/subgid`,
 so ranges added later for the same user or for other users survive. It saves a
-copy of bootstrap's generated, `Also=`-free unit and reinstalls it at the start
-of every attempt before restoring the recorded enablement (including
-`enabled-runtime`), so neither a first run nor a retry can make `enable`/`disable`
-change companion units that were never recorded. Then it restores the files,
-reloads systemd, reapplies the recorded active state, and verifies both with
-`is-enabled`/`is-active`. If verification fails, it reports the error and
-**keeps the state files** so the rollback can be retried; only a verified
-rollback deletes the manifest files. With no manifest it exits without changing
-anything.
+copy of bootstrap's generated unit on the first rollback and reinstalls it at
+the start of every attempt, and validates its `[Install]` section and every
+systemd drop-in for the unit before calling `enable`/`disable`. That keeps the
+operation to the generated `WantedBy=multi-user.target` link, so neither a
+retry nor an operator drop-in can change companion units, aliases, or targets
+that were never recorded. It then restores the recorded enablement (including
+`enabled-runtime`), restores the files, reloads systemd, reapplies the recorded
+active state, and verifies both with `is-enabled`/`is-active`. If enablement
+fails it stops before restoring any manifest target, leaving the generated unit
+reinstalled and the unit stopped; if final verification fails it leaves the
+files restored. Both failures **keep the state files** so the rollback can be
+retried; only a verified rollback deletes the manifest files and the saved
+generated unit. With no manifest it exits without changing anything.
 
 Rollback refuses incomplete state rather than guessing, before changing
 anything: missing `unit.tsv`; legacy `subuid:*` / `subgid:*` rows in
 `manifest.tsv` or a `subids.tsv` entry without an exact added line (both from
-older script versions); or a backup path recorded in the manifest that no
-longer exists. `K3S_UNIT` must be a regular file at bootstrap; a symlinked unit path
-is rejected because `cat >` would overwrite the symlink target. Bootstrap also
-preserves runtime-only enablement instead of promoting it to a persistent
-systemd unit.
+older script versions); a backup path recorded in the manifest that no longer
+exists; or effective `[Install]` directives in the recorded unit or any systemd
+drop-in for it that could create unrecorded units or symlinks (`Also=`, `Alias=`,
+`RequiredBy=`, `DefaultInstance=`, or a `WantedBy=` other than
+`multi-user.target`). Keys systemd ignores do not block rollback. `K3S_UNIT`
+must be a regular file at bootstrap; a symlinked unit path is rejected because
+`cat >` would overwrite the symlink target. Bootstrap also preserves
+runtime-only enablement instead of promoting it to a persistent systemd unit.
 
 It intentionally leaves in place: downloaded binaries in the user's home (not
 created by this script), registry image data, and k3s cluster state under

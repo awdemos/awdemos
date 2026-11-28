@@ -6,11 +6,12 @@
 #     bootstrap, otherwise remove the file bootstrap created;
 #   - subids: remove only the exact lines bootstrap added, so ranges added
 #     later for the same user or for other users survive;
-#   - systemd unit: use the recorded unit name; save and reinstall the
-#     generated Also=-free unit on every attempt before restoring enablement,
-#     so a retry cannot apply enable/disable to an original unit with Also=;
+#   - systemd unit: use the recorded unit name; save the generated unit on the
+#     first attempt and reinstall it on every attempt; validate its [Install]
+#     section and all systemd drop-ins before enable/disable so neither a
+#     retry nor an operator override can touch unrecorded units or symlinks;
 #     restore active state after daemon-reload; keep the state files if
-#     verification fails so the rollback can be retried.
+#     enablement or verification fails so the rollback can be retried.
 #
 # Deliberately NOT removed: downloaded binaries in the user's home, registry
 # image data, and k3s state under /var/lib/rancher/k3s.
@@ -95,24 +96,84 @@ echo
 read -r -p "Type 'yes' to continue: " confirm
 [ "$confirm" = "yes" ] || { echo "Aborted"; exit 1; }
 
-# Every attempt must apply enablement against the bootstrap-generated unit,
-# which has no Also= directive. Save that unit on the first attempt and
-# reinstall it on every attempt: a partial failure leaves the restored
-# original unit on disk, and a retry must not run enable/disable against it.
+# Every attempt must apply enablement against the bootstrap-generated unit.
+# systemd merges [Install] from drop-ins in every unit path when enable/disable
+# runs, so validate the unit and its drop-ins before touching the unit file.
 # Do this before stopping the unit so a refusal changes nothing.
 [ -n "$_UNIT_PATH" ] || { echo "ERROR: $UNIT_STATE has no unit path; cannot roll back safely."; exit 1; }
+UNIT_FILE="$(basename "$_UNIT_PATH")"
 GENERATED_UNIT="$BACKUP_DIR/bootstrap-unit.service"
+
+# Fail closed on the [Install] keys systemd actually uses when enabling or
+# disabling: Also, Alias, RequiredBy and DefaultInstance must be absent, and
+# WantedBy must be exactly multi-user.target. Whitespace around '=' is accepted
+# because systemd accepts it; comments, other sections and keys systemd ignores
+# are left alone so a harmless override does not block rollback.
+install_section_is_generated() {
+  awk '
+    /^[[:space:]]*[;#]/ { next }
+    /^[[:space:]]*\[/ {
+      section = $0
+      sub(/^[[:space:]]*\[/, "", section)
+      sub(/\].*$/, "", section)
+      gsub(/[[:space:]]/, "", section)
+      next
+    }
+    section == "Install" && /=/ {
+      key = $0
+      sub(/[[:space:]]*=.*/, "", key)
+      gsub(/[[:space:]]/, "", key)
+      value = $0
+      sub(/^[^=]*=[[:space:]]*/, "", value)
+      gsub(/[[:space:]]/, "", value)
+      if (key == "Also" || key == "Alias" || key == "RequiredBy" || key == "DefaultInstance") bad = 1
+      if (key == "WantedBy" && value != "multi-user.target") bad = 1
+    }
+    END { exit bad ? 1 : 0 }
+  ' "$1"
+}
+
+# Check the unit file and every drop-in for this unit across all systemd unit
+# paths. systemd-analyze gives the authoritative list; the static list is the
+# same set for hosts without that tool.
+check_install_config() {
+  local file="$1" p dropin paths
+  install_section_is_generated "$file" || return 1
+  if command -v systemd-analyze >/dev/null 2>&1; then
+    paths="$(systemd-analyze unit-paths 2>/dev/null | grep '^/' || true)"
+  else
+    paths=""
+  fi
+  if [ -z "$paths" ]; then
+    paths="$(printf '%s\n' \
+      /etc/systemd/system.control /run/systemd/system.control \
+      /run/systemd/transient /run/systemd/generator.early \
+      /etc/systemd/system /etc/systemd/system.attached \
+      /run/systemd/system /run/systemd/system.attached \
+      /run/systemd/generator /usr/local/lib/systemd/system \
+      /usr/lib/systemd/system /run/systemd/generator.late)"
+  fi
+  while IFS= read -r p; do
+    [ -n "$p" ] || continue
+    [ -d "$p/$UNIT_FILE.d" ] || continue
+    for dropin in "$p/$UNIT_FILE.d"/*.conf; do
+      [ -f "$dropin" ] || continue
+      install_section_is_generated "$dropin" || return 1
+    done
+  done <<< "$paths"
+}
+
 if [ ! -f "$GENERATED_UNIT" ]; then
-  if grep -qE '^[[:space:]]*Also=' "$_UNIT_PATH" 2>/dev/null; then
-    echo "ERROR: no saved bootstrap unit and $_UNIT_PATH contains Also=."
-    echo "Restore the bootstrap-generated unit there, then retry."
+  if ! check_install_config "$_UNIT_PATH"; then
+    echo "ERROR: no saved bootstrap unit and $_UNIT_PATH or its drop-ins have install directives that could change unrecorded units."
+    echo "Restore the bootstrap-generated unit at $_UNIT_PATH (or $GENERATED_UNIT), then retry."
     exit 1
   fi
-  mkdir -p "$(dirname "$GENERATED_UNIT")" "$(dirname "$_UNIT_PATH")"
+  mkdir -p "$(dirname "$GENERATED_UNIT")"
   cp -a "$_UNIT_PATH" "$GENERATED_UNIT"
 fi
-if grep -qE '^[[:space:]]*Also=' "$GENERATED_UNIT"; then
-  echo "ERROR: $GENERATED_UNIT contains Also=; enablement cannot be restored safely."
+if ! check_install_config "$GENERATED_UNIT"; then
+  echo "ERROR: $GENERATED_UNIT or its drop-ins have install directives that could change unrecorded units."
   echo "Restore a copy of the bootstrap-generated unit there, then retry."
   exit 1
 fi
@@ -136,11 +197,13 @@ case "$WAS_ENABLED" in
     systemctl disable "$UNIT_NAME" >/dev/null 2>&1 || true
     ;;
 esac
-# Fail before touching any file if enablement could not be restored. The
-# generated unit is already back on disk, so a later retry is safe.
+# Fail before touching any manifest target if enablement could not be
+# restored. The generated unit is reinstalled and the unit is stopped; a later
+# retry starts from the same known-good unit.
 if [ "$state_error" -ne 0 ]; then
   echo "ERROR: could not restore the pre-bootstrap enablement state for $UNIT_NAME."
-  echo "No files were restored; state files are kept under $BACKUP_DIR for a retry."
+  echo "The generated unit was reinstalled and $UNIT_NAME was stopped; no manifest targets were restored."
+  echo "State files are kept under $BACKUP_DIR for a retry."
   exit 1
 fi
 
@@ -215,7 +278,7 @@ if [ "$state_error" -ne 0 ]; then
   exit 1
 fi
 
-rm -f "$MANIFEST" "$SUBIDS" "$UNIT_STATE"
+rm -f "$MANIFEST" "$SUBIDS" "$UNIT_STATE" "$GENERATED_UNIT"
 
 echo "BOOTSTRAP ROLLED BACK"
 echo "Note: registry image data and /var/lib/rancher/k3s are intentionally left in place."
