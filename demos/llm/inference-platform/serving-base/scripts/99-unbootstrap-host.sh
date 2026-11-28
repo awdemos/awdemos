@@ -6,9 +6,10 @@
 #     bootstrap, otherwise remove the file bootstrap created;
 #   - subids: remove only the exact lines bootstrap added, so ranges added
 #     later for the same user or for other users survive;
-#   - systemd unit: use the recorded unit name, restore the recorded
-#     enabled/active state after restoring files and reloading systemd, and
-#     keep the state files if verification fails so the rollback can be retried.
+#   - systemd unit: use the recorded unit name; restore enablement before
+#     restoring the original unit file so its Also= directive cannot change
+#     unrecorded units; restore active state after daemon-reload; keep the
+#     state files if verification fails so the rollback can be retried.
 #
 # Deliberately NOT removed: downloaded binaries in the user's home, registry
 # image data, and k3s state under /var/lib/rancher/k3s.
@@ -96,6 +97,26 @@ read -r -p "Type 'yes' to continue: " confirm
 echo "==> stop $UNIT_NAME before restoring its unit file"
 systemctl stop "$UNIT_NAME" 2>/dev/null || true
 
+# Restore enablement while the bootstrap-generated unit is still on disk. That
+# unit has no Also= directive, so enable/disable cannot touch companion units
+# that were never recorded. This must happen before the original unit file
+# (which may carry Also=) is restored below.
+state_error=0
+case "$WAS_ENABLED" in
+  enabled)
+    systemctl enable "$UNIT_NAME" 2>/dev/null || state_error=1
+    ;;
+  enabled-runtime)
+    # A persistent symlink from an older bootstrap would keep is-enabled at
+    # "enabled"; remove it before restoring the runtime-only enablement.
+    systemctl disable "$UNIT_NAME" >/dev/null 2>&1 || true
+    systemctl enable --runtime "$UNIT_NAME" 2>/dev/null || state_error=1
+    ;;
+  *)
+    systemctl disable "$UNIT_NAME" >/dev/null 2>&1 || true
+    ;;
+esac
+
 echo "==> restore pre-existing files and remove bootstrap-created ones"
 while IFS=$'\t' read -r label path backup; do
   [ -n "$label" ] || continue
@@ -128,24 +149,8 @@ if [ -f "$SUBIDS" ]; then
   done < "$SUBIDS"
 fi
 
-echo "==> daemon-reload and restore unit state"
+echo "==> daemon-reload and reapply active state with the restored unit"
 systemctl daemon-reload
-
-state_error=0
-case "$WAS_ENABLED" in
-  enabled)
-    systemctl enable "$UNIT_NAME" 2>/dev/null || state_error=1
-    ;;
-  enabled-runtime)
-    # A persistent symlink from an older bootstrap would keep is-enabled at
-    # "enabled"; remove it before restoring the runtime-only enablement.
-    systemctl disable "$UNIT_NAME" >/dev/null 2>&1 || true
-    systemctl enable --runtime "$UNIT_NAME" 2>/dev/null || state_error=1
-    ;;
-  *)
-    systemctl disable "$UNIT_NAME" >/dev/null 2>&1 || true
-    ;;
-esac
 if [ "$WAS_ACTIVE" = "active" ]; then
   systemctl start "$UNIT_NAME" 2>/dev/null || state_error=1
 fi

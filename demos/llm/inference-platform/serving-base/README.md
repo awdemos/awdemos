@@ -82,12 +82,15 @@ and **restores the backup** for every target that existed before bootstrap, or
 installed k3s binary, the systemd unit, `registries.yaml`, the copied
 kubeconfig, and the containerd config/drop-in/template changed by `nvidia-ctk`.
 It removes only the exact recorded lines from `/etc/subuid` and `/etc/subgid`,
-so ranges added later for the same user or for other users survive. Finally it
-reloads systemd, reapplies the recorded enabled/active state (including
-`enabled-runtime`), and verifies it with `is-enabled`/`is-active`. If that
-verification fails, it reports the error and **keeps the state files** so the
-rollback can be retried; only a verified rollback deletes the manifest files.
-With no manifest it exits without changing anything.
+so ranges added later for the same user or for other users survive. It restores
+the recorded enablement (including `enabled-runtime`) while bootstrap's
+generated unit is still loaded, so an `Also=` directive in the original unit
+cannot change companion units that were never recorded. Then it restores the
+files, reloads systemd, reapplies the recorded active state, and verifies both
+with `is-enabled`/`is-active`. If verification fails, it reports the error and
+**keeps the state files** so the rollback can be retried; only a verified
+rollback deletes the manifest files. With no manifest it exits without changing
+anything.
 
 Rollback refuses incomplete state rather than guessing, before changing
 anything: missing `unit.tsv`; legacy `subuid:*` / `subgid:*` rows in
