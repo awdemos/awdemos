@@ -29,6 +29,8 @@ If you're building something ambitious and would value another experienced engin
 - [**score-centering**](https://scorecentering.com/): Managed training observability for GRPO, PPO, and REINFORCE.
 - [**Adversarial Review**](https://adversarial-review.com/): An open standard for evidence-backed, severity-rated code review.
 - [**Loops and Graphs**](https://loopsandgraphs.dev/): A control framework for AI coding agents built around deterministic checks and planned graphs.
+- [**RegicideOS**](https://regicideos.com/): An immutable AI-native Linux distribution with per-agent VMs, Turso audit trails, and atomic updates.
+- [**Compactation**](https://compactation.dev/): An open standard for evidence-backed agent context management — capture, project, verify, rehydrate.
 - [**Neuron Engineering**](https://neuronengineering.dev/): Research and engineering for inference-time model steering and neuron interventions.
 
 ## Selected products and engineering work
@@ -39,7 +41,7 @@ These projects show the kind of problems I enjoy: AI infrastructure, systems sof
 |---|---|
 | [**Merlin**](https://github.com/awdemos/merlin) | Multi-provider LLM routing in Rust with semantic routing, policy controls, cost and latency awareness, and observability. |
 | [**score-centering**](https://scorecentering.com/) | A commercial Rust library for differentiable per-token score centering in GRPO, PPO, and REINFORCE trainers, with a managed observability service. |
-| [**RegicideOS**](https://github.com/awdemos/RegicideOS) | An AI-native Linux distribution built on Gentoo, Btrfs, and COSMIC, with GPU and ML tooling integrated into the system. |
+| [**RegicideOS**](https://regicideos.com/) | An AI-native Linux distribution built on Gentoo, Btrfs, and COSMIC, with GPU and ML tooling integrated into the system. |
 | [**gpt2.s**](https://github.com/awdemos/gpt2.s) | GPT-2 small in handwritten AArch64 assembly with raw syscalls and output verified against PyTorch. |
 | [**needle-rs**](https://github.com/awdemos/needle-rs) | A pure Rust runtime for on-device tool calling, including quantized model loading, incremental inference, and grammar-constrained decoding. |
 | [**MAS-Steer**](https://github.com/awdemos/mas-steer) | A Rust multi-agent search system for discovering activation-steering interventions while measuring damage to model behavior. |
