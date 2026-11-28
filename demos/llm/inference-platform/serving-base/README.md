@@ -53,27 +53,41 @@ do not reuse it on a shared or internet-facing host.
 
 ## Rollback
 
-Before changing any target, bootstrap writes a manifest to `$BACKUP_DIR/manifest.tsv`
-and copies pre-existing targets to timestamped backups there. A second bootstrap
-run is refused while that manifest exists, so state cannot compound.
+Before changing any target, bootstrap writes three files under `$BACKUP_DIR`:
 
-`scripts/99-unbootstrap-host.sh` consumes the manifest:
+| File | Contents |
+| --- | --- |
+| `manifest.tsv` | File targets, each with a timestamped backup when it already existed |
+| `subids.tsv` | Only the subuid/subgid ranges bootstrap actually added, for the exact user |
+| `unit.tsv` | The systemd unit name/path and whether it was enabled/active before bootstrap |
+
+A second bootstrap run is refused while `manifest.tsv` exists, so state cannot
+compound.
+
+`scripts/99-unbootstrap-host.sh` reads those files:
 
 ```bash
 sudo bash scripts/99-unbootstrap-host.sh
-# or, with overrides:
-sudo DEMO_USER=alice bash scripts/99-unbootstrap-host.sh
+# if BACKUP_DIR was overridden at bootstrap:
+sudo BACKUP_DIR=/custom/backup/dir bash scripts/99-unbootstrap-host.sh
 ```
 
-It prompts for confirmation, stops and disables the k3s unit, then walks the
-manifest and **restores the backup** for every target that existed before
-bootstrap, or **removes the target** when bootstrap created it. Managed targets
-include the installed k3s binary, the systemd unit, `registries.yaml`, the
-copied kubeconfig, the containerd config/drop-in/template changed by
-`nvidia-ctk`, and the user's subuid/subgid lines. It then reloads systemd and
-deletes the manifest. With no manifest it exits without changing anything.
+No other overrides are needed; the unit identity, prior unit state, and exact
+subid changes all come from the manifest, so a bootstrap with a custom
+`K3S_UNIT` or `DEMO_USER` rolls back correctly with the plain command above.
+
+It prompts for confirmation, stops the current unit, then walks `manifest.tsv`
+and **restores the backup** for every target that existed before bootstrap, or
+**removes the target** when bootstrap created it. Managed targets include the
+installed k3s binary, the systemd unit, `registries.yaml`, the copied
+kubeconfig, and the containerd config/drop-in/template changed by `nvidia-ctk`.
+It removes only the recorded user's lines from `/etc/subuid` and `/etc/subgid`,
+preserving ranges added for other users since bootstrap. Finally it reloads
+systemd and reapplies the recorded enabled/active state, so a pre-existing
+service comes back enabled and running. It then deletes the manifest files.
+With no manifest it exits without changing anything.
 
 It intentionally leaves in place: downloaded binaries in the user's home (not
-created by this script), registry image data in `$REGISTRY_DIR`, and k3s cluster
-state under `/var/lib/rancher/k3s`. Remove those manually only after confirming
-nothing else depends on them.
+created by this script), registry image data, and k3s cluster state under
+`/var/lib/rancher/k3s`. Remove those manually only after confirming nothing
+else depends on them.

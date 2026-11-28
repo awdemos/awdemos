@@ -12,9 +12,10 @@
 #
 #   sudo DEMO_USER=alice K3S_SRC=/home/alice/bin/k3s bash 00-bootstrap-host.sh
 #
-# Every file this script replaces or creates is recorded in a manifest, with a
-# timestamped backup when the file already existed. 99-unbootstrap-host.sh
-# restores those backups. Rollback: see 99-unbootstrap-host.sh and ../README.md.
+# Every file this script replaces or creates is recorded in a manifest with a
+# timestamped backup. The pre-bootstrap systemd state and the exact subuid/
+# subgid range added are recorded too. 99-unbootstrap-host.sh restores all of
+# it with no overrides required.
 set -euo pipefail
 
 [ "$(id -u)" -eq 0 ] || { echo "ERROR: run with sudo"; exit 1; }
@@ -37,6 +38,8 @@ K3S_UNIT="${K3S_UNIT:-/etc/systemd/system/k3s.service}"
 KUBECONFIG_DIR="${KUBECONFIG_DIR:-$DEMO_HOME/.kube}"
 BACKUP_DIR="${BACKUP_DIR:-/var/lib/inference-platform-bootstrap-backup}"
 MANIFEST="$BACKUP_DIR/manifest.tsv"
+SUBIDS="$BACKUP_DIR/subids.tsv"
+UNIT_STATE="$BACKUP_DIR/unit.tsv"
 
 CONTAINERD_CONFIG=/var/lib/rancher/k3s/agent/etc/containerd/config.toml
 CONTAINERD_TMPL=/var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
@@ -52,18 +55,28 @@ if [ -e "$MANIFEST" ]; then
   exit 1
 fi
 
+UNIT_NAME="$(basename "$K3S_UNIT" .service)"
+
 echo "==> Configuration"
 echo "    user=$DEMO_USER uid=$DEMO_UID gid=$DEMO_GID home=$DEMO_HOME"
 echo "    k3s source=$K3S_SRC -> $K3S_BIN"
 echo "    nvidia-ctk=$CTK_BIN"
 echo "    registry=$REGISTRY_DIR"
 echo "    k3s config=$K3S_CONFIG_DIR"
-echo "    systemd unit=$K3S_UNIT"
+echo "    systemd unit=$K3S_UNIT ($UNIT_NAME)"
 echo "    kubeconfig=$KUBECONFIG_DIR/config"
 echo "    backup/manifest=$BACKUP_DIR / $MANIFEST"
 
 mkdir -p "$BACKUP_DIR"
 : > "$MANIFEST"
+: > "$SUBIDS"
+: > "$UNIT_STATE"
+
+# Capture the pre-bootstrap unit state BEFORE the unit file is replaced or
+# `enable --now` runs, so rollback can restore enabled/active independently.
+WAS_ENABLED="$(systemctl is-enabled "$UNIT_NAME" 2>/dev/null || true)"
+WAS_ACTIVE="$(systemctl is-active "$UNIT_NAME" 2>/dev/null || true)"
+printf '%s\t%s\t%s\t%s\n' "$UNIT_NAME" "$K3S_UNIT" "$WAS_ENABLED" "$WAS_ACTIVE" > "$UNIT_STATE"
 
 # Record a target before modifying it. An empty backup field means the file did
 # not exist before bootstrap and should be removed on rollback.
@@ -76,16 +89,43 @@ record_target() {
   printf '%s\t%s\t%s\n' "$label" "$path" "$backup" >> "$MANIFEST"
 }
 
+# Literal first-field match: a dotted username such as a.b must not match axb.
+user_has_range() {
+  local file="$1" user="$2"
+  [ -f "$file" ] || return 1
+  awk -F: -v u="$user" '$1 == u { found = 1 } END { exit !found }' "$file"
+}
+
+# Only touch subuid/subgid when this user has no range. Record the exact file,
+# user, and whether the file existed before bootstrap; rollback then removes
+# only that user's line instead of restoring the whole file (which would erase
+# ranges added by other users in the meantime). The timestamped copy is a
+# safety artifact and is never restored automatically.
+add_subid_range() {
+  local file="$1" label="$2" flag="$3" existed="no"
+  user_has_range "$file" "$DEMO_USER" && return 0
+
+  [ -e "$file" ] && existed="yes"
+  if [ -e "$file" ]; then
+    cp -a "$file" "$BACKUP_DIR/$label.$(date +%Y%m%d%H%M%S).safety"
+  fi
+  printf '%s\t%s\t%s\n' "$file" "$DEMO_USER" "$existed" >> "$SUBIDS"
+
+  if [ "$flag" = subuid ]; then
+    usermod --add-subuids 100000-165535 "$DEMO_USER"
+  else
+    usermod --add-subgids 100000-165535 "$DEMO_USER"
+  fi
+}
+
 # ── Install ────────────────────────────────────────────────────────────────────
 echo "==> install k3s binary (SELinux: init cannot exec from home)"
 record_target k3s-bin "$K3S_BIN"
 install -m 0755 "$K3S_SRC" "$K3S_BIN"
 
 echo "==> subuid/subgid for rootless podman ($DEMO_USER)"
-record_target "subuid:$DEMO_USER" /etc/subuid
-record_target "subgid:$DEMO_USER" /etc/subgid
-grep -q "^${DEMO_USER}:" /etc/subuid || usermod --add-subuids 100000-165535 "$DEMO_USER"
-grep -q "^${DEMO_USER}:" /etc/subgid || usermod --add-subgids 100000-165535 "$DEMO_USER"
+add_subid_range /etc/subuid subuid subuid
+add_subid_range /etc/subgid subgid subgid
 
 echo "==> local registry storage"
 mkdir -p "$REGISTRY_DIR" && chown "${DEMO_UID}:${DEMO_GID}" "$REGISTRY_DIR"
@@ -129,7 +169,6 @@ wait_for_ready() {
   return 1
 }
 
-UNIT_NAME="$(basename "$K3S_UNIT" .service)"
 systemctl daemon-reload
 systemctl enable --now "$UNIT_NAME"
 wait_for_ready "$UNIT_NAME" || exit 1
