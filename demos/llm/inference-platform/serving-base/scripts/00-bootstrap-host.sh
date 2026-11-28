@@ -14,7 +14,7 @@
 #
 # Every file this script replaces or creates is recorded in a manifest with a
 # timestamped backup. The pre-bootstrap systemd state and the exact subuid/
-# subgid range added are recorded too. 99-unbootstrap-host.sh restores all of
+# subgid lines added are recorded too. 99-unbootstrap-host.sh restores all of
 # it with no overrides required.
 set -euo pipefail
 
@@ -52,6 +52,14 @@ done
 if [ -e "$MANIFEST" ]; then
   echo "ERROR: bootstrap state already exists at $MANIFEST."
   echo "Run 99-unbootstrap-host.sh before bootstrapping again."
+  exit 1
+fi
+
+# A unit symlink would be followed by `cat >`, overwriting the package-provided
+# target while the rollback only restores the symlink. Refuse it explicitly.
+if [ -L "$K3S_UNIT" ]; then
+  echo "ERROR: $K3S_UNIT is a symlink; bootstrap requires a regular file."
+  echo "Point K3S_UNIT at the real unit file before bootstrapping."
   exit 1
 fi
 
@@ -96,26 +104,33 @@ user_has_range() {
   awk -F: -v u="$user" '$1 == u { found = 1 } END { exit !found }' "$file"
 }
 
-# Only touch subuid/subgid when this user has no range. Record the exact file,
-# user, and whether the file existed before bootstrap; rollback then removes
-# only that user's line instead of restoring the whole file (which would erase
-# ranges added by other users in the meantime). The timestamped copy is a
-# safety artifact and is never restored automatically.
+# Only touch subuid/subgid when this user has no range. Record the exact lines
+# usermod adds, not just the user name: another admin may add more ranges for
+# the same user after bootstrap, and rollback must leave those intact. The
+# timestamped full-file copy is a safety artifact, never restored automatically.
 add_subid_range() {
-  local file="$1" label="$2" flag="$3" existed="no"
+  local file="$1" label="$2" flag="$3" existed="no" before added line
   user_has_range "$file" "$DEMO_USER" && return 0
 
   [ -e "$file" ] && existed="yes"
+  before="$BACKUP_DIR/$label.$(date +%Y%m%d%H%M%S).safety"
   if [ -e "$file" ]; then
-    cp -a "$file" "$BACKUP_DIR/$label.$(date +%Y%m%d%H%M%S).safety"
+    cp -a "$file" "$before"
+  else
+    : > "$before"
   fi
-  printf '%s\t%s\t%s\n' "$file" "$DEMO_USER" "$existed" >> "$SUBIDS"
 
   if [ "$flag" = subuid ]; then
     usermod --add-subuids 100000-165535 "$DEMO_USER"
   else
     usermod --add-subgids 100000-165535 "$DEMO_USER"
   fi
+
+  added="$(grep -Fxv -f "$before" "$file" | awk -F: -v u="$DEMO_USER" '$1 == u' || true)"
+  while IFS= read -r line; do
+    [ -n "$line" ] || continue
+    printf '%s\t%s\t%s\t%s\n' "$file" "$DEMO_USER" "$existed" "$line" >> "$SUBIDS"
+  done <<< "$added"
 }
 
 # ── Install ────────────────────────────────────────────────────────────────────

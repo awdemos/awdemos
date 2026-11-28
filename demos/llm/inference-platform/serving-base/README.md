@@ -58,7 +58,7 @@ Before changing any target, bootstrap writes three files under `$BACKUP_DIR`:
 | File | Contents |
 | --- | --- |
 | `manifest.tsv` | File targets, each with a timestamped backup when it already existed |
-| `subids.tsv` | Only the subuid/subgid ranges bootstrap actually added, for the exact user |
+| `subids.tsv` | The exact `/etc/subuid` / `/etc/subgid` lines bootstrap added, with the file, user, and whether the file existed before |
 | `unit.tsv` | The systemd unit name/path and whether it was enabled/active before bootstrap |
 
 A second bootstrap run is refused while `manifest.tsv` exists, so state cannot
@@ -81,11 +81,19 @@ and **restores the backup** for every target that existed before bootstrap, or
 **removes the target** when bootstrap created it. Managed targets include the
 installed k3s binary, the systemd unit, `registries.yaml`, the copied
 kubeconfig, and the containerd config/drop-in/template changed by `nvidia-ctk`.
-It removes only the recorded user's lines from `/etc/subuid` and `/etc/subgid`,
-preserving ranges added for other users since bootstrap. Finally it reloads
-systemd and reapplies the recorded enabled/active state, so a pre-existing
-service comes back enabled and running. It then deletes the manifest files.
+It removes only the exact recorded lines from `/etc/subuid` and `/etc/subgid`,
+so ranges added later for the same user or for other users survive. Finally it
+reloads systemd, reapplies the recorded enabled/active state (including
+`enabled-runtime`), and verifies it with `is-enabled`/`is-active`. If that
+verification fails, it reports the error and **keeps the state files** so the
+rollback can be retried; only a verified rollback deletes the manifest files.
 With no manifest it exits without changing anything.
+
+Rollback refuses incomplete state rather than guessing: missing `unit.tsv`, an
+empty subid entry, or legacy `subuid:*` / `subgid:*` rows from an older
+bootstrap all require rolling back with the script version that created that
+manifest first. `K3S_UNIT` must be a regular file at bootstrap; a symlinked unit
+path is rejected because `cat >` would overwrite the symlink target.
 
 It intentionally leaves in place: downloaded binaries in the user's home (not
 created by this script), registry image data, and k3s cluster state under
