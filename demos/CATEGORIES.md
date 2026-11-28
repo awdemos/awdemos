@@ -34,34 +34,34 @@ This document organizes all demos by technology category for quick navigation. E
 
 | Demo                       | Description                                    | Cloud                       | Quick Start                                                |
 | -------------------------- | ---------------------------------------------- | --------------------------- | ---------------------------------------------------------- |
-| [AWS EKS](./kubernetes/)   | Production EKS with GPU nodes and auto-scaling | AWS, EKS, VPC, Cilium       | [Quick Start](./kubernetes/#cloud-provider-configurations) |
-| [GCP GKE](./kubernetes/)   | GKE with confidential computing support        | GCP, GKE, Workload Identity | [Quick Start](./kubernetes/#cloud-provider-configurations) |
-| [Azure AKS](./kubernetes/) | AKS with hybrid cloud connectivity             | Azure, AKS, Azure AD        | [Quick Start](./kubernetes/#cloud-provider-configurations) |
+| [AWS EKS](./kubernetes/)   | Production EKS with GPU nodes and auto-scaling | AWS, EKS, VPC, Cilium       | [Quick Start](./kubernetes/#multi-cloud-deployment-strategies) |
+| [GCP GKE](./kubernetes/)   | GKE with confidential computing support        | GCP, GKE, Workload Identity | [Quick Start](./kubernetes/#multi-cloud-deployment-strategies) |
+| [Azure AKS](./kubernetes/) | AKS with hybrid cloud connectivity             | Azure, AKS, Azure AD        | [Quick Start](./kubernetes/#multi-cloud-deployment-strategies) |
 
 ### Kubernetes Distributions
 
 | Demo                              | Description                        | Distribution                   | Quick Start                                           |
 | --------------------------------- | ---------------------------------- | ------------------------------ | ----------------------------------------------------- |
-| [Talos Linux](./kubernetes/)      | Immutable, API-only Kubernetes OS  | Talos, Kubernetes, cluster-api | [Quick Start](./kubernetes/#kubernetes-distributions) |
-| [K3s Lightweight](./kubernetes/)  | Edge-compatible lightweight K8s    | K3s, edge computing            | [Quick Start](./kubernetes/#kubernetes-distributions) |
-| [vCluster Virtual](./kubernetes/) | Virtual K8s clusters for isolation | vCluster, K8s-in-K8s           | [Quick Start](./kubernetes/#virtual-clusters)         |
+| [Talos Linux](./kubernetes/)      | Immutable, API-only Kubernetes OS  | Talos, Kubernetes, cluster-api | [Quick Start](./kubernetes/#quick-start) |
+| [K3s Lightweight](./kubernetes/)  | Edge-compatible lightweight K8s    | K3s, edge computing            | [Quick Start](./kubernetes/#quick-start) |
+| [vCluster Virtual](./kubernetes/) | Virtual K8s clusters for isolation | vCluster, K8s-in-K8s           | [Quick Start](./kubernetes/#quick-start)         |
 
 ### Advanced Networking
 
 | Demo                                     | Description                           | Tech Stack                         | Quick Start                                      |
 | ---------------------------------------- | ------------------------------------- | ---------------------------------- | ------------------------------------------------ |
-| [Cilium eBPF](./kubernetes/)             | Kernel-bypass networking and security | Cilium, eBPF, Hubble, Cilium       | [Quick Start](./kubernetes/#networking-security) |
-| [Zero-Trust Architecture](./kubernetes/) | Zero-trust networking and policies    | Cilium, network policies, mTLS     | [Quick Start](./kubernetes/#networking-security) |
-| [Ingress Controllers](./kubernetes/)     | Multiple ingress strategies           | NGINX, Traefik, Cilium Gateway API | [Quick Start](./kubernetes/#ingress-options)     |
+| [Cilium eBPF](./kubernetes/)             | Kernel-bypass networking and security | Cilium, eBPF, Hubble, Cilium       | [Quick Start](./kubernetes/#zero-trust-networking) |
+| [Zero-Trust Architecture](./kubernetes/) | Zero-trust networking and policies    | Cilium, network policies, mTLS     | [Quick Start](./kubernetes/#zero-trust-networking) |
+| [Ingress Controllers](./kubernetes/)     | Multiple ingress strategies           | NGINX, Traefik, Cilium Gateway API | [Quick Start](./kubernetes/#quick-start)     |
 
 ### Observability
 
 | Demo                                  | Description                       | Tech Stack                              | Quick Start                                      |
 | ------------------------------------- | --------------------------------- | --------------------------------------- | ------------------------------------------------ |
-| [Prometheus + Grafana](./kubernetes/) | Metrics collection and dashboards | Prometheus, Grafana, DCGM Exporter      | [Quick Start](./kubernetes/#observability-stack) |
-| [Loki Logging](./kubernetes/)         | Distributed log aggregation       | Loki, Promtail, Grafana                 | [Quick Start](./kubernetes/#observability-stack) |
-| [Jaeger Tracing](./kubernetes/)       | Distributed request tracing       | Jaeger, OpenTelemetry, tracing          | [Quick Start](./kubernetes/#observability-stack) |
-| [GPU Metrics](./kubernetes/)          | DCGM GPU monitoring               | NVIDIA DCGM, Prometheus, custom metrics | [Quick Start](./kubernetes/#gpu-metrics)         |
+| [Prometheus + Grafana](./kubernetes/) | Metrics collection and dashboards | Prometheus, Grafana, DCGM Exporter      | [Quick Start](./kubernetes/#technologies-demonstrated) |
+| [Loki Logging](./kubernetes/)         | Distributed log aggregation       | Loki, Promtail, Grafana                 | [Quick Start](./kubernetes/#technologies-demonstrated) |
+| [Jaeger Tracing](./kubernetes/)       | Distributed request tracing       | Jaeger, OpenTelemetry, tracing          | [Quick Start](./kubernetes/#technologies-demonstrated) |
+| [GPU Metrics](./kubernetes/)          | DCGM GPU monitoring               | NVIDIA DCGM, Prometheus, custom metrics | [Quick Start](./kubernetes/#gpu-enabled-clusters)         |
 
 ---
 
@@ -122,8 +122,8 @@ This document organizes all demos by technology category for quick navigation. E
 
 | Demo                                     | Description           | Tech Stack                     | Quick Start                                      |
 | ---------------------------------------- | --------------------- | ------------------------------ | ------------------------------------------------ |
-| [Cilium Network Policies](./kubernetes/) | Zero-trust networking | Cilium, eBPF, network policies | [Quick Start](./kubernetes/#networking-security) |
-| [mTLS Everywhere](./kubernetes/)         | Mutual TLS encryption | Cilium, certificates, PKI      | [Quick Start](./kubernetes/#networking-security) |
+| [Cilium Network Policies](./kubernetes/) | Zero-trust networking | Cilium, eBPF, network policies | [Quick Start](./kubernetes/#zero-trust-networking) |
+| [mTLS Everywhere](./kubernetes/)         | Mutual TLS encryption | Cilium, certificates, PKI      | [Quick Start](./kubernetes/#zero-trust-networking) |
 
 ---
 
@@ -193,7 +193,7 @@ This document organizes all demos by technology category for quick navigation. E
 1. Start with [LLM Infrastructure](./llm/) for GPU optimization
 2. Explore [Multi-Agent AI](./llm/) for MCP patterns
 3. Review [MLOps Pipeline](./llm/) for production ML
-4. Check [BENCHMARKS.md](../BENCHMARKS.md) for GPU performance metrics
+4. Check [BENCHMARKS.md](../BENCHMARKS.md) for the evidence template before quoting performance numbers
 
 ### For DevOps Engineers
 
@@ -211,9 +211,9 @@ This document organizes all demos by technology category for quick navigation. E
 
 ### For Security Engineers
 
-1. Review [Supply Chain Security](../COMPARISONS.md/#-container-optimization) approaches
+1. Review [Supply Chain Security](../COMPARISONS.md#container-optimization) approaches
 2. Explore [Zero-Trust Architecture](./kubernetes/) implementation
-3. Study [Security.md](../SECURITY.md) for vulnerability reporting
+3. Study [SECURITY.md](../SECURITY.md) for private vulnerability reporting
 4. Check [Research.md](../Research.md) for security research
 
 ---
@@ -222,7 +222,7 @@ This document organizes all demos by technology category for quick navigation. E
 
 - [Main README](../README.md) - Portfolio overview
 - [COMPARISONS.md](../COMPARISONS.md) - Technology decision frameworks
-- [BENCHMARKS.md](../BENCHMARKS.md) - Performance metrics and optimizations
+- [BENCHMARKS.md](../BENCHMARKS.md) - Evidence template and timing methodology
 - [Research.md](../Research.md) - Ongoing research topics
 - [History.md](../History.md) - Technology evolution
 

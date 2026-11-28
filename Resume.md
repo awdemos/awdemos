@@ -68,6 +68,6 @@ AI and DevOps platform leader with 20+ years in technology — from selling Linu
 - AI Technologies: Large Language Models, RAG, AI Agents
 - Open Source: Active contributor and maintainer of AI platforms
 
-**Portfolio & Certs:** [github.com/awdemos](https://github.com/awdemos) | [certs directory](https://github.com/awdemos/demos/tree/main/certs)
+**Portfolio & Certs:** [github.com/awdemos](https://github.com/awdemos) | [certs directory](https://github.com/awdemos/awdemos/tree/master/certs)
 
 Authorized to work in the US for any employer

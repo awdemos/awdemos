@@ -1,22 +1,21 @@
-# robots.txt for awdemos.github.io/demos
+# Legacy artifact: the awdemos.github.io/demos Pages site was retired and its
+# URLs return 404. The canonical location for this content is the GitHub
+# repository at https://github.com/awdemos/awdemos. This file is retained only
+# for historical reference and is not served by any live host.
 
-# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Block presentation HTML exports in favor of markdown versions (for better SEO)
-Disallow: /docs/My_AI_Leadership_Journey.html
+# Presentation HTML exports are retained in the repo but markdown is preferred.
+Disallow: /docs/My_AI_Leadership_Journey-typo-fix.html
 
-# Block temporary or backup files
+# Temporary or backup files
 Disallow: /*.tmp$
 Disallow: /*.bak$
 Disallow: /*.swp$
 
-# Disallow node_modules and common development directories
+# Development directories
 Disallow: /node_modules/
 Disallow: /.git/
 Disallow: /dist/
 Disallow: /build/
-
-# Allow sitemap
-Sitemap: https://awdemos.github.io/demos/docs/sitemap.xml

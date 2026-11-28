@@ -32,7 +32,7 @@ Personal demo monorepo by Andrew White — production-grade infrastructure and A
 
 | Task | Location | Notes |
 |------|----------|-------|
-| K8s deployment patterns | `demos/kubernetes/` | 100+ patterns across AWS/GCP/Azure |
+| K8s deployment patterns | `demos/kubernetes/` | 15 Pulumi cluster bootstrap examples across AWS/GCP/Azure in 5 languages |
 | LLM/RAG pipelines | `demos/llm/` | Chainlit + Qdrant + Cohere reranking |
 | CI/CD pipelines | `demos/dagger-go-ci/` | Dagger Go SDK, Jenkinsfile |
 | Rust systems code | `demos/rust/` | Matrix math, CLI boilerplate, DB patterns |

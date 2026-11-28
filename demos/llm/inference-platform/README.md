@@ -19,7 +19,7 @@ flowchart LR
 
 | Demo | Dir | Status |
 |------|-----|--------|
-| D1 serving-base | `serving-base/` | in progress |
+| D1 serving-base | [`serving-base/`](serving-base/README.md) | in progress |
 | D2 batching-loadtest | — | planned |
 | D3 observability-spine | — | planned |
 | D4 cost-dashboard | — | planned |

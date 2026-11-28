@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Legacy artifact. The awdemos.github.io/demos/ Pages site was retired and its
+  URLs return 404. These entries point at the live GitHub repository instead.
+  GitHub is the canonical host; this file is kept for internal link consistency.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
@@ -6,65 +11,80 @@
 
   <!-- Main Pages -->
   <url>
-    <loc>https://awdemos.github.io/demos/</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://github.com/awdemos/awdemos/blob/master/README.md</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <url>
+    <loc>https://github.com/awdemos/awdemos/blob/master/PROJECTS.md</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://github.com/awdemos/awdemos/blob/master/Resume.md</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://github.com/awdemos/awdemos/blob/master/BENCHMARKS.md</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://github.com/awdemos/awdemos/blob/master/SECURITY.md</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Documentation Pages -->
   <url>
-    <loc>https://awdemos.github.io/demos/docs/index.md</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://github.com/awdemos/awdemos/blob/master/docs/index.md</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://awdemos.github.io/demos/docs/25_Verbs_Devops.md</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://github.com/awdemos/awdemos/blob/master/docs/25_Verbs_Devops.md</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://awdemos.github.io/demos/docs/25_Verbs_DevOps_Comprehensive_Skills_Framework.md</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://github.com/awdemos/awdemos/blob/master/docs/25_Verbs_DevOps_Comprehensive_Skills_Framework.md</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://awdemos.github.io/demos/docs/GLM-4.7-Z.ai-Setup-Guide.md</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://github.com/awdemos/awdemos/blob/master/docs/GLM-4.7-Z.ai-Setup-Guide.md</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://awdemos.github.io/demos/docs/My_AI_Leadership_Journey.md</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://github.com/awdemos/awdemos/blob/master/docs/My_AI_Leadership_Journey.md</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://awdemos.github.io/demos/docs/My_AI_Leadership_Journey.html</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://github.com/awdemos/awdemos/blob/master/docs/My_AI_Leadership_Journey-typo-fix.html</loc>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://awdemos.github.io/demos/docs/Repo2txt.md</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://github.com/awdemos/awdemos/blob/master/docs/Repo2txt.md</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://awdemos.github.io/demos/docs/Whitfied_in_Latin.md</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://github.com/awdemos/awdemos/blob/master/docs/Whitfied_in_Latin.md</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

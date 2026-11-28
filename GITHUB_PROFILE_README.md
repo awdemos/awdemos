@@ -1,6 +1,9 @@
-# GitHub Profile README
+# GitHub Profile README (historical draft)
 
-> Copy the contents below into your `awdemos/awdemos` repository's `README.md`.
+> **Superseded.** The live profile is [README.md](README.md). This file is kept for
+> historical reference only; do not copy it into the repository root and do not
+> treat its links or positioning as current. Stale links inside the draft have
+> been corrected to the `awdemos/awdemos` repository on `master`.
 
 ---
 
@@ -18,9 +21,9 @@
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://kernel.org/)
 
-**20+ years** building systems — from Linux supercomputers & Top 500 HPC clusters → Web 2.0 startups → award-winning AI platforms for the US Navy.
+**20+ years** building systems, from Linux supercomputers and Top 500 HPC clusters to Web 2.0 startups and AI platform engineering.
 
-[🏆 Certs](https://github.com/awdemos/demos/tree/main/certs) · [📂 Projects](https://github.com/awdemos/demos/blob/main/PROJECTS.md)
+[🏆 Certs](https://github.com/awdemos/awdemos/tree/master/certs) · [📂 Projects](https://github.com/awdemos/awdemos/blob/master/PROJECTS.md)
 
 </div>
 
@@ -29,13 +32,10 @@
 ## 🎯 At a Glance
 
 - 🔭 **Current:** AI Factory Lead at a Fortune 500 company
-- 🎖️ **Former:** Lead AI Infrastructure Engineer at [Helix Center for Applied AI](https://www.abileneisd.org/helix) — built an **award-winning AI platform for the US Navy** (Jan 2025)
-- 🧠 **Former:** Cycorp Inc. — reported to **Dr. Doug Lenat**, supported symbolic AI for defense & healthcare
-- 🚀 **Early Career:** Sold Linux supercomputers, built Top 500 HPC systems, infrastructure at **LiveJournal** & **OpenDNS**
+- 🎖️ **Former:** Lead AI Infrastructure Engineer at Helix Center for Applied AI, including work on an AI platform for the US Navy (January 2025)
+- 🧠 **Former:** Cycorp Inc., reported to Dr. Doug Lenat, supported symbolic AI for defense and healthcare
+- 🚀 **Early Career:** Sold Linux supercomputers, built Top 500 HPC systems, infrastructure at LiveJournal and OpenDNS
 - 🏆 **NVIDIA Certified:** DGX SuperPOD · AI Infrastructure · InfiniBand
-- 🌆 **Community:** Founder, Detroit AI Collective
-
-
 
 ---
 
@@ -45,27 +45,27 @@
 |---|---------|------|------------|
 | 🥇 | [**RegicideOS**](https://github.com/awdemos/RegicideOS) | 🦀 Rust | AI-native Linux distribution (Gentoo + Btrfs + Cosmic Desktop) |
 | 🥈 | [**zerochain**](https://github.com/awdemos/zerochain) | 🦀 Rust | Multi-agent orchestration via plain text files |
-| 🥉 | [**merlin**](https://github.com/awdemos/merlin) | 🦀 Rust | RL-based LLM prompt router (sub-ms async routing) |
+| 🥉 | [**merlin**](https://github.com/awdemos/merlin) | 🦀 Rust | Multi-provider LLM router written in Rust |
 | 🔧 | [**opencode-pushguard**](https://github.com/awdemos/opencode-pushguard) | 📘 TS | Pre-push git hook for AI-assisted workflows |
 | 🛡️ | [**opencode-watchtower**](https://github.com/awdemos/opencode-watchtower) | 🐚 Shell | Safer agent tool calling with utcp isolation |
 | 🧠 | [**opencode-memento**](https://github.com/awdemos/opencode-memento) | 📘 TS | Preserves project context across AI coding sessions |
 
-See the full [project index](https://github.com/awdemos/demos/blob/main/PROJECTS.md) for demos & infrastructure patterns.
+See the current [project index](https://github.com/awdemos/awdemos/blob/master/PROJECTS.md) for demos and infrastructure patterns.
 
 ---
 
 ## 📂 Demos & Reference Architecture
 
-This repo ([awdemos/demos](https://github.com/awdemos/demos)) contains production-grade patterns:
+This repository ([awdemos/awdemos](https://github.com/awdemos/awdemos)) contains production-shaped patterns:
 
-- **Kubernetes** — 100+ deployment patterns, Cilium eBPF, multi-cluster
-- **LLM Infrastructure** — RAG pipelines, fine-tuning, multimodal benchmarks
+- **Kubernetes** — 15 Pulumi cluster bootstrap examples across AWS, GCP, and Azure in five languages, plus Cilium eBPF and multi-cluster notes
+- **LLM Infrastructure** — RAG pipelines, fine-tuning, multimodal benchmarks, and inference experiments
 - **CI/CD** — Dagger Go pipelines with container-native builds
-- **IaC** — Pulumi (Go/TypeScript) for Azure & AWS multi-tenant infra
-- **Rust** — Matrix operations, CLI boilerplate, async patterns
+- **IaC** — Pulumi (Go/TypeScript) for Azure and AWS multi-tenant infra
+- **Rust** — Matrix operations, CLI boilerplate, and systems experiments
 
 ```bash
-git clone https://github.com/awdemos/demos.git
+git clone https://github.com/awdemos/awdemos.git
 ```
 
 ---
@@ -74,9 +74,9 @@ git clone https://github.com/awdemos/demos.git
 
 > **Reproducible. Observable. Composable.**
 
-I think from **first principles**. I design systems the way **Unix intended**: small, focused tools that do one thing well and compose cleanly. I believe in **symbolic AI** and **systems thinking** over hype cycles. I **distrust big tech** consolidation and I'm a big fan of **AI sovereignty** — models you own, data you control, infrastructure you can audit.
+I think from **first principles**. I design systems the way **Unix intended**: small, focused tools that do one thing well and compose cleanly. I believe in **symbolic AI** and **systems thinking** over hype cycles. I **distrust big tech** consolidation and I'm a big fan of **AI sovereignty**: models you own, data you control, infrastructure you can audit.
 
-Memory safety and zero-cost abstractions aren't just Rust features — they're how I think about infrastructure architecture.
+Memory safety and zero-cost abstractions aren't just Rust features, they are how I think about infrastructure architecture.
 
 ---
 

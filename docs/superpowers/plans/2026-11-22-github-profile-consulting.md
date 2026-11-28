@@ -8,7 +8,7 @@
 
 **Tech Stack:** GitHub-flavored Markdown, Python 3 standard library for content checks, Git and GitHub CLI for verification.
 
-**Execution note:** Independent link review replaced the broken scheduler with the working strategy-call page, removed an unavailable social link and an unpublished C-port claim, and canonicalized the repository link.
+**Execution note:** Independent link review replaced the broken scheduler with the working strategy-call page, removed an unavailable social link and an unpublished C-port claim, and canonicalized the repository link. A later profile revision added a recruiter/hiring-manager path, a Compactation link, and reworded two project descriptions; the Task 3 verification below is updated for that current state.
 
 ---
 
@@ -61,7 +61,7 @@ Expected: the first six repositories are `PUBLIC`; `score-centering` is `PRIVATE
 
 - [x] **Step 1: Replace the complete profile with the approved structure and copy**
 
-Set `README.md` to exactly this content:
+Set `README.md` to exactly this content (the original approved draft). The profile was extended after execution: a "For recruiters and hiring managers" section and a Compactation link were added, and the score-centering and oxidatedBSD descriptions were reworded. Task 3 verifies the current file, not this historical draft:
 
 ````markdown
 <div align="center">
@@ -184,6 +184,7 @@ required = [
     '## Selected products and engineering work',
     '## Experience you can draw on',
     '## How I work',
+    '## For recruiters and hiring managers',
     '## Open source',
     '## Get in touch',
     '**[Discuss a project](https://vibecodingagency.com/strategy-call/)**',
@@ -191,8 +192,10 @@ required = [
     'https://vibecodingagency.com/',
     'mailto:contact@vibecodingagency.com',
     '[awdemos repository](https://github.com/awdemos/awdemos)',
-    'A private commercial Rust library',
-    'An unpublished `no_std` amd64 kernel',
+    '[Résumé](Resume.md)',
+    '[**Compactation**](https://compactation.dev/)',
+    'A commercial Rust library',
+    'An unpublished `no_std` amd64 OS',
 ]
 missing = [item for item in required if item not in text]
 assert not missing, f'Missing required content: {missing}'
@@ -211,17 +214,18 @@ sections = [
     '## How I can help',
     '## Selected products and engineering work',
     '## Experience you can draw on',
+    '## For recruiters and hiring managers',
     '## How I work',
     '## Open source',
     '## Get in touch',
 ]
 positions = [text.index(section) for section in sections]
 assert positions == sorted(positions), f'Incorrect section order: {sections}'
-print('PASS: current content, seven-heading order, rejected stale URLs and claims, and no em dashes')
+print('PASS: current content, heading order, rejected stale URLs and claims, and no em dashes')
 PY
 ```
 
-Expected: `PASS: current content, seven-heading order, rejected stale URLs and claims, and no em dashes`.
+Expected: `PASS: current content, heading order, rejected stale URLs and claims, and no em dashes`.
 
 - [x] **Step 2: Validate local Markdown links and public project links**
 
@@ -277,7 +281,7 @@ Read `README.md` from top to bottom and confirm:
 - Private or unpublished projects have no broken GitHub links.
 - Experimental work is described without inflated production claims.
 - No defensive wording remains.
-- The older `GITHUB_PROFILE_README.md` has not changed.
+- The older `GITHUB_PROFILE_README.md` is clearly marked as a superseded historical draft if it is present.
 
 Run:
 
@@ -286,7 +290,7 @@ git diff --name-only
 git status --short
 ```
 
-Expected: the only modified files are `README.md` and `docs/superpowers/plans/2026-11-22-github-profile-consulting.md`.
+Expected (at the time this task ran): the only modified files were `README.md` and `docs/superpowers/plans/2026-11-22-github-profile-consulting.md`. On current HEAD, later profile fixes also touch `GITHUB_PROFILE_README.md`, `Resume.md`, and this plan; the check is retained as a record of the original task, not as a current clean-tree assertion.
 
 ### Task 4: Commit the profile update
 

@@ -1,259 +1,92 @@
-# Performance Benchmarks & Metrics
+# Performance Benchmarks & Evidence
 
-This document showcases concrete performance improvements and optimizations demonstrated in this portfolio.
+This repository contains **runnable starting points** for performance work. It does not publish performance numbers as facts unless the raw evidence is checked in alongside them.
 
-## 🚀 Cloud Cost Reduction
-## 🚀 Cloud Cost Reduction
-
-## 🦀 Rust + AI: Performance Benchmarks
-
-### Why Rust for AI Workloads?
-
-**Rust's memory safety and zero-cost abstractions make it ideal for production AI systems.**
-
-| Metric | Python | Rust |
-|--------|--------|-------|
-| Memory Safety | Runtime errors | **Compile-time guarantees** |
-| Performance | Good | **2-5x faster** |
-| Concurrency | GIL limitations | **True parallelism** |
-| Memory Overhead | 50-100MB+ | **Zero-cost abstractions** |
-| Deployment | Heavy interpreter | **Single binary** |
-
-### Rust vs Python: LLM Inference Benchmarks
-
-| Model | Python (transformers) | Rust (candle) | Speedup |
-|--------|----------------------|----------------|---------|
-| LLaMA-7B | 8.2 t/s | 38.5 t/s | **4.7x** |
-| Mistral-7B | 12.1 t/s | 64.3 t/s | **5.3x** |
-| Gemma-2B | 45.0 t/s | 180.0 t/s | **4.0x** |
-| Phi-3 | 28.5 t/s | 125.0 t/s | **4.4x** |
-
-### GPU Operations: Rust CUDA
-
-| Operation | CuBLAS | Rust-CUDA | Improvement |
-|-----------|---------|------------|-------------|
-| Matrix Mult (1024) | 0.08s | 0.05s | **37.5% faster** |
-| Vector Add (1M) | 0.12s | 0.08s | **33% faster** |
-| Batch Gemm | 1.2s | 0.8s | **50% faster** |
-| Custom Kernels | N/A | 0.03s | **4x speedup** |
-
-### Memory Efficiency
-
-| Workload | Python | Rust | Savings |
-|----------|--------|-------|---------|
-| Base memory | 120MB | 18MB | **85% reduction** |
-| Peak memory | 340MB | 85MB | **75% reduction** |
-| Zero-copy ops | N/A | Yes | **O(1)** |
-
-### Key Takeaways
-
-- **Zero GC pauses**: Critical for production AI with latency requirements
-- **Predictable performance**: Compile-time optimization beats runtime JIT in production
-- **Memory efficiency**: 75-85% reduction enables larger batch sizes
-- **CUDA acceleration**: Rust bindings provide direct GPU control with minimal overhead
+A number without a reproducible record is an anecdote. This page explains the record I expect before a measurement is presented as a result, and points to the demos where you can produce your own.
 
 ---
 
-### AI Infrastructure Optimization
+## Current status
 
-| Metric | Before | After | Improvement | Technique |
-|--------|--------|-------|-------------|-----------|
-| Monthly AI Infrastructure Cost | $15,000 | $6,000 | **60% reduction** | GPU MIG partitioning, spot instances |
-| Inference Latency (p95) | 450ms | 180ms | **60% faster** | TensorRT optimization, Triton Server |
-| GPU Utilization | 45% | 78% | **+73% efficiency** | Dynamic batching, MIG scheduling |
-| Model Serving Throughput | 12 req/s | 35 req/s | **192% increase** | Triton Inference Server |
+| Area | Runnable code | Published, attributable results |
+|------|---------------|---------------------------------|
+| CPU vs GPU matrix multiply (`ndarray` vs `cudarc`/NVRTC) | [`demos/rust/rust_matrix_multiplication/`](demos/rust/rust_matrix_multiplication/) | None yet |
+| Embedding / output-head interventions | [`demos/llm/vocab_surgery/`](demos/llm/vocab_surgery/) | None yet |
+| Single-GPU serving stack (llama-server, Prometheus) | [`demos/llm/inference-platform/`](demos/llm/inference-platform/) | None yet |
+| Container-native CI | [`demos/dagger-go-ci/`](demos/dagger-go-ci/) | None yet |
 
-**Client Quote:**
-> *"Reduced our AI costs by 60% while improving performance. The infrastructure overhaul was seamless and team training was invaluable."*
-> — CTO, FinTech Startup
+"No published results" is deliberate. I do not have a controlled, attributable measurement for these demos in this repository, so I do not present one here. If you run them, your numbers will depend on your hardware, drivers, and workload.
 
 ---
 
-### Kubernetes Optimization
+## Evidence template
 
-| Metric | Before | After | Improvement | Technique |
-|--------|--------|-------|-------------|-----------|
-| Monthly Cloud Spend | $25,000 | $12,500 | **50% reduction** | Right-sizing, spot instances, HPA |
-| Pod Startup Time | 45s | 12s | **73% faster** | Pre-warmed images, init containers |
-| Cluster CPU Utilization | 32% | 58% | **+81% efficiency** | Cluster autoscaling, bin-packing |
-| Deployment Frequency | Weekly | Daily | **7x faster** | GitOps, automated CI/CD |
+To add a result to this page, include all of the following in a committed file under `benchmarks/<YYYY-MM-DD>-<topic>/`:
 
-**Client Quote:**
-> *"Helped us transition from legacy systems to Kubernetes with zero downtime. The migration strategy was brilliant and execution flawless."*
-> — VP Engineering, SaaS Company
+1. **Claim** - one sentence stating exactly what changed and what metric moved.
+2. **Hardware** - CPU model, GPU model, memory, and (for cloud) instance type and region.
+3. **Software** - OS and kernel, driver version, CUDA/toolkit version, language/runtime version, and dependency versions or lockfile.
+4. **Commit** - the exact git SHA the measurement was taken at.
+5. **Command** - the exact command(s), including any env vars and warm-up steps.
+6. **Method** - baseline definition, number of iterations, warm-up policy, load pattern, and how variance was handled.
+7. **Raw output** - unedited logs, captured to `raw/` (`.txt`, `.json`, or `.csv`).
+8. **Analysis** - how the summary number was derived from the raw output.
 
----
+Example record shape (structure only; no values are asserted):
 
-## ⚡ Performance Improvements
+```markdown
+# Claim
+<metric> improved from <baseline> to <candidate> on <workload>.
 
-### NVIDIA GPU Optimization
+# Environment
+- commit: <sha>
+- hardware: <cpu>, <gpu>, <ram>
+- software: <os/kernel>, <driver>, <cuda>, <runtime>
+- dependencies: <lockfile or pinned versions>
 
-| Workload | GPU Type | Throughput | Latency (p95) | Memory Efficiency |
-|----------|-----------|-----------|----------------|-------------------|
-| LLM Inference (7B) | A100 40GB | 35 req/s | 180ms | 78% |
-| LLM Finetuning (7B) | A100 80GB | 8 samples/s | 2.3s | 85% |
-| RAG Pipeline | A100 40GB | 45 req/s | 220ms | 72% |
-| Batch Inference | H100 80GB | 120 req/s | 95ms | 82% |
+# Command
+<exact command>
 
-**Optimizations Applied:**
-- **CUDA Kernels**: Custom kernels for token generation (30% speedup)
-- **MIG Partitioning**: 4x A100-40GB instances (3.2x cost efficiency)
-- **TensorRT**: INT8 quantization (2.1x inference speed)
-- **Dynamic Batching**: Triton Server adaptive batching (1.8x throughput)
-- **NCCL Optimization**: Distributed training efficiency (25% improvement)
+# Method
+baseline: <definition>
+iterations: <n>   warm-up: <n>   load: <description>
 
----
+# Raw output
+see raw/<file>
 
-### Multi-Agent AI Systems
+# Analysis
+<derivation of the summary number from raw output>
+```
 
-| Metric | Single Agent | Multi-Agent | Improvement |
-|--------|--------------|-------------|-------------|
-| Task Completion Time | 45s | 18s | **60% faster** |
-| Token Efficiency | 1.0x | 0.6x | **40% savings** |
-| Parallelism Level | 1 | 4-8 | **4-8x speedup** |
-| Tool Accuracy | 78% | 92% | **+18% accuracy** |
-
-**Multi-Agent Architecture Benefits:**
-- Parallel task execution across specialized agents
-- Reduced token usage through efficient delegation
-- Improved accuracy with specialized tools
-- MCP (Model Context Protocol) for seamless integration
+A chart or summary table is welcome only as a pointer back to this record, never as a substitute for it.
 
 ---
 
-## 📊 Container & Infrastructure Performance
+## Timing methodology
 
-### Docker Image Optimization
+For GPU measurements, keep setup out of the timed region:
 
-| Project | Original Size | Optimized Size | Reduction | Tool Used |
-|---------|--------------|---------------|-----------|-----------|
-| LLM Inference Service | 2.8GB | 245MB | **91% smaller** | Slim, multi-stage builds |
-| Kubernetes Control Plane | 1.2GB | 180MB | **85% smaller** | Alpine base, distroless |
-| Rust CLI Tools | 140MB | 8MB | **94% smaller** | Static linking, UPX compression |
-| Python ML Pipeline | 850MB | 95MB | **89% smaller** | Poetry, .dockerignore |
+- Device initialization, NVRTC/JIT compilation, module loading, and buffer allocation are **setup**, not benchmark time.
+- Host-to-device and device-to-host transfers are real costs. Report them **separately** from kernel time rather than folding them into a "kernel" number or hiding them.
+- Include an untimed warm-up and state the policy explicitly.
+- Prefer distributions (median and p95) over a single run where feasible; state what you used.
 
-**Impact:**
-- 12x faster image pull times
-- 45% reduction in storage costs
-- 60% faster deployment cycles
+`demos/rust/rust_matrix_multiplication/` implements this split explicitly: "GPU kernel only" measures launch plus synchronization, while "GPU + transfers" measures the full path including copies. See its [README](demos/rust/rust_matrix_multiplication/README.md).
 
 ---
 
-### CI/CD Pipeline Performance
+## Work in progress
 
-| Pipeline | Before | After | Improvement |
-|----------|--------|-------|-------------|
-| Full Test Suite | 45min | 12min | **73% faster** |
-| Docker Build | 15min | 4min | **73% faster** |
-| Kubernetes Deployment | 8min | 45s | **89% faster** |
-| Security Scanning | 10min | 3min | **70% faster** |
+The following are candidates for future, properly recorded measurements:
 
-**Tools & Techniques:**
-- **Dagger.io**: Container-native pipeline (2.5x faster)
-- **Tekton**: Cloud-native CI/CD framework
-- **Build Caching**: Multi-layer caching strategy
-- **Parallel Execution**: Matrix builds and parallel testing
+- **Serving throughput and p95 latency** across quantization formats using the inference-platform harness.
+- **Matrix multiply kernels** (naive, tiled/shared-memory, cuBLAS) with Criterion.rs statistics.
+- **Container image size and build time** with reproducible Dockerfiles and cached builds.
+
+These are plans, not results. They are listed so the direction is clear and so a reviewer can check whether the evidence eventually arrives.
 
 ---
 
-## 🔒 Security & Compliance Metrics
+## Get in touch
 
-### Supply Chain Security
-
-| Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
-| Vulnerability Scan Time | 45min | 8min | **82% faster** |
-| Critical Vulnerabilities | 12 | 0 | **100% resolved** |
-| SBOM Coverage | 0% | 100% | **Complete** |
-| SLSA Compliance | N/A | Level 2 | **Production-grade** |
-
-**Security Tooling:**
-- **Trivy**: Fast vulnerability scanning
-- **Sigstore**: Image signing and verification
-- **SLSA**: Supply chain provenance
-- **SBOM**: CycloneDX automatic generation
-
----
-
-## 🎯 Development Productivity
-
-### Developer Experience Metrics
-
-| Metric | Traditional | With This Approach | Improvement |
-|--------|-------------|-------------------|-------------|
-| Environment Setup Time | 2 hours | 8 minutes | **93% faster** |
-| Local Development Complexity | High | Low | **70% reduction** |
-| Debugging Time (avg) | 45min | 15min | **67% faster** |
-| Feature Velocity | 2 days | 4 hours | **92% faster** |
-
-**DX Improvements:**
-- **Container-Use**: Reproducible environments with one command
-- **Git Worktrees**: Parallel feature development
-- **Devcontainers**: VS Code integration
-- **AI-Assisted Development**: Claude Code, Cursor IDE
-
----
-
-## 📈 Methodology
-
-### How Metrics Were Collected
-
-1. **Baseline Measurement**: Establish baseline before optimization
-2. **Controlled Testing**: Isolate variables, consistent load patterns
-3. **Long Duration**: Run tests for 7-30 days for reliability
-4. **Real Production**: Measurements in production environments (not synthetic)
-5. **Business Metrics**: Track actual cost savings and business impact
-
-### Tools Used for Measurement
-
-- **Prometheus & Grafana**: Metrics collection and visualization
-- **DCGM**: NVIDIA GPU metrics (utilization, memory, temperature)
-- **Kubernetes Metrics**: CPU, memory, network, storage
-- **Cloud Cost Explorer**: AWS/GCP/Azure cost tracking
-- **A/B Testing**: Performance comparison across configurations
-
----
-
-## 🔬 Continuous Improvement
-
-### Ongoing Optimization Areas
-
-- **Cost Optimization**: Continuous right-sizing and spot instance strategies
-- **Performance Profiling**: Regular performance audits and profiling
-- **Security Scanning**: Automated vulnerability detection and remediation
-- **Supply Chain**: SLSA level progression toward Level 3
-- **Developer Experience**: Feedback loops and tool refinement
-
----
-
-## 💡 Key Takeaways
-
-### What These Metrics Demonstrate
-
-1. **Proven Results**: Real data from production environments
-2. **Business Impact**: Measurable cost savings and performance improvements
-3. **Technical Excellence**: Deep understanding of optimization techniques
-4. **Holistic Approach**: Infrastructure, security, and developer experience
-5. **Continuous Improvement**: Ongoing commitment to optimization
-
-### Performance Optimization Philosophy
-
-- **Measure First**: Never optimize without baseline metrics
-- **Business Value**: Focus on metrics that matter to business outcomes
-- **Data-Driven**: Decisions backed by empirical evidence
-- **Incremental**: Iterative improvements with continuous validation
-- **Holistic**: Consider cost, performance, security, and DX together
-
----
-
-## 📞 Interested in These Results?
-
-These benchmarks demonstrate what's possible with modern infrastructure practices. Interested in achieving similar results for your organization?
-
-- **Schedule a Free Consultation**: [cal.com/aiconsulting](https://cal.com/aiconsulting)
-- **Create an Issue**: [GitHub Issues](https://github.com/awdemos/demos/issues) to discuss your use case
-- **Explore the Demos**: [Browse demo directory](../demos/) to see implementation details
-
----
-
-*Metrics are based on real production environments. Your results may vary based on workload, infrastructure, and configuration.*
+If you want to reproduce or extend any of this work, open an issue in [awdemos/awdemos](https://github.com/awdemos/awdemos/issues), or reach out via [Vibe Coding Agency](https://vibecodingagency.com/).

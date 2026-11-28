@@ -2,6 +2,8 @@
 
 Baseline CPU matrix multiplication in Rust using [`ndarray`](https://docs.rs/ndarray), plus a **CUDA GPU implementation** using [`cudarc`](https://github.com/coreylowman/cudarc) with runtime kernel compilation via NVRTC.
 
+This is a runnable starting point, not a published benchmark result. Run it on your own hardware to get numbers; see [BENCHMARKS.md](../../../BENCHMARKS.md) for the evidence template required before claiming a speedup.
+
 ## 🚀 Quick Start
 
 ### Requirements
@@ -17,7 +19,7 @@ cd demos/rust/rust_matrix_multiplication
 cargo run --release
 ```
 
-**Example output on an NVIDIA RTX 4090:**
+Without a usable GPU the program prints `GPU skipped` and still runs the CPU path. Example output shape (numbers are illustrative; no specific hardware or run is asserted here):
 
 ```
 ╔══════════════════════════════════════════════════╗
@@ -28,24 +30,13 @@ cargo run --release
 
 📐 Matrix size: 512×512
 --------------------------------------------------
-🖥️  CPU (ndarray)          45.231 ms
-⚡ GPU (CUDA)              1.842 ms  ✅ max rel err: 1.23e-05
-🚀 Speedup                24.56×
-
-📐 Matrix size: 1024×1024
---------------------------------------------------
-🖥️  CPU (ndarray)         412.456 ms
-⚡ GPU (CUDA)              8.934 ms  ✅ max rel err: 1.45e-05
-🚀 Speedup                46.17×
-
-📐 Matrix size: 2048×2048
---------------------------------------------------
-🖥️  CPU (ndarray)        3456.123 ms
-⚡ GPU (CUDA)             62.451 ms  ✅ max rel err: 1.67e-05
-🚀 Speedup                55.34×
+🖥️  CPU (ndarray)         <measured> ms
+⚡ GPU kernel only        <measured> ms  ✅ max rel err: <measured>
+🔁 GPU + transfers       <measured> ms  (H2D + kernel + D2H)
+🚀 Speedup (kernel)      <measured>×
 ```
 
-_Your numbers will vary by CPU and GPU. Expect **20–60× speedup** on modern NVIDIA hardware._
+Report results with the hardware, driver/toolkit versions, commit, exact command, and raw output. Do not treat the numbers above as a claim about any specific device.
 
 ---
 
@@ -59,31 +50,21 @@ _Your numbers will vary by CPU and GPU. Expect **20–60× speedup** on modern N
        │
        └──────────────────────────────────────────────┐
                                                       ▼
-                                            ┌─────────────────┐
-                                            │  cudarc::nvrtc  │
-                                            │  compile_ptx()  │
-                                            └─────────────────┘
+                                            ┌──────────────────┐
+                                            │  ONE-TIME SETUP  │
+                                            │  CudaDevice::new │
+                                            │  NVRTC compile   │
+                                            │  load_ptx        │
+                                            └──────────────────┘
+                                                      │
+                                    (reused, never timed)
                                                       │
                                                       ▼
-                                            ┌─────────────────┐
-                                            │  CUDA kernel    │
-                                            │  matmul_f32     │
-                                            │  (16×16 blocks) │
-                                            └─────────────────┘
-                                                      │
-                                                      ▼
-                                            ┌─────────────────┐
-                                            │  Device memory  │
-                                            │  htod_copy      │
-                                            │  dtoh_sync_copy │
-                                            └─────────────────┘
-                                                      │
-                                                      ▼
-                                            ┌─────────────────┐
-                                            │  GPU result     │
-                                            │  (verified vs   │
-                                            │   CPU)          │
-                                            └─────────────────┘
+                                            ┌──────────────────┐
+                                            │  TIMED REGION    │
+                                            │  kernel launch   │
+                                            │  synchronize     │
+                                            └──────────────────┘
 ```
 
 ---
@@ -92,15 +73,17 @@ _Your numbers will vary by CPU and GPU. Expect **20–60× speedup** on modern N
 
 ### CPU Path
 
-Uses `ndarray::Array2` and `.dot()` for a highly optimized BLAS-like CPU matrix multiply.
+Uses `ndarray::Array2` and `.dot()` for a BLAS-backed CPU matrix multiply.
 
 ### GPU Path
 
-1. **Runtime compilation**: The CUDA C kernel is embedded as a string and compiled at runtime via NVRTC — no `nvcc` build step required.
-2. **Memory management**: Host vectors are copied to device memory with `htod_copy`.
-3. **Kernel launch**: A 2D grid of 16×16 thread blocks is launched. Each thread computes one output element.
-4. **Synchronization**: Results are copied back with `dtoh_sync_copy`.
-5. **Verification**: CPU and GPU outputs are compared with relative error checking.
+1. **One-time setup (untimed):** create the CUDA device, compile the embedded CUDA C kernel with NVRTC, and load the PTX module. This is done once in `GpuMatmul::new()` and reused for every matrix size.
+2. **Inputs (untimed for kernel-only):** copy host vectors to device buffers with `htod_copy`.
+3. **Timed region:** launch a 2D grid of 16×16 thread blocks and call `synchronize()`. Each thread computes one output element. Only this span is reported as "GPU kernel only".
+4. **Result (untimed for kernel-only):** copy the output back with `dtoh_sync_copy` and compare it against the CPU result with relative error checking.
+5. **End-to-end timing:** a separate measurement wraps allocation, H2D copy, launch, sync, and D2H copy so transfer overhead is visible rather than hidden.
+
+A single untimed warm-up run precedes each size to keep first-use driver effects out of the reported numbers. These are single-run timings for illustration, not a statistically rigorous benchmark. A Criterion.rs suite is on the roadmap.
 
 ### CUDA Kernel
 
@@ -134,7 +117,8 @@ __global__ void matmul_f32(const float* a, const float* b, float* c, int n) {
 ## 🗺️ Roadmap
 
 - [x] Naive CUDA kernel (global memory)
-- [ ] **Tiled/shared-memory kernel** — reduce global memory traffic for another 2–5× speedup
+- [x] Timing that excludes device setup, NVRTC compilation, and transfers from the kernel number
+- [ ] **Tiled/shared-memory kernel** — reduce global memory traffic (measure with the same methodology)
 - [ ] **cuBLAS backend** — call `cublasSgemm` for vendor-optimized performance
 - [ ] **Criterion.rs benchmark suite** — statistical benchmarking with plots
 - [ ] **Half-precision (FP16)** — test `__half` tensor core throughput on Ampere+
@@ -150,4 +134,4 @@ __global__ void matmul_f32(const float* a, const float* b, float* c, int n) {
 
 ---
 
-**Status:** ✅ CPU + GPU baseline complete · Shared-memory optimization planned
+**Status:** CPU + GPU baseline with separated setup/compute/transfer timings. Shared-memory optimization planned.

@@ -8,42 +8,72 @@ This directory contains comprehensive demonstrations of AI/ML infrastructure, LL
 
 ### What You'll Find Here
 
-| Category                   | Description                            | Files                                                                                                |
-| -------------------------- | -------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| **Getting Started**        | LLM fundamentals and deployment basics | [LLM_Getting_Started.md](LLM_Getting_Started.md), [Make_Your_Own_LLM.md](Make_Your_Own_LLM.md)       |
-| **NVIDIA Technologies**    | Deep GPU optimization and tooling      | [Nvidia_software.md](Nvidia_software.md), [Nvidia_cuda_optimization.md](Nvidia_cuda_optimization.md) |
-| **Infrastructure & MLOps** | Production AI infrastructure pipelines | [MLOPS.md](MLOPS.md), [Mlflow.md](Mlflow.md), [Ray.md](Ray.md)                                       |
-| **LLM Gateway Observability** | TensorZero gateway + UI over self-hosted vLLM | [tensorzero-gateway/](tensorzero-gateway/README.md)                                          |
-| **Enterprise Solutions**   | Vertex AI and production platforms     | [Vertex.md](Vertex.md)                                                                               |
-| **Advanced Topics**        | Inference optimization and scaling     | [Inference.md](Inference.md)                                                                         |
+| Category | Description | Where to look |
+| --- | --- | --- |
+| **Environment setup** | NVIDIA drivers, P2P, and cloud GPU options | [Nvidia_software.md](Nvidia_software.md), [Nvidia_cloud_vendors.md](Nvidia_cloud_vendors.md) |
+| **Fine-tuning** | A Cog/Replicate walkthrough and config-driven experiments | [Make_Your_Own_LLM.md](Make_Your_Own_LLM.md), [finetuning/](finetuning/) |
+| **Serving** | Single-GPU llama-server and a TensorZero gateway | [inference-platform/](inference-platform/), [tensorzero-gateway/](tensorzero-gateway/) |
+| **Observability** | Trace, playground, and teardown notes | [tensorzero-evaluation.md](tensorzero-evaluation.md) |
+| **RAG** | Chainlit + Qdrant + Cohere reranking | [chainlit_rust_rag/](chainlit_rust_rag/) |
+| **Model internals** | Reversible embedding and output-head edits | [vocab_surgery/](vocab_surgery/) |
+| **Experiments** | GRPO maze solving, research notes, DeepSeek notes | [alpha_maze_finder_grpo/](alpha_maze_finder_grpo/), [UsingDeepseek.md](UsingDeepseek.md) |
+| **Security research** | Prompt injection and jailbreak notes | [attacks/](attacks/) |
+| **Evaluations** | Gemma 3 multimodal benchmark notes | [Multimodal_benchmarks_Gemma3.md](Multimodal_benchmarks_Gemma3.md) |
+
+Some older notes referenced guides that were never written (`LLM_Getting_Started.md`,
+`Nvidia_cuda_optimization.md`, `Mlflow.md`, `Ray.md`, `Vertex.md`, `Inference.md`).
+Those references were removed rather than replaced with links to nonexistent files.
 
 ---
 
 ## 🚀 Quick Start
 
-### Understanding LLM Fundamentals
+### Understand the environment
 
-Start here to build foundational knowledge:
+1. **[NVIDIA software setup](Nvidia_software.md)** - driver, P2P, and cluster setup notes
+2. **[Cloud GPU vendors](Nvidia_cloud_vendors.md)** - GPU cloud options
+3. **[Make Your Own LLM](Make_Your_Own_LLM.md)** - a fine-tuning and deployment walkthrough
 
-1. **[LLM Getting Started](LLM_Getting_Started.md)** - LLM basics and deployment concepts
-2. **[Make Your Own LLM](Make_Your_Own_LLM.md)** - Training and fine-tuning fundamentals
-3. **[NVIDIA Software Stack](Nvidia_software.md)** - GPU optimization fundamentals
+### Run a serving or RAG demo
 
-### Production Infrastructure
+- **[Inference platform](inference-platform/)** - llama-server on a single 16 GB GPU
+- **[TensorZero gateway](tensorzero-gateway/)** - gateway and UI over a local model fleet
+- **[Chainlit RAG](chainlit_rust_rag/)** - retrieval-augmented generation pipeline
 
-Once comfortable with basics, explore production deployment:
+### Read the operations notes
 
-- **[MLOps Pipeline](MLOPS.md)** - Production ML lifecycle management
-- **[MLflow](Mlflow.md)** - Experiment tracking and model registry
-- **[Ray](Ray.md)** - Distributed computing and scaling
-- **[Vertex AI](Vertex.md)** - Enterprise AI platform
+- **[MLOPS.md](MLOPS.md)** - operations notes and entry point
+- **[TensorZero evaluation notes](tensorzero-evaluation.md)** - traces, playground, and config
 
-### Advanced Optimization
+---
 
-Production-focused optimization:
+## 🧭 Topic Guides
 
-- **[NVIDIA CUDA Optimization](Nvidia_cuda_optimization.md)** - GPU kernel tuning
-- **[Inference Optimization](Inference.md)** - TensorRT and model serving
+### NVIDIA GPU Setup
+
+[Nvidia_software.md](Nvidia_software.md) covers driver and P2P setup;
+[Nvidia_cloud_vendors.md](Nvidia_cloud_vendors.md) covers cloud GPU options. For a
+small CUDA kernel comparison with explicit timing methodology, see
+[rust_matrix_multiplication](../rust/rust_matrix_multiplication/).
+
+### MLOps Pipeline Integration
+
+[MLOPS.md](MLOPS.md) is the notes entry point. Runnable pieces are the
+[inference platform](inference-platform/), the
+[TensorZero gateway](tensorzero-gateway/), and the
+[evaluation notes](tensorzero-evaluation.md).
+
+### Distributed ML with Ray
+
+There is no standalone Ray example in this repository yet. The closest runnable
+experiments are [GRPO maze solving](alpha_maze_finder_grpo/) and the
+[fine-tuning configs](finetuning/). Treat [MLOPS.md](MLOPS.md) as notes, not as a
+verified Ray deployment.
+
+### Retrieval-Augmented Generation (RAG)
+
+[chainlit_rust_rag/](chainlit_rust_rag/) is the RAG implementation: mixed
+PDF/HTML/Markdown ingestion, HuggingFace embeddings, Qdrant, and Cohere reranking.
 
 ---
 
@@ -378,23 +408,22 @@ Comprehensive GPU monitoring:
 
 ### Beginner
 
-1. Read [LLM_Getting_Started.md](LLM_Getting_Started.md)
-2. Read [Make_Your_Own_LLM.md](Make_Your_Own_LLM.md)
-3. Understand [Nvidia_software.md](Nvidia_software.md)
-4. Practice with basic model inference
+1. Read [Nvidia_software.md](Nvidia_software.md)
+2. Read [Nvidia_cloud_vendors.md](Nvidia_cloud_vendors.md)
+3. Follow [Make_Your_Own_LLM.md](Make_Your_Own_LLM.md)
 
 ### Intermediate
 
-5. Study [MLOPS.md](MLOPS.md) and implement basic MLflow tracking
-6. Learn [Inference.md](Inference.md) optimization techniques
-7. Deploy a simple model with Triton
-8. Understand GPU monitoring with DCGM
+4. Work through [MLOPS.md](MLOPS.md)
+5. Run the [inference platform](inference-platform/)
+6. Explore the [TensorZero gateway](tensorzero-gateway/) and its
+   [evaluation notes](tensorzero-evaluation.md)
 
 ### Advanced
 
-9. Deep dive into [Nvidia_cuda_optimization.md](Nvidia_cuda_optimization.md)
-10. Implement distributed training with [Ray.md](Ray.md)
-11. Build production MLOps pipeline with [Mlflow.md](Mlflow.md)
+7. Study [UsingDeepseek.md](UsingDeepseek.md) and [vocab_surgery/](vocab_surgery/)
+8. Review [attacks/](attacks/) for adversarial testing notes
+9. Compare matrix kernels in [rust_matrix_multiplication](../rust/rust_matrix_multiplication/)
 
 ---
 

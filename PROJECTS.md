@@ -142,7 +142,7 @@ These live in the `demos/` directory of this repo and represent working examples
 - **`demos/llm/tensorzero-gateway/`** — TensorZero gateway observability demo: A/B function routing over Switchyard and a local model-serving fleet, Postgres-only store, per-inference raw request/response traces, OTLP trace export, and the TensorZero UI (playground included). Verified end-to-end live.
 
 ### Infrastructure
-- **`demos/kubernetes/`** — 100+ deployment patterns, debugging guides, deterministic build strategies, and multi-cluster architecture notes. Includes Cilium eBPF networking setup.
+- **`demos/kubernetes/`** — 15 Pulumi cluster bootstrap examples across AWS, GCP, and Azure in five languages, plus debugging guides, deterministic build strategies, and multi-cluster architecture notes. Includes Cilium eBPF networking setup.
 - **`demos/pulumi-azure-tenant/`** — Multi-tenant Azure AD B2C infrastructure provisioned with Pulumi TypeScript.
 - **`demos/dagger-go-ci/`** — Container-native CI/CD pipeline using Dagger's Go SDK. Includes test, lint, build, and serve stages with Trivy security scanning.
 - **`demos/eks-pulumi-go-demo/`** — AWS EKS cluster provisioning with Pulumi Go.

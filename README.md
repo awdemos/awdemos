@@ -30,7 +30,7 @@ If you're building something ambitious and would value another experienced engin
 - [**Adversarial Review**](https://adversarial-review.com/): An open standard for evidence-backed, severity-rated code review.
 - [**Loops and Graphs**](https://loopsandgraphs.dev/): A control framework for AI coding agents built around deterministic checks and planned graphs.
 - [**RegicideOS**](https://regicideos.com/): An immutable AI-native Linux distribution with per-agent VMs, Turso audit trails, and atomic updates.
-- [**Compactation**](https://compactation.dev/): An open standard for evidence-backed agent context management — capture, project, verify, rehydrate.
+- [**Compactation**](https://compactation.dev/): An open standard for evidence-backed agent context management, including capture, projection, verification, and rehydration.
 - [**Neuron Engineering**](https://neuronengineering.dev/): Research and engineering for inference-time model steering and neuron interventions.
 
 ## Selected products and engineering work
@@ -55,6 +55,13 @@ You can find more open-source experiments and reference architectures in my [pro
 By day, I'm an AI Factory Lead at a Fortune 500 company, collaborating with NVIDIA on infrastructure designed to ship reliably and quickly. Previously, I was lead AI infrastructure engineer at the Helix Center for Applied AI, worked on symbolic AI at Cycorp under Dr. Doug Lenat, built Top 500 HPC systems, and spent time at OpenDNS and the Wikimedia Foundation.
 
 That background helps me move comfortably between business constraints, platform architecture, and low-level technical details. I care about finding the useful path forward and leaving your team with a system it can understand and own.
+
+## For recruiters and hiring managers
+
+- [Résumé](Resume.md): roles, dates, and certifications in one page.
+- [Project index](PROJECTS.md): the full map of demos and reference architectures.
+- [Merlin](https://github.com/awdemos/merlin), [gpt2.s](https://github.com/awdemos/gpt2.s), and [vocab_surgery](demos/llm/vocab_surgery/): three places to start reading real code.
+- [ADVERSARIAL_REVIEW.md](ADVERSARIAL_REVIEW.md): the evidence-backed review standard used for this repository.
 
 ## How I work
 

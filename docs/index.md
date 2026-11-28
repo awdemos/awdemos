@@ -1,32 +1,32 @@
 <!--
 meta:
   title: "AI Infrastructure & Automation Expert | Nvidia Certified | Portfolio"
-  description: "Production-grade AI/ML infrastructure and Kubernetes operations. 100+ deployment patterns, GPU optimization, MLOps pipelines, and enterprise consulting."
+  description: "Production-grade AI/ML infrastructure and Kubernetes operations. Fifteen Pulumi cluster bootstrap examples across AWS, GCP, and Azure, GPU engineering, MLOps pipelines, and enterprise consulting."
   keywords: "AI infrastructure, Kubernetes, Nvidia GPU, MLOps, DevOps, GPU optimization, LLM deployment, multi-cloud, consulting"
-  author: "Drew"
-  canonical: "https://awdemos.github.io/demos/"
+  author: "Andrew White"
+  canonical: "https://github.com/awdemos/awdemos/blob/master/docs/index.md"
 og:
   title: "AI Infrastructure & Automation Expert | Nvidia Certified"
-  description: "Production-grade AI/ML infrastructure and Kubernetes operations. 100+ deployment patterns, GPU optimization, MLOps pipelines."
+  description: "Production-grade AI/ML infrastructure and Kubernetes operations with reproducible demos."
   type: "website"
-  url: "https://awdemos.github.io/demos/"
-  image: "https://awdemos.github.io/demos/docs/og-image.png"
+  url: "https://github.com/awdemos/awdemos/blob/master/docs/index.md"
+  image: "https://raw.githubusercontent.com/awdemos/awdemos/master/awdemos_repo.png"
 twitter:
   card: "summary_large_image"
   title: "AI Infrastructure & Automation Expert | Nvidia Certified"
-  description: "Production-grade AI/ML infrastructure and Kubernetes operations."
-  image: "https://awdemos.github.io/demos/docs/og-image.png"
+  description: "Production-grade AI/ML infrastructure and Kubernetes operations with reproducible demos."
+  image: "https://raw.githubusercontent.com/awdemos/awdemos/master/awdemos_repo.png"
 -->
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Drew",
+  "name": "Andrew White",
   "jobTitle": "AI Infrastructure Architect",
-  "description": "AI/ML infrastructure expert with deep expertise in Kubernetes, Nvidia GPU optimization, and production-grade automation",
+  "description": "AI/ML infrastructure engineer with deep expertise in Kubernetes, Nvidia GPU optimization, and production-grade automation",
   "knowsAbout": ["Kubernetes", "NVIDIA GPU", "CUDA", "LLM Deployment", "MLOps", "DevOps", "Multi-Cloud", "CI/CD"],
-  "url": "https://awdemos.github.io/demos/"
+  "url": "https://github.com/awdemos/awdemos"
 }
 </script>
 
@@ -34,20 +34,21 @@ twitter:
 # AI Infrastructure & Automation Expert | Nvidia Certified
 
 ## 🎯 Quick Navigation
-- [View Portfolio](../#featured-projects) | [For Recruiters](../#for-recruiters--hiring-managers) | [For Consulting Clients](../#for-consulting-clients)
+- [View Portfolio](../#selected-products-and-engineering-work) | [For Recruiters](../#for-recruiters-and-hiring-managers) | [For Consulting Clients](#for-consulting-clients)
 
 ---
 
 ## 🌐 About This Site
 
-Welcome to the GitHub Pages site for [awdemos/demos](https://github.com/awdemos/demos) - a comprehensive portfolio demonstrating expertise in AI/ML infrastructure, Kubernetes operations, and production-grade automation.
+Welcome to the portfolio documentation for [awdemos/awdemos](https://github.com/awdemos/awdemos), a repository of production-shaped AI/ML infrastructure and Kubernetes experiments.
 
 ### What You'll Find Here
 
 This portfolio showcases:
+
 - **Production-grade infrastructure code** and architectural patterns
-- **100+ Kubernetes deployment implementations** across AWS, GCP, and Azure
-- **AI/ML infrastructure** with deep Nvidia expertise
+- **15 Pulumi Kubernetes cluster bootstrap examples** across AWS, GCP, and Azure in five languages
+- **AI/ML infrastructure** with NVIDIA GPU, inference, and evaluation experiments
 - **Open-source tools** and automation frameworks
 
 ---
@@ -56,27 +57,27 @@ This portfolio showcases:
 
 ### AI/ML Infrastructure
 
-- [**LLM & AI Infrastructure**](../demos/llm/) - Production-grade LLM deployments, NVIDIA GPU optimization, MLOps pipelines
-- **NVIDIA Technologies** - CUDA optimization, MIG (Multi-Instance GPU), Triton Inference Server, DCGM monitoring
-- **Multi-Agent AI Systems** - MCP (Model Context Protocol), container-use integration, Claude Desktop workflows
+- [**LLM & AI Infrastructure**](../demos/llm/) - Production-shaped LLM deployments, NVIDIA GPU tooling, MLOps pipelines
+- **NVIDIA Technologies** - CUDA, MIG, TensorRT, and DCGM experiments documented under `demos/llm/`
+- **Multi-Agent AI Systems** - MCP-based orchestration notes and experiments
 
 ### Kubernetes & Cloud Native
 
-- [**Kubernetes Demos**](../demos/kubernetes/) - Comprehensive K8s patterns, multi-cluster architectures, GPU-enabled clusters
+- [**Kubernetes Demos**](../demos/kubernetes/) - Cluster patterns, multi-cluster architectures, GPU-enabled clusters
 - **Talos** - Immutable, minimal Kubernetes OS
 - **Cilium** - eBPF-based networking and security
 - **vCluster** - Virtual Kubernetes clusters
 
 ### CI/CD & Automation
 
-- [**Dagger Go CI**](../demos/dagger-go-ci/) - Container-native CI/CD pipelines with Tekton
-- [**Pulumi Azure Tenant**](../demos/pulumi-azure-tenant/) - Multi-tenant IaC with Pulumi (Go)
+- [**Dagger Go CI**](../demos/dagger-go-ci/) - Container-native CI/CD pipelines
+- [**Pulumi Azure Tenant**](../demos/pulumi-azure-tenant/) - Multi-tenant IaC with Pulumi
 - [**cdebug**](../demos/cdebug/) - Container debugging across Docker, Podman, and Kubernetes
 
 ### Development Tools
 
-- [**Rust Tooling**](../demos/rust/) - High-performance CLI applications, systems programming
-- [**Python Best Practices**](../demos/python/) - Production-ready Python code with type hints, testing, and Poetry
+- [**Rust Tooling**](../demos/rust/) - High-performance CLI applications and systems programming
+- [**Python Best Practices**](../demos/python/) - Production-ready Python with type hints and testing
 
 ---
 
@@ -84,28 +85,28 @@ This portfolio showcases:
 
 ### Deep Technical Expertise
 
-**Nvidia Technologies:**
-- Production experience with GPU-optimized infrastructure
-- CUDA kernels and MIG optimization
-- Triton Inference Server for model serving
+**NVIDIA Technologies:**
+- GPU-optimized infrastructure and CUDA experiments
+- MIG partitioning and GPU scheduling notes
+- Triton Inference Server and llama-server serving experiments
 - DCGM monitoring and GPU metrics
 
 **Kubernetes:**
-- 100+ deployment patterns across multiple clouds
+- 15 Pulumi cluster bootstrap examples across multiple clouds
 - Multi-cluster architectures and GitOps practices
 - GPU-enabled clusters with MIG partitioning
 - Zero-trust networking with Cilium
 
 **AI/ML Infrastructure:**
-- Production LLM deployments and optimization
-- MLOps pipelines with MLflow, Ray, Vertex AI
+- LLM serving, routing, and evaluation experiments
+- MLOps pipelines with MLflow, Ray, and TensorZero
 - Multi-agent AI systems orchestration
 - Supply chain security and provenance
 
 **Open Source Contributions:**
-- [RegicideOS](https://github.com/awdemos/RegicideOS) — AI-native Rust Linux distribution
-- [Merlin](https://github.com/awdemos/merlin) — LLM router with reinforcement learning
-- [efrit](https://github.com/awdemos/efrit) — Native elisp coding agent
+- [RegicideOS](https://github.com/awdemos/RegicideOS) - AI-native Linux distribution
+- [Merlin](https://github.com/awdemos/merlin) - Multi-provider LLM router in Rust
+- [gpt2.s](https://github.com/awdemos/gpt2.s) - GPT-2 in handwritten AArch64 assembly
 
 ### Technical Skills
 
@@ -128,8 +129,10 @@ This portfolio showcases:
 
 ### Contact
 
-- 🐙 [GitHub Issues](https://github.com/awdemos/demos/issues) — Create an issue to reach out
-- 📧 Use GitHub's email contact feature
+- [Résumé](https://github.com/awdemos/awdemos/blob/master/Resume.md)
+- [Project index](https://github.com/awdemos/awdemos/blob/master/PROJECTS.md)
+- [Email](mailto:contact@vibecodingagency.com)
+- [GitHub Issues](https://github.com/awdemos/awdemos/issues) for technical questions
 
 ---
 
@@ -137,39 +140,29 @@ This portfolio showcases:
 
 ### How I Can Help
 
-I’m a senior AI/infrastructure engineer who shipped **180 repos** this year and has launched enterprise AI products. I help teams ship LLM/GPU/AI tooling fast. Here is my work. Let’s talk.
+I'm a senior AI and infrastructure engineer. I help teams design, build, and operate LLM, GPU, and platform tooling with an emphasis on auditable decisions and systems the team can own.
 
 I help organizations:
-- **Reduce cloud costs by up to 50%**
-- **Accelerate AI/ML infrastructure deployment**
-- **Migrate to Kubernetes with zero downtime**
-- **Build production-ready MLOps pipelines**
+- **Reduce cloud costs** through right-sizing, batching, and workload-aware scheduling
+- **Accelerate AI/ML infrastructure deployment** with reproducible patterns
+- **Migrate to Kubernetes** with staged rollouts and rollback plans
+- **Build production-ready MLOps pipelines** with evaluation and observability
 
-### Proven Results
+### Evidence Before Claims
 
-> *"Reduced our AI costs by 60% while improving performance. The infrastructure overhaul was seamless and team training was invaluable."* — CTO, FinTech Startup
-
-> *"Helped us transition from legacy systems to Kubernetes with zero downtime. The migration strategy was brilliant and execution flawless."* — VP Engineering, SaaS Company
+Measured results require a reproducible record. Before publishing a number here, include the hardware, software versions, commit, exact command, raw output, and how the baseline was established. The repository holds runnable starting points in [`demos/rust/rust_matrix_multiplication/`](../demos/rust/rust_matrix_multiplication/), [`demos/llm/vocab_surgery/`](../demos/llm/vocab_surgery/), and [`demos/llm/inference-platform/`](../demos/llm/inference-platform/). See [BENCHMARKS.md](../BENCHMARKS.md) for the evidence template.
 
 ### Engagement Models
 
-**Initial Consultation:** Free 10-minute discovery call
+**Initial Consultation:** discovery call to scope the problem
 
-**Tier 1: Strategy & Planning** — $250/hr, 10-hour minimum
-- Infrastructure Assessment
-- Cost Optimization Analysis
-- Technology Roadmap
-- Team Training
+**Strategy & Planning:** architecture assessment, cost analysis, technology roadmap, and team training
 
-**Tier 2: Full Implementation** — $5,000/project
-- Complete Infrastructure Overhaul
-- AI/ML Pipeline Development
-- Kubernetes Migration
-- Ongoing Support (retainer-based)
+**Implementation:** hands-on delivery of infrastructure, AI/ML pipelines, and migrations with documented handoff
 
 ### Get Started
 
-📅 **[Schedule Free Consultation](https://cal.com/aiconsulting)**
+📅 **[Discuss a project](https://vibecodingagency.com/strategy-call/)**
 
 ---
 
@@ -177,7 +170,7 @@ I help organizations:
 
 ### 📚 Documentation
 - [The 25 Verbs of DevOps Framework](25_Verbs_Devops.md) - Comprehensive skills assessment for technology teams
-- [GLM-4.7 Z.ai Setup Guide](GLM-4.7-Z.ai-Setup-Guide.md) - Complete configuration for Claude Code, Cursor, VS Code
+- [GLM-4.7 Z.ai Setup Guide](GLM-4.7-Z.ai-Setup-Guide.md) - Configuration notes
 - [repo2txt - Repository Dumper](Repo2txt.md) - Tool for LLM prompts and RAG systems
 - [AI Leadership Journey](My_AI_Leadership_Journey.md) - 20+ years in AI and technology
 - [De Cryptographiae Historia (Latin)](Whitfied_in_Latin.md) - Whitfield Diffie's cryptography lecture
@@ -185,11 +178,9 @@ I help organizations:
 
 ### 🌐 External
 
-- [Main Repository](https://github.com/awdemos/demos) - Full source code and documentation
+- [Main Repository](https://github.com/awdemos/awdemos) - Full source code and documentation
 - [GitHub Profile](https://github.com/awdemos) - All open-source projects
-- [Demos Directory](../demos/) - Browse all demos and examples
-- [GitHub Profile](https://github.com/awdemos) - All open-source projects
-- [Demos Directory](../demos/) - Browse all demos and examples
+- [Demos Directory](https://github.com/awdemos/awdemos/tree/master/demos) - Browse all demos and examples
 
 ---
 
@@ -199,4 +190,4 @@ All code and documentation in this repository is released under the **MIT Licens
 
 ---
 
-*Built with ❤️ for production infrastructure and automation excellence.*
+*Built for reproducible infrastructure and automation work.*
