@@ -6,10 +6,11 @@
 #     bootstrap, otherwise remove the file bootstrap created;
 #   - subids: remove only the exact lines bootstrap added, so ranges added
 #     later for the same user or for other users survive;
-#   - systemd unit: use the recorded unit name; restore enablement before
-#     restoring the original unit file so its Also= directive cannot change
-#     unrecorded units; restore active state after daemon-reload; keep the
-#     state files if verification fails so the rollback can be retried.
+#   - systemd unit: use the recorded unit name; save and reinstall the
+#     generated Also=-free unit on every attempt before restoring enablement,
+#     so a retry cannot apply enable/disable to an original unit with Also=;
+#     restore active state after daemon-reload; keep the state files if
+#     verification fails so the rollback can be retried.
 #
 # Deliberately NOT removed: downloaded binaries in the user's home, registry
 # image data, and k3s state under /var/lib/rancher/k3s.
@@ -94,13 +95,32 @@ echo
 read -r -p "Type 'yes' to continue: " confirm
 [ "$confirm" = "yes" ] || { echo "Aborted"; exit 1; }
 
+# Every attempt must apply enablement against the bootstrap-generated unit,
+# which has no Also= directive. Save that unit on the first attempt and
+# reinstall it on every attempt: a partial failure leaves the restored
+# original unit on disk, and a retry must not run enable/disable against it.
+# Do this before stopping the unit so a refusal changes nothing.
+[ -n "$_UNIT_PATH" ] || { echo "ERROR: $UNIT_STATE has no unit path; cannot roll back safely."; exit 1; }
+GENERATED_UNIT="$BACKUP_DIR/bootstrap-unit.service"
+if [ ! -f "$GENERATED_UNIT" ]; then
+  if grep -qE '^[[:space:]]*Also=' "$_UNIT_PATH" 2>/dev/null; then
+    echo "ERROR: no saved bootstrap unit and $_UNIT_PATH contains Also=."
+    echo "Restore the bootstrap-generated unit there, then retry."
+    exit 1
+  fi
+  mkdir -p "$(dirname "$GENERATED_UNIT")" "$(dirname "$_UNIT_PATH")"
+  cp -a "$_UNIT_PATH" "$GENERATED_UNIT"
+fi
+if grep -qE '^[[:space:]]*Also=' "$GENERATED_UNIT"; then
+  echo "ERROR: $GENERATED_UNIT contains Also=; enablement cannot be restored safely."
+  echo "Restore a copy of the bootstrap-generated unit there, then retry."
+  exit 1
+fi
+cp -a "$GENERATED_UNIT" "$_UNIT_PATH"
+
 echo "==> stop $UNIT_NAME before restoring its unit file"
 systemctl stop "$UNIT_NAME" 2>/dev/null || true
 
-# Restore enablement while the bootstrap-generated unit is still on disk. That
-# unit has no Also= directive, so enable/disable cannot touch companion units
-# that were never recorded. This must happen before the original unit file
-# (which may carry Also=) is restored below.
 state_error=0
 case "$WAS_ENABLED" in
   enabled)
@@ -116,6 +136,13 @@ case "$WAS_ENABLED" in
     systemctl disable "$UNIT_NAME" >/dev/null 2>&1 || true
     ;;
 esac
+# Fail before touching any file if enablement could not be restored. The
+# generated unit is already back on disk, so a later retry is safe.
+if [ "$state_error" -ne 0 ]; then
+  echo "ERROR: could not restore the pre-bootstrap enablement state for $UNIT_NAME."
+  echo "No files were restored; state files are kept under $BACKUP_DIR for a retry."
+  exit 1
+fi
 
 echo "==> restore pre-existing files and remove bootstrap-created ones"
 while IFS=$'\t' read -r label path backup; do
