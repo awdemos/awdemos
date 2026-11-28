@@ -40,11 +40,36 @@ if [ ! -f "$UNIT_STATE" ]; then
   echo "Roll back with the script version that created this manifest, or restore $UNIT_STATE."
   exit 1
 fi
+# An even older manifest recorded subuid/subgid as whole-file backups; a legacy
+# row paired with a restored unit.tsv must not reach the generic restore loop.
 if cut -f1 "$MANIFEST" | grep -qE '^(subuid|subgid):'; then
   echo "ERROR: $MANIFEST contains legacy subuid/subgid rows."
   echo "Roll back with the script version that created this manifest first."
   exit 1
 fi
+# A legacy subids.tsv entry has no exact added line. Refuse before mutating
+# anything rather than guessing which ranges to remove.
+if [ -f "$SUBIDS" ]; then
+  while IFS=$'\t' read -r _file _user _existed added_line; do
+    [ -n "$_file" ] || continue
+    if [ -z "$added_line" ]; then
+      echo "ERROR: $SUBIDS contains an entry without an exact added line (legacy format)."
+      echo "Roll back with the script version that created this manifest first."
+      exit 1
+    fi
+  done < "$SUBIDS"
+fi
+
+# A non-empty backup path that no longer exists means a pre-existing target
+# would be deleted. Refuse instead of failing open.
+while IFS=$'\t' read -r label path backup; do
+  [ -n "$label" ] || continue
+  if [ -n "$backup" ] && [ ! -e "$backup" ]; then
+    echo "ERROR: backup for $label is missing: $backup"
+    echo "Restore it before rolling back, or remove the stale manifest entry manually."
+    exit 1
+  fi
+done < "$MANIFEST"
 
 # Derive unit identity and prior state from the manifest, never from the
 # current environment: a bootstrap with a custom K3S_UNIT must still be
@@ -93,8 +118,8 @@ if [ -f "$SUBIDS" ]; then
       exit 1
     fi
     tmp="$(mktemp)"
-    # Literal full-line comparison: exact line only, never a user-name regex.
-    awk -v line="$added_line" '$0 != line' "$file" > "$tmp"
+    # Literal full-line comparison: ENVIRON avoids awk's -v escape decoding.
+    ADDED_LINE="$added_line" awk '$0 != ENVIRON["ADDED_LINE"]' "$file" > "$tmp"
     cat "$tmp" > "$file"   # truncate in place to preserve mode and ownership
     rm -f "$tmp"
     if [ ! -s "$file" ] && [ "$existed" = "no" ]; then
@@ -112,6 +137,9 @@ case "$WAS_ENABLED" in
     systemctl enable "$UNIT_NAME" 2>/dev/null || state_error=1
     ;;
   enabled-runtime)
+    # A persistent symlink from an older bootstrap would keep is-enabled at
+    # "enabled"; remove it before restoring the runtime-only enablement.
+    systemctl disable "$UNIT_NAME" >/dev/null 2>&1 || true
     systemctl enable --runtime "$UNIT_NAME" 2>/dev/null || state_error=1
     ;;
   *)

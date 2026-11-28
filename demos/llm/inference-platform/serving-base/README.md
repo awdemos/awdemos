@@ -89,11 +89,14 @@ verification fails, it reports the error and **keeps the state files** so the
 rollback can be retried; only a verified rollback deletes the manifest files.
 With no manifest it exits without changing anything.
 
-Rollback refuses incomplete state rather than guessing: missing `unit.tsv`, an
-empty subid entry, or legacy `subuid:*` / `subgid:*` rows from an older
-bootstrap all require rolling back with the script version that created that
-manifest first. `K3S_UNIT` must be a regular file at bootstrap; a symlinked unit
-path is rejected because `cat >` would overwrite the symlink target.
+Rollback refuses incomplete state rather than guessing, before changing
+anything: missing `unit.tsv`; legacy `subuid:*` / `subgid:*` rows in
+`manifest.tsv` or a `subids.tsv` entry without an exact added line (both from
+older script versions); or a backup path recorded in the manifest that no
+longer exists. `K3S_UNIT` must be a regular file at bootstrap; a symlinked unit path
+is rejected because `cat >` would overwrite the symlink target. Bootstrap also
+preserves runtime-only enablement instead of promoting it to a persistent
+systemd unit.
 
 It intentionally leaves in place: downloaded binaries in the user's home (not
 created by this script), registry image data, and k3s cluster state under

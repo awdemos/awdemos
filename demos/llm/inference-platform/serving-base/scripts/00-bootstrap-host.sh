@@ -101,7 +101,8 @@ record_target() {
 user_has_range() {
   local file="$1" user="$2"
   [ -f "$file" ] || return 1
-  awk -F: -v u="$user" '$1 == u { found = 1 } END { exit !found }' "$file"
+  # ENVIRON avoids awk's -v escape decoding for unusual user names.
+  RANGE_USER="$user" awk -F: '$1 == ENVIRON["RANGE_USER"] { found = 1 } END { exit !found }' "$file"
 }
 
 # Only touch subuid/subgid when this user has no range. Record the exact lines
@@ -126,7 +127,7 @@ add_subid_range() {
     usermod --add-subgids 100000-165535 "$DEMO_USER"
   fi
 
-  added="$(grep -Fxv -f "$before" "$file" | awk -F: -v u="$DEMO_USER" '$1 == u' || true)"
+  added="$(grep -Fxv -f "$before" "$file" | RANGE_USER="$DEMO_USER" awk -F: '$1 == ENVIRON["RANGE_USER"]' || true)"
   while IFS= read -r line; do
     [ -n "$line" ] || continue
     printf '%s\t%s\t%s\t%s\n' "$file" "$DEMO_USER" "$existed" "$line" >> "$SUBIDS"
@@ -185,7 +186,14 @@ wait_for_ready() {
 }
 
 systemctl daemon-reload
-systemctl enable --now "$UNIT_NAME"
+# Preserve pre-bootstrap enablement: a runtime-enabled unit must not be
+# promoted to a persistent one, and a disabled/static unit should be started
+# without changing its enablement.
+case "$WAS_ENABLED" in
+  enabled)         systemctl enable --now "$UNIT_NAME" ;;
+  enabled-runtime) systemctl enable --runtime --now "$UNIT_NAME" ;;
+  *)               systemctl start "$UNIT_NAME" ;;
+esac
 wait_for_ready "$UNIT_NAME" || exit 1
 echo "==> k3s up"
 
