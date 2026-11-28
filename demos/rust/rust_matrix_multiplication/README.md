@@ -32,7 +32,7 @@ Without a usable GPU the program prints `GPU skipped` and still runs the CPU pat
 --------------------------------------------------
 🖥️  CPU (ndarray)         <measured> ms
 ⚡ GPU kernel only        <measured> ms  ✅ max rel err: <measured>
-🔁 GPU + transfers       <measured> ms  (H2D + kernel + D2H)
+🔁 GPU + transfers       <measured> ms  (host copies + H2D + kernel + D2H)
 🚀 Speedup (kernel)      <measured>×
 ```
 
@@ -73,7 +73,9 @@ Report results with the hardware, driver/toolkit versions, commit, exact command
 
 ### CPU Path
 
-Uses `ndarray::Array2` and `.dot()` for a BLAS-backed CPU matrix multiply.
+Uses `ndarray::Array2` and `.dot()` with ndarray's default pure-Rust
+`matrixmultiply` backend. No BLAS provider is linked in this demo; see the
+roadmap for a future cuBLAS comparison.
 
 ### GPU Path
 

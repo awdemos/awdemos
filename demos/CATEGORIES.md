@@ -12,7 +12,7 @@ This document organizes all demos by technology category for quick navigation. E
 
 | Demo                          | Description                                         | Tech Stack                                   | Quick Start                                  |
 | ----------------------------- | --------------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
-| [LLM Infrastructure](./llm/)  | Production LLM deployments with NVIDIA optimization | NVIDIA GPUs, Triton, MLflow, Ray, Kubernetes | [Quick Start](./llm/#quick-start)            |
+| [LLM Infrastructure](./llm/)  | Production LLM deployments with NVIDIA optimization | NVIDIA GPUs, Triton, MLflow, Ray, Kubernetes | [Quick Start](./llm/#-quick-start)           |
 | [Multi-Agent AI](./llm/)      | MCP-based agent orchestration and state management  | MCP, container-use, Claude Desktop           | [Quick Start](./llm/#multi-agent-ai-systems) |
 | [NVIDIA Technologies](./llm/) | CUDA, MIG, TensorRT, DCGM optimization              | NVIDIA GPU toolkit, Python, Rust             | [Quick Start](./llm/#nvidia-gpu-setup)       |
 
@@ -40,28 +40,28 @@ This document organizes all demos by technology category for quick navigation. E
 
 ### Kubernetes Distributions
 
-| Demo                              | Description                        | Distribution                   | Quick Start                                           |
-| --------------------------------- | ---------------------------------- | ------------------------------ | ----------------------------------------------------- |
-| [Talos Linux](./kubernetes/)      | Immutable, API-only Kubernetes OS  | Talos, Kubernetes, cluster-api | [Quick Start](./kubernetes/#quick-start) |
-| [K3s Lightweight](./kubernetes/)  | Edge-compatible lightweight K8s    | K3s, edge computing            | [Quick Start](./kubernetes/#quick-start) |
-| [vCluster Virtual](./kubernetes/) | Virtual K8s clusters for isolation | vCluster, K8s-in-K8s           | [Quick Start](./kubernetes/#quick-start)         |
+| Demo | Description | Distribution | Where to start |
+| --- | --- | --- | --- |
+| [Talos Linux](./kubernetes/) | Immutable, API-only Kubernetes OS | Talos, Kubernetes, cluster-api | [Technologies demonstrated](./kubernetes/#-technologies-demonstrated) |
+| K3s Lightweight | Edge-compatible lightweight K8s | K3s, edge computing | No guide in this repo yet; the [D1 bootstrap](./llm/inference-platform/serving-base/) uses k3s |
+| [vCluster Virtual](./kubernetes/) | Virtual K8s clusters for isolation | vCluster, K8s-in-K8s | [Technologies demonstrated](./kubernetes/#-technologies-demonstrated) |
 
 ### Advanced Networking
 
-| Demo                                     | Description                           | Tech Stack                         | Quick Start                                      |
-| ---------------------------------------- | ------------------------------------- | ---------------------------------- | ------------------------------------------------ |
-| [Cilium eBPF](./kubernetes/)             | Kernel-bypass networking and security | Cilium, eBPF, Hubble, Cilium       | [Quick Start](./kubernetes/#zero-trust-networking) |
-| [Zero-Trust Architecture](./kubernetes/) | Zero-trust networking and policies    | Cilium, network policies, mTLS     | [Quick Start](./kubernetes/#zero-trust-networking) |
-| [Ingress Controllers](./kubernetes/)     | Multiple ingress strategies           | NGINX, Traefik, Cilium Gateway API | [Quick Start](./kubernetes/#quick-start)     |
+| Demo | Description | Tech Stack | Where to start |
+| --- | --- | --- | --- |
+| [Cilium eBPF](./kubernetes/) | eBPF networking and security | Cilium, eBPF, Hubble | [Zero-trust networking](./kubernetes/#zero-trust-networking) |
+| [Zero-Trust Architecture](./kubernetes/) | Network policies and mTLS | Cilium, network policies, mTLS | [Zero-trust networking](./kubernetes/#zero-trust-networking) |
+| Ingress Controllers | Multiple ingress strategies | NGINX, Traefik, Cilium Gateway API | No guide in this repo yet |
 
 ### Observability
 
-| Demo                                  | Description                       | Tech Stack                              | Quick Start                                      |
-| ------------------------------------- | --------------------------------- | --------------------------------------- | ------------------------------------------------ |
-| [Prometheus + Grafana](./kubernetes/) | Metrics collection and dashboards | Prometheus, Grafana, DCGM Exporter      | [Quick Start](./kubernetes/#technologies-demonstrated) |
-| [Loki Logging](./kubernetes/)         | Distributed log aggregation       | Loki, Promtail, Grafana                 | [Quick Start](./kubernetes/#technologies-demonstrated) |
-| [Jaeger Tracing](./kubernetes/)       | Distributed request tracing       | Jaeger, OpenTelemetry, tracing          | [Quick Start](./kubernetes/#technologies-demonstrated) |
-| [GPU Metrics](./kubernetes/)          | DCGM GPU monitoring               | NVIDIA DCGM, Prometheus, custom metrics | [Quick Start](./kubernetes/#gpu-enabled-clusters)         |
+| Demo | Description | Tech Stack | Where to start |
+| --- | --- | --- | --- |
+| Prometheus + Grafana | Metrics collection and dashboards | Prometheus, Grafana, DCGM Exporter | No guide in this repo yet |
+| Loki Logging | Distributed log aggregation | Loki, Promtail, Grafana | No guide in this repo yet |
+| Jaeger Tracing | Distributed request tracing | Jaeger, OpenTelemetry | No guide in this repo yet |
+| [GPU Metrics](./kubernetes/) | DCGM GPU monitoring | NVIDIA DCGM, Prometheus | [GPU-enabled clusters](./kubernetes/#gpu-enabled-clusters) |
 
 ---
 
@@ -211,7 +211,7 @@ This document organizes all demos by technology category for quick navigation. E
 
 ### For Security Engineers
 
-1. Review [Supply Chain Security](../COMPARISONS.md#container-optimization) approaches
+1. Review [Supply Chain Security](../COMPARISONS.md#-container-optimization) approaches
 2. Explore [Zero-Trust Architecture](./kubernetes/) implementation
 3. Study [SECURITY.md](../SECURITY.md) for private vulnerability reporting
 4. Check [Research.md](../Research.md) for security research

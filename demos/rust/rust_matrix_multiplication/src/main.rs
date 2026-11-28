@@ -182,7 +182,7 @@ fn benchmark_size(n: usize, gpu: Option<&GpuMatmul>) {
             match gpu.time_end_to_end(&a_vec, &b_vec, n) {
                 Ok((_, total_ms)) => {
                     println!(
-                        "🔁 GPU + transfers   {:>10.3} ms  (H2D + kernel + D2H)",
+                        "🔁 GPU + transfers   {:>10.3} ms  (host copies + H2D + kernel + D2H)",
                         total_ms
                     );
                     println!("🚀 Speedup (kernel)  {:>10.2}×", cpu_ms / kernel_ms);

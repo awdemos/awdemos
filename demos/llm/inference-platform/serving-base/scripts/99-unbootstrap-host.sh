@@ -1,55 +1,75 @@
 #!/usr/bin/env bash
 # Rollback for 00-bootstrap-host.sh.
 #
-# Removes the host-level files that bootstrap created. It deliberately does NOT
-# remove: downloaded binaries in the user's home, subuid/subgid ranges (they are
-# shared with rootless podman), registry image data, or k3s state under
-# /var/lib/rancher/k3s. Delete those only after checking nothing else uses them.
+# Reads the manifest written by bootstrap and, for each recorded target:
+#   - restores the timestamped backup when the file existed before bootstrap;
+#   - removes the file when bootstrap created it;
+#   - removes only this user's subuid/subgid lines when those files did not
+#     exist before bootstrap.
+#
+# Deliberately NOT removed: downloaded binaries in the user's home, registry
+# image data in $REGISTRY_DIR, and k3s state under /var/lib/rancher/k3s.
 #
 # Run as root with the same parameters used for bootstrap:
 #
 #   sudo bash 99-unbootstrap-host.sh
-#   sudo DEMO_USER=alice K3S_SRC=/home/alice/bin/k3s bash 99-unbootstrap-host.sh
+#   sudo DEMO_USER=alice bash 99-unbootstrap-host.sh
 set -euo pipefail
 
 [ "$(id -u)" -eq 0 ] || { echo "ERROR: run with sudo"; exit 1; }
 
 DEMO_USER="${DEMO_USER:-${SUDO_USER:-a}}"
-id "$DEMO_USER" >/dev/null 2>&1 || echo "WARNING: no such user: $DEMO_USER (continuing)"
-DEMO_HOME="$(getent passwd "$DEMO_USER" 2>/dev/null | cut -d: -f6 || true)"
-
-K3S_BIN="${K3S_BIN:-/usr/local/bin/k3s}"
-REGISTRY_DIR="${REGISTRY_DIR:-/var/lib/inference-registry}"
-K3S_CONFIG_DIR="${K3S_CONFIG_DIR:-/etc/rancher/k3s}"
 K3S_UNIT="${K3S_UNIT:-/etc/systemd/system/k3s.service}"
-KUBECONFIG_DIR="${KUBECONFIG_DIR:-${DEMO_HOME:-/var/home/$DEMO_USER}/.kube}"
+BACKUP_DIR="${BACKUP_DIR:-/var/lib/inference-platform-bootstrap-backup}"
+MANIFEST="$BACKUP_DIR/manifest.tsv"
+REGISTRY_DIR="${REGISTRY_DIR:-/var/lib/inference-registry}"
 
-echo "==> Planned rollback"
-echo "    stop/disable unit: $K3S_UNIT"
-echo "    remove unit:       $K3S_UNIT"
-echo "    remove config:     $K3S_CONFIG_DIR/registries.yaml"
-echo "    remove binary:     $K3S_BIN"
-echo "    remove kubeconfig: $KUBECONFIG_DIR/config"
-echo "    leave in place:    registry data, k3s state, subuid/subgid, home binaries"
+if [ ! -f "$MANIFEST" ]; then
+  echo "No bootstrap state found at $MANIFEST; nothing to roll back."
+  exit 0
+fi
+
+echo "==> Planned rollback from $MANIFEST"
+echo "    stop/disable unit: $(basename "$K3S_UNIT" .service)"
+echo "    restore or remove every target recorded in the manifest"
+echo "    leave in place:    registry data, k3s state, downloaded home binaries"
 echo
 read -r -p "Type 'yes' to continue: " confirm
 [ "$confirm" = "yes" ] || { echo "Aborted"; exit 1; }
 
 UNIT_NAME="$(basename "$K3S_UNIT" .service)"
-
 if [ -f "$K3S_UNIT" ]; then
   echo "==> stop and disable $UNIT_NAME"
   systemctl stop "$UNIT_NAME" 2>/dev/null || true
   systemctl disable "$UNIT_NAME" 2>/dev/null || true
 fi
 
-echo "==> remove files created by bootstrap"
-rm -f "$K3S_UNIT"
-rm -f "$K3S_CONFIG_DIR/registries.yaml"
-rmdir "$K3S_CONFIG_DIR" 2>/dev/null || true
-rm -f "$K3S_BIN"
-rm -f "$KUBECONFIG_DIR/config"
-rmdir "$KUBECONFIG_DIR" 2>/dev/null || true
+echo "==> restore pre-existing files and remove bootstrap-created ones"
+while IFS=$'\t' read -r label path backup; do
+  [ -n "$label" ] || continue
+
+  case "$label" in
+    subuid:*|subgid:*)
+      user="${label#*:}"
+      if [ -n "$backup" ] && [ -e "$backup" ]; then
+        cp -a "$backup" "$path"
+      elif [ -f "$path" ]; then
+        # No pre-existing file: drop only the range bootstrap added for this user.
+        sed -i "/^${user}:/d" "$path"
+      fi
+      ;;
+    *)
+      if [ -n "$backup" ] && [ -e "$backup" ]; then
+        mkdir -p "$(dirname "$path")"
+        cp -a "$backup" "$path"
+      else
+        rm -f "$path"
+      fi
+      ;;
+  esac
+done < "$MANIFEST"
+
+rm -f "$MANIFEST"
 
 echo "==> daemon-reload"
 systemctl daemon-reload

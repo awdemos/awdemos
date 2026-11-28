@@ -38,6 +38,7 @@ on the `sudo` command line:
 | `K3S_CONFIG_DIR` | `/etc/rancher/k3s` | k3s config directory |
 | `K3S_UNIT` | `/etc/systemd/system/k3s.service` | systemd unit path |
 | `KUBECONFIG_DIR` | `$DEMO_HOME/.kube` | Destination for the kubeconfig |
+| `BACKUP_DIR` | `/var/lib/inference-platform-bootstrap-backup` | Timestamped backups and the rollback manifest |
 
 Example for another account:
 
@@ -52,19 +53,27 @@ do not reuse it on a shared or internet-facing host.
 
 ## Rollback
 
-`scripts/99-unbootstrap-host.sh` reverses the file changes made by bootstrap:
+Before changing any target, bootstrap writes a manifest to `$BACKUP_DIR/manifest.tsv`
+and copies pre-existing targets to timestamped backups there. A second bootstrap
+run is refused while that manifest exists, so state cannot compound.
+
+`scripts/99-unbootstrap-host.sh` consumes the manifest:
 
 ```bash
 sudo bash scripts/99-unbootstrap-host.sh
 # or, with overrides:
-sudo DEMO_USER=alice K3S_SRC=/home/alice/bin/k3s bash scripts/99-unbootstrap-host.sh
+sudo DEMO_USER=alice bash scripts/99-unbootstrap-host.sh
 ```
 
-It prompts for confirmation, stops and disables the k3s unit, removes the unit,
-`registries.yaml`, installed k3s binary, and copied kubeconfig, then reloads
-systemd.
+It prompts for confirmation, stops and disables the k3s unit, then walks the
+manifest and **restores the backup** for every target that existed before
+bootstrap, or **removes the target** when bootstrap created it. Managed targets
+include the installed k3s binary, the systemd unit, `registries.yaml`, the
+copied kubeconfig, the containerd config/drop-in/template changed by
+`nvidia-ctk`, and the user's subuid/subgid lines. It then reloads systemd and
+deletes the manifest. With no manifest it exits without changing anything.
 
 It intentionally leaves in place: downloaded binaries in the user's home (not
-created by this script), subuid/subgid ranges (shared with rootless podman),
-registry image data, and k3s cluster state under `/var/lib/rancher/k3s`. Remove
-those manually only after confirming nothing else depends on them.
+created by this script), registry image data in `$REGISTRY_DIR`, and k3s cluster
+state under `/var/lib/rancher/k3s`. Remove those manually only after confirming
+nothing else depends on them.

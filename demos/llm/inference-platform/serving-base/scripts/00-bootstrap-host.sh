@@ -2,7 +2,7 @@
 # One-time host bootstrap for the D1 serving-base demo.
 #
 # MANUAL GATE: this script changes host-level state (systemd, /etc, registry
-# storage, subuid/subgid). Review it before running. Run as root:
+# storage, subuid/subgid, containerd). Review it before running. Run as root:
 #
 #   sudo bash 00-bootstrap-host.sh
 #
@@ -12,7 +12,9 @@
 #
 #   sudo DEMO_USER=alice K3S_SRC=/home/alice/bin/k3s bash 00-bootstrap-host.sh
 #
-# Rollback: see 99-unbootstrap-host.sh and ../README.md.
+# Every file this script replaces or creates is recorded in a manifest, with a
+# timestamped backup when the file already existed. 99-unbootstrap-host.sh
+# restores those backups. Rollback: see 99-unbootstrap-host.sh and ../README.md.
 set -euo pipefail
 
 [ "$(id -u)" -eq 0 ] || { echo "ERROR: run with sudo"; exit 1; }
@@ -23,7 +25,7 @@ id "$DEMO_USER" >/dev/null 2>&1 || { echo "ERROR: no such user: $DEMO_USER"; exi
 
 DEMO_UID="$(id -u "$DEMO_USER")"
 DEMO_GID="$(id -g "$DEMO_USER")"
-DEMO_HOME="$(getent passwd "$DEMO_USER" | cut -d: -f6)"
+DEMO_HOME="${DEMO_HOME:-$(getent passwd "$DEMO_USER" | cut -d: -f6 || true)}"
 [ -n "$DEMO_HOME" ] || { echo "ERROR: cannot determine home for $DEMO_USER"; exit 1; }
 
 K3S_SRC="${K3S_SRC:-$DEMO_HOME/.local/bin/k3s}"
@@ -33,10 +35,22 @@ REGISTRY_DIR="${REGISTRY_DIR:-/var/lib/inference-registry}"
 K3S_CONFIG_DIR="${K3S_CONFIG_DIR:-/etc/rancher/k3s}"
 K3S_UNIT="${K3S_UNIT:-/etc/systemd/system/k3s.service}"
 KUBECONFIG_DIR="${KUBECONFIG_DIR:-$DEMO_HOME/.kube}"
+BACKUP_DIR="${BACKUP_DIR:-/var/lib/inference-platform-bootstrap-backup}"
+MANIFEST="$BACKUP_DIR/manifest.tsv"
+
+CONTAINERD_CONFIG=/var/lib/rancher/k3s/agent/etc/containerd/config.toml
+CONTAINERD_TMPL=/var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
+NVIDIA_DROPIN=/etc/containerd/conf.d/99-nvidia.toml
 
 for required in "$K3S_SRC" "$CTK_BIN"; do
   [ -x "$required" ] || { echo "ERROR: missing or non-executable: $required"; exit 1; }
 done
+
+if [ -e "$MANIFEST" ]; then
+  echo "ERROR: bootstrap state already exists at $MANIFEST."
+  echo "Run 99-unbootstrap-host.sh before bootstrapping again."
+  exit 1
+fi
 
 echo "==> Configuration"
 echo "    user=$DEMO_USER uid=$DEMO_UID gid=$DEMO_GID home=$DEMO_HOME"
@@ -46,12 +60,30 @@ echo "    registry=$REGISTRY_DIR"
 echo "    k3s config=$K3S_CONFIG_DIR"
 echo "    systemd unit=$K3S_UNIT"
 echo "    kubeconfig=$KUBECONFIG_DIR/config"
+echo "    backup/manifest=$BACKUP_DIR / $MANIFEST"
+
+mkdir -p "$BACKUP_DIR"
+: > "$MANIFEST"
+
+# Record a target before modifying it. An empty backup field means the file did
+# not exist before bootstrap and should be removed on rollback.
+record_target() {
+  local label="$1" path="$2" backup=""
+  if [ -e "$path" ]; then
+    backup="$BACKUP_DIR/$label.$(date +%Y%m%d%H%M%S)"
+    cp -a "$path" "$backup"
+  fi
+  printf '%s\t%s\t%s\n' "$label" "$path" "$backup" >> "$MANIFEST"
+}
 
 # ── Install ────────────────────────────────────────────────────────────────────
 echo "==> install k3s binary (SELinux: init cannot exec from home)"
+record_target k3s-bin "$K3S_BIN"
 install -m 0755 "$K3S_SRC" "$K3S_BIN"
 
 echo "==> subuid/subgid for rootless podman ($DEMO_USER)"
+record_target "subuid:$DEMO_USER" /etc/subuid
+record_target "subgid:$DEMO_USER" /etc/subgid
 grep -q "^${DEMO_USER}:" /etc/subuid || usermod --add-subuids 100000-165535 "$DEMO_USER"
 grep -q "^${DEMO_USER}:" /etc/subgid || usermod --add-subgids 100000-165535 "$DEMO_USER"
 
@@ -59,6 +91,7 @@ echo "==> local registry storage"
 mkdir -p "$REGISTRY_DIR" && chown "${DEMO_UID}:${DEMO_GID}" "$REGISTRY_DIR"
 
 echo "==> k3s systemd unit"
+record_target k3s-unit "$K3S_UNIT"
 cat > "$K3S_UNIT" <<UNIT
 [Unit]
 Description=k3s (inference-platform)
@@ -78,6 +111,7 @@ UNIT
 echo "==> insecure localhost registry (must exist before first start)"
 mkdir -p "$K3S_CONFIG_DIR"
 # Intentionally insecure: localhost-only registry for a single-user demo box.
+record_target registries "$K3S_CONFIG_DIR/registries.yaml"
 cat > "$K3S_CONFIG_DIR/registries.yaml" <<'YAML'
 mirrors:
   "localhost:5000":
@@ -102,17 +136,20 @@ wait_for_ready "$UNIT_NAME" || exit 1
 echo "==> k3s up"
 
 echo "==> nvidia containerd runtime (drop-in + config.toml.tmpl)"
+record_target containerd-config "$CONTAINERD_CONFIG"
+record_target containerd-dropin "$NVIDIA_DROPIN"
+record_target containerd-tmpl "$CONTAINERD_TMPL"
 "$CTK_BIN" runtime configure --runtime=containerd --set-as-default=true \
-  --config=/var/lib/rancher/k3s/agent/etc/containerd/config.toml \
+  --config="$CONTAINERD_CONFIG" \
   || { echo "ERROR: nvidia-ctk runtime configure failed"; exit 1; }
-grep -qE '^\s*default_runtime_name\s*=\s*"nvidia"' /etc/containerd/conf.d/99-nvidia.toml \
+grep -qE '^\s*default_runtime_name\s*=\s*"nvidia"' "$NVIDIA_DROPIN" \
   || { echo "ERROR: nvidia default runtime missing from drop-in"; exit 1; }
-cp /var/lib/rancher/k3s/agent/etc/containerd/config.toml \
-   /var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
+cp "$CONTAINERD_CONFIG" "$CONTAINERD_TMPL"
 systemctl restart "$UNIT_NAME"
 wait_for_ready "$UNIT_NAME" || exit 1
 
 echo "==> kubeconfig for $DEMO_USER"
+record_target kubeconfig "$KUBECONFIG_DIR/config"
 mkdir -p "$KUBECONFIG_DIR"
 cp /etc/rancher/k3s/k3s.yaml "$KUBECONFIG_DIR/config"
 chown "${DEMO_UID}:${DEMO_GID}" "$KUBECONFIG_DIR/config"
@@ -120,3 +157,4 @@ chmod 600 "$KUBECONFIG_DIR/config"
 
 "$K3S_BIN" kubectl get nodes -o wide
 echo "BOOTSTRAP OK"
+echo "Pre-existing targets were backed up under $BACKUP_DIR; 99-unbootstrap-host.sh restores them."

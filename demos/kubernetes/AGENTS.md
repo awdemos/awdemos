@@ -2,7 +2,7 @@
 
 ## OVERVIEW
 
-Production Kubernetes deployment patterns across AWS, GCP, and Azure. Includes Cilium eBPF networking, multi-cluster federation, deterministic builds, and 100+ reference implementations.
+Production Kubernetes deployment patterns across AWS, GCP, and Azure. Includes 15 Pulumi cluster bootstrap examples in five languages, Cilium eBPF networking, multi-cluster federation, and deterministic builds.
 
 ## STRUCTURE
 

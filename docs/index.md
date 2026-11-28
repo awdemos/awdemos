@@ -34,7 +34,7 @@ twitter:
 # AI Infrastructure & Automation Expert | Nvidia Certified
 
 ## 🎯 Quick Navigation
-- [View Portfolio](../#selected-products-and-engineering-work) | [For Recruiters](../#for-recruiters-and-hiring-managers) | [For Consulting Clients](#for-consulting-clients)
+- [View Portfolio](../README.md#selected-products-and-engineering-work) | [For Recruiters](../README.md#for-recruiters-and-hiring-managers) | [For Consulting Clients](#-for-consulting-clients)
 
 ---
 

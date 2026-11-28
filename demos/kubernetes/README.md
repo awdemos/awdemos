@@ -4,7 +4,7 @@ Production-ready Kubernetes deployments, patterns, and deep dives into container
 
 ## 📋 Overview
 
-This directory contains comprehensive demonstrations of Kubernetes concepts, production deployment patterns, and operational best practices developed across **100+ real-world deployments** across AWS, GCP, and Azure.
+This directory contains Kubernetes concepts, production deployment patterns, and operational notes. The `100_ways_to_deploy_kubernetes/` folder holds 15 Pulumi cluster bootstrap examples across AWS, GCP, and Azure in five languages; the name is pedagogical, not a count.
 
 ### What You'll Find Here
 
@@ -349,4 +349,4 @@ All demos and documentation in this directory are licensed under the MIT License
 
 ---
 
-**Built with ❤️ for production Kubernetes deployments across 100+ real-world scenarios.**
+**Built for reproducible Kubernetes patterns across AWS, GCP, and Azure.**

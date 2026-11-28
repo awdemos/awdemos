@@ -14,7 +14,7 @@ the subject line `SECURITY: awdemos`. Include:
 - your preferred contact method for follow-up.
 
 You should receive an acknowledgement within five business days. I will work
-with you on a fix and coordinates disclosure. Please allow **90 days** before
+with you on a fix and coordinate disclosure. Please allow **90 days** before
 any public disclosure so a verified fix and advisory can be prepared.
 
 ## Scope
